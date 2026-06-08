@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products — CENTOR Underground System Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="centor.css" />
+  <style>
+    .line-intro { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .line-intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:48px; }
+    @media(max-width:700px){.line-intro-grid{grid-template-columns:1fr;}}
+    .li-card { padding:44px 36px; background-color:var(--bg); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); }
+    .li-card.gold { border-top:3px solid var(--gold); }
+    .li-card.silver { border-top:3px solid var(--charcoal-2); }
+    .li-badge { display:inline-block; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; padding:4px 12px; border:1px solid; margin-bottom:20px; font-weight:600; }
+    .li-badge.g { color:var(--gold); border-color:var(--gold-border); background:var(--gold-dim); }
+    .li-badge.s { color:var(--charcoal-2); border-color:rgba(0,0,0,0.15); background:rgba(0,0,0,0.05); }
+    .li-name { font-family:var(--font-d); font-size:22px; color:var(--charcoal); letter-spacing:0.06em; margin-bottom:8px; }
+    .li-name em { font-style:normal; color:var(--gold); }
+    .li-tagline { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:18px; }
+    .li-desc { font-size:14px; color:var(--text-mid); line-height:1.75; margin-bottom:24px; }
+    .li-feats { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:28px; }
+    .li-feat { font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); background:rgba(0,0,0,0.05); border:1px solid var(--border); padding:4px 10px; }
+    .li-jump { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); text-decoration:none; display:inline-flex; align-items:center; gap:7px; transition:gap 0.2s ease; font-weight:600; }
+    .li-jump:hover { gap:12px; }
+
+    .gold-section { background-color:var(--bg); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .silver-section { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+
+    .section-line-head { display:flex; align-items:flex-end; justify-content:space-between; gap:32px; flex-wrap:wrap; margin-bottom:40px; padding-bottom:32px; border-bottom:1px solid var(--border); }
+    .section-line-head-left h2 { font-family:var(--font-d); font-size:clamp(20px,2.8vw,34px); color:var(--charcoal); letter-spacing:0.04em; margin-top:10px; }
+    .section-line-head-left h2 em { font-style:normal; color:var(--gold); }
+    .section-line-head-right { font-size:14px; color:var(--text-mid); line-height:1.72; max-width:360px; }
+
+    .prod-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+    @media(max-width:1000px){.prod-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:560px){.prod-grid{grid-template-columns:1fr;}}
+
+    .pc { padding:34px 28px; background-color:var(--bg-1); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 1px 4px rgba(0,0,0,0.06); position:relative; overflow:hidden; transition:border-color 0.22s ease,background-color 0.22s ease; }
+    .pc::after { content:''; position:absolute; bottom:0;left:0;right:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); transform:scaleX(0); transform-origin:left; transition:transform 0.32s cubic-bezier(0.34,1.56,0.64,1); }
+    .pc:hover { border-color:var(--border-gold); background-color:var(--bg-2); }
+    .pc:hover::after { transform:scaleX(1); }
+    .pc-code { font-family:var(--font-d); font-size:9px; color:var(--text-faint); letter-spacing:0.24em; margin-bottom:6px; text-transform:uppercase; }
+    .pc-name { font-family:var(--font-d); font-size:14px; color:var(--charcoal); letter-spacing:0.05em; margin-bottom:14px; line-height:1.3; }
+    .pc-name em { font-style:normal; color:var(--gold); }
+    .pc-desc { font-size:13px; color:var(--text-mid); line-height:1.68; margin-bottom:20px; }
+    .pc-specs { display:flex; flex-direction:column; gap:5px; margin-bottom:18px; padding:14px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .spec { display:flex; gap:8px; font-size:12px; }
+    .spec-k { color:var(--text-faint); text-transform:uppercase; letter-spacing:0.08em; font-size:10px; flex:none; min-width:82px; padding-top:1px; }
+    .spec-v { color:var(--charcoal-2); font-weight:500; }
+    .pc-pkg { font-size:12px; color:var(--text-dim); }
+    .pc-pkg strong { color:var(--charcoal-2); }
+    .pc-feats { display:flex; flex-wrap:wrap; gap:5px; margin-top:14px; }
+    .pc-feat { font-size:9.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); background:rgba(0,0,0,0.04); border:1px solid var(--border); padding:3px 8px; }
+
+    .silver-section .pc { background-color:var(--bg); }
+    .silver-section .pc:hover { background-color:var(--bg-2); }
+
+    .support { background-color:var(--bg-2); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .support-inner { display:grid; grid-template-columns:1fr auto; gap:48px; align-items:center; }
+    @media(max-width:700px){.support-inner{grid-template-columns:1fr;gap:28px;}}
+    .support-h { font-family:var(--font-d); font-size:clamp(16px,2.4vw,28px); color:var(--charcoal); letter-spacing:0.04em; margin-bottom:12px; }
+    .support-h em { font-style:normal; color:var(--gold); }
+    .support-body { font-size:14.5px; color:var(--text-mid); line-height:1.72; }
+    .support-actions { display:flex; gap:12px; flex-wrap:wrap; flex:none; }
+  </style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true"><defs>
+  <linearGradient id="gSteel" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#f4f5f6"/><stop offset="0.32" stop-color="#d3d5d8"/><stop offset="0.6" stop-color="#a7abae"/><stop offset="0.82" stop-color="#888c90"/><stop offset="1" stop-color="#6c7074"/></linearGradient>
+  <linearGradient id="gGrey" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#74787c"/><stop offset="0.4" stop-color="#4f5256"/><stop offset="0.75" stop-color="#3a3d40"/><stop offset="1" stop-color="#2a2c2f"/></linearGradient>
+</defs></svg>
+
+<nav id="top-nav"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><img src="brand_assets/centor-logo-horizontal-gold.svg" alt="CENTOR" /></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li>
+    <li><a href="products.html" class="active">Products</a></li><li><a href="services.html">Services</a></li>
+    <li><a href="references.html">References</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="btn-nav desktop-only">Get a Quote</a>
+  <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu"><ul>
+  <li><a href="index.html" onclick="closeMobile()">Home</a></li><li><a href="about.html" onclick="closeMobile()">About Us</a></li>
+  <li><a href="products.html" onclick="closeMobile()">Products</a></li><li><a href="services.html" onclick="closeMobile()">Services</a></li>
+  <li><a href="references.html" onclick="closeMobile()">References</a></li><li><a href="contact.html" onclick="closeMobile()">Contact</a></li>
+</ul><a href="contact.html" class="mobile-cta">Get a Quote</a></div>
+
+<!-- PAGE BANNER -->
+<div class="page-banner">
+  <div class="page-banner-inner container">
+    <div class="page-banner-eyebrow">Our Products</div>
+    <h1 class="page-banner-h">Two precision product lines.<br><em>Every formulation engineered for underground performance.</em></h1>
+    <p class="page-banner-sub">Gold Line and Silver Line — covering every project requirement from ultra-demanding deep-sea metro TBMs to standard utility tunnel drives.</p>
+  </div>
+</div>
+
+<!-- PRODUCT LINE INTRO -->
+<section class="line-intro sp">
+  <div class="container">
+    <div class="fade-up">
+      <div class="eyebrow"><span class="eyebrow-num">01</span><span class="eyebrow-line"></span><span class="eyebrow-label">Product Lines</span></div>
+      <h2 class="section-h">Gold Line &amp; <em>Silver Line</em></h2>
+      <p class="section-lede" style="max-width:560px">Two complementary lines covering every project requirement — from ultra-demanding deep-sea metro TBMs to standard utility tunnel drives.</p>
+    </div>
+    <div class="line-intro-grid">
+      <div class="li-card gold fade-up">
+        <div class="li-badge g">Gold Line</div>
+        <div class="li-name"><em>C</em>ENTOR Gold</div>
+        <div class="li-tagline">Maximum-Performance Formulations</div>
+        <p class="li-desc">Designed for the most demanding TBM operating conditions. Advanced additive packages deliver superior EP performance, extreme temperature stability, and extended service intervals.</p>
+        <div class="li-feats"><span class="li-feat">Biodegradable</span><span class="li-feat">Fire Resistant</span><span class="li-feat">High EP Performance</span><span class="li-feat">Extended Service Life</span></div>
+        <a href="#gold-line" class="li-jump">View Gold Line Products ↓</a>
+      </div>
+      <div class="li-card silver fade-up" style="transition-delay:0.08s">
+        <div class="li-badge s">Silver Line</div>
+        <div class="li-name">CENTOR Silver</div>
+        <div class="li-tagline">High-Reliability Standard Formulations</div>
+        <p class="li-desc">Proven, reliable performance for standard underground applications. The same engineering philosophy as Gold Line, optimised for cost-efficiency on high-volume projects.</p>
+        <div class="li-feats"><span class="li-feat">Biodegradable</span><span class="li-feat">Fire Resistant</span><span class="li-feat">EP Performance</span><span class="li-feat">Cost Optimised</span></div>
+        <a href="#silver-line" class="li-jump">View Silver Line Products ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOLD LINE PRODUCTS -->
+<section class="gold-section sp" id="gold-line">
+  <div class="container">
+    <div class="section-line-head fade-up">
+      <div class="section-line-head-left">
+        <span class="li-badge g">Gold Line — Premium Performance</span>
+        <h2><em>C</em>ENTOR Gold Products</h2>
+      </div>
+      <div class="section-line-head-right">Maximum-performance formulations engineered for the most demanding TBM environments. Biodegradable, fire-resistant, and optimised for EP performance.</div>
+    </div>
+    <div class="prod-grid">
+      <div class="pc fade-up">
+        <div class="pc-code">CTG-MB-GL01</div>
+        <div class="pc-name"><em>C</em>TG Main Bearing Grease</div>
+        <p class="pc-desc">High-performance lithium complex grease engineered for TBM main bearing lubrication. Exceptional load-carrying capacity under the extreme radial and axial forces of shield tunnelling.</p>
+        <div class="pc-specs">
+          <div class="spec"><span class="spec-k">Base Oil</span><span class="spec-v">460 cSt @ 40°C</span></div>
+          <div class="spec"><span class="spec-k">Temp Range</span><span class="spec-v">−20°C to +180°C</span></div>
+          <div class="spec"><span class="spec-k">NLGI Grade</span><span class="spec-v">2</span></div>
+        </div>
+        <div class="pc-pkg"><strong>Packaging:</strong> 18 kg pail / 180 kg drum</div>
+      </div>
+      <div class="pc fade-up" style="transition-delay:0.05s">
+        <div class="pc-code">CTS-ST-GL02</div>
+        <div class="pc-name"><em>C</em>TS Shield Tail Sealant</div>
+        <p class="pc-desc">Multi-component grease sealant system for shield tail void prevention. Maintains an effective barrier against groundwater, compressed air, and grout ingress at the shield-segment interface.</p>
+        <div class="pc-specs">
+          <div class="spec"><span class="spec-k">Consistency</span><span class="spec-v">NLGI 1.5 – 2</span></div>
+          <div class="spec"><span class="spec-k">Water Res.</span><span class="spec-v">Excellent (DIN 51807)</span></div>
+          <div class="spec"><span class="spec-k">Pressure</span><span class="spec-v">Up to 8 bar</span></div>
+        </div>
+        <div class="pc-pkg"><strong>Packaging:</strong> 20 kg pail / 200 kg drum</div>
+      </div>
+      <div class="pc fade-up" style="transition-delay:0.10s">
+        <div class="pc-code">CTF-SC-GL03</div>
+        <div class="pc-name"><em>C</em>TF Soil Conditioner Foam</div>
+        <p class="pc-desc">Biodegradable foaming agent designed for EPB TBM face conditioning. Reduces cutterhead torque and wear, controls pore water pressure, and improves muck flow in the screw conveyor.</p>
+        <div class="pc-specs">
+          <div class="spec"><span class="spec-k">Dilution</span><span class="spec-v">1:20 – 1:40</span></div>
+          <div class="spec"><span class="spec-k">FER</span><span class="spec-v">10 – 20 (typical)</span></div>
+          <div class="spec"><span class="spec-k">Biodeg.</span><span class="spec-v">Yes (OECD 301)</span></div>
+        </div>
+        <div class="pc-pkg"><strong>Packaging:</strong> 25 L jerry / 1000 L IBC</div>
+        <div class="pc-feats"><span class="pc-feat">Biodegradable</span></div>
+      </div>
+      <div class="pc fade-up" style="transition-delay:0.15s">
+        <div class="pc-code">CTH-AW-GL04</div>
+        <div class="pc-name"><em>C</em>TH Anti-Wear Hydraulic Oil</div>
+        <p class="pc-desc">Premium anti-wear hydraulic fluid for TBM hydraulic systems. Provides superior film strength, rust and oxidation protection, and excellent filterability for precision hydraulic components.</p>
+        <div class="pc-specs">
+          <div class="spec"><span class="spec-k">Grade</span><span class="spec-v">ISO VG 46 / 68</span></div>
+          <div class="spec"><span class="spec-k">VI</span><span class="spec-v">≥ 100</span></div>
+          <div class="spec"><span class="spec-k">Flash Point</span><span class="spec-v">≥ 220°C</span></div>
+        </div>
+        <div class="pc-pkg"><strong>Packaging:</strong> 20 L / 200 L drum</div>
+      </div>
+      <div class="pc fade-up" style="transition-delay:0.20s">
+        <div class="pc-code">CTG-CT-GL05</div>
+        <div class="pc-name"><em>C</em>TG Cutting Tool Grease</div>
+        <p class="pc-desc">Extreme-pressure grease for disc cutter and scraper tool lubrication. Resists wash-out from groundwater infiltration while maintaining a tenacious film on all cutting tool bearing surfaces.</p>
+        <div class="pc-specs">
+          <div class="spec"><span class="spec-k">EP Additive</span><span class="spec-v">Sulphur-Phosphorus</span></div>
+          <div class="spec"><span class="spec-k">Weld Load</span><span class="spec-v">≥ 400 kgf (4-Ball)</span></div>
+          <div class="spec"><span class="spec-k">Drop Point</span><span class="spec-v">≥ 280°C</span></div>
+        </div>
+        <div class="pc-pkg"><strong>Packaging:</strong> 18 kg pail / 180 kg drum</div>
+      </div>
+      <div class="pc fade-up" style="transition-delay:0.25s">
+        <div class="pc-code">CTR-SM-GL06</div>
+        <div class="pc-name"><em>C</em>TR Segment Mould Release</div>
+        <p class="pc-desc">Water-based mould release agent for pre-cast tunnel segment production. Provides a clean release while protecting mould surfaces and meeting environmental discharge requirements.</p>
+        <div class="pc-specs">
+          <div class="spec"><span class="spec-k">Type</span><span class="spec-v">Water-based emulsion</span></div>
+          <div class="spec"><span class="spec-k">Dilution</span><span class="spec-v">1:3 – 1:5 with water</span></div>
+          <div class="spec"><span class="spec-k">VOC</span><span class="spec-v">&lt; 30 g/L</span></div>
+        </div>
+        <div class="pc-pkg"><strong>Packaging:</strong> 25 L jerry / 200 L drum</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SILVER LINE PRODUCTS -->
+<section class="silver-section sp" id="silver-line">
+  <div class="container">
+    <div class="section-line-head fade-up">
+      <div class="section-line-head-left">
+        <span class="li-badge s">Silver Line — Standard Performance</span>
+        <h2>CENTOR Silver Products</h2>
+      </div>
+      <div class="section-line-head-right">Proven, reliable performance for standard underground applications. The same engineering philosophy as Gold Line, optimised for cost-efficiency on high-volume projects.</div>
+    </div>
+    <div class="prod-grid">
+      <div class="pc fade-up">
+        <div class="pc-code">CTG-MB-SL01</div>
+        <div class="pc-name">CTG Main Bearing Grease</div>
+        <p class="pc-desc">Reliable lithium complex main bearing grease for standard TBM applications. Proven performance in metro, road tunnel, and utility projects where operating conditions are well-controlled.</p>
+        <div class="pc-specs">
+          <div class="spec"><span class="spec-k">Base Oil</span><span class="spec-v">320 cSt @ 40°C</span></div>
+          <div class="spec"><span class="spec-k">Temp Range</span><span class="spec-v">−15°C to +160°C</span></div>
+          <div class="spec"><span class="spec-k">NLGI Grade</span><span class="spec-v">2</span></div>
+        </div>
+        <div class="pc-pkg"><strong>Packaging:</strong> 18 kg pail / 180 kg drum</div>
+      </div>
+      <div class="pc fade-up" style="transition-delay:0.07s">
+        <div class="pc-code">CTS-ST-SL02</div>
+        <div class="pc-name">CTS Shield Tail Sealant</div>
+        <p class="pc-desc">Standard-grade shield tail grease providing reliable sealing performance for low-to-medium water pressure conditions. Compatible with all major TBM shield tail brush systems.</p>
+        <div class="pc-specs">
+          <div class="spec"><span class="spec-k">Consistency</span><span class="spec-v">NLGI 1 – 2</span></div>
+          <div class="spec"><span class="spec-k">Water Res.</span><span class="spec-v">Good (DIN 51807)</span></div>
+          <div class="spec"><span class="spec-k">Pressure</span><span class="spec-v">Up to 4 bar</span></div>
+        </div>
+        <div class="pc-pkg"><strong>Packaging:</strong> 20 kg pail / 200 kg drum</div>
+      </div>
+      <div class="pc fade-up" style="transition-delay:0.14s">
+        <div class="pc-code">CTF-SC-SL03</div>
+        <div class="pc-name">CTF Soil Conditioner Foam</div>
+        <p class="pc-desc">Cost-effective biodegradable foaming agent for EPB conditioning in stable, low-permeability ground conditions. Provides reliable flow improvement and torque reduction at competitive cost.</p>
+        <div class="pc-specs">
+          <div class="spec"><span class="spec-k">Dilution</span><span class="spec-v">1:25 – 1:50</span></div>
+          <div class="spec"><span class="spec-k">FER</span><span class="spec-v">8 – 15 (typical)</span></div>
+          <div class="spec"><span class="spec-k">Biodeg.</span><span class="spec-v">Yes (OECD 301)</span></div>
+        </div>
+        <div class="pc-pkg"><strong>Packaging:</strong> 25 L jerry / 1000 L IBC</div>
+        <div class="pc-feats"><span class="pc-feat">Biodegradable</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT CTA -->
+<section class="support sp">
+  <div class="container">
+    <div class="support-inner fade-up">
+      <div>
+        <h2 class="support-h">Not Sure Which Product Is <em>Right for Your Project?</em></h2>
+        <p class="support-body">Our engineering team will review your ground conditions, TBM specifications, and project timeline to recommend the optimal product selection.</p>
+      </div>
+      <div class="support-actions">
+        <a href="contact.html" class="btn-gold">Request Technical Advice</a>
+        <a href="services.html" class="btn-ghost">Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="footer-logo"><img src="brand_assets/centor-logo-horizontal-gold.svg" alt="CENTOR" /></div><p class="footer-desc">Engineering-grade lubrication and conditioning products for TBM and underground systems.</p><div class="footer-socials"><a href="#" class="social-btn">in</a><a href="#" class="social-btn">X</a></div></div>
+    <div><div class="footer-col-head">Navigation</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="services.html">Services</a></li><li><a href="references.html">References</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><div class="footer-col-head">Products</div><ul class="footer-links"><li><a href="products.html">Gold Line — Premium</a></li><li><a href="products.html">Silver Line — Standard</a></li><li><a href="products.html">Main Bearing Grease</a></li><li><a href="products.html">Shield Tail Sealant</a></li><li><a href="products.html">Soil Conditioner</a></li><li><a href="products.html">Anti-Wear Additive</a></li></ul></div>
+    <div><div class="footer-col-head">Contact</div><div class="footer-contact"><div class="contact-item"><div class="contact-label">Global HQ</div><div class="contact-val">Singapore · Global</div></div><div class="contact-item"><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:info@centortech.com">info@centortech.com</a></div></div><div class="contact-item"><div class="contact-label">Phone</div><div class="contact-val"><a href="tel:+6562221800">+65 6222 1800</a></div></div></div></div>
+  </div>
+  <div class="footer-bottom"><p class="footer-copy">© 2025 CENTOR Underground System Solutions. All rights reserved.</p><ul class="footer-legal"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Use</a></li></ul></div>
+</div></footer>
+
+<script>
+  var burger=document.getElementById('nav-burger'),mobileM=document.getElementById('mobile-menu');
+  burger.addEventListener('click',function(){var o=mobileM.classList.toggle('open');burger.setAttribute('aria-expanded',o?'true':'false');});
+  function closeMobile(){mobileM.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+  document.addEventListener('click',function(e){if(!burger.contains(e.target)&&!mobileM.contains(e.target))closeMobile();});
+  var navEl=document.getElementById('top-nav');
+  window.addEventListener('scroll',function(){navEl.style.background=window.scrollY>60?'rgba(215,216,219,0.96)':'rgba(225,226,229,0.90)';},{passive:true});
+  var io=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target);}});},{rootMargin:'0px 0px -60px 0px',threshold:0.08});
+  document.querySelectorAll('.fade-up').forEach(function(el){io.observe(el);});
+</script>
+</body></html>
