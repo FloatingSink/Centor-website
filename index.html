@@ -7,21 +7,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="centor.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
   <style>
     /* ===== HERO ===== */
-    .hero {
-      position: relative; min-height: 100vh; padding-top: var(--nav-h);
-      display: flex; align-items: center; overflow: hidden;
-      background:
-        linear-gradient(108deg, rgba(222,223,226,0.88) 0%, rgba(218,220,223,0.78) 35%, rgba(210,212,215,0.50) 62%, rgba(215,217,220,0.68) 100%),
-        linear-gradient(180deg, rgba(200,202,205,0.22) 0%, transparent 40%, rgba(195,197,200,0.14) 100%),
-        url("brand_assets/Centor finalised general photos.jpeg") center 22% / cover no-repeat;
-    }
-    .hero::after { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 130% 50% at 50% 0%, rgba(180,182,185,0.16) 0%, transparent 55%), radial-gradient(ellipse 80% 40% at 50% 100%, rgba(170,172,175,0.20) 0%, transparent 55%); pointer-events:none; z-index:0; }
-    .hero-ring { position:absolute; right:-80px; top:50%; transform:translateY(-50%); width:700px; height:700px; opacity:0.20; pointer-events:none; z-index:0; filter:drop-shadow(0 4px 32px rgba(0,0,0,0.08)); }
+    .hero { position:relative; width:100%; height:100vh; max-height:950px; padding-top:var(--nav-h); display:flex; align-items:center; overflow:hidden; }
+    .hero-swiper { position:absolute; inset:0; height:100%; }
+    .hero-swiper .swiper-wrapper { height:100%; }
+    .hero-slide { background-size:cover; background-position:center 22%; background-repeat:no-repeat; position:relative; }
+    .hero-slide::after { content:''; position:absolute; inset:0; pointer-events:none; background: linear-gradient(108deg,rgba(222,223,226,0.88) 0%,rgba(218,220,223,0.78) 35%,rgba(210,212,215,0.50) 62%,rgba(215,217,220,0.68) 100%), linear-gradient(180deg,rgba(200,202,205,0.22) 0%,transparent 40%,rgba(195,197,200,0.14) 100%), radial-gradient(ellipse 130% 50% at 50% 0%,rgba(180,182,185,0.16) 0%,transparent 55%); }
+    .hero-swiper .swiper-button-prev, .hero-swiper .swiper-button-next { --swiper-navigation-size:32px; color:var(--charcoal); transition:color 0.2s; }
+    .hero-swiper .swiper-button-prev:hover, .hero-swiper .swiper-button-next:hover { color:var(--gold); }
+    .hero-swiper .swiper-pagination-bullet { background:rgba(0,0,0,0.30); opacity:1; }
+    .hero-swiper .swiper-pagination-bullet-active { background:var(--gold); }
+    .hero-ring { position:absolute; right:-80px; top:50%; transform:translateY(-50%); width:700px; height:700px; opacity:0.20; pointer-events:none; z-index:2; filter:drop-shadow(0 4px 32px rgba(0,0,0,0.08)); }
     @media(max-width:1100px){ .hero-ring{width:480px;height:480px;right:-60px;opacity:0.15;} }
     @media(max-width:768px){ .hero-ring{width:280px;height:280px;right:-40px;opacity:0.10;} }
-    .hero-inner { position:relative; z-index:1; width:100%; }
+    .hero-inner { position:relative; z-index:10; width:100%; }
     .hero-content { max-width:580px; padding:96px 0 80px; }
     .hero-eyebrow { display:flex; align-items:center; gap:12px; margin-bottom:32px; }
     .hero-eyebrow-line { width:44px; height:1px; background:var(--gold); }
@@ -131,6 +132,16 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="swiper hero-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide hero-slide" style="background-image:url('brand_assets/Centor finalised general photos.jpeg')"></div>
+      <div class="swiper-slide hero-slide" style="background-image:url('brand_assets/Centor finalised general photos.jpeg')"></div>
+      <!-- Add more slides: <div class="swiper-slide hero-slide" style="background-image:url('...')"></div> -->
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
   <svg class="hero-ring" viewBox="0 0 90 102" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <path d="M78.283 83.706 A44 44 0 0 1 44.79 93.69 L46.744 77.307 A27.5 27.5 0 0 0 67.677 71.066 Z" fill="url(#gSteel)"/>
     <path d="M39.878 92.82  A44 44 0 0 1 11.857 71.933 L26.16 63.708 A27.5 27.5 0 0 0 43.674 76.762 Z" fill="url(#gSteel)"/>
@@ -303,6 +314,25 @@
   window.addEventListener('scroll',function(){navEl.style.background=window.scrollY>60?'rgba(215,216,219,0.96)':'rgba(225,226,229,0.90)';},{passive:true});
   var io=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target);}});},{rootMargin:'0px 0px -60px 0px',threshold:0.08});
   document.querySelectorAll('.fade-up').forEach(function(el){io.observe(el);});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+(function(){
+  var el = document.querySelector('.hero-swiper');
+  if(!el) return;
+  var slides = el.querySelectorAll('.hero-slide');
+  if(slides.length < 2){
+    el.querySelectorAll('.swiper-button-prev,.swiper-button-next,.swiper-pagination').forEach(function(n){ n.style.display='none'; });
+    return;
+  }
+  new Swiper('.hero-swiper', {
+    loop: true,
+    speed: 800,
+    autoplay: { delay: 5000, disableOnInteraction: false },
+    pagination: { el: '.hero-swiper .swiper-pagination', clickable: true },
+    navigation: { nextEl: '.hero-swiper .swiper-button-next', prevEl: '.hero-swiper .swiper-button-prev' },
+  });
+})();
 </script>
 </body>
 </html>

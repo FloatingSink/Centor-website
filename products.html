@@ -6,6 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="centor.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
   <style>
     .line-intro { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
     .line-intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:48px; }
@@ -91,6 +92,15 @@
 
 <!-- PAGE BANNER -->
 <div class="page-banner">
+  <div class="swiper banner-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide banner-slide" style="background-image:url('brand_assets/Centor finalised general photos.jpeg')"></div>
+      <!-- Add more slides: <div class="swiper-slide banner-slide" style="background-image:url('...')"></div> -->
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
   <div class="page-banner-inner container">
     <div class="page-banner-eyebrow">Our Products</div>
     <h1 class="page-banner-h">Two precision product lines.<br><em>Every formulation engineered for underground performance.</em></h1>
@@ -295,4 +305,6 @@
   var io=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target);}});},{rootMargin:'0px 0px -60px 0px',threshold:0.08});
   document.querySelectorAll('.fade-up').forEach(function(el){io.observe(el);});
 </script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="centor.js"></script>
 </body></html>
