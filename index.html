@@ -27,10 +27,10 @@
     .hero-eyebrow { display:flex; align-items:center; gap:12px; margin-bottom:32px; }
     .hero-eyebrow-line { width:44px; height:1px; background:var(--gold); }
     .hero-eyebrow-text { font-size:11px; letter-spacing:0.26em; text-transform:uppercase; color:var(--gold); font-weight:600; }
-    .hero-brand { font-family:var(--font-d); font-size:clamp(52px,8.5vw,108px); color:var(--gold); line-height:1.0; letter-spacing:0.06em; margin-bottom:10px; }
-    .hero-sub { font-family:var(--font-d); font-size:clamp(11px,1.6vw,18px); color:var(--charcoal); letter-spacing:0.24em; text-transform:uppercase; margin-bottom:28px; }
-    .hero-body { font-size:16px; line-height:1.80; color:var(--text-mid); max-width:460px; margin-bottom:48px; }
-    .hero-actions { display:flex; gap:14px; flex-wrap:wrap; }
+    .hero-heading { font-family:var(--font-d); font-size:clamp(52px,8.5vw,108px); color:var(--gold); line-height:1.0; letter-spacing:0.06em; margin-bottom:10px; }
+    .hero-subtitle { font-family:var(--font-d); font-size:clamp(11px,1.6vw,18px); color:var(--charcoal); letter-spacing:0.24em; text-transform:uppercase; margin-bottom:28px; }
+    .hero-description { font-size:16px; line-height:1.80; color:var(--text-mid); max-width:460px; margin-bottom:48px; }
+    .hero-buttons { display:flex; gap:14px; flex-wrap:wrap; }
     .scroll-indicator { position:absolute; bottom:45px; left:50%; transform:translateX(-50%); z-index:3; display:flex; flex-direction:column; align-items:center; gap:8px; color:var(--clr-text-dim); font-size:9px; letter-spacing:3px; text-transform:uppercase; animation:scrollBob 2.2s ease-in-out infinite; }
     @keyframes scrollBob { 0%,100%{transform:translateX(-50%) translateY(0);} 50%{transform:translateX(-50%) translateY(8px);} }
     @media(max-width:768px){.scroll-indicator{display:none;}}
@@ -38,59 +38,59 @@
     /* ===== STATS ===== */
     .stats-section { background-color:var(--bg-2); background-image:var(--metal-lines); border-top:1px solid rgba(0,0,0,0.10); }
 
-    /* ===== PRODUCT LINES ===== */
-    .product-lines-section { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
-    .pl-intro { margin-bottom:52px; }
-    .pl-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
-    @media(max-width:680px){.pl-grid{grid-template-columns:1fr;}}
-    .pl-card { padding:52px 44px; background-color:var(--bg); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 2px 8px rgba(0,0,0,0.06); position:relative; overflow:hidden; transition:border-color 0.22s ease,box-shadow 0.22s ease; }
-    .pl-card::after { content:''; position:absolute; bottom:0;left:0;right:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); transform:scaleX(0); transform-origin:left; transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1); }
-    .pl-card:hover { border-color:var(--border-gold); box-shadow:inset 0 1px 0 rgba(255,255,255,0.45),0 6px 24px rgba(0,0,0,0.09); }
-    .pl-card:hover::after { transform:scaleX(1); }
-    .pl-card.gold { border-top:3px solid var(--gold); }
-    .pl-card.silver { border-top:3px solid var(--charcoal-2); }
-    .pl-badge { display:inline-block; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; padding:4px 12px; border:1px solid; margin-bottom:24px; font-weight:600; }
-    .pl-badge.g { color:var(--gold); border-color:var(--gold-border); background:var(--gold-dim); }
-    .pl-badge.s { color:var(--charcoal-2); border-color:rgba(0,0,0,0.15); background:rgba(0,0,0,0.05); }
-    .pl-name { font-family:var(--font-d); font-size:26px; color:var(--charcoal); letter-spacing:0.06em; margin-bottom:10px; }
-    .pl-name em { font-style:normal; color:var(--gold); }
-    .pl-tagline { font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:22px; }
-    .pl-desc { font-size:14.5px; color:var(--text-mid); line-height:1.75; margin-bottom:32px; }
-    .pl-feats { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:36px; }
-    .pl-feat { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); background:rgba(0,0,0,0.05); border:1px solid var(--border); padding:4px 11px; }
-    .pl-cta { font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:gap 0.2s ease; font-weight:600; }
-    .pl-cta:hover { gap:13px; }
+    /* ===== PRODUCTS ===== */
+    .products-section { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .products-intro { margin-bottom:52px; }
+    .products-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+    @media(max-width:680px){.products-grid{grid-template-columns:1fr;}}
+    .product-card { padding:52px 44px; background-color:var(--bg); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 2px 8px rgba(0,0,0,0.06); position:relative; overflow:hidden; transition:border-color 0.22s ease,box-shadow 0.22s ease; }
+    .product-card::after { content:''; position:absolute; bottom:0;left:0;right:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); transform:scaleX(0); transform-origin:left; transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1); }
+    .product-card:hover { border-color:var(--border-gold); box-shadow:inset 0 1px 0 rgba(255,255,255,0.45),0 6px 24px rgba(0,0,0,0.09); }
+    .product-card:hover::after { transform:scaleX(1); }
+    .product-card.gold { border-top:3px solid var(--gold); }
+    .product-card.silver { border-top:3px solid var(--charcoal-2); }
+    .product-badge { display:inline-block; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; padding:4px 12px; border:1px solid; margin-bottom:24px; font-weight:600; }
+    .product-badge.gold { color:var(--gold); border-color:var(--gold-border); background:var(--gold-dim); }
+    .product-badge.silver { color:var(--charcoal-2); border-color:rgba(0,0,0,0.15); background:rgba(0,0,0,0.05); }
+    .product-name { font-family:var(--font-d); font-size:26px; color:var(--charcoal); letter-spacing:0.06em; margin-bottom:10px; }
+    .product-name em { font-style:normal; color:var(--gold); }
+    .product-tagline { font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:22px; }
+    .product-description { font-size:14.5px; color:var(--text-mid); line-height:1.75; margin-bottom:32px; }
+    .product-features { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:36px; }
+    .product-feature { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); background:rgba(0,0,0,0.05); border:1px solid var(--border); padding:4px 11px; }
+    .product-link { font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:gap 0.2s ease; font-weight:600; }
+    .product-link:hover { gap:13px; }
 
-    /* ===== SERVICES STRIP ===== */
-    .services-strip { background-color:var(--bg); background-image:var(--metal-lines); border-top:1px solid var(--border); }
-    .svc-strip-header { margin-bottom:52px; }
-    .svc-4-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
-    @media(max-width:900px){.svc-4-grid{grid-template-columns:1fr 1fr;}}
-    @media(max-width:480px){.svc-4-grid{grid-template-columns:1fr;}}
-    .svc4 { padding:40px 30px; background-color:var(--bg-1); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); transition:border-color 0.22s ease; }
-    .svc4:hover { border-color:var(--border-gold); }
-    .svc4-num { font-family:var(--font-d); font-size:10px; color:var(--gold); letter-spacing:0.18em; margin-bottom:16px; opacity:0.7; }
-    .svc4-title { font-family:var(--font-d); font-size:14px; color:var(--charcoal); letter-spacing:0.05em; margin-bottom:12px; line-height:1.35; }
-    .svc4-desc { font-size:13px; color:var(--text-dim); line-height:1.65; }
-    .svc-strip-footer { margin-top:44px; }
+    /* ===== SERVICES ===== */
+    .services-section { background-color:var(--bg); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .services-header { margin-bottom:52px; }
+    .services-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+    @media(max-width:900px){.services-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:480px){.services-grid{grid-template-columns:1fr;}}
+    .service-card { padding:40px 30px; background-color:var(--bg-1); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); transition:border-color 0.22s ease; }
+    .service-card:hover { border-color:var(--border-gold); }
+    .service-number { font-family:var(--font-d); font-size:10px; color:var(--gold); letter-spacing:0.18em; margin-bottom:16px; opacity:0.7; }
+    .service-title { font-family:var(--font-d); font-size:14px; color:var(--charcoal); letter-spacing:0.05em; margin-bottom:12px; line-height:1.35; }
+    .service-description { font-size:13px; color:var(--text-dim); line-height:1.65; }
+    .services-footer { margin-top:44px; }
 
-    /* ===== ABOUT STRIP ===== */
-    .about-strip { background-color:var(--bg-2); background-image:var(--metal-lines); border-top:1px solid var(--border); }
-    .about-strip-inner { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
-    @media(max-width:860px){.about-strip-inner{grid-template-columns:1fr;gap:44px;}}
-    .about-strip-body { font-size:15px; line-height:1.82; color:var(--text-mid); margin:20px 0 36px; }
+    /* ===== ABOUT ===== */
+    .about-section { background-color:var(--bg-2); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .about-inner { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+    @media(max-width:860px){.about-inner{grid-template-columns:1fr;gap:44px;}}
+    .about-description { font-size:15px; line-height:1.82; color:var(--text-mid); margin:20px 0 36px; }
 
-    /* ===== REFERENCES STRIP ===== */
-    .refs-strip { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
-    .ref-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:48px; }
-    @media(max-width:800px){.ref-cards{grid-template-columns:1fr;}}
-    .ref-card { padding:36px 30px; background-color:var(--bg); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); transition:border-color 0.22s ease; }
-    .ref-card:hover { border-color:var(--border-gold); }
-    .ref-tag { font-size:10px; letter-spacing:0.20em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:14px; }
-    .ref-city { font-family:var(--font-d); font-size:22px; color:var(--charcoal); letter-spacing:0.04em; margin-bottom:6px; }
-    .ref-proj { font-size:13.5px; color:var(--text-mid); margin-bottom:18px; }
-    .ref-type { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); padding:4px 10px; background:rgba(0,0,0,0.05); border:1px solid var(--border); display:inline-block; }
-    .refs-footer { margin-top:44px; }
+    /* ===== REFERENCES ===== */
+    .references-section { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .reference-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:48px; }
+    @media(max-width:800px){.reference-cards{grid-template-columns:1fr;}}
+    .reference-card { padding:36px 30px; background-color:var(--bg); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); transition:border-color 0.22s ease; }
+    .reference-card:hover { border-color:var(--border-gold); }
+    .reference-tag { font-size:10px; letter-spacing:0.20em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:14px; }
+    .reference-city { font-family:var(--font-d); font-size:22px; color:var(--charcoal); letter-spacing:0.04em; margin-bottom:6px; }
+    .reference-project { font-size:13.5px; color:var(--text-mid); margin-bottom:18px; }
+    .reference-type { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); padding:4px 10px; background:rgba(0,0,0,0.05); border:1px solid var(--border); display:inline-block; }
+    .references-footer { margin-top:44px; }
   </style>
 </head>
 <body>
@@ -150,74 +150,74 @@
   <div class="hero-inner container">
     <div class="hero-content">
       <div class="hero-eyebrow"><span class="hero-eyebrow-line"></span><span class="hero-eyebrow-text">Lubrication &amp; Conditioning for TBM</span></div>
-      <h1 class="hero-brand">CENTOR</h1>
-      <p class="hero-sub">Underground &nbsp;·&nbsp; System &nbsp;·&nbsp; Solutions</p>
-      <p class="hero-body">Engineering-grade lubrication and conditioning products built for Tunnel Boring Machines and underground infrastructure. Trusted by leading contractors across global metro, highway, and utility projects.</p>
-      <div class="hero-actions">
+      <h1 class="hero-heading">CENTOR</h1>
+      <p class="hero-subtitle">Underground &nbsp;·&nbsp; System &nbsp;·&nbsp; Solutions</p>
+      <p class="hero-description">Engineering-grade lubrication and conditioning products built for Tunnel Boring Machines and underground infrastructure. Trusted by leading contractors across global metro, highway, and utility projects.</p>
+      <div class="hero-buttons">
         <a href="products.html" class="btn-gold">Explore Products</a>
         <a href="contact.html" class="btn-ghost">Request a Quote</a>
       </div>
     </div>
   </div>
-  <div class="hero-scroll" aria-hidden="true"><span>Scroll</span></div>
+  <div class="scroll-indicator" aria-hidden="true"><span>Scroll</span></div>
 </section>
 
 
 <!-- PRODUCT LINES -->
-<section class="product-lines-section sp">
+<section class="products-section sp">
   <div class="container">
-    <div class="pl-intro fade-up">
+    <div class="products-intro fade-up">
       <div class="eyebrow"><span class="eyebrow-num">01</span><span class="eyebrow-line"></span><span class="eyebrow-label">Product Lines</span></div>
       <h2 class="section-h">Engineered for the <em>Underground</em></h2>
       <p class="section-lede" style="max-width:520px">Two complementary lines covering every project requirement — from ultra-demanding deep-sea metro TBMs to standard utility tunnel drives.</p>
     </div>
-    <div class="pl-grid">
-      <div class="pl-card gold fade-up">
-        <div class="pl-badge g">Gold Line — Premium</div>
-        <div class="pl-name">Lubrication &amp; Conditioning</div>
-        <div class="pl-tagline">Maximum-Performance Formulations</div>
-        <p class="pl-desc">Maximum-performance formulations engineered for the most demanding TBM environments. Advanced additive packages deliver superior EP performance, extreme temperature stability, and extended service intervals.</p>
-        <div class="pl-feats"><span class="pl-feat">Biodegradable</span><span class="pl-feat">Fire Resistant</span><span class="pl-feat">EP Performance</span><span class="pl-feat">TBM System</span><span class="pl-feat">Tunnel Compatible</span></div>
-        <a href="products.html" class="pl-cta">View Gold Line →</a>
+    <div class="products-grid">
+      <div class="product-card gold fade-up">
+        <div class="product-badge gold">Gold Line — Premium</div>
+        <div class="product-name">Lubrication &amp; Conditioning</div>
+        <div class="product-tagline">Maximum-Performance Formulations</div>
+        <p class="product-description">Maximum-performance formulations engineered for the most demanding TBM environments. Advanced additive packages deliver superior EP performance, extreme temperature stability, and extended service intervals.</p>
+        <div class="product-features"><span class="product-feature">Biodegradable</span><span class="product-feature">Fire Resistant</span><span class="product-feature">EP Performance</span><span class="product-feature">TBM System</span><span class="product-feature">Tunnel Compatible</span></div>
+        <a href="products.html" class="product-link">View Gold Line →</a>
       </div>
-      <div class="pl-card silver fade-up" style="transition-delay:0.08s">
-        <div class="pl-badge s">Silver Line — Standard</div>
-        <div class="pl-name">Lubrication &amp; Conditioning</div>
-        <div class="pl-tagline">High-Reliability Standard Formulations</div>
-        <p class="pl-desc">Reliable, high-quality conditioning products for standard underground applications. The same engineering philosophy as Gold Line, optimised for cost-efficiency on high-volume projects.</p>
-        <div class="pl-feats"><span class="pl-feat">Biodegradable</span><span class="pl-feat">Fire Resistant</span><span class="pl-feat">EP Performance</span><span class="pl-feat">TBM System</span><span class="pl-feat">Tunnel Compatible</span></div>
-        <a href="products.html" class="pl-cta">View Silver Line →</a>
+      <div class="product-card silver fade-up" style="transition-delay:0.08s">
+        <div class="product-badge silver">Silver Line — Standard</div>
+        <div class="product-name">Lubrication &amp; Conditioning</div>
+        <div class="product-tagline">High-Reliability Standard Formulations</div>
+        <p class="product-description">Reliable, high-quality conditioning products for standard underground applications. The same engineering philosophy as Gold Line, optimised for cost-efficiency on high-volume projects.</p>
+        <div class="product-features"><span class="product-feature">Biodegradable</span><span class="product-feature">Fire Resistant</span><span class="product-feature">EP Performance</span><span class="product-feature">TBM System</span><span class="product-feature">Tunnel Compatible</span></div>
+        <a href="products.html" class="product-link">View Silver Line →</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section class="services-strip sp">
+<section class="services-section sp">
   <div class="container">
-    <div class="svc-strip-header fade-up">
+    <div class="services-header fade-up">
       <div class="eyebrow"><span class="eyebrow-num">02</span><span class="eyebrow-line"></span><span class="eyebrow-label">Our Services</span></div>
       <h2 class="section-h">End-to-End <em>Underground Solutions</em></h2>
       <p class="section-lede" style="max-width:520px">From product supply to on-site technical support, CENTOR partners with contractors at every stage of the project lifecycle.</p>
     </div>
-    <div class="svc-4-grid">
-      <div class="svc4 fade-up"><div class="svc4-num">01</div><div class="svc4-title">TBM Lubrication</div><div class="svc4-desc">Comprehensive lubrication system design and product selection tailored to your TBM type and ground conditions.</div></div>
-      <div class="svc4 fade-up" style="transition-delay:0.06s"><div class="svc4-num">02</div><div class="svc4-title">Engineering Expertise</div><div class="svc4-desc">CENTOR engineers deployed on-site during commissioning, launch, and critical ground transition zones.</div></div>
-      <div class="svc4 fade-up" style="transition-delay:0.12s"><div class="svc4-num">03</div><div class="svc4-title">Global Supply</div><div class="svc4-desc">On-time product delivery to project sites worldwide. We manage customs, logistics, and compliance.</div></div>
-      <div class="svc4 fade-up" style="transition-delay:0.18s"><div class="svc4-num">04</div><div class="svc4-title">Built for Underground</div><div class="svc4-desc">Every product and service engineered specifically for TBM and underground construction environments.</div></div>
+    <div class="services-grid">
+      <div class="service-card fade-up"><div class="service-number">01</div><div class="service-title">TBM Lubrication</div><div class="service-description">Comprehensive lubrication system design and product selection tailored to your TBM type and ground conditions.</div></div>
+      <div class="service-card fade-up" style="transition-delay:0.06s"><div class="service-number">02</div><div class="service-title">Engineering Expertise</div><div class="service-description">CENTOR engineers deployed on-site during commissioning, launch, and critical ground transition zones.</div></div>
+      <div class="service-card fade-up" style="transition-delay:0.12s"><div class="service-number">03</div><div class="service-title">Global Supply</div><div class="service-description">On-time product delivery to project sites worldwide. We manage customs, logistics, and compliance.</div></div>
+      <div class="service-card fade-up" style="transition-delay:0.18s"><div class="service-number">04</div><div class="service-title">Built for Underground</div><div class="service-description">Every product and service engineered specifically for TBM and underground construction environments.</div></div>
     </div>
-    <div class="svc-strip-footer"><a href="services.html" class="btn-ghost">View All Services →</a></div>
+    <div class="services-footer"><a href="services.html" class="btn-ghost">View All Services →</a></div>
   </div>
 </section>
 
 <!-- ABOUT STRIP -->
-<section class="about-strip sp">
+<section class="about-section sp">
   <div class="container">
-    <div class="about-strip-inner">
+    <div class="about-inner">
       <div class="fade-up">
         <div class="eyebrow"><span class="eyebrow-num">03</span><span class="eyebrow-line"></span><span class="eyebrow-label">About CENTOR</span></div>
         <h2 class="section-h">Precision Chemistry for the <em>World Beneath</em></h2>
-        <p class="about-strip-body">CENTOR was founded by tunnelling engineers who recognised that underground machinery was being lubricated with generic, surface-grade products that were never designed for the extreme pressures, temperatures, and contamination environments found beneath the ground.</p>
+        <p class="about-description">CENTOR was founded by tunnelling engineers who recognised that underground machinery was being lubricated with generic, surface-grade products that were never designed for the extreme pressures, temperatures, and contamination environments found beneath the ground.</p>
         <a href="about.html" class="btn-ghost">Read Our Story →</a>
       </div>
       <div class="fade-up" style="transition-delay:0.12s">
@@ -233,19 +233,19 @@
 </section>
 
 <!-- REFERENCES STRIP -->
-<section class="refs-strip sp">
+<section class="references-section sp">
   <div class="container">
     <div class="fade-up">
       <div class="eyebrow"><span class="eyebrow-num">04</span><span class="eyebrow-line"></span><span class="eyebrow-label">Project References</span></div>
       <h2 class="section-h">Trusted on Projects <em>Worldwide</em></h2>
       <p class="section-lede" style="max-width:480px">500+ projects across metro, highway, rail, and utility tunnels on four continents.</p>
     </div>
-    <div class="ref-cards">
-      <div class="ref-card fade-up"><div class="ref-tag">Asia-Pacific</div><div class="ref-city">Singapore</div><p class="ref-proj">Thomson-East Coast Line</p><span class="ref-type">Metro · Shield Tunnelling</span></div>
-      <div class="ref-card fade-up" style="transition-delay:0.08s"><div class="ref-tag">Asia-Pacific</div><div class="ref-city">Hong Kong</div><p class="ref-proj">MTR Tuen Ma Line Extension</p><span class="ref-type">Metro · EPB TBM</span></div>
-      <div class="ref-card fade-up" style="transition-delay:0.16s"><div class="ref-tag">Middle East</div><div class="ref-city">Dubai</div><p class="ref-proj">Dubai Metro Blue Line</p><span class="ref-type">Metro · Slurry TBM</span></div>
+    <div class="reference-cards">
+      <div class="reference-card fade-up"><div class="reference-tag">Asia-Pacific</div><div class="reference-city">Singapore</div><p class="reference-project">Thomson-East Coast Line</p><span class="reference-type">Metro · Shield Tunnelling</span></div>
+      <div class="reference-card fade-up" style="transition-delay:0.08s"><div class="reference-tag">Asia-Pacific</div><div class="reference-city">Hong Kong</div><p class="reference-project">MTR Tuen Ma Line Extension</p><span class="reference-type">Metro · EPB TBM</span></div>
+      <div class="reference-card fade-up" style="transition-delay:0.16s"><div class="reference-tag">Middle East</div><div class="reference-city">Dubai</div><p class="reference-project">Dubai Metro Blue Line</p><span class="reference-type">Metro · Slurry TBM</span></div>
     </div>
-    <div class="refs-footer"><a href="references.html" class="btn-ghost">View All References →</a></div>
+    <div class="references-footer"><a href="references.html" class="btn-ghost">View All References →</a></div>
   </div>
 </section>
 
