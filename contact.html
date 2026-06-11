@@ -228,8 +228,6 @@
   document.addEventListener('click',function(e){if(!burger.contains(e.target)&&!mobileM.contains(e.target))closeMobile();});
   var navEl=document.getElementById('top-nav');
   window.addEventListener('scroll',function(){navEl.style.background=window.scrollY>60?'rgba(215,216,219,0.96)':'rgba(225,226,229,0.90)';},{passive:true});
-  var io=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target);}});},{rootMargin:'0px 0px -60px 0px',threshold:0.08});
-  document.querySelectorAll('.fade-up').forEach(function(el){io.observe(el);});
   document.getElementById('cform').addEventListener('submit',function(e){
     e.preventDefault();
     this.style.display='none';

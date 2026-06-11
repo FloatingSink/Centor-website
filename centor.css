@@ -71,7 +71,7 @@ body {
 .section-lede { font-size: 15.5px; line-height: 1.78; color: var(--text-mid); }
 
 /* ===== ANIMATION ===== */
-.fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fade-up { opacity: 0; transform: translateY(56px); transition: opacity 0.72s cubic-bezier(0.16, 1, 0.3, 1), transform 0.72s cubic-bezier(0.16, 1, 0.3, 1); }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 
 /* ===== BUTTONS ===== */
