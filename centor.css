@@ -32,18 +32,6 @@
   --font-d:      'Rajdhani', 'Barlow Condensed', 'Inter', sans-serif;
   --font-b:      'Inter', 'Noto Sans', sans-serif;
 
-  --metal-lines: repeating-linear-gradient(
-    180deg,
-    transparent 0px, transparent 2px,
-    rgba(0,0,0,0.030) 2px, rgba(0,0,0,0.030) 3px,
-    transparent 3px, transparent 9px
-  );
-  --metal-lines-strong: repeating-linear-gradient(
-    180deg,
-    transparent 0px, transparent 2px,
-    rgba(0,0,0,0.048) 2px, rgba(0,0,0,0.048) 3px,
-    transparent 3px, transparent 8px
-  );
   --metal-sheen: linear-gradient(
     148deg,
     rgba(255,255,255,0.60) 0%,
@@ -58,7 +46,6 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-b);
   background-color: var(--bg);
-  background-image: var(--metal-lines);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -186,7 +173,7 @@ nav {
 
 /* ===== TICKER ===== */
 .ticker {
-  background-color: var(--bg-2); background-image: var(--metal-lines);
+  background-color: var(--bg-2);
   border-top: 1px solid rgba(0,0,0,0.10); border-bottom: 1px solid rgba(0,0,0,0.10);
   padding: 12px 0; overflow: hidden; position: relative;
 }
@@ -202,7 +189,7 @@ nav {
 /* ===== CARD BASE ===== */
 .metal-card {
   background-color: var(--bg-1);
-  background-image: var(--metal-sheen), var(--metal-lines-strong);
+  background-image: var(--metal-sheen);
   border: 1px solid var(--border);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 1px 3px rgba(0,0,0,0.06);
   transition: border-color 0.22s ease, background-color 0.22s ease, box-shadow 0.22s ease;
@@ -210,7 +197,7 @@ nav {
 .metal-card:hover {
   border-color: var(--border-gold);
   background-color: var(--bg-2);
-  background-image: var(--metal-sheen), var(--metal-lines-strong);
+  background-image: var(--metal-sheen);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.45), 0 4px 18px rgba(0,0,0,0.10);
 }
 
@@ -219,17 +206,17 @@ nav {
 @media (max-width: 800px) { .stat-band { grid-template-columns: 1fr 1fr; } }
 .stat-box {
   padding: 42px 28px;
-  background-color: var(--bg); background-image: var(--metal-sheen), var(--metal-lines-strong);
+  background-color: var(--bg); background-image: var(--metal-sheen);
   border: 1px solid var(--border); box-shadow: inset 0 1px 0 rgba(255,255,255,0.55);
   text-align: center; transition: border-color 0.22s ease, background-color 0.22s ease;
 }
-.stat-box:hover { border-color: var(--border-gold); background-color: var(--bg-2); background-image: var(--metal-sheen), var(--metal-lines-strong); }
+.stat-box:hover { border-color: var(--border-gold); background-color: var(--bg-2); background-image: var(--metal-sheen); }
 .stat-box-val { font-family: var(--font-d); font-size: 44px; color: var(--gold); line-height: 1; margin-bottom: 8px; }
 .stat-box-label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim); }
 
 /* ===== FOOTER ===== */
 footer {
-  background-color: var(--bg-3); background-image: var(--metal-lines);
+  background-color: var(--bg-3);
   border-top: 1px solid rgba(0,0,0,0.12);
 }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 56px; padding: 76px 0 60px; }
@@ -269,10 +256,10 @@ footer {
 .footer-legal a:hover { color: var(--gold); }
 
 /* ===== SHARED SECTION BACKGROUNDS ===== */
-.bg-base  { background-color: var(--bg);   background-image: var(--metal-lines); }
-.bg-light { background-color: var(--bg-1); background-image: var(--metal-lines); }
-.bg-mid   { background-color: var(--bg-2); background-image: var(--metal-lines); }
-.bg-dark  { background-color: var(--bg-3); background-image: var(--metal-lines); }
+.bg-base  { background-color: var(--bg); }
+.bg-light { background-color: var(--bg-1); }
+.bg-mid   { background-color: var(--bg-2); }
+.bg-dark  { background-color: var(--bg-3); }
 
 /* section border-top */
 .bt { border-top: 1px solid var(--border); }
@@ -280,7 +267,7 @@ footer {
 /* ===== CTA BAND ===== */
 .cta-band {
   position: relative; overflow: hidden;
-  background-color: var(--bg-2); background-image: var(--metal-lines);
+  background-color: var(--bg-2);
   border-top: 1px solid var(--border);
 }
 .cta-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 90% at 50% -5%, rgba(184,138,60,0.10) 0%, transparent 60%); pointer-events: none; }
@@ -294,7 +281,7 @@ footer {
 /* ===== REGIONS ===== */
 .regions { display: flex; gap: 2px; flex-wrap: wrap; }
 .region-tag {
-  padding: 9px 18px; background-color: var(--bg); background-image: var(--metal-lines);
+  padding: 9px 18px; background-color: var(--bg);
   border: 1px solid var(--border); box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
   font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dim);
   transition: border-color 0.2s ease, color 0.2s ease;
