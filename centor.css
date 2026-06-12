@@ -239,7 +239,7 @@ footer {
 
 .footer-brand { display: flex; flex-direction: column; gap: 18px; }
 .footer-logo img { height: 26px; width: auto; filter: brightness(0.48) contrast(1.2); }
-.footer-desc { font-size: 13px; color: var(--text-dim); line-height: 1.78; max-width: 245px; }
+.footer-desc { font-size: 15px; color: var(--text-dim); line-height: 1.78; max-width: 245px; }
 .footer-socials { display: flex; gap: 10px; }
 .social-btn {
   width: 33px; height: 33px; border: 1px solid rgba(0,0,0,0.14);
@@ -251,7 +251,7 @@ footer {
 }
 .social-btn:hover { border-color: var(--border-gold); color: var(--gold); }
 
-.footer-col-head { font-family: var(--font-d); font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--charcoal); margin-bottom: 22px; }
+.footer-col-head { font-family: var(--font-d); font-size: 15.5px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--charcoal); margin-bottom: 22px; font-weight: bold; }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .footer-links a { font-size: 13px; color: var(--text-mid); text-decoration: none; transition: color 0.18s ease; }
 .footer-links a:hover { color: var(--gold); }

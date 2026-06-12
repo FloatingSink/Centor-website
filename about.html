@@ -6,7 +6,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="centor.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
   <style>
     .who-we-are { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
     .two-col { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
@@ -62,15 +61,6 @@
 
 <!-- PAGE BANNER -->
 <div class="page-banner">
-  <div class="swiper banner-swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide banner-slide" style="background-image:url('brand_assets/Centor finalised general photos.jpeg')"></div>
-      <!-- Add more slides: <div class="swiper-slide banner-slide" style="background-image:url('...')"></div> -->
-    </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
   <div class="page-banner-inner container">
     <div class="page-banner-eyebrow">About CENTOR</div>
     <h1 class="page-banner-h">Built by tunnelling specialists.<br><em>Engineered for the underground.</em></h1>
@@ -157,10 +147,10 @@
 <!-- FOOTER -->
 <footer><div class="container">
   <div class="footer-grid">
-    <div class="footer-brand"><div class="footer-logo"><img src="brand_assets/centor-logo-horizontal-gold.svg" alt="CENTOR" /></div><p class="footer-desc">Engineering-grade lubrication and conditioning products for TBM and underground systems.</p><div class="footer-socials"><a href="#" class="social-btn">in</a><a href="#" class="social-btn">X</a></div></div>
+    <div class="footer-brand"><div class="footer-logo"><img src="brand_assets/centor-logo-horizontal-gold.svg" alt="CENTOR" /></div><p class="footer-desc">Engineering-grade lubrication and conditioning products for TBM and underground systems.</p><div class="footer-socials"><a href="#" class="social-btn">in</a></div></div>
     <div><div class="footer-col-head">Navigation</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="services.html">Services</a></li><li><a href="references.html">References</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div><div class="footer-col-head">Products</div><ul class="footer-links"><li><a href="products.html">Gold Line — Premium</a></li><li><a href="products.html">Silver Line — Standard</a></li><li><a href="products.html">Main Bearing Grease</a></li><li><a href="products.html">Shield Tail Sealant</a></li><li><a href="products.html">Soil Conditioner</a></li><li><a href="products.html">Anti-Wear Additive</a></li></ul></div>
-    <div><div class="footer-col-head">Contact</div><div class="footer-contact"><div class="contact-item"><div class="contact-label">Global HQ</div><div class="contact-val">Singapore · Global</div></div><div class="contact-item"><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:info@centortech.com">info@centortech.com</a></div></div><div class="contact-item"><div class="contact-label">Phone</div><div class="contact-val"><a href="tel:+6562221800">+65 6222 1800</a></div></div></div></div>
+    <div><div class="footer-col-head">Contact</div><div class="footer-contact"><div class="contact-item"><div class="contact-label">Global HQ</div><div class="contact-val">Singapore · Global</div></div><div class="contact-item"><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:info@centorglobal.com">info@centorglobal.com</a></div></div><div class="contact-item"><div class="contact-label">Phone</div><div class="contact-val"><a href="tel:+6562221800">+65 6222 1800</a></div></div></div></div>
   </div>
   <div class="footer-bottom"><p class="footer-copy">© 2025 CENTOR Underground System Solutions. All rights reserved.</p><ul class="footer-legal"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Use</a></li></ul></div>
 </div></footer>
@@ -172,6 +162,7 @@
   document.addEventListener('click',function(e){if(!burger.contains(e.target)&&!mobileM.contains(e.target))closeMobile();});
   var navEl=document.getElementById('top-nav');
   window.addEventListener('scroll',function(){navEl.style.background=window.scrollY>60?'rgba(215,216,219,0.96)':'rgba(225,226,229,0.90)';},{passive:true});
+  var io=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target);}});},{rootMargin:'0px 0px -60px 0px',threshold:0.08});
+  document.querySelectorAll('.fade-up').forEach(function(el){io.observe(el);});
 </script>
-<script src="centor.js"></script>
 </body></html>

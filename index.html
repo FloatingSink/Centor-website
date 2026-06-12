@@ -28,7 +28,7 @@
     .hero-eyebrow-line { width:44px; height:1px; background:var(--gold); }
     .hero-eyebrow-text { font-size:11px; letter-spacing:0.26em; text-transform:uppercase; color:var(--gold); font-weight:600; }
     .hero-heading { font-family:var(--font-d); font-size:clamp(52px,8.5vw,108px); color:var(--gold); line-height:1.0; letter-spacing:0.06em; margin-bottom:10px; animation:bannerContentIn 0.95s cubic-bezier(0.25,0.46,0.45,0.94) 0.45s both; }
-    .hero-subtitle { font-family:var(--font-d); font-size:clamp(11px,1.6vw,18px); color:var(--charcoal); letter-spacing:0.24em; text-transform:uppercase; margin-bottom:28px; animation:bannerContentIn 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.6s both; }
+    .hero-subtitle { font-family:var(--font-d); font-size:clamp(11px,1.6vw,18px); font-weight:bold; color:var(--charcoal); letter-spacing:0.24em; text-transform:uppercase; margin-bottom:28px; animation:bannerContentIn 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.6s both; }
     .hero-description { font-size:16px; line-height:1.80; color:var(--text-mid); max-width:460px; margin-bottom:48px; animation:bannerContentIn 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.75s both; }
     .hero-buttons { display:flex; gap:14px; flex-wrap:wrap; animation:bannerContentIn 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.9s both; }
     .scroll-indicator { position:absolute; bottom:45px; left:50%; transform:translateX(-50%); z-index:3; display:flex; flex-direction:column; align-items:center; gap:8px; color:var(--clr-text-dim); font-size:9px; letter-spacing:3px; text-transform:uppercase; animation:scrollBob 2.2s ease-in-out infinite; }
@@ -151,7 +151,7 @@
     <div class="hero-content">
       <div class="hero-eyebrow"><span class="hero-eyebrow-line"></span><span class="hero-eyebrow-text">Lubrication &amp; Conditioning for TBM</span></div>
       <h1 class="hero-heading">CENTOR</h1>
-      <p class="hero-subtitle">Underground &nbsp;·&nbsp; System &nbsp;·&nbsp; Solutions</p>
+      <p class="hero-subtitle">Underground &nbsp;·&nbsp; Solutions</p>
       <p class="hero-description">Engineering-grade lubrication and conditioning products built for Tunnel Boring Machines and underground infrastructure. Trusted by leading contractors across global metro, highway, and utility projects.</p>
       <div class="hero-buttons">
         <a href="products.html" class="btn-gold">Explore Products</a>
@@ -269,7 +269,7 @@
       <div class="footer-brand">
         <div class="footer-logo"><img src="brand_assets/centor-logo-horizontal-gold.svg" alt="CENTOR" /></div>
         <p class="footer-desc">Engineering-grade lubrication and conditioning products for TBM and underground systems. Trusted by leading contractors worldwide.</p>
-        <div class="footer-socials"><a href="#" class="social-btn" aria-label="LinkedIn">in</a><a href="#" class="social-btn" aria-label="X">X</a></div>
+        <div class="footer-socials"><a href="#" class="social-btn" aria-label="LinkedIn">in</a></div>
       </div>
       <div>
         <div class="footer-col-head">Navigation</div>
@@ -291,7 +291,7 @@
         <div class="footer-col-head">Contact</div>
         <div class="footer-contact">
           <div class="contact-item"><div class="contact-label">Global HQ</div><div class="contact-val">Singapore · Global</div></div>
-          <div class="contact-item"><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:info@centortech.com">info@centortech.com</a></div></div>
+          <div class="contact-item"><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:info@centorglobal.com">info@centorglobal.com</a></div></div>
           <div class="contact-item"><div class="contact-label">Phone</div><div class="contact-val"><a href="tel:+6562221800">+65 6222 1800</a></div></div>
         </div>
       </div>
@@ -309,7 +309,17 @@
   function closeMobile(){mobileM.classList.remove('open');burger.setAttribute('aria-expanded','false');}
   document.addEventListener('click',function(e){if(!burger.contains(e.target)&&!mobileM.contains(e.target))closeMobile();});
   var navEl=document.getElementById('top-nav');
-  window.addEventListener('scroll',function(){navEl.style.background=window.scrollY>60?'rgba(215,216,219,0.96)':'rgba(225,226,229,0.90)';},{passive:true});
+  var heroContent=document.querySelector('.hero-content');
+  window.addEventListener('scroll',function(){
+    var s=window.scrollY;
+    navEl.style.background=s>60?'rgba(215,216,219,0.96)':'rgba(225,226,229,0.90)';
+    if(heroContent){
+      var heroH=document.querySelector('.hero').offsetHeight;
+      var p=Math.min(s/(heroH*0.55),1);
+      heroContent.style.opacity=1-p;
+      heroContent.style.transform='translateY('+(-p*60)+'px)';
+    }
+  },{passive:true});
 </script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script>
