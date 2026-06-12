@@ -4,7 +4,7 @@
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — CENTOR Underground System Solutions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Montserrat:wght@600&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="centor.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
   <style>
@@ -14,7 +14,7 @@
 
     .info-blocks { display:flex; flex-direction:column; gap:2px; }
     .ib { padding:26px 24px; background-color:var(--bg-2); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.50); }
-    .ib-head { font-family:var(--font-d); font-size:10px; color:var(--gold); letter-spacing:0.20em; text-transform:uppercase; margin-bottom:16px; }
+    .ib-head { font-family:var(--font-ui); font-weight:600; font-size:10px; color:var(--gold); letter-spacing:0.20em; text-transform:uppercase; margin-bottom:16px; }
     .ib-row { display:flex; flex-direction:column; gap:3px; margin-bottom:14px; }
     .ib-row:last-child { margin-bottom:0; }
     .ib-label { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-faint); font-weight:600; }
@@ -30,7 +30,7 @@
     /* FORM */
     .form-wrap { padding:44px 40px; background-color:var(--bg); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 4px 20px rgba(0,0,0,0.07); }
     @media(max-width:600px){.form-wrap{padding:30px 22px;}}
-    .form-h { font-family:var(--font-d); font-size:17px; color:var(--charcoal); letter-spacing:0.06em; margin-bottom:8px; }
+    .form-h { font-family:var(--font-d); font-weight:700; font-size:17px; color:var(--charcoal); letter-spacing:0.06em; margin-bottom:8px; }
     .form-sub { font-size:13.5px; color:var(--text-mid); margin-bottom:30px; }
     .fg { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
     @media(max-width:560px){.fg{grid-template-columns:1fr;}}
@@ -53,11 +53,11 @@
     .fcheck input { width:16px; height:16px; flex:none; margin-top:2px; accent-color:var(--gold); cursor:pointer; }
     .fcheck label { font-size:12.5px; color:var(--text-dim); line-height:1.5; cursor:pointer; }
     .fcheck a { color:var(--gold); }
-    .fsubmit { margin-top:6px; width:100%; padding:14px; background:var(--gold); color:#080808; font-family:var(--font-b); font-size:12px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; border:1px solid var(--gold); cursor:pointer; transition:background 0.2s ease,box-shadow 0.2s ease; }
+    .fsubmit { margin-top:6px; width:100%; padding:14px; background:var(--gold); color:#080808; font-family:var(--font-ui); font-size:12px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; border:1px solid var(--gold); cursor:pointer; transition:background 0.2s ease,box-shadow 0.2s ease; }
     .fsubmit:hover { background:var(--gold-light); box-shadow:0 4px 18px rgba(184,138,60,0.30); }
     .fresponse { display:none; padding:24px; background:var(--gold-dim); border:1px solid var(--gold-border); text-align:center; }
     .fresponse.show { display:block; }
-    .fresponse-h { font-family:var(--font-d); font-size:15px; color:var(--gold); letter-spacing:0.06em; margin-bottom:8px; }
+    .fresponse-h { font-family:var(--font-d); font-weight:700; font-size:15px; color:var(--gold); letter-spacing:0.06em; margin-bottom:8px; }
     .fresponse-b { font-size:13.5px; color:var(--text-mid); }
 
     .help { background-color:var(--bg); background-image:var(--metal-lines); border-top:1px solid var(--border); }
@@ -65,7 +65,7 @@
     @media(max-width:760px){.help-grid{grid-template-columns:1fr;}}
     .hc { padding:34px 28px; background-color:var(--bg-1); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); transition:border-color 0.22s ease; }
     .hc:hover { border-color:var(--border-gold); }
-    .hc-title { font-family:var(--font-d); font-size:14px; color:var(--charcoal); letter-spacing:0.05em; margin-bottom:10px; }
+    .hc-title { font-family:var(--font-d); font-weight:700; font-size:14px; color:var(--charcoal); letter-spacing:0.05em; margin-bottom:10px; }
     .hc-desc { font-size:13.5px; color:var(--text-dim); line-height:1.68; }
   </style>
 </head>
@@ -140,7 +140,7 @@
         </div>
         <div class="ib">
           <div class="ib-head">Response Time</div>
-          <div class="ib-row"><div class="ib-label">Standard Enquiries</div><div class="ib-val" style="color:var(--gold);font-family:var(--font-d);font-size:17px">Within 1 Business Day</div></div>
+          <div class="ib-row"><div class="ib-label">Standard Enquiries</div><div class="ib-val" style="color:var(--gold);font-family:var(--font-spec);font-size:17px">Within 1 Business Day</div></div>
           <div class="ib-row"><div class="ib-label">Emergencies</div><div class="ib-val">Immediate — use 24/7 hotline</div></div>
         </div>
       </div>
