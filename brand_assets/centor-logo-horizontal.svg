@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140">
+  <defs>
+    <!-- Segment 5 (top): titanium silver — lightest, catches most light -->
+    <linearGradient id="nSilver" x1="0" y1="0" x2="0.85" y2="1">
+      <stop offset="0"    stop-color="#e8eaec"/>
+      <stop offset="0.32" stop-color="#c7c9cc"/>
+      <stop offset="0.7"  stop-color="#aaadaf"/>
+      <stop offset="1"    stop-color="#96999c"/>
+    </linearGradient>
+    <!-- Segment 4 (upper-left): mid silver -->
+    <linearGradient id="nMidSilver" x1="0" y1="0" x2="0.85" y2="1">
+      <stop offset="0"   stop-color="#b4b7ba"/>
+      <stop offset="0.5" stop-color="#8c9094"/>
+      <stop offset="1"   stop-color="#70747a"/>
+    </linearGradient>
+    <!-- Segment 3 (left): mid grey — transitional -->
+    <linearGradient id="nMidGrey" x1="0" y1="0" x2="0.85" y2="1">
+      <stop offset="0"   stop-color="#76797e"/>
+      <stop offset="0.5" stop-color="#5e6166"/>
+      <stop offset="1"   stop-color="#4e5154"/>
+    </linearGradient>
+    <!-- Segments 1 & 2 (lower): industrial dark grey — deepest shadow -->
+    <linearGradient id="nDark" x1="0" y1="0" x2="0.85" y2="1">
+      <stop offset="0"   stop-color="#5a5d60"/>
+      <stop offset="0.4" stop-color="#4a4d50"/>
+      <stop offset="0.8" stop-color="#3c3f42"/>
+      <stop offset="1"   stop-color="#282b2e"/>
+    </linearGradient>
+    <!-- Text: subtle top-to-bottom steel gradient -->
+    <linearGradient id="nText" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#dcdfe2"/>
+      <stop offset="0.42" stop-color="#c7c9cc"/>
+      <stop offset="1"    stop-color="#9ea1a4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- C mark — same proven geometry, new brand colours -->
+  <!-- Center (50,50), outer R=44, inner r=27.5, transform=translate(10,10) scale(1.2) -->
+  <g transform="translate(10,10) scale(1.2)">
+    <!-- Seg 1 · 50°–97°  · lower-right · darkest -->
+    <path d="M78.283 83.706 A44 44 0 0 1 44.79 93.69 L46.744 77.307 A27.5 27.5 0 0 0 67.677 71.066 Z"  fill="url(#nDark)"/>
+    <!-- Seg 2 · 103°–150° · lower-left  · dark -->
+    <path d="M39.878 92.82  A44 44 0 0 1 11.857 71.933 L26.16 63.708 A27.5 27.5 0 0 0 43.674 76.762 Z"  fill="url(#nDark)"/>
+    <!-- Seg 3 · 156°–203° · left        · mid grey -->
+    <path d="M9.619 67.475  A44 44 0 0 1 9.619 32.525  L24.762 39.078 A27.5 27.5 0 0 0 24.762 60.922 Z"  fill="url(#nMidGrey)"/>
+    <!-- Seg 4 · 209°–256° · upper-left  · mid silver -->
+    <path d="M11.857 28.067 A44 44 0 0 1 39.878 7.18   L43.674 23.238 A27.5 27.5 0 0 0 26.16 36.292 Z"   fill="url(#nMidSilver)"/>
+    <!-- Seg 5 · 262°–309° · top         · titanium silver — lightest -->
+    <path d="M44.79 6.31    A44 44 0 0 1 78.283 16.294 L67.677 28.934 A27.5 27.5 0 0 0 46.744 22.693 Z"  fill="url(#nSilver)"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text
+    x="148" y="70"
+    dominant-baseline="central"
+    font-family="'Eurostile Extended', 'Eurostile', 'Arial Narrow', 'Impact', sans-serif"
+    font-size="46"
+    font-weight="700"
+    letter-spacing="2"
+    fill="url(#nText)">CENTOR</text>
+</svg>
