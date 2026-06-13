@@ -29,10 +29,10 @@
   --border-gold: rgba(184,138,60,0.34);
   --nav-h:       76px;
   --max-w:       1200px;
-  --font-d:      'Outfit', 'Avenir Next', 'Avenir', sans-serif;
-  --font-b:      'Inter', 'Noto Sans', sans-serif;
+  --font-d:      'Avenir Next', 'Avenir', 'Outfit', sans-serif;
+  --font-b:      'Inter', sans-serif;
   --font-ui:     'Montserrat', sans-serif;
-  --font-spec:   'DIN Pro', 'DIN', 'Rajdhani', sans-serif;
+  --font-spec:   'DIN Pro', 'DIN', 'Barlow', sans-serif;
 
   --metal-sheen: linear-gradient(
     148deg,
