@@ -312,3 +312,47 @@ footer {
 }
 .line-badge.gold { color: var(--gold); border-color: var(--gold-border); background: var(--gold-dim); }
 .line-badge.silver { color: var(--charcoal-2); border-color: rgba(0,0,0,0.15); background: rgba(0,0,0,0.05); }
+
+/* ===== LANGUAGE SWITCHER ===== */
+.lang-switcher { position: relative; flex: none; }
+.lang-btn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 14px; background: transparent;
+  border: 1px solid rgba(0,0,0,0.13); cursor: pointer;
+  font-family: var(--font-ui); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.10em; color: var(--text-dim);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.lang-btn:hover { border-color: var(--border-gold); color: var(--charcoal); }
+.lang-btn svg { width: 14px; height: 14px; flex: none; opacity: 0.55; }
+.lang-menu {
+  display: none; position: absolute; top: calc(100% + 6px); right: 0;
+  background: rgba(224,225,228,0.98); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0,0,0,0.10); min-width: 130px; z-index: 300;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+}
+.lang-switcher.open .lang-menu { display: block; }
+.lang-opt {
+  display: block; padding: 11px 16px;
+  font-family: var(--font-ui); font-size: 12.5px; letter-spacing: 0.06em;
+  color: var(--text-mid); text-decoration: none;
+  transition: color 0.18s ease, background 0.18s ease;
+  border-bottom: 1px solid var(--border);
+}
+.lang-opt:last-child { border-bottom: none; }
+.lang-opt:hover { color: var(--gold); background: rgba(184,138,60,0.06); }
+.lang-opt.active { color: var(--gold); font-weight: 700; }
+@media (max-width: 920px) { .lang-switcher { display: none; } }
+
+/* Mobile language row (inside mobile-menu) */
+.mobile-lang {
+  display: flex; gap: 22px; padding: 13px 0;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-lang a {
+  font-size: 13px; letter-spacing: 0.10em; text-transform: uppercase;
+  color: var(--text-mid); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.mobile-lang a.active { color: var(--gold); font-weight: 600; }
+.mobile-lang a:hover { color: var(--gold); }

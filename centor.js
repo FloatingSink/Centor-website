@@ -27,4 +27,19 @@
     });
   }, { rootMargin: '0px 0px -60px 0px', threshold: 0.08 });
   document.querySelectorAll('.fade-up').forEach(function(el){ io.observe(el); });
+
+  // Language switcher dropdown
+  var ls = document.getElementById('lang-switcher');
+  if(ls) {
+    var lb = document.getElementById('lang-btn');
+    lb.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var open = ls.classList.toggle('open');
+      lb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function() {
+      ls.classList.remove('open');
+      lb.setAttribute('aria-expanded', 'false');
+    });
+  }
 })();
