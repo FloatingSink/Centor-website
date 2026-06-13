@@ -161,7 +161,7 @@ nav {
   to   { opacity: 1; transform: scale(1); }
 }
 
-.page-banner { padding-top: var(--nav-h); position: relative; overflow: hidden; }
+.page-banner { padding-top: var(--nav-h); position: relative; overflow: hidden; min-height: 480px; max-height: 480px; }
 .page-banner .banner-swiper { position: absolute; inset: 0; }
 .page-banner .banner-swiper .swiper-wrapper { height: 100%; }
 .banner-slide { background-size: cover; background-position: center 22%; background-repeat: no-repeat; position: relative;
@@ -177,11 +177,11 @@ nav {
 .banner-swiper .swiper-button-prev:hover, .banner-swiper .swiper-button-next:hover { color: var(--gold); }
 .banner-swiper .swiper-pagination-bullet { background: rgba(0,0,0,0.30); opacity: 1; }
 .banner-swiper .swiper-pagination-bullet-active { background: var(--gold); }
-.page-banner-inner { position: relative; z-index: 10; padding: 80px 0 72px; }
+.page-banner-inner { position: relative; z-index: 10; padding: 64px 0 56px; }
 .page-banner-eyebrow { font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
   animation: bannerContentIn 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s both; }
 .page-banner-eyebrow::before { content: ''; display: block; width: 36px; height: 1px; background: var(--gold); }
-.page-banner-h { font-family: var(--font-d); font-weight: 700; font-size: clamp(34px, 5.5vw, 72px); color: var(--charcoal); line-height: 1.04; letter-spacing: 0.04em; margin-bottom: 18px;
+.page-banner-h { font-family: var(--font-d); font-weight: 700; font-size: clamp(28px, 4vw, 52px); color: var(--charcoal); line-height: 1.04; letter-spacing: 0.04em; margin-bottom: 14px;
   animation: bannerContentIn 0.95s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.45s both; }
 .page-banner-h em { font-style: normal; color: var(--gold); }
 .page-banner-sub { font-size: 16px; line-height: 1.75; color: var(--text-mid); max-width: 540px;
