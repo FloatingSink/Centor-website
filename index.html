@@ -14,7 +14,7 @@
     .hero-swiper { position:absolute; inset:0; height:100%; }
     .hero-swiper .swiper-wrapper { height:100%; }
     .hero-slide { background-size:cover; background-position:center 22%; background-repeat:no-repeat; position:relative; animation:bannerBgZoom 2.4s cubic-bezier(0.25,0.46,0.45,0.94) both; }
-    .hero-slide::after { content:''; position:absolute; inset:0; pointer-events:none; background: linear-gradient(108deg,rgba(222,223,226,0.88) 0%,rgba(218,220,223,0.78) 35%,rgba(210,212,215,0.50) 62%,rgba(215,217,220,0.68) 100%), linear-gradient(180deg,rgba(200,202,205,0.22) 0%,transparent 40%,rgba(195,197,200,0.14) 100%), radial-gradient(ellipse 130% 50% at 50% 0%,rgba(180,182,185,0.16) 0%,transparent 55%); }
+    .hero-slide::after { content:''; position:absolute; inset:0; pointer-events:none; background: linear-gradient(108deg,rgba(222,223,226,0.15) 0%,rgba(218,220,223,0.10) 35%,rgba(210,212,215,0.03) 62%,rgba(215,217,220,0.08) 100%), linear-gradient(180deg,rgba(200,202,205,0.22) 0%,transparent 40%,rgba(195,197,200,0.14) 100%), radial-gradient(ellipse 130% 50% at 50% 0%,rgba(180,182,185,0.16) 0%,transparent 55%); }
     .hero-swiper .swiper-button-prev, .hero-swiper .swiper-button-next { --swiper-navigation-size:32px; color:var(--charcoal); transition:color 0.2s; }
     .hero-swiper .swiper-button-prev:hover, .hero-swiper .swiper-button-next:hover { color:var(--gold); }
     .hero-swiper .swiper-pagination-bullet { background:rgba(0,0,0,0.30); opacity:1; }
@@ -23,13 +23,13 @@
     @media(max-width:1100px){ .hero-ring{width:480px;height:480px;right:-60px;opacity:0.15;} }
     @media(max-width:768px){ .hero-ring{width:280px;height:280px;right:-40px;opacity:0.10;} }
     .hero-inner { position:relative; z-index:10; width:100%; }
-    .hero-content { max-width:580px; padding:96px 0 80px; }
+    .hero-content { max-width:580px; padding:48px 36px; background:rgba(255,255,255,0.25); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px); border-radius:6px; }
     .hero-eyebrow { display:flex; align-items:center; gap:12px; margin-bottom:32px; animation:bannerContentIn 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.25s both; }
     .hero-eyebrow-line { width:44px; height:1px; background:var(--gold); }
-    .hero-eyebrow-text { font-size:11px; letter-spacing:0.26em; text-transform:uppercase; color:var(--gold); font-weight:600; }
+    .hero-eyebrow-text { font-size:13px; letter-spacing:0.26em; text-transform:uppercase; color:var(--gold); font-weight:600; }
     .hero-heading { font-family:var(--font-d); font-weight:700; font-size:clamp(52px,8.5vw,108px); color:var(--gold); line-height:1.0; letter-spacing:0.06em; margin-bottom:10px; animation:bannerContentIn 0.95s cubic-bezier(0.25,0.46,0.45,0.94) 0.45s both; }
     .hero-subtitle { font-family:var(--font-ui); font-size:clamp(11px,1.6vw,18px); font-weight:600; color:var(--charcoal); letter-spacing:0.24em; text-transform:uppercase; margin-bottom:28px; animation:bannerContentIn 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.6s both; }
-    .hero-description { font-size:16px; line-height:1.80; color:var(--text-mid); max-width:460px; margin-bottom:48px; animation:bannerContentIn 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.75s both; }
+    .hero-description { font-size:16px; line-height:1.80; color:var(--charcoal); max-width:460px; margin-bottom:48px; animation:bannerContentIn 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.75s both; }
     .hero-buttons { display:flex; gap:14px; flex-wrap:wrap; animation:bannerContentIn 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.9s both; }
     .scroll-indicator { position:absolute; bottom:45px; left:50%; transform:translateX(-50%); z-index:3; display:flex; flex-direction:column; align-items:center; gap:8px; color:var(--clr-text-dim); font-size:9px; letter-spacing:3px; text-transform:uppercase; animation:scrollBob 2.2s ease-in-out infinite; }
     @keyframes scrollBob { 0%,100%{transform:translateX(-50%) translateY(0);} 50%{transform:translateX(-50%) translateY(8px);} }
