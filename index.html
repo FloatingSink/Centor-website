@@ -21,7 +21,7 @@
     .hero-swiper .swiper-button-prev:hover, .hero-swiper .swiper-button-next:hover { color:var(--gold); }
     .hero-swiper .swiper-pagination-bullet { background:rgba(0,0,0,0.30); opacity:1; }
     .hero-swiper .swiper-pagination-bullet-active { background:var(--gold); }
-    .hero-ring { position:absolute; right:-80px; top:50%; transform:translateY(-50%); width:700px; height:700px; opacity:0.20; pointer-events:none; z-index:2; filter:drop-shadow(0 4px 32px rgba(0,0,0,0.08)); }
+    .hero-ring { position:absolute; right:-80px; top:50%; transform:translateY(-50%); width:700px; height:700px; opacity:0.20; pointer-events:none; z-index:2; filter:drop-shadow(0 4px 32px rgba(0,0,0,0.08)); mix-blend-mode:multiply; }
     @media(max-width:1100px){ .hero-ring{width:480px;height:480px;right:-60px;opacity:0.15;} }
     @media(max-width:768px){ .hero-ring{width:280px;height:280px;right:-40px;opacity:0.10;} }
     .hero-inner { position:relative; z-index:10; width:100%; }
@@ -154,13 +154,7 @@
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
   </div>
-  <svg class="hero-ring" viewBox="0 0 90 102" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M78.283 83.706 A44 44 0 0 1 44.79 93.69 L46.744 77.307 A27.5 27.5 0 0 0 67.677 71.066 Z" fill="url(#gSteel)"/>
-    <path d="M39.878 92.82  A44 44 0 0 1 11.857 71.933 L26.16 63.708 A27.5 27.5 0 0 0 43.674 76.762 Z" fill="url(#gSteel)"/>
-    <path d="M9.619 67.475   A44 44 0 0 1 9.619 32.525  L24.762 39.078 A27.5 27.5 0 0 0 24.762 60.922 Z" fill="url(#gGrey)"/>
-    <path d="M11.857 28.067  A44 44 0 0 1 39.878 7.18   L43.674 23.238 A27.5 27.5 0 0 0 26.16 36.292 Z"  fill="url(#gGrey)"/>
-    <path d="M44.79 6.31     A44 44 0 0 1 78.283 16.294 L67.677 28.934 A27.5 27.5 0 0 0 46.744 22.693 Z" fill="url(#gSteel)"/>
-  </svg>
+  <img class="hero-ring" src="brand_assets/centor-C-ring-transparent.PNG" alt="" aria-hidden="true" />
   <div class="hero-inner container">
     <div class="hero-content">
       <div class="hero-eyebrow"><span class="hero-eyebrow-line"></span><span class="hero-eyebrow-text">Lubrication &amp; Conditioning for TBM</span></div>
@@ -182,8 +176,10 @@
     <div class="about-inner">
       <div class="fade-up">
         <div class="eyebrow"><span class="eyebrow-num">01</span><span class="eyebrow-line"></span><span class="eyebrow-label">About CENTOR</span></div>
-        <h2 class="section-h">Precision Chemistry for the <em>World Beneath</em></h2>
-        <p class="about-description">CENTOR was founded by tunnelling engineers who recognised that underground machinery was being lubricated with generic, surface-grade products that were never designed for the extreme pressures, temperatures, and contamination environments found beneath the ground.</p>
+        <h2 class="section-h">Building Trust Beneath the <em>Surface</em></h2>
+        <p class="about-description">CENTOR is a Singapore-based underground construction materials and technical solutions platform dedicated to supporting tunnelling and underground infrastructure projects worldwide.</p>
+        <p class="about-description">Founded by industry professionals with extensive experience in TBM operations, underground construction, and international project delivery, CENTOR was established with a clear mission: to bridge the gap between manufacturing capability and real-world engineering performance.</p>
+        <p class="about-description">We combine high-performance construction materials with technical expertise, project databases, international standards, and local support capabilities to deliver practical solutions for complex underground environments.</p>
         <a href="about.html" class="btn-ghost">Read Our Story →</a>
       </div>
       <!-- <div class="fade-up" style="transition-delay:0.12s">
