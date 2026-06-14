@@ -27,7 +27,8 @@
     .mv-heading { font-family:var(--font-d); font-weight:700; font-size:clamp(15px,2vw,24px); color:var(--charcoal); letter-spacing:0.04em; line-height:1.25; margin-bottom:16px; }
     .mv-body { font-size:14px; color:var(--text-mid); line-height:1.75; }
     .values-section { background-color:var(--bg-2); background-image:var(--metal-lines); border-top:1px solid var(--border); }
-    .values-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; margin-top:48px; }
+    .values-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:2px; margin-top:48px; }
+    @media(max-width:1100px){.values-grid{grid-template-columns:repeat(3,1fr);}}
     @media(max-width:900px){.values-grid{grid-template-columns:1fr 1fr;}}
     @media(max-width:480px){.values-grid{grid-template-columns:1fr;}}
     .val-card { padding:40px 28px; background-color:var(--bg-1); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); transition:border-color 0.22s ease; }
@@ -121,13 +122,11 @@
     <div class="mv-grid">
       <div class="mv-card fade-up">
         <div class="mv-label">我们的使命</div>
-        <div class="mv-heading">以卓越化学性能最大化 TBM 运转效率</div>
-        <p class="mv-body">计划外停机对承包商造成巨大损失。承拓致力于消除润滑失效引发的故障——提供在任何地质条件、任何 TBM 类型、任何项目中均能稳定发挥性能的产品。</p>
+        <div class="mv-heading">以品质、创新与专业技术解决地下工程挑战。</div>
       </div>
       <div class="mv-card fade-up" style="transition-delay:0.1s">
         <div class="mv-label">我们的愿景</div>
-        <div class="mv-heading">成为地下工程调节领域的全球标准</div>
-        <p class="mv-body">我们致力于将承拓打造为 TBM 润滑与调节领域的通用规范——在行业内确立地下工程性能化学品的卓越基准。</p>
+        <div class="mv-heading">成为全球最值得信赖的地下工程材料与技术解决方案平台。</div>
       </div>
     </div>
   </div>
@@ -139,13 +138,14 @@
     <div class="fade-up">
       <div class="eyebrow"><span class="eyebrow-num">03</span><span class="eyebrow-line"></span><span class="eyebrow-label">核心价值观</span></div>
       <h2 class="section-h">我们的<em>核心理念</em></h2>
-      <p class="section-lede" style="max-width:480px">四项核心原则，指引我们研发每一款产品、支持每一个项目。</p>
+      <p class="section-lede" style="max-width:480px">五项核心价值观，指引我们研发每一款产品、支持每一个项目。</p>
     </div>
     <div class="values-grid">
-      <div class="val-card fade-up"><div class="val-num">01</div><div class="val-name">工程卓越</div><div class="val-desc">每款配方均由隧道工程师针对隧道施工条件专项开发——而非改自地面行业产品。</div></div>
-      <div class="val-card fade-up" style="transition-delay:0.07s"><div class="val-num">02</div><div class="val-name">深度合作</div><div class="val-desc">我们在项目每个阶段深度嵌入技术专业能力——从合同前润滑审计到掘进完成后的性能分析。</div></div>
-      <div class="val-card fade-up" style="transition-delay:0.14s"><div class="val-num">03</div><div class="val-name">安全优先</div><div class="val-desc">可生物降解、阻燃配方，全面保护地下工程每个环境中的工人、设备与生态环境。</div></div>
-      <div class="val-card fade-up" style="transition-delay:0.21s"><div class="val-num">04</div><div class="val-name">全球覆盖</div><div class="val-desc">本地专业能力与国际物流配送能力相结合——无论项目位于哪个大洲，我们都能准时送达。</div></div>
+      <div class="val-card fade-up"><div class="val-num">01</div><div class="val-name">品质至上</div><div class="val-desc">我们始终坚持品质与稳定性。</div></div>
+      <div class="val-card fade-up" style="transition-delay:0.07s"><div class="val-num">02</div><div class="val-name">客户成功</div><div class="val-desc">客户的成功，就是我们的成功。</div></div>
+      <div class="val-card fade-up" style="transition-delay:0.14s"><div class="val-num">03</div><div class="val-name">专业技术</div><div class="val-desc">以专业技术驱动每一个解决方案。</div></div>
+      <div class="val-card fade-up" style="transition-delay:0.21s"><div class="val-num">04</div><div class="val-name">诚信与信任</div><div class="val-desc">长期合作始于信任。</div></div>
+      <div class="val-card fade-up" style="transition-delay:0.28s"><div class="val-num">05</div><div class="val-name">持续创新</div><div class="val-desc">持续优化产品、服务与技术体系。</div></div>
     </div>
   </div>
 </section>

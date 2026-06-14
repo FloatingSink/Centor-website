@@ -28,7 +28,8 @@
     .mv-body { font-size:14px; color:var(--text-mid); line-height:1.75; }
 
     .values-section { background-color:var(--bg-2); background-image:var(--metal-lines); border-top:1px solid var(--border); }
-    .values-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; margin-top:48px; }
+    .values-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:2px; margin-top:48px; }
+    @media(max-width:1100px){.values-grid{grid-template-columns:repeat(3,1fr);}}
     @media(max-width:900px){.values-grid{grid-template-columns:1fr 1fr;}}
     @media(max-width:480px){.values-grid{grid-template-columns:1fr;}}
     .val-card { padding:40px 28px; background-color:var(--bg-1); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); transition:border-color 0.22s ease; }
@@ -123,13 +124,11 @@
     <div class="mv-grid">
       <div class="mv-card fade-up">
         <div class="mv-label">Our Mission</div>
-        <div class="mv-heading">To Maximise TBM Uptime Through Superior Chemistry</div>
-        <p class="mv-body">Unplanned downtime costs contractors significantly. CENTOR exists to eliminate lubrication-related failures — delivering products that perform reliably in every ground condition, every TBM type, on every project.</p>
+        <div class="mv-heading">To solve underground construction challenges through quality, innovation, and technical excellence.</div>
       </div>
       <div class="mv-card fade-up" style="transition-delay:0.1s">
         <div class="mv-label">Our Vision</div>
-        <div class="mv-heading">The Global Standard for Underground Conditioning</div>
-        <p class="mv-body">We aspire for CENTOR to become the universal specification for TBM lubrication and conditioning — a standard recognised across the industry as the benchmark for underground performance chemistry.</p>
+        <div class="mv-heading">To become the world's most trusted underground construction materials and technical solutions platform.</div>
       </div>
     </div>
   </div>
@@ -141,13 +140,14 @@
     <div class="fade-up">
       <div class="eyebrow"><span class="eyebrow-num">03</span><span class="eyebrow-line"></span><span class="eyebrow-label">Core Values</span></div>
       <h2 class="section-h">What We <em>Stand For</em></h2>
-      <p class="section-lede" style="max-width:480px">Four principles that guide every product we formulate and every project we support.</p>
+      <p class="section-lede" style="max-width:480px">Five principles that guide every product we develop and every project we support.</p>
     </div>
     <div class="values-grid">
-      <div class="val-card fade-up"><div class="val-num">01</div><div class="val-name">Engineering Excellence</div><div class="val-desc">Every formulation developed by tunnelling engineers for tunnelling conditions — not adapted from surface-industry products.</div></div>
-      <div class="val-card fade-up" style="transition-delay:0.07s"><div class="val-num">02</div><div class="val-name">Partnership</div><div class="val-desc">We embed technical expertise at every project stage — from pre-contract lubrication audits to post-drive performance analysis.</div></div>
-      <div class="val-card fade-up" style="transition-delay:0.14s"><div class="val-num">03</div><div class="val-name">Safety First</div><div class="val-desc">Biodegradable, fire-resistant formulations that protect workers, equipment, and the environment in every underground environment.</div></div>
-      <div class="val-card fade-up" style="transition-delay:0.21s"><div class="val-num">04</div><div class="val-name">Global Reach</div><div class="val-desc">Local expertise and international logistics capability — we deliver wherever your project drives, on any continent.</div></div>
+      <div class="val-card fade-up"><div class="val-num">01</div><div class="val-name">Quality First</div><div class="val-desc">We never compromise on quality and consistency.</div></div>
+      <div class="val-card fade-up" style="transition-delay:0.07s"><div class="val-num">02</div><div class="val-name">Customer Success</div><div class="val-desc">We measure our success by the success of our clients.</div></div>
+      <div class="val-card fade-up" style="transition-delay:0.14s"><div class="val-num">03</div><div class="val-name">Technical Excellence</div><div class="val-desc">Engineering expertise drives every solution we deliver.</div></div>
+      <div class="val-card fade-up" style="transition-delay:0.21s"><div class="val-num">04</div><div class="val-name">Trust &amp; Integrity</div><div class="val-desc">Long-term partnerships are built on trust.</div></div>
+      <div class="val-card fade-up" style="transition-delay:0.28s"><div class="val-num">05</div><div class="val-name">Continuous Innovation</div><div class="val-desc">We continuously improve products, services, and knowledge.</div></div>
     </div>
   </div>
 </section>
