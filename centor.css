@@ -151,6 +151,67 @@ nav {
 .mobile-menu a:hover { color: var(--gold); }
 .mobile-menu .mobile-cta { margin-top: 22px; display: inline-flex; padding: 11px 22px; border: 1px solid var(--border-gold); color: var(--gold); font-family: var(--font-ui); font-size: 11.5px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; }
 
+/* ===== DROPDOWN NAV (2nd-level) ===== */
+
+/* Desktop: li is just a positioned block — no flex, so all 1st-level items align identically */
+.nav-links li.has-dropdown { position: relative; }
+
+/* Chevron lives inside the <a> so the link renders exactly like every other nav link */
+.nav-links li.has-dropdown > a { display: inline-flex; align-items: center; gap: 5px; }
+.nav-links li.has-dropdown > a .chevron {
+  width: 8px; height: 8px; flex: none; opacity: 0.55;
+  transition: transform 0.22s ease, opacity 0.18s ease;
+}
+.nav-links li.has-dropdown:hover > a .chevron,
+.nav-links li.has-dropdown.open  > a .chevron { transform: rotate(180deg); opacity: 1; }
+
+/* Dropdown panel — positioned flush below the navbar inner edge */
+.nav-dropdown {
+  display: none; position: absolute; top: calc(100% + 10px); left: 0;
+  background: rgba(224,225,228,0.98); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0,0,0,0.10); min-width: 200px; z-index: 300;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10); list-style: none; padding: 6px 0;
+}
+.nav-links li.has-dropdown:hover > .nav-dropdown,
+.nav-links li.has-dropdown.open  > .nav-dropdown { display: block; }
+
+.nav-dropdown a {
+  display: block; padding: 10px 18px;
+  font-family: var(--font-ui); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-mid); text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.18s ease, background 0.18s ease;
+  white-space: nowrap;
+}
+.nav-dropdown li:last-child a { border-bottom: none; }
+.nav-dropdown a:hover  { color: var(--gold); background: rgba(184,138,60,0.06); }
+.nav-dropdown a.active { color: var(--gold); }
+.nav-dropdown a:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+
+/* Mobile: row with link + tap-target chevron button */
+.mobile-menu .has-dropdown > .mobile-item-row {
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-menu .has-dropdown > .mobile-item-row > a { flex: 1; border-bottom: none; }
+.mobile-dropdown-toggle {
+  display: flex; align-items: center; justify-content: center;
+  flex: none; width: 42px; height: 42px; padding: 0;
+  background: none; border: none; cursor: pointer;
+  color: var(--text-mid); transition: color 0.18s ease;
+}
+.mobile-dropdown-toggle:hover  { color: var(--gold); }
+.mobile-dropdown-toggle:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.mobile-dropdown-toggle .chevron { width: 11px; height: 11px; transition: transform 0.22s ease; }
+.mobile-menu .has-dropdown.open .mobile-dropdown-toggle .chevron { transform: rotate(180deg); }
+
+/* Mobile submenu */
+.mobile-sub { display: none; list-style: none; padding-left: 16px; }
+.mobile-menu .has-dropdown.open > .mobile-sub { display: block; }
+.mobile-sub a { padding: 11px 0; font-size: 12px; letter-spacing: 0.11em; color: var(--text-dim); }
+.mobile-sub li:last-child a { border-bottom: none; }
+
 /* ===== PAGE BANNER (inner pages) ===== */
 @keyframes bannerBgZoom {
   from { transform: scale(1.10); }
