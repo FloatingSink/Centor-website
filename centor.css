@@ -172,8 +172,8 @@ nav {
   border: 1px solid rgba(0,0,0,0.10); min-width: 200px; z-index: 300;
   box-shadow: 0 8px 24px rgba(0,0,0,0.10); list-style: none; padding: 6px 0;
   opacity: 0; visibility: hidden; pointer-events: none;
-  transform: translateY(-6px);
-  transition: opacity 0.22s ease, transform 0.25s cubic-bezier(0.22,1,0.36,1), visibility 0.22s;
+  transform: translateY(-28px);
+  transition: opacity 0.22s ease, transform 0.55s cubic-bezier(0.22,1,0.36,1), visibility 0.22s;
 }
 /* Invisible bridge fills the gap so hover isn't broken crossing to the dropdown */
 .nav-links li.has-dropdown::after {
