@@ -20,7 +20,7 @@
     .hero-swiper .swiper-button-prev:hover, .hero-swiper .swiper-button-next:hover { color:var(--gold); }
     .hero-swiper .swiper-pagination-bullet { background:rgba(0,0,0,0.30); opacity:1; }
     .hero-swiper .swiper-pagination-bullet-active { background:var(--gold); }
-    .hero-ring { position:absolute; right:-80px; top:50%; transform:translateY(-50%); width:700px; height:700px; opacity:0.20; pointer-events:none; z-index:2; filter:drop-shadow(0 4px 32px rgba(0,0,0,0.08)); }
+    .hero-ring { position:absolute; right:-80px; top:50%; transform:translateY(-50%); width:700px; height:700px; opacity:0.20; pointer-events:none; z-index:2; filter:drop-shadow(0 4px 32px rgba(0,0,0,0.08)); mix-blend-mode:multiply; }
     @media(max-width:1100px){ .hero-ring{width:480px;height:480px;right:-60px;opacity:0.15;} }
     @media(max-width:768px){ .hero-ring{width:280px;height:280px;right:-40px;opacity:0.10;} }
     .hero-inner { position:relative; z-index:10; width:100%; }
@@ -141,8 +141,8 @@
         <a href="about.html" class="btn-ghost">了解我们 →</a>
       </div>
       <div class="fade-up" style="transition-delay:0.12s">
-        <div class="stat-band" style="grid-template-columns:1fr 1fr;">
-          <div class="stat-box"><div class="stat-box-val">2</div><div class="stat-box-label">产品系列</div></div>
+        <div style="border:1px solid var(--border);overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,0.55);">
+          <img src="../photos/banner/about_banner/banner.jpg" alt="CENTOR underground engineering" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;" />
         </div>
       </div>
     </div>
