@@ -40,6 +40,7 @@
         },
         {
           en: 'References', zh: '项目参考', href: 'references.html',
+          maintenance: true,
           subs: [
             { en: 'Featured Project',    zh: '精选案例', href: 'references.html#featured-project' },
             { en: 'Project Portfolio',   zh: '项目组合', href: 'references.html#portfolio' },
@@ -71,6 +72,15 @@
       const desktopLinks = navDef.map(function (item, i) {
         var isActive    = i === activeIdx;
         var activeClass = isActive ? ' class="active"' : '';
+        if (item.maintenance) {
+          var mTip = isZh ? '维护中' : 'Under Maintenance';
+          return (
+            '<li class="nav-maint-li">' +
+              '<span>' + lbl(item) + '</span>' +
+              '<div class="nav-maint-tip" role="tooltip">' + mTip + '</div>' +
+            '</li>'
+          );
+        }
         if (item.subs) {
           var dropId   = 'nav-drop-' + i;
           var subLinks = item.subs.map(function (sub) {
@@ -91,6 +101,15 @@
 
       // Mobile: separate chevron button so the main link still navigates on tap
       const mobileLinks = navDef.map(function (item, i) {
+        if (item.maintenance) {
+          var mTip = isZh ? '维护中' : 'Under Maintenance';
+          return (
+            '<li class="nav-maint-li">' +
+              '<span>' + lbl(item) + '</span>' +
+              '<div class="nav-maint-tip" role="tooltip">' + mTip + '</div>' +
+            '</li>'
+          );
+        }
         if (item.subs) {
           var mDropId  = 'mob-drop-' + i;
           var subLinks = item.subs.map(function (sub) {
@@ -108,6 +127,33 @@
         }
         return '<li><a href="' + item.href + '">' + lbl(item) + '</a></li>';
       }).join('');
+
+      if (!document.getElementById('nav-maint-styles')) {
+        var s = document.createElement('style');
+        s.id = 'nav-maint-styles';
+        s.textContent = [
+          '.nav-maint-li { position: relative; }',
+          '.nav-maint-li > span {',
+          '  font-family: var(--font-ui); font-size: 12.5px; font-weight: 600;',
+          '  letter-spacing: 0.13em; text-transform: uppercase;',
+          '  color: rgba(20,22,26,0.22); cursor: default;',
+          '}',
+          '.nav-maint-tip {',
+          '  display: none; position: absolute; top: calc(100% + 10px); left: 50%;',
+          '  transform: translateX(-50%); white-space: nowrap;',
+          '  background: #3a3d40; color: #f0f1f2;',
+          '  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;',
+          '  padding: 6px 12px; border-radius: 3px; z-index: 300; pointer-events: none;',
+          '}',
+          '.nav-maint-tip::before {',
+          '  content: ""; position: absolute; bottom: 100%; left: 50%;',
+          '  transform: translateX(-50%);',
+          '  border: 5px solid transparent; border-bottom-color: #3a3d40;',
+          '}',
+          '.nav-maint-li:hover .nav-maint-tip { display: block; }',
+        ].join(' ');
+        document.head.appendChild(s);
+      }
 
       this.innerHTML =
         '<nav id="top-nav">\n' +
