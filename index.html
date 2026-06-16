@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Outfit:wght@700&family=Barlow:wght@400;500;600&family=Montserrat:wght@600&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="centor.css" />
+  <link rel="stylesheet" href="assets/css/centor.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
   <style>
     /* ===== HERO ===== */
@@ -109,16 +109,16 @@
 <section class="hero">
   <div class="swiper hero-swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide hero-slide" style="background-image:url('photos/home_page_banner/banner-1.jpg')"></div>
-      <div class="swiper-slide hero-slide" style="background-image:url('photos/home_page_banner/banner-2.jpg')"></div>
-      <div class="swiper-slide hero-slide" style="background-image:url('photos/home_page_banner/banner-3.jpg')"></div>
-      <div class="swiper-slide hero-slide" style="background-image:url('photos/home_page_banner/banner-4.jpg')"></div>
+      <div class="swiper-slide hero-slide" style="background-image:url('assets/images/hero/hero-1.jpg')"></div>
+      <div class="swiper-slide hero-slide" style="background-image:url('assets/images/hero/hero-2.jpg')"></div>
+      <div class="swiper-slide hero-slide" style="background-image:url('assets/images/hero/hero-3.jpg')"></div>
+      <div class="swiper-slide hero-slide" style="background-image:url('assets/images/hero/hero-4.jpg')"></div>
     </div>
     <div class="swiper-pagination"></div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
   </div>
-  <img class="hero-ring" src="brand_assets/centor-C-ring-transparent.PNG" alt="" aria-hidden="true" />
+  <img class="hero-ring" src="assets/brand/centor-ring.png" alt="" aria-hidden="true" />
   <div class="hero-inner container">
     <div class="hero-content">
       <div class="hero-eyebrow"><span class="hero-eyebrow-line"></span><span class="hero-eyebrow-text">Lubrication &amp; Conditioning for TBM</span></div>
@@ -126,7 +126,7 @@
       <p class="hero-subtitle">Underground &nbsp;·&nbsp; Solutions</p>
       <p class="hero-description">Engineering-grade lubrication and conditioning products built for Tunnel Boring Machines and underground infrastructure. Trusted by leading contractors across global metro, highway, and utility projects.</p>
       <div class="hero-buttons">
-        <a href="products.html" class="btn-gold">Explore Products</a>
+        <a href="products/" class="btn-gold">Explore Products</a>
         <a href="contact.html" class="btn-ghost">Request a Quote</a>
       </div>
     </div>
@@ -156,7 +156,7 @@
       </div> -->
       <div class="fade-up" style="transition-delay:0.12s">
         <div style="border:1px solid var(--border);overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,0.55);">
-          <img src="photos/about-centor.jpg" alt="CENTOR underground engineering" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;" />
+          <img src="assets/images/about-centor.jpg" alt="CENTOR underground engineering" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;" />
         </div>
       </div>
     </div>
@@ -178,7 +178,7 @@
         <div class="product-tagline">4 Products — Pump-type &amp; Hand-applied</div>
         <p class="product-description">Engineered sealants for main bearing lip-seal systems and tail brush assemblies. Covering the full range of shield TBM configurations — from centralised pump-distributed main bearing grease to manually applied first-fill tail sealants.</p>
         <div class="product-features"><span class="product-feature">Main Bearing</span><span class="product-feature">Tail Seal</span><span class="product-feature">Biodegradable</span><span class="product-feature">High Pressure</span><span class="product-feature">Flame Retardant</span></div>
-        <a href="products.html#sealing-materials" class="product-link">View Sealing Products →</a>
+        <a href="products/#sealing-materials" class="product-link">View Sealing Products →</a>
       </div>
       <div class="product-card silver fade-up" style="transition-delay:0.08s">
         <div class="product-badge silver">Soil Conditioning</div>
@@ -186,7 +186,7 @@
         <div class="product-tagline">IS-C · IS-D · IS-P</div>
         <p class="product-description">EPB-grade soil conditioning foam agents that reduce cutterhead torque, control face permeability, and improve muck flow through the screw conveyor. Three variants for standard, dispersive, and cohesive ground conditions.</p>
         <div class="product-features"><span class="product-feature">Biodegradable</span><span class="product-feature">Water Soluble</span><span class="product-feature">EPB Compatible</span><span class="product-feature">Face Pressure Control</span></div>
-        <a href="products.html#soil-conditioning" class="product-link">View Foam Agents →</a>
+        <a href="products/#soil-conditioning" class="product-link">View Foam Agents →</a>
       </div>
     </div>
   </div>
@@ -234,7 +234,7 @@
     <p class="cta-band-body fade-up" style="transition-delay:0.1s">Contact our engineering team for a no-obligation technical consultation. We provide specifications, qualification data, and on-site support for tunnelling contractors worldwide.</p>
     <div class="cta-band-actions fade-up" style="transition-delay:0.2s">
       <a href="contact.html" class="btn-gold">Contact Us</a>
-      <a href="products.html" class="btn-ghost">View Products</a>
+      <a href="products/" class="btn-ghost">View Products</a>
     </div>
   </div>
 </section>
@@ -273,6 +273,6 @@
   });
 })();
 </script>
-<script src="centor.js"></script>
+<script src="assets/js/centor.js"></script>
 </body>
 </html>

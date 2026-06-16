@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PORT = 3000;
 
 const MIME = {
@@ -24,9 +24,9 @@ const MIME = {
 
 http.createServer((req, res) => {
   let urlPath = req.url.split('?')[0];
-  if (urlPath === '/') urlPath = '/index.html';
+  if (urlPath.endsWith('/')) urlPath += 'index.html';
 
-  const filePath = path.join(__dirname, urlPath);
+  const filePath = path.join(ROOT, urlPath);
   const ext = path.extname(filePath).toLowerCase();
 
   fs.readFile(filePath, (err, data) => {

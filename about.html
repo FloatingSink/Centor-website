@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +7,7 @@
   <link rel="alternate" hreflang="zh-Hans" href="https://staging.centorglobal.com/zh/about.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Outfit:wght@700&family=Barlow:wght@400;500;600&family=Montserrat:wght@600&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="centor.css" />
+<link rel="stylesheet" href="assets/css/centor.css" />
   <style>
     .who-we-are { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
     .two-col { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
@@ -50,7 +50,7 @@
 
 <!-- PAGE BANNER -->
 <div class="page-banner">
-  <div class="banner-static banner-slide" style="background-image:url('photos/banner/about_banner/banner.jpg');background-position:center 75%"></div>
+  <div class="banner-static banner-slide" style="background-image:url('assets/images/banners/about.jpg');background-position:center 75%"></div>
   <div class="page-banner-inner container">
     <div class="page-banner-eyebrow">About CENTOR</div>
     <h1 class="page-banner-h">Built by tunnelling specialists.<br><em>Engineered for the underground.</em></h1>
@@ -127,7 +127,7 @@
     <p class="cta-band-body fade-up" style="transition-delay:0.1s">Talk to our engineering team about your project requirements. We provide technical specifications, qualification data, and on-site support for tunnelling contractors worldwide.</p>
     <div class="cta-band-actions fade-up" style="transition-delay:0.2s">
       <a href="contact.html" class="btn-gold">Contact Us</a>
-      <a href="products.html" class="btn-ghost">View Products</a>
+      <a href="products/" class="btn-ghost">View Products</a>
     </div>
   </div>
 </section>
@@ -136,8 +136,5 @@
 
 <script src="components/navbar.js"></script>
 <script src="components/footer.js"></script>
-<script>
-  var io=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target);}});},{rootMargin:'0px 0px -60px 0px',threshold:0.08});
-  document.querySelectorAll('.fade-up').forEach(function(el){io.observe(el);});
-</script>
+<script src="assets/js/centor.js"></script>
 </body></html>

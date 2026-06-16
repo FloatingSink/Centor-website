@@ -3,28 +3,27 @@
     connectedCallback() {
       this.style.display = 'contents';
 
-      var path = window.location.pathname;
-      var isZh = path.includes('/zh/');
-      var imgBase = isZh ? '../' : '';
+      const isZh = window.location.pathname.includes('/zh/');
+      const base = isZh ? '/zh/' : '/';
 
-      var t = isZh ? {
+      const t = isZh ? {
         desc: '专为 TBM 及地下工程系统研制的工程级润滑与调节产品，深受全球领先承包商信赖。',
         navHead: '导航',
         navLinks: [
-          { href: 'index.html',      label: '首页' },
-          { href: 'about.html',      label: '关于我们' },
-          { href: 'products.html',   label: '产品' },
-          { href: 'services.html',   label: '服务' },
-          { href: 'references.html', label: '项目参考' },
-          { href: 'contact.html',    label: '联系我们' },
+          { href: base,                    label: '首页' },
+          { href: base + 'about.html',     label: '关于我们' },
+          { href: base + 'products/',      label: '产品' },
+          { href: base + 'services.html',  label: '服务' },
+          { href: base + 'references.html',label: '项目参考' },
+          { href: base + 'contact.html',   label: '联系我们' },
         ],
         prodHead: '产品',
         prodLinks: [
-          { href: 'product-main-bearing-sealant.html',  label: '主轴承密封脂' },
-          { href: 'product-tail-seal-grease.html',      label: '盾尾密封脂' },
-          { href: 'product-tail-sealant-handcoat.html', label: '盾尾密封手涂剂' },
-          { href: 'product-main-bearing-grease.html',   label: '主轴承润滑脂' },
-          { href: 'product-foam-agents.html',           label: '泡沫剂' },
+          { href: base + 'products/main-bearing-sealant.html',  label: '主轴承密封脂' },
+          { href: base + 'products/tail-seal-grease.html',      label: '盾尾密封脂' },
+          { href: base + 'products/tail-sealant-handcoat.html', label: '盾尾密封手涂剂' },
+          { href: base + 'products/main-bearing-grease.html',   label: '主轴承润滑脂' },
+          { href: base + 'products/foam-agents.html',           label: '泡沫剂' },
         ],
         contactHead: '联系我们',
         hqLabel:    '全球总部',
@@ -38,20 +37,20 @@
         desc: 'Engineering-grade lubrication and conditioning products for TBM and underground systems. Trusted by leading contractors worldwide.',
         navHead: 'Navigation',
         navLinks: [
-          { href: 'index.html',      label: 'Home' },
-          { href: 'about.html',      label: 'About Us' },
-          { href: 'products.html',   label: 'Products' },
-          { href: 'services.html',   label: 'Services' },
-          { href: 'references.html', label: 'References' },
-          { href: 'contact.html',    label: 'Contact' },
+          { href: base,                    label: 'Home' },
+          { href: base + 'about.html',     label: 'About Us' },
+          { href: base + 'products/',      label: 'Products' },
+          { href: base + 'services.html',  label: 'Services' },
+          { href: base + 'references.html',label: 'References' },
+          { href: base + 'contact.html',   label: 'Contact' },
         ],
         prodHead: 'Products',
         prodLinks: [
-          { href: 'product-main-bearing-sealant.html',  label: 'Main Bearing Sealant' },
-          { href: 'product-tail-seal-grease.html',      label: 'Tail Seal Grease' },
-          { href: 'product-tail-sealant-handcoat.html', label: 'Tail Sealant Hand-coat' },
-          { href: 'product-main-bearing-grease.html',   label: 'Main Bearing Grease' },
-          { href: 'product-foam-agents.html',           label: 'Foam Agents' },
+          { href: base + 'products/main-bearing-sealant.html',  label: 'Main Bearing Sealant' },
+          { href: base + 'products/tail-seal-grease.html',      label: 'Tail Seal Grease' },
+          { href: base + 'products/tail-sealant-handcoat.html', label: 'Tail Sealant Hand-coat' },
+          { href: base + 'products/main-bearing-grease.html',   label: 'Main Bearing Grease' },
+          { href: base + 'products/foam-agents.html',           label: 'Foam Agents' },
         ],
         contactHead: 'Contact',
         hqLabel:    'Global HQ',
@@ -63,20 +62,20 @@
         terms:      'Terms of Use',
       };
 
-      var navLinksHtml = t.navLinks.map(function (l) {
-        return '<li><a href="' + l.href + '">' + l.label + '</a></li>';
-      }).join('');
+      const navLinksHtml  = t.navLinks.map(l =>
+        '<li><a href="' + l.href + '">' + l.label + '</a></li>'
+      ).join('');
 
-      var prodLinksHtml = t.prodLinks.map(function (l) {
-        return '<li><a href="' + l.href + '">' + l.label + '</a></li>';
-      }).join('');
+      const prodLinksHtml = t.prodLinks.map(l =>
+        '<li><a href="' + l.href + '">' + l.label + '</a></li>'
+      ).join('');
 
       this.innerHTML =
         '<footer>\n' +
         '  <div class="container">\n' +
         '    <div class="footer-grid">\n' +
         '      <div class="footer-brand">\n' +
-        '        <div class="footer-logo"><img src="' + imgBase + 'brand_assets/centor-logo-transparent.png" alt="CENTOR" /></div>\n' +
+        '        <div class="footer-logo"><img src="/assets/brand/centor-logo.png" alt="CENTOR" /></div>\n' +
         '        <p class="footer-desc">' + t.desc + '</p>\n' +
         '        <div class="footer-socials"><a href="#" class="social-btn" aria-label="LinkedIn">in</a></div>\n' +
         '      </div>\n' +
@@ -107,4 +106,4 @@
   }
 
   customElements.define('site-footer', SiteFooter);
-})();
+}());
