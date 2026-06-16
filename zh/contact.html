@@ -27,6 +27,7 @@
     .offices { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
     .office { padding:10px 12px; background-color:var(--bg-1); background-image:var(--metal-lines); border:1px solid var(--border); font-size:12.5px; color:var(--charcoal-2); text-align:center; box-shadow:inset 0 1px 0 rgba(255,255,255,0.5); }
     .office.hq { border-color:var(--gold-border); color:var(--gold); background-color:var(--gold-dim); }
+    .office.inactive { opacity:0.4; }
     .form-wrap { padding:44px 40px; background-color:var(--bg); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 4px 20px rgba(0,0,0,0.07); }
     @media(max-width:600px){.form-wrap{padding:30px 22px;}}
     .form-h { font-family:var(--font-d); font-weight:700; font-size:17px; color:var(--charcoal); letter-spacing:0.06em; margin-bottom:8px; }
@@ -100,10 +101,8 @@
       <div class="info-blocks fade-up">
         <div class="ib">
           <div class="ib-head">全球总部</div>
-          <div class="ib-row"><div class="ib-label">地址</div><div class="ib-val">10 Anson Road, #22-01<br>International Plaza<br>Singapore 079903</div></div>
-          <div class="ib-row"><div class="ib-label">综合询盘</div><div class="ib-val"><a href="mailto:info@centortech.com">info@centortech.com</a></div></div>
-          <div class="ib-row"><div class="ib-label">技术支持</div><div class="ib-val"><a href="mailto:technical@centortech.com">technical@centortech.com</a></div></div>
-          <div class="ib-row"><div class="ib-label">电话</div><div class="ib-val"><a href="tel:+6562221800">+65 6222 1800</a><p class="ib-note">周一至周五，08:00–18:00（新加坡时间）</p></div></div>
+          <div class="ib-row"><div class="ib-label">地址</div><div class="ib-val">151 Chin Swee Road, #09-08<br>Manhattan House<br>Singapore 169876</div></div>
+          <div class="ib-row"><div class="ib-label">综合询盘</div><div class="ib-val"><a href="mailto:info@centortech.com">info@centortech.com</a></div></div>          <div class="ib-row"><div class="ib-label">电话</div><div class="ib-val"><a href="tel:+6562221800">+65 6222 1800</a><p class="ib-note">周一至周五，08:00–18:00（新加坡时间）</p></div></div>
         </div>
         <div class="ib">
           <div class="ib-head">紧急技术支持</div>
@@ -114,11 +113,8 @@
           <div class="ib-head">区域办公室</div>
           <div class="offices">
             <div class="office hq">新加坡总部</div>
-            <div class="office">迪拜</div>
-            <div class="office">伦敦</div>
-            <div class="office">悉尼</div>
-            <div class="office">台北</div>
-            <div class="office">休斯顿</div>
+            <div class="office inactive">迪拜</div>
+            <div class="office inactive">香港</div>
           </div>
         </div>
         <div class="ib">

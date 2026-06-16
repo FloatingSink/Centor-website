@@ -28,6 +28,7 @@
     .offices { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
     .office { padding:10px 12px; background-color:var(--bg-1); background-image:var(--metal-lines); border:1px solid var(--border); font-size:12.5px; color:var(--charcoal-2); text-align:center; box-shadow:inset 0 1px 0 rgba(255,255,255,0.5); }
     .office.hq { border-color:var(--gold-border); color:var(--gold); background-color:var(--gold-dim); }
+    .office.inactive { opacity:0.4; }
 
     /* FORM */
     .form-wrap { padding:44px 40px; background-color:var(--bg); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 4px 20px rgba(0,0,0,0.07); }
@@ -104,10 +105,8 @@
       <div class="info-blocks fade-up">
         <div class="ib">
           <div class="ib-head">Global Headquarters</div>
-          <div class="ib-row"><div class="ib-label">Address</div><div class="ib-val">10 Anson Road, #22-01<br>International Plaza<br>Singapore 079903</div></div>
-          <div class="ib-row"><div class="ib-label">General</div><div class="ib-val"><a href="mailto:info@centortech.com">info@centortech.com</a></div></div>
-          <div class="ib-row"><div class="ib-label">Technical</div><div class="ib-val"><a href="mailto:technical@centortech.com">technical@centortech.com</a></div></div>
-          <div class="ib-row"><div class="ib-label">Phone</div><div class="ib-val"><a href="tel:+6562221800">+65 6222 1800</a><p class="ib-note">Mon–Fri, 08:00–18:00 SGT</p></div></div>
+          <div class="ib-row"><div class="ib-label">Address</div><div class="ib-val">151 Chin Swee Road, #09-08<br>Manhattan House<br>Singapore 169876</div></div>
+          <div class="ib-row"><div class="ib-label">General</div><div class="ib-val"><a href="mailto:info@centortech.com">info@centortech.com</a></div></div>          <div class="ib-row"><div class="ib-label">Phone</div><div class="ib-val"><a href="tel:+6562221800">+65 6222 1800</a><p class="ib-note">Mon–Fri, 08:00–18:00 SGT</p></div></div>
         </div>
         <div class="ib">
           <div class="ib-head">Emergency Technical Support</div>
@@ -118,11 +117,8 @@
           <div class="ib-head">Regional Offices</div>
           <div class="offices">
             <div class="office hq">Singapore HQ</div>
-            <div class="office">Dubai</div>
-            <div class="office">London</div>
-            <div class="office">Sydney</div>
-            <div class="office">Taipei</div>
-            <div class="office">Houston</div>
+            <div class="office inactive">Dubai</div>
+            <div class="office inactive">Hong Kong</div>
           </div>
         </div>
         <div class="ib">
