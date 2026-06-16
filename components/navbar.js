@@ -229,6 +229,19 @@
         closeAllDesktopDropdowns(null);
       });
 
+      // ── Language switcher: preserve scroll position ───────────
+      this.querySelectorAll('.lang-switcher .lang-pill, .mobile-lang a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          sessionStorage.setItem('restoreScroll', window.scrollY);
+        });
+      });
+
+      var savedScroll = sessionStorage.getItem('restoreScroll');
+      if (savedScroll !== null) {
+        sessionStorage.removeItem('restoreScroll');
+        window.scrollTo({ top: parseInt(savedScroll, 10), behavior: 'instant' });
+      }
+
       // ── Nav background on scroll ───────────────────────────────
       window.addEventListener('scroll', function () {
         navEl.style.background = window.scrollY > 60
