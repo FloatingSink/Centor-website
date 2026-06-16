@@ -115,7 +115,7 @@
         '    <a href="index.html" class="nav-logo"><img src="' + imgBase + 'brand_assets/centor-logo-transparent.png" alt="CENTOR" /></a>\n' +
         '    <ul class="nav-links">' + desktopLinks + '</ul>\n' +
         '    <a href="contact.html" class="btn-nav desktop-only">' + cta + '</a>\n' +
-        '    <div class="lang-switcher">\n' +
+        '    <div class="lang-switcher" style="display:none">\n' +
         '      <a href="' + enHref + '" class="lang-pill' + (!isZh ? ' active' : '') + '">EN</a>\n' +
         '      <a href="' + zhHref + '" class="lang-pill' + (isZh ? ' active' : '') + '">中文</a>\n' +
         '    </div>\n' +
@@ -124,7 +124,7 @@
         '</nav>\n' +
         '<div class="mobile-menu" id="mobile-menu">\n' +
         '  <ul>' + mobileLinks + '</ul>\n' +
-        '  <div class="mobile-lang">\n' +
+        '  <div class="mobile-lang" style="display:none">\n' +
         '    <a href="' + enHref + '"' + (!isZh ? ' class="active"' : '') + '>English</a>' +
         '<a href="' + zhHref + '"' + (isZh ? ' class="active"' : '') + '>中文</a>\n' +
         '  </div>\n' +

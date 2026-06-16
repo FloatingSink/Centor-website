@@ -249,6 +249,7 @@ nav {
 .banner-swiper .swiper-pagination-bullet { background: rgba(0,0,0,0.30); opacity: 1; }
 .banner-swiper .swiper-pagination-bullet-active { background: var(--gold); }
 .page-banner-inner { position: relative; z-index: 10; padding: 64px 0 56px; }
+@media (max-width: 768px) { .page-banner-inner { padding-left: 20px; padding-right: 20px; } }
 .page-banner-eyebrow { font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
   animation: bannerContentIn 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s both; }
 .page-banner-eyebrow::before { content: ''; display: block; width: 36px; height: 1px; background: var(--gold); }
