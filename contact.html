@@ -1,13 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — CENTOR Underground System Solutions</title>
+  <meta name="description" content="Contact CENTOR's engineering team for technical consultations and project support. Headquarters in Singapore, with offices across six global locations." />
   <link rel="alternate" hreflang="en" href="https://staging.centorglobal.com/contact.html" />
   <link rel="alternate" hreflang="zh-Hans" href="https://staging.centorglobal.com/zh/contact.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Outfit:wght@700&family=Barlow:wght@400;500;600&family=Montserrat:wght@600&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="centor.css" />
+  <link rel="stylesheet" href="assets/css/centor.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
   <style>
     .contact-section { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
@@ -28,6 +29,7 @@
     .offices { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
     .office { padding:10px 12px; background-color:var(--bg-1); background-image:var(--metal-lines); border:1px solid var(--border); font-size:12.5px; color:var(--charcoal-2); text-align:center; box-shadow:inset 0 1px 0 rgba(255,255,255,0.5); }
     .office.hq { border-color:var(--gold-border); color:var(--gold); background-color:var(--gold-dim); }
+    .office.inactive { opacity:0.4; }
 
     /* FORM */
     .form-wrap { padding:44px 40px; background-color:var(--bg); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 4px 20px rgba(0,0,0,0.07); }
@@ -104,10 +106,8 @@
       <div class="info-blocks fade-up">
         <div class="ib">
           <div class="ib-head">Global Headquarters</div>
-          <div class="ib-row"><div class="ib-label">Address</div><div class="ib-val">10 Anson Road, #22-01<br>International Plaza<br>Singapore 079903</div></div>
-          <div class="ib-row"><div class="ib-label">General</div><div class="ib-val"><a href="mailto:info@centortech.com">info@centortech.com</a></div></div>
-          <div class="ib-row"><div class="ib-label">Technical</div><div class="ib-val"><a href="mailto:technical@centortech.com">technical@centortech.com</a></div></div>
-          <div class="ib-row"><div class="ib-label">Phone</div><div class="ib-val"><a href="tel:+6562221800">+65 6222 1800</a><p class="ib-note">Mon–Fri, 08:00–18:00 SGT</p></div></div>
+          <div class="ib-row"><div class="ib-label">Address</div><div class="ib-val">151 Chin Swee Road, #09-08<br>Manhattan House<br>Singapore 169876</div></div>
+          <div class="ib-row"><div class="ib-label">General</div><div class="ib-val"><a href="mailto:info@centortech.com">info@centortech.com</a></div></div>          <div class="ib-row"><div class="ib-label">Phone</div><div class="ib-val"><a href="tel:+6562221800">+65 6222 1800</a><p class="ib-note">Mon–Fri, 08:00–18:00 SGT</p></div></div>
         </div>
         <div class="ib">
           <div class="ib-head">Emergency Technical Support</div>
@@ -118,11 +118,8 @@
           <div class="ib-head">Regional Offices</div>
           <div class="offices">
             <div class="office hq">Singapore HQ</div>
-            <div class="office">Dubai</div>
-            <div class="office">London</div>
-            <div class="office">Sydney</div>
-            <div class="office">Taipei</div>
-            <div class="office">Houston</div>
+            <div class="office inactive">Dubai</div>
+            <div class="office inactive">Hong Kong</div>
           </div>
         </div>
         <div class="ib">
@@ -210,5 +207,5 @@
   });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script src="centor.js"></script>
+<script src="assets/js/centor.js"></script>
 </body></html>
