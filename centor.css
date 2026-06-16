@@ -243,6 +243,7 @@ nav {
     linear-gradient(180deg, rgba(198,200,204,0.22) 0%, transparent 45%),
     radial-gradient(ellipse 100% 50% at 50% 0%, rgba(175,178,182,0.15) 0%, transparent 55%);
 }
+.banner-static { position: absolute; inset: 0; }
 .banner-swiper .swiper-button-prev, .banner-swiper .swiper-button-next { --swiper-navigation-size: 32px; color: var(--charcoal); transition: color 0.2s; }
 .banner-swiper .swiper-button-prev:hover, .banner-swiper .swiper-button-next:hover { color: var(--gold); }
 .banner-swiper .swiper-pagination-bullet { background: rgba(0,0,0,0.30); opacity: 1; }
