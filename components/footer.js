@@ -14,7 +14,7 @@
           { href: base + 'about.html',     label: '关于我们' },
           { href: base + 'products/',      label: '产品' },
           { href: base + 'services.html',  label: '服务' },
-          { href: base + 'references.html',label: '项目参考' },
+          { href: base + 'references.html',label: '项目参考', maintenance: true },
           { href: base + 'contact.html',   label: '联系我们' },
         ],
         prodHead: '产品',
@@ -41,7 +41,7 @@
           { href: base + 'about.html',     label: 'About Us' },
           { href: base + 'products/',      label: 'Products' },
           { href: base + 'services.html',  label: 'Services' },
-          { href: base + 'references.html',label: 'References' },
+          { href: base + 'references.html',label: 'References', maintenance: true },
           { href: base + 'contact.html',   label: 'Contact' },
         ],
         prodHead: 'Products',
@@ -62,9 +62,35 @@
         terms:      'Terms of Use',
       };
 
-      const navLinksHtml  = t.navLinks.map(l =>
-        '<li><a href="' + l.href + '">' + l.label + '</a></li>'
-      ).join('');
+      if (!document.getElementById('footer-maint-styles')) {
+        var fs = document.createElement('style');
+        fs.id = 'footer-maint-styles';
+        fs.textContent = [
+          '.footer-maint-wrap { position: relative; display: inline-block; }',
+          '.footer-maint-tip {',
+          '  display: none; position: absolute; bottom: calc(100% + 8px); left: 50%;',
+          '  transform: translateX(-50%); white-space: nowrap;',
+          '  background: #3a3d40; color: #f0f1f2;',
+          '  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;',
+          '  padding: 6px 12px; border-radius: 3px; z-index: 300; pointer-events: none;',
+          '}',
+          '.footer-maint-tip::after {',
+          '  content: ""; position: absolute; top: 100%; left: 50%;',
+          '  transform: translateX(-50%);',
+          '  border: 5px solid transparent; border-top-color: #3a3d40;',
+          '}',
+          '.footer-maint-wrap:hover .footer-maint-tip { display: block; }',
+        ].join(' ');
+        document.head.appendChild(fs);
+      }
+
+      var maintTip = isZh ? '维护中' : 'Under Maintenance';
+      const navLinksHtml  = t.navLinks.map(l => {
+        if (l.maintenance) {
+          return '<li><span class="footer-maint-wrap"><a href="' + l.href + '" style="color:rgba(20,22,26,0.22);pointer-events:none;cursor:default;">' + l.label + '</a><div class="footer-maint-tip">' + maintTip + '</div></span></li>';
+        }
+        return '<li><a href="' + l.href + '">' + l.label + '</a></li>';
+      }).join('');
 
       const prodLinksHtml = t.prodLinks.map(l =>
         '<li><a href="' + l.href + '">' + l.label + '</a></li>'
