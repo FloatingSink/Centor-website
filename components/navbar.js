@@ -60,14 +60,12 @@
       const lbl         = function (item) { return isZh ? item.zh : item.en; };
       const cta         = isZh ? '获取报价' : 'Get a Quote';
       const burgerLabel = isZh ? '打开菜单' : 'Open menu';
-      const langLabel   = isZh ? '中文' : 'EN';
 
       const enHref = isZh ? '../' + pageName : pageName;
       const zhHref = isZh ? pageName : 'zh/' + pageName;
 
       // Chevron SVG — embedded inside <a> for desktop, inside <button> for mobile
       const chevronSvg = '<svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>';
-      const globeSvg   = '<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="7" r="6"/><path d="M7 1c-2 2.5-2 10.5 0 12M7 1c2 2.5 2 10.5 0 12M1 7h12"/></svg>';
 
       // Desktop: chevron lives inside the <a> — no separate button, so all items align identically
       const desktopLinks = navDef.map(function (item, i) {
@@ -117,15 +115,9 @@
         '    <a href="index.html" class="nav-logo"><img src="' + imgBase + 'brand_assets/centor-logo-transparent.png" alt="CENTOR" /></a>\n' +
         '    <ul class="nav-links">' + desktopLinks + '</ul>\n' +
         '    <a href="contact.html" class="btn-nav desktop-only">' + cta + '</a>\n' +
-        '    <div class="lang-switcher" id="lang-switcher">\n' +
-        '      <button class="lang-btn" id="lang-btn" aria-label="Language / 语言" aria-expanded="false">\n' +
-        '        ' + globeSvg + '\n' +
-        '        ' + langLabel + '\n' +
-        '      </button>\n' +
-        '      <div class="lang-menu">\n' +
-        '        <a href="' + enHref + '" class="lang-opt' + (!isZh ? ' active' : '') + '">English</a>\n' +
-        '        <a href="' + zhHref + '" class="lang-opt' + (isZh ? ' active' : '') + '">中文</a>\n' +
-        '      </div>\n' +
+        '    <div class="lang-switcher">\n' +
+        '      <a href="' + enHref + '" class="lang-pill' + (!isZh ? ' active' : '') + '">EN</a>\n' +
+        '      <a href="' + zhHref + '" class="lang-pill' + (isZh ? ' active' : '') + '">中文</a>\n' +
         '    </div>\n' +
         '    <button class="nav-burger" id="nav-burger" aria-label="' + burgerLabel + '" aria-expanded="false"><span></span><span></span><span></span></button>\n' +
         '  </div>\n' +
@@ -142,8 +134,6 @@
       var burger     = this.querySelector('#nav-burger');
       var mobileMenu = this.querySelector('#mobile-menu');
       var navEl      = this.querySelector('#top-nav');
-      var ls         = this.querySelector('#lang-switcher');
-      var lb         = this.querySelector('#lang-btn');
 
       // ── Desktop dropdowns ──────────────────────────────────────
       function closeAllDesktopDropdowns(except) {
@@ -246,16 +236,6 @@
           : 'rgba(225,226,229,0.90)';
       }, { passive: true });
 
-      // ── Language switcher ──────────────────────────────────────
-      lb.addEventListener('click', function (e) {
-        e.stopPropagation();
-        var open = ls.classList.toggle('open');
-        lb.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-      document.addEventListener('click', function () {
-        ls.classList.remove('open');
-        lb.setAttribute('aria-expanded', 'false');
-      });
     }
   }
 
