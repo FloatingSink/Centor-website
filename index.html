@@ -95,6 +95,10 @@
     .reference-project { font-size:13.5px; color:var(--text-mid); margin-bottom:18px; }
     .reference-type { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); padding:4px 10px; background:rgba(0,0,0,0.05); border:1px solid var(--border); display:inline-block; }
     .references-footer { margin-top:44px; }
+    .maint-btn-wrap { position:relative; display:inline-block; }
+    .maint-btn-tip { display:none; position:absolute; bottom:calc(100% + 10px); left:50%; transform:translateX(-50%); white-space:nowrap; background:#3a3d40; color:#f0f1f2; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; padding:6px 12px; border-radius:3px; z-index:10; pointer-events:none; }
+    .maint-btn-tip::after { content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:5px solid transparent; border-top-color:#3a3d40; }
+    .maint-btn-wrap:hover .maint-btn-tip { display:block; }
   </style>
 </head>
 <body>
@@ -223,7 +227,7 @@
       <div class="reference-card fade-up" style="transition-delay:0.08s"><div class="reference-tag">Asia-Pacific</div><div class="reference-city">Hong Kong</div><p class="reference-project">MTR Tuen Ma Line Extension</p><span class="reference-type">Metro · EPB TBM</span></div>
       <div class="reference-card fade-up" style="transition-delay:0.16s"><div class="reference-tag">Middle East</div><div class="reference-city">Dubai</div><p class="reference-project">Dubai Metro Blue Line</p><span class="reference-type">Metro · Slurry TBM</span></div>
     </div>
-    <div class="references-footer fade-up"><a href="references.html" class="btn-ghost">View All References →</a></div>
+    <div class="references-footer fade-up"><div class="maint-btn-wrap"><a href="references.html" class="btn-ghost" style="opacity:0.35;pointer-events:none;cursor:default;">View All References →</a><div class="maint-btn-tip">Under Maintenance</div></div></div>
   </div>
 </section>
 

@@ -82,6 +82,10 @@
     .reference-project { font-size:13.5px; color:var(--text-mid); margin-bottom:18px; }
     .reference-type { font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); padding:4px 10px; background:rgba(0,0,0,0.05); border:1px solid var(--border); display:inline-block; }
     .references-footer { margin-top:44px; }
+    .maint-btn-wrap { position:relative; display:inline-block; }
+    .maint-btn-tip { display:none; position:absolute; bottom:calc(100% + 10px); left:50%; transform:translateX(-50%); white-space:nowrap; background:#3a3d40; color:#f0f1f2; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; padding:6px 12px; border-radius:3px; z-index:10; pointer-events:none; }
+    .maint-btn-tip::after { content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:5px solid transparent; border-top-color:#3a3d40; }
+    .maint-btn-wrap:hover .maint-btn-tip { display:block; }
   </style>
 </head>
 <body>
@@ -209,7 +213,7 @@
       <div class="reference-card fade-up" style="transition-delay:0.08s"><div class="reference-tag">亚太地区</div><div class="reference-city">香港</div><p class="reference-project">港铁屯马线延线</p><span class="reference-type">地铁 · EPB TBM</span></div>
       <div class="reference-card fade-up" style="transition-delay:0.16s"><div class="reference-tag">中东</div><div class="reference-city">迪拜</div><p class="reference-project">迪拜地铁蓝线</p><span class="reference-type">地铁 · 泥水平衡 TBM</span></div>
     </div>
-    <div class="references-footer fade-up"><a href="references.html" class="btn-ghost">查看全部参考项目 →</a></div>
+    <div class="references-footer fade-up"><div class="maint-btn-wrap"><a href="references.html" class="btn-ghost" style="opacity:0.35;pointer-events:none;cursor:default;">查看全部参考项目 →</a><div class="maint-btn-tip">维护中</div></div></div>
   </div>
 </section>
 
