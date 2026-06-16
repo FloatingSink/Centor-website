@@ -1,0 +1,510 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foam Agents IS-C / IS-D / IS-P — CENTOR Underground System Solutions</title>
+  <meta name="description" content="CENTOR IS Series foam agents — IS-C, IS-D, and IS-P EPB soil conditioning formulations for standard, dispersive, and cohesive TBM ground conditions." />
+  <link rel="alternate" hreflang="en" href="https://staging.centorglobal.com/products/foam-agents.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://staging.centorglobal.com/zh/products/foam-agents.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Outfit:wght@700&family=Barlow:wght@400;500;600&family=Montserrat:wght@600&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/centor.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <style>
+    .pd-s1 { background-color:var(--bg-1); border-top:1px solid var(--border); }
+    .pd-s2 { background-color:var(--bg);   border-top:1px solid var(--border); }
+    .pd-s3 { background-color:var(--bg-1); border-top:1px solid var(--border); }
+    .pd-s4 { background-color:var(--bg-2); border-top:1px solid var(--border); }
+    .pd-s5 { background-color:var(--bg);   border-top:1px solid var(--border); }
+    .pd-s6 { background-color:var(--bg-1); border-top:1px solid var(--border); }
+    .pd-s7 { background-color:var(--bg-2); border-top:1px solid var(--border); }
+
+    .pd-breadcrumb { display:flex; align-items:center; gap:8px; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:52px; flex-wrap:wrap; }
+    .pd-breadcrumb a { color:var(--text-dim); text-decoration:none; transition:color 0.18s; }
+    .pd-breadcrumb a:hover { color:var(--gold); }
+    .pd-breadcrumb-sep { color:var(--text-faint); }
+    .pd-breadcrumb-cur { color:var(--gold); }
+
+    .pd-overview { display:grid; grid-template-columns:1.4fr 1fr; gap:48px; align-items:start; }
+    @media(max-width:860px){ .pd-overview { grid-template-columns:1fr; gap:32px; } }
+
+    .pd-badge-s { display:inline-block; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; padding:4px 12px; border:1px solid; margin-bottom:18px; font-weight:600; color:var(--charcoal-2); border-color:rgba(0,0,0,0.15); background:rgba(0,0,0,0.05); }
+    .pd-body { font-size:15px; color:var(--text-mid); line-height:1.82; margin-bottom:28px; }
+
+    .pd-qs { padding:32px 28px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); }
+    .pd-qs-head { font-family:var(--font-ui); font-size:10px; letter-spacing:0.26em; text-transform:uppercase; color:var(--charcoal); font-weight:600; margin-bottom:20px; display:flex; align-items:center; gap:10px; }
+    .pd-qs-head::before { content:''; width:20px; height:1px; background:var(--gold); }
+    .pd-qs-row { display:flex; gap:12px; padding:9px 0; border-bottom:1px solid var(--border); }
+    .pd-qs-row:last-child { border-bottom:none; }
+    .pd-qs-k { font-family:var(--font-spec); font-size:10px; letter-spacing:0.10em; text-transform:uppercase; color:var(--text-faint); min-width:110px; flex:none; padding-top:2px; }
+    .pd-qs-v { font-family:var(--font-spec); font-size:13px; color:var(--charcoal-2); font-weight:500; line-height:1.4; }
+
+    .pd-sec-head { margin-bottom:32px; }
+    .pd-sec-h { font-family:var(--font-d); font-weight:700; font-size:clamp(20px,2.5vw,32px); color:var(--charcoal); letter-spacing:0.04em; line-height:1.1; margin-top:10px; }
+    .pd-sec-h em { font-style:normal; color:var(--gold); }
+
+    /* Comparison table */
+    .cmp-table-wrap { overflow-x:auto; background-color:var(--bg-1); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); }
+    .cmp-table { width:100%; border-collapse:collapse; min-width:560px; }
+    .cmp-table th { padding:14px 18px; text-align:left; font-family:var(--font-ui); font-size:10px; letter-spacing:0.20em; text-transform:uppercase; background:var(--bg-2); border-bottom:1px solid var(--border); border-right:1px solid var(--border); white-space:nowrap; color:var(--text-dim); }
+    .cmp-table th:last-child { border-right:none; }
+    .cmp-table th.col-variant { color:var(--charcoal); font-size:13px; font-family:var(--font-spec); letter-spacing:0.12em; font-weight:600; }
+    .cmp-table th.col-variant span { display:block; font-family:var(--font-ui); font-size:9px; letter-spacing:0.18em; color:var(--text-dim); margin-top:3px; font-weight:600; }
+    .cmp-table td { padding:11px 18px; border-bottom:1px solid var(--border); border-right:1px solid var(--border); vertical-align:top; }
+    .cmp-table td:last-child { border-right:none; }
+    .cmp-table tr:last-child td { border-bottom:none; }
+    .cmp-table td.col-prop { font-family:var(--font-spec); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-faint); min-width:170px; background:rgba(0,0,0,0.02); }
+    .cmp-table td.col-val  { font-family:var(--font-spec); font-size:13px; color:var(--charcoal-2); font-weight:500; }
+    .cmp-table td.col-highlight { background:rgba(184,138,60,0.04); }
+    .cmp-table .diff { color:var(--gold); }
+
+    /* Variant detail cards */
+    .variant-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+    @media(max-width:900px){ .variant-cards { grid-template-columns:1fr; } }
+    .variant-card { padding:36px 30px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); border-top:3px solid var(--border); }
+    .variant-card.is-c { border-top-color:var(--gold); }
+    .variant-card.is-d { border-top-color:var(--charcoal-2); }
+    .variant-card.is-p { border-top-color:var(--grey-mid); }
+    .vc-code { font-family:var(--font-spec); font-size:22px; color:var(--charcoal); font-weight:600; letter-spacing:0.10em; margin-bottom:4px; }
+    .vc-sub  { font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--text-dim); margin-bottom:20px; }
+    .vc-body { font-size:13.5px; color:var(--text-mid); line-height:1.72; margin-bottom:22px; }
+    .vc-specs { display:flex; flex-direction:column; gap:6px; margin-bottom:20px; padding:16px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .vc-spec { display:flex; gap:10px; }
+    .vc-spec-k { font-family:var(--font-spec); font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-faint); flex:none; min-width:110px; padding-top:2px; }
+    .vc-spec-v { font-family:var(--font-spec); font-size:12.5px; color:var(--charcoal-2); font-weight:500; }
+    .vc-feats { display:flex; flex-wrap:wrap; gap:5px; }
+    .vc-feat { font-size:9.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); background:rgba(0,0,0,0.04); border:1px solid var(--border); padding:3px 8px; }
+
+    /* Usage parameters */
+    .usage-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px; margin-top:32px; }
+    @media(max-width:700px){ .usage-grid { grid-template-columns:1fr; } }
+    .usage-box { padding:28px 24px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.5); text-align:center; }
+    .usage-val { font-family:var(--font-spec); font-size:28px; color:var(--gold); font-weight:600; line-height:1; margin-bottom:6px; }
+    .usage-label { font-family:var(--font-ui); font-size:10px; letter-spacing:0.20em; text-transform:uppercase; color:var(--text-dim); }
+
+    /* Key Benefits */
+    .pd-ben-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:32px; }
+    @media(max-width:860px){ .pd-ben-grid { grid-template-columns:1fr 1fr; } }
+    @media(max-width:480px){ .pd-ben-grid { grid-template-columns:1fr; } }
+    .pd-ben { padding:26px 22px; background-color:var(--bg-1); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.5); }
+    .pd-ben-mark { width:24px; height:2px; background:var(--gold); margin-bottom:14px; }
+    .pd-ben-text { font-size:13.5px; color:var(--text-mid); line-height:1.65; }
+
+    /* Packaging / Storage */
+    .pd-info-row { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:32px; }
+    @media(max-width:680px){ .pd-info-row { grid-template-columns:1fr; } }
+    .pd-info-box { padding:30px 26px; background-color:var(--bg-1); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.5); }
+    .pd-info-head { font-family:var(--font-ui); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--charcoal); font-weight:600; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+    .pd-info-head::before { content:''; width:22px; height:1px; background:var(--gold); flex:none; }
+    .pd-info-list { list-style:none; display:flex; flex-direction:column; gap:8px; }
+    .pd-info-list li { font-size:13px; color:var(--text-mid); display:flex; gap:9px; align-items:baseline; line-height:1.55; }
+    .pd-info-list li::before { content:'—'; color:var(--gold); font-size:10px; flex:none; }
+
+    /* Safety section */
+    .safety-section { background-color:var(--bg); border-top:1px solid rgba(180,50,50,0.20); }
+    .safety-inner { border:1px solid rgba(180,50,50,0.28); background:rgba(200,50,50,0.03); padding:48px 44px; }
+    @media(max-width:768px){ .safety-inner { padding:32px 24px; } }
+    .safety-top { display:grid; grid-template-columns:1fr auto; gap:32px; align-items:start; margin-bottom:32px; }
+    @media(max-width:700px){ .safety-top { grid-template-columns:1fr; } }
+    .safety-eyebrow { font-family:var(--font-ui); font-size:11px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#b03030; margin-bottom:12px; display:flex; align-items:center; gap:10px; }
+    .safety-h { font-family:var(--font-d); font-weight:700; font-size:clamp(18px,2.2vw,26px); color:#8b2020; letter-spacing:0.04em; line-height:1.1; margin-bottom:14px; }
+    .safety-lede { font-size:14px; color:var(--text-mid); line-height:1.75; }
+    .ghs-signal { display:inline-flex; align-items:center; gap:8px; border:2px solid rgba(180,50,50,0.40); background:rgba(180,50,50,0.08); padding:10px 18px; }
+    .ghs-signal-word { font-family:var(--font-ui); font-size:15px; font-weight:700; color:#b03030; letter-spacing:0.08em; }
+    .safety-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+    @media(max-width:680px){ .safety-grid { grid-template-columns:1fr; } }
+    .safety-box { padding:24px 22px; background:rgba(180,50,50,0.04); border:1px solid rgba(180,50,50,0.16); }
+    .safety-box-head { font-family:var(--font-ui); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#b03030; font-weight:700; margin-bottom:12px; }
+    .safety-list { list-style:none; display:flex; flex-direction:column; gap:7px; }
+    .safety-list li { font-size:13px; color:var(--text-mid); display:flex; gap:9px; align-items:baseline; line-height:1.55; }
+    .safety-list li::before { content:'▸'; color:#b03030; font-size:10px; flex:none; }
+    .safety-transport { margin-top:2px; padding:16px 22px; background:rgba(0,0,0,0.03); border:1px solid var(--border); font-size:13px; color:var(--text-mid); display:flex; gap:10px; align-items:center; }
+    .safety-transport::before { content:''; width:18px; height:1px; background:var(--gold); flex:none; }
+
+    /* Related */
+    .pd-rel-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:32px; }
+    @media(max-width:800px){ .pd-rel-grid { grid-template-columns:1fr 1fr; } }
+    @media(max-width:500px){ .pd-rel-grid { grid-template-columns:1fr; } }
+    .pd-rel { padding:28px 24px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.5); text-decoration:none; display:block; transition:border-color 0.22s,background-color 0.22s; position:relative; overflow:hidden; }
+    .pd-rel::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); transform:scaleX(0); transform-origin:left; transition:transform 0.32s cubic-bezier(0.34,1.56,0.64,1); }
+    .pd-rel:hover { border-color:var(--border-gold); background-color:var(--bg-2); }
+    .pd-rel:hover::after { transform:scaleX(1); }
+    .pd-rel-code { font-family:var(--font-spec); font-size:9px; color:var(--text-faint); letter-spacing:0.24em; text-transform:uppercase; margin-bottom:6px; }
+    .pd-rel-name { font-family:var(--font-d); font-weight:700; font-size:14px; color:var(--charcoal); letter-spacing:0.04em; margin-bottom:8px; }
+    .pd-rel-name em { font-style:normal; color:var(--gold); }
+    .pd-rel-desc { font-size:12px; color:var(--text-mid); line-height:1.62; margin-bottom:14px; }
+    .pd-rel-lnk { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); font-weight:600; display:inline-flex; align-items:center; gap:5px; }
+    .pd-img-wrap { margin-bottom:28px; border:1px solid var(--border); background:var(--bg-2); overflow:hidden; }
+    .pd-img-wrap img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; }
+  </style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true"><defs>
+  <linearGradient id="gSteel" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#f4f5f6"/><stop offset="0.32" stop-color="#d3d5d8"/><stop offset="0.6" stop-color="#a7abae"/><stop offset="0.82" stop-color="#888c90"/><stop offset="1" stop-color="#6c7074"/></linearGradient>
+</defs></svg>
+
+<site-navbar></site-navbar>
+
+<!-- PAGE BANNER -->
+<div class="page-banner">
+  <div class="swiper banner-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide banner-slide" style="background-image:url('https://images.unsplash.com/photo-1672571055011-8c74bf640894?w=1600&q=80')"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <div class="page-banner-inner container">
+    <div class="page-banner-eyebrow">Soil Conditioning · EPB Shield</div>
+    <h1 class="page-banner-h">IS Series <em>Foam Agents</em></h1>
+    <p class="page-banner-sub">IS-C, IS-D and IS-P — three TBM soil conditioning foam formulations for standard, dispersive and cohesive ground conditions.</p>
+  </div>
+</div>
+
+<!-- SECTION 1: OVERVIEW -->
+<section class="pd-s1 sp">
+  <div class="container">
+    <div class="pd-breadcrumb fade-up">
+      <a href="../index.html">Products</a>
+      <span class="pd-breadcrumb-sep">›</span>
+      <a href="index.html#soil-conditioning">Soil Conditioning</a>
+      <span class="pd-breadcrumb-sep">›</span>
+      <span class="pd-breadcrumb-cur">IS Series Foam Agents</span>
+    </div>
+    <div class="pd-overview">
+      <div class="fade-up">
+        <div class="pd-img-wrap"><img src="../assets/images/products/foam-agents.jpg" alt="IS Series Foam Agents IS-C IS-D IS-P" loading="lazy" /></div>
+        <div class="eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-label">TBM Soil Conditioning · EPB Shield</span></div>
+        <h2 class="section-h">IS Series <em>Foam Agents</em></h2>
+        <span class="pd-badge-s">IS-C · IS-D · IS-P</span>
+        <p class="pd-body">Three formulations of soil conditioning foam agent for EPB (Earth Pressure Balance) shield TBMs. Mixed and foamed through the machine's foaming device before injection into the cutterhead excavation chamber, where they condition the excavated soil to improve its flow characteristics through the screw conveyor and earth chamber.</p>
+        <p class="pd-body" style="margin-top:-12px">All IS Series variants create temporary cohesion in the excavated material, reduce water permeability at the face, provide an air cushion to compensate for abrupt pressure changes, and improve overall muck rheology. The three variants differ in solid content and active chemistry to suit different ground types — from standard sandy clay through dispersive soils to cohesive or mixed-face conditions.</p>
+      </div>
+      <div class="pd-qs fade-up" style="transition-delay:0.08s">
+        <div class="pd-qs-head">IS-C — At a Glance</div>
+        <div class="pd-qs-row"><span class="pd-qs-k">Appearance</span><span class="pd-qs-v">Colourless to pale yellow liquid</span></div>
+        <div class="pd-qs-row"><span class="pd-qs-k">Density</span><span class="pd-qs-v">1.01–1.03 g/cm³</span></div>
+        <div class="pd-qs-row"><span class="pd-qs-k">Solid Content</span><span class="pd-qs-v">13.5–15.1%</span></div>
+        <div class="pd-qs-row"><span class="pd-qs-k">pH</span><span class="pd-qs-v">7.0–9.0</span></div>
+        <div class="pd-qs-row"><span class="pd-qs-k">Mix Ratio</span><span class="pd-qs-v">1.5–5%</span></div>
+        <div class="pd-qs-row"><span class="pd-qs-k">Expansion</span><span class="pd-qs-v">8–25×</span></div>
+        <div class="pd-qs-row"><span class="pd-qs-k">Biodeg.</span><span class="pd-qs-v">&gt;80% in 28 days</span></div>
+      </div>
+    </div>
+
+    <!-- Usage parameters (IS-C reference) -->
+    <div class="usage-grid" style="margin-top:52px">
+      <div class="usage-box fade-up">
+        <div class="usage-val">1.5–5%</div>
+        <div class="usage-label">Mixture Ratio</div>
+      </div>
+      <div class="usage-box fade-up" style="transition-delay:0.06s">
+        <div class="usage-val">8–25×</div>
+        <div class="usage-label">Expansion Rate</div>
+      </div>
+      <div class="usage-box fade-up" style="transition-delay:0.12s">
+        <div class="usage-val">30–120%</div>
+        <div class="usage-label">Injection Rate</div>
+      </div>
+    </div>
+    <p style="font-size:11px;color:var(--text-dim);margin-top:10px;letter-spacing:0.08em">* Usage parameters shown for IS-C Standard. Consult our engineering team for IS-D / IS-P application parameters.</p>
+  </div>
+</section>
+
+<!-- SECTION 2: COMPARISON TABLE -->
+<section class="pd-s2 sp-sm">
+  <div class="container">
+    <div class="pd-sec-head fade-up">
+      <div class="eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-label">Variant Comparison</span></div>
+      <h3 class="pd-sec-h">IS-C vs IS-D vs <em>IS-P</em></h3>
+    </div>
+    <div class="cmp-table-wrap fade-up">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th class="col-variant">IS-C<span>Standard</span></th>
+            <th class="col-variant">IS-D<span>Dispersed</span></th>
+            <th class="col-variant">IS-P<span>Polymer</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-prop">Appearance</td>
+            <td class="col-val">Colourless to pale yellow transparent liquid</td>
+            <td class="col-val">Colourless to pale yellow transparent liquid</td>
+            <td class="col-val">Colourless to pale yellow transparent liquid</td>
+          </tr>
+          <tr>
+            <td class="col-prop">Density (g/cm³)</td>
+            <td class="col-val">1.01–1.03</td>
+            <td class="col-val">1.02–1.05</td>
+            <td class="col-val">1.01–1.03</td>
+          </tr>
+          <tr>
+            <td class="col-prop">Solid Content</td>
+            <td class="col-val">13.5–15.1%</td>
+            <td class="col-val col-highlight"><span class="diff">19.4–21.4%</span></td>
+            <td class="col-val">13.5–15.1%</td>
+          </tr>
+          <tr>
+            <td class="col-prop">pH</td>
+            <td class="col-val">7.0–9.0</td>
+            <td class="col-val">7.0–9.0</td>
+            <td class="col-val">7.0–9.0</td>
+          </tr>
+          <tr>
+            <td class="col-prop">Solubility</td>
+            <td class="col-val">Completely water soluble</td>
+            <td class="col-val">Completely water soluble</td>
+            <td class="col-val">Completely water soluble</td>
+          </tr>
+          <tr>
+            <td class="col-prop">Biodegradation (28 days)</td>
+            <td class="col-val">&gt;80%</td>
+            <td class="col-val">—</td>
+            <td class="col-val">—</td>
+          </tr>
+          <tr>
+            <td class="col-prop">Mix Ratio</td>
+            <td class="col-val">1.5–5%</td>
+            <td class="col-val">Contact us</td>
+            <td class="col-val">Contact us</td>
+          </tr>
+          <tr>
+            <td class="col-prop">Expansion Rate</td>
+            <td class="col-val">8–25×</td>
+            <td class="col-val">Contact us</td>
+            <td class="col-val">Contact us</td>
+          </tr>
+          <tr>
+            <td class="col-prop">Injection Rate</td>
+            <td class="col-val">30–120%</td>
+            <td class="col-val">Contact us</td>
+            <td class="col-val">Contact us</td>
+          </tr>
+          <tr>
+            <td class="col-prop">Packaging</td>
+            <td class="col-val">200 kg drum / 1,000 kg IBC</td>
+            <td class="col-val">1,000 kg IBC</td>
+            <td class="col-val">1,000 kg IBC</td>
+          </tr>
+          <tr>
+            <td class="col-prop">Ground Suitability</td>
+            <td class="col-val">Wet to sandy clay</td>
+            <td class="col-val col-highlight"><span class="diff">Dispersive soils</span></td>
+            <td class="col-val col-highlight"><span class="diff">Cohesive / mixed face</span></td>
+          </tr>
+          <tr>
+            <td class="col-prop">Key Enhancement</td>
+            <td class="col-val">Standard formulation</td>
+            <td class="col-val col-highlight"><span class="diff">Higher solid content</span></td>
+            <td class="col-val col-highlight"><span class="diff">Polymer-enhanced</span></td>
+          </tr>
+          <tr>
+            <td class="col-prop">GHS Hazard</td>
+            <td class="col-val" style="color:#b03030;font-size:12px">H302 · H315 · H318 — see safety section</td>
+            <td class="col-val">—</td>
+            <td class="col-val">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: INDIVIDUAL VARIANTS -->
+<section class="pd-s3 sp-sm">
+  <div class="container">
+    <div class="pd-sec-head fade-up">
+      <div class="eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-label">Variants</span></div>
+      <h3 class="pd-sec-h">Individual <em>Formulations</em></h3>
+    </div>
+    <div class="variant-cards">
+
+      <!-- IS-C -->
+      <div class="variant-card is-c fade-up" id="is-c">
+        <div class="vc-code">IS-C</div>
+        <div class="vc-sub">Standard Formulation</div>
+        <p class="vc-body">The standard soil conditioning foam for TBM use. Designed for wet to sandy clay soils, it creates temporary cohesion and reduces water permeability, providing an air cushion to compensate for face pressure changes. Suitable for the widest range of ground conditions.</p>
+        <div class="vc-specs">
+          <div class="vc-spec"><span class="vc-spec-k">Density</span><span class="vc-spec-v">1.01–1.03 g/cm³</span></div>
+          <div class="vc-spec"><span class="vc-spec-k">Solid Content</span><span class="vc-spec-v">13.5–15.1%</span></div>
+          <div class="vc-spec"><span class="vc-spec-k">pH</span><span class="vc-spec-v">7.0–9.0</span></div>
+          <div class="vc-spec"><span class="vc-spec-k">Mix Ratio</span><span class="vc-spec-v">1.5–5%</span></div>
+          <div class="vc-spec"><span class="vc-spec-k">Expansion</span><span class="vc-spec-v">8–25×</span></div>
+          <div class="vc-spec"><span class="vc-spec-k">Injection Rate</span><span class="vc-spec-v">30–120%</span></div>
+        </div>
+        <div class="vc-feats"><span class="vc-feat">Standard</span><span class="vc-feat">Biodegradable &gt;80%</span><span class="vc-feat">Wet to sandy clay</span><span class="vc-feat" style="color:#b03030;border-color:rgba(180,50,50,0.25);background:rgba(180,50,50,0.06)">GHS H302/H315/H318</span></div>
+      </div>
+
+      <!-- IS-D -->
+      <div class="variant-card is-d fade-up" style="transition-delay:0.08s" id="is-d">
+        <div class="vc-code">IS-D</div>
+        <div class="vc-sub">Dispersed — Higher Solids</div>
+        <p class="vc-body">A dispersed-type formulation with significantly higher solid content (19.4–21.4%) compared to IS-C. Engineered for dispersive soil conditions where a more concentrated active chemistry is required to achieve stable foam conditioning in high-permeability or granular ground.</p>
+        <div class="vc-specs">
+          <div class="vc-spec"><span class="vc-spec-k">Density</span><span class="vc-spec-v">1.02–1.05 g/cm³</span></div>
+          <div class="vc-spec"><span class="vc-spec-k">Solid Content</span><span class="vc-spec-v" style="color:var(--gold)">19.4–21.4%</span></div>
+          <div class="vc-spec"><span class="vc-spec-k">pH</span><span class="vc-spec-v">7.0–9.0</span></div>
+          <div class="vc-spec"><span class="vc-spec-k">Solubility</span><span class="vc-spec-v">Completely water soluble</span></div>
+          <div class="vc-spec"><span class="vc-spec-k">Packaging</span><span class="vc-spec-v">1,000 kg IBC</span></div>
+        </div>
+        <div class="vc-feats"><span class="vc-feat">Dispersive soils</span><span class="vc-feat">High solid content</span><span class="vc-feat">Water soluble</span></div>
+      </div>
+
+      <!-- IS-P -->
+      <div class="variant-card is-p fade-up" style="transition-delay:0.16s" id="is-p">
+        <div class="vc-code">IS-P</div>
+        <div class="vc-sub">Polymer-Enhanced</div>
+        <p class="vc-body">A polymer-enhanced formulation for cohesive or mixed-face ground conditions. The polymer additive system improves foam structure stability and soil integration performance, making it effective in sticky clays and mixed-face environments where standard foam may be less effective.</p>
+        <div class="vc-specs">
+          <div class="vc-spec"><span class="vc-spec-k">Density</span><span class="vc-spec-v">1.01–1.03 g/cm³</span></div>
+          <div class="vc-spec"><span class="vc-spec-k">Solid Content</span><span class="vc-spec-v">13.5–15.1%</span></div>
+          <div class="vc-spec"><span class="vc-spec-k">pH</span><span class="vc-spec-v">7.0–9.0</span></div>
+          <div class="vc-spec"><span class="vc-spec-k">Solubility</span><span class="vc-spec-v">Completely water soluble</span></div>
+          <div class="vc-spec"><span class="vc-spec-k">Packaging</span><span class="vc-spec-v">1,000 kg IBC</span></div>
+        </div>
+        <div class="vc-feats"><span class="vc-feat">Polymer-enhanced</span><span class="vc-feat">Cohesive / mixed face</span><span class="vc-feat">Water soluble</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: KEY BENEFITS -->
+<section class="pd-s4 sp-sm">
+  <div class="container">
+    <div class="pd-sec-head fade-up">
+      <div class="eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-label">Performance — All Variants</span></div>
+      <h3 class="pd-sec-h">Key <em>Benefits</em></h3>
+    </div>
+    <div class="pd-ben-grid">
+      <div class="pd-ben fade-up"><div class="pd-ben-mark"></div><div class="pd-ben-text"><strong>Reduces clay adhesion &amp; muck cake on cutterhead</strong> — foam injection prevents buildup of sticky material on disc cutters and scraper tools, reducing cleaning interventions and clogging risk.</div></div>
+      <div class="pd-ben fade-up" style="transition-delay:0.05s"><div class="pd-ben-mark"></div><div class="pd-ben-text"><strong>Improves soil rheology</strong> — conditioned muck flows more uniformly through the screw conveyor, reducing torque peaks and equipment wear during extraction.</div></div>
+      <div class="pd-ben fade-up" style="transition-delay:0.10s"><div class="pd-ben-mark"></div><div class="pd-ben-text"><strong>Reduces face permeability</strong> — air-entrained foam reduces the hydraulic conductivity of the excavated face, preventing groundwater inflow and improving face support stability.</div></div>
+      <div class="pd-ben fade-up" style="transition-delay:0.15s"><div class="pd-ben-mark"></div><div class="pd-ben-text"><strong>Prevents soil consolidation</strong> — temporary cohesion created by foam prevents granular soils from consolidating in the earth chamber, avoiding plug formation and drive interruptions.</div></div>
+      <div class="pd-ben fade-up" style="transition-delay:0.20s"><div class="pd-ben-mark"></div><div class="pd-ben-text"><strong>Improves face stability &amp; EPB pressure control</strong> — foam compressibility provides buffering against sudden pressure changes at the face, improving EPB pressure regulation during ring building.</div></div>
+      <div class="pd-ben fade-up" style="transition-delay:0.25s"><div class="pd-ben-mark"></div><div class="pd-ben-text"><strong>Non-toxic to environment (IS-D &amp; IS-P)</strong> — biodegradable active agents minimise environmental impact. IS-C is water soluble and biodegradable (&gt;80% in 28 days) — handle with appropriate PPE.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: PACKAGING & STORAGE -->
+<section class="pd-s5 sp-sm">
+  <div class="container">
+    <div class="pd-sec-head fade-up">
+      <div class="eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-label">Logistics</span></div>
+      <h3 class="pd-sec-h">Packaging &amp; <em>Storage</em></h3>
+    </div>
+    <div class="pd-info-row">
+      <div class="pd-info-box fade-up">
+        <div class="pd-info-head">Packaging Options</div>
+        <ul class="pd-info-list">
+          <li><strong>IS-C:</strong> 200 kg drum or 1,000 kg IBC</li>
+          <li><strong>IS-D:</strong> 1,000 kg IBC</li>
+          <li><strong>IS-P:</strong> 1,000 kg IBC</li>
+        </ul>
+      </div>
+      <div class="pd-info-box fade-up" style="transition-delay:0.08s">
+        <div class="pd-info-head">Storage Conditions</div>
+        <ul class="pd-info-list">
+          <li>Store at 5°C–35°C (IS-C) or ambient (IS-D / IS-P)</li>
+          <li>Keep dry, away from direct sunlight</li>
+          <li>12-month shelf life from manufacture date (IS-C)</li>
+          <li>Not regulated for transport (all variants)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: IS-C SAFETY WARNING -->
+<section class="safety-section sp-sm">
+  <div class="container">
+    <div class="eyebrow fade-up"><span class="eyebrow-line" style="background:rgba(180,50,50,0.45)"></span><span class="eyebrow-label" style="color:#b03030">IS-C Safety Information</span></div>
+    <div class="safety-inner fade-up" style="margin-top:24px">
+      <div class="safety-top">
+        <div>
+          <div class="safety-eyebrow">⚠ GHS Hazard Classification — IS-C Only</div>
+          <div class="safety-h">IS-C carries GHS hazard classifications.<br>Read before use.</div>
+          <p class="safety-lede">IS-C (Standard Foam Agent) is classified under the GHS system. IS-D and IS-P do not carry these classifications. All personnel handling IS-C must read the full Safety Data Sheet and wear appropriate personal protective equipment before use.</p>
+        </div>
+        <div class="ghs-signal"><span class="ghs-signal-word">DANGER</span></div>
+      </div>
+      <div class="safety-grid">
+        <div class="safety-box">
+          <div class="safety-box-head">Hazard Statements (IS-C)</div>
+          <ul class="safety-list">
+            <li><strong>H302</strong> — Harmful if swallowed</li>
+            <li><strong>H315</strong> — Causes skin irritation</li>
+            <li><strong>H318</strong> — Causes serious eye damage</li>
+          </ul>
+        </div>
+        <div class="safety-box">
+          <div class="safety-box-head">Required PPE — IS-C</div>
+          <ul class="safety-list">
+            <li>Safety goggles / face shield (eye protection)</li>
+            <li>Chemical-resistant gloves (hand protection)</li>
+            <li>Respiratory protection in enclosed spaces</li>
+            <li>Chemical-resistant protective clothing</li>
+          </ul>
+        </div>
+      </div>
+      <div class="safety-transport">Transport classification: IS-C is not regulated for transport under ADR, IATA, or IMDG — no hazmat shipping requirements apply.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: RELATED PRODUCTS -->
+<section class="pd-s7 sp-sm">
+  <div class="container">
+    <div class="pd-sec-head fade-up">
+      <div class="eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-label">Also Available</span></div>
+      <h3 class="pd-sec-h">Related <em>Products</em></h3>
+    </div>
+    <div class="pd-rel-grid">
+      <a href="main-bearing-sealant.html" class="pd-rel fade-up">
+        <div class="pd-rel-code">Model: PX2350</div>
+        <div class="pd-rel-name">Main Bearing <em>Sealant</em></div>
+        <p class="pd-rel-desc">Clay-thickened pump grease for TBM main bearing lip-seal systems. Biodegradable and self-extinguishing.</p>
+        <span class="pd-rel-lnk">View Details →</span>
+      </a>
+      <a href="tail-seal-grease.html" class="pd-rel fade-up" style="transition-delay:0.06s">
+        <div class="pd-rel-code">Model: TM-T100</div>
+        <div class="pd-rel-name">Tail Seal <em>Grease</em></div>
+        <p class="pd-rel-desc">Driving-grade tail sealant for shielded TBMs. Resists 35 bar water pressure, flame retardant and anti-washout.</p>
+        <span class="pd-rel-lnk">View Details →</span>
+      </a>
+      <a href="main-bearing-grease.html" class="pd-rel fade-up" style="transition-delay:0.12s">
+        <div class="pd-rel-code">Models: EP1 / EP2</div>
+        <div class="pd-rel-name">Main Bearing <em>Grease</em></div>
+        <p class="pd-rel-desc">Eco-friendly pump-distributed sealant for main bearing lip-seal systems. Biodegradable and non-toxic.</p>
+        <span class="pd-rel-lnk">View Details →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <div class="eyebrow fade-up" style="justify-content:center"><span class="eyebrow-line"></span><span class="eyebrow-label">Get in Touch</span></div>
+    <h2 class="cta-band-h fade-up">Request Technical Guidance on <em>Foam Selection</em></h2>
+    <p class="cta-band-body fade-up" style="transition-delay:0.1s">Our engineering team will recommend the optimal IS Series variant and usage parameters based on your ground investigation data and TBM specifications.</p>
+    <div class="cta-band-actions fade-up" style="transition-delay:0.2s">
+      <a href="../contact.html" class="btn-gold">Contact Us</a>
+      <a href="../index.html" class="btn-ghost">All Products</a>
+    </div>
+  </div>
+</section>
+
+<site-footer></site-footer>
+
+<script src="../components/navbar.js"></script>
+<script src="../components/footer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="../assets/js/centor.js"></script>
+</body></html>

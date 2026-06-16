@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-Hans">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +7,7 @@
   <link rel="alternate" hreflang="zh-Hans" href="https://staging.centorglobal.com/zh/about.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Outfit:wght@700&family=Barlow:wght@400;500;600&family=Montserrat:wght@600&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../centor.css" />
+  <link rel="stylesheet" href="../assets/css/centor.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
   <style>
     .who-we-are { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
@@ -51,7 +51,7 @@
 <div class="page-banner">
   <div class="swiper banner-swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide banner-slide" style="background-image:url('../photos/banner/about_banner/banner.jpg')"></div>
+      <div class="swiper-slide banner-slide" style="background-image:url('../assets/images/banners/about.jpg');background-position:center 75%"></div>
     </div>
     <div class="swiper-pagination"></div>
     <div class="swiper-button-prev"></div>
@@ -132,7 +132,7 @@
     <p class="cta-band-body fade-up" style="transition-delay:0.1s">与我们的工程团队探讨您的项目需求。我们为全球隧道承包商提供技术规格书、资质数据及现场技术支持。</p>
     <div class="cta-band-actions fade-up" style="transition-delay:0.2s">
       <a href="contact.html" class="btn-gold">联系我们</a>
-      <a href="products.html" class="btn-ghost">查看产品</a>
+      <a href="products/" class="btn-ghost">查看产品</a>
     </div>
   </div>
 </section>
@@ -140,10 +140,5 @@
 <site-footer></site-footer>
 <script src="../components/navbar.js"></script>
 <script src="../components/footer.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script>
-  var io=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target);}});},{rootMargin:'0px 0px -60px 0px',threshold:0.08});
-  document.querySelectorAll('.fade-up').forEach(function(el){io.observe(el);});
-</script>
-<script src="../centor.js"></script>
+<script src="../assets/js/centor.js"></script>
 </body></html>
