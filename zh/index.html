@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CENTOR — Underground System Solutions</title>
+  <title>承拓 CENTOR — 地下系统解决方案</title>
   <link rel="alternate" hreflang="en" href="https://staging.centorglobal.com/index.html" />
   <link rel="alternate" hreflang="zh-Hans" href="https://staging.centorglobal.com/zh/index.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Outfit:wght@700&family=Barlow:wght@400;500;600&family=Montserrat:wght@600&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="centor.css" />
+  <link rel="stylesheet" href="../centor.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
   <style>
-    /* ===== HERO ===== */
     .hero { position:relative; width:100%; height:100vh; max-height:950px; padding-top:var(--nav-h); display:flex; align-items:center; overflow:hidden; }
     .hero-swiper { position:absolute; inset:0; height:100%; }
     .hero-swiper .swiper-wrapper { height:100%; }
@@ -28,19 +27,15 @@
     .hero-content { max-width:580px; padding:48px 36px; background:rgba(255,255,255,0.25); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px); border-radius:6px; }
     .hero-eyebrow { display:flex; align-items:center; gap:12px; margin-bottom:32px; animation:bannerContentIn 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.25s both; }
     .hero-eyebrow-line { width:44px; height:1px; background:var(--gold); }
-    .hero-eyebrow-text { font-size:13px; letter-spacing:0.26em; text-transform:uppercase; color:var(--gold); font-weight:600; }
+    .hero-eyebrow-text { font-size:13px; letter-spacing:0.20em; text-transform:uppercase; color:var(--gold); font-weight:600; }
     .hero-heading { font-family:var(--font-d); font-weight:700; font-size:clamp(52px,8.5vw,108px); color:var(--gold); line-height:1.0; letter-spacing:0.06em; margin-bottom:10px; animation:bannerContentIn 0.95s cubic-bezier(0.25,0.46,0.45,0.94) 0.45s both; }
-    .hero-subtitle { font-family:var(--font-ui); font-size:clamp(11px,1.6vw,18px); font-weight:600; color:var(--charcoal); letter-spacing:0.24em; text-transform:uppercase; margin-bottom:28px; animation:bannerContentIn 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.6s both; }
+    .hero-subtitle { font-family:var(--font-ui); font-size:clamp(11px,1.6vw,18px); font-weight:600; color:var(--charcoal); letter-spacing:0.20em; text-transform:uppercase; margin-bottom:28px; animation:bannerContentIn 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.6s both; }
     .hero-description { font-size:16px; line-height:1.80; color:var(--charcoal); max-width:460px; margin-bottom:48px; animation:bannerContentIn 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.75s both; }
     .hero-buttons { display:flex; gap:14px; flex-wrap:wrap; animation:bannerContentIn 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.9s both; }
     .scroll-indicator { position:absolute; bottom:45px; left:50%; transform:translateX(-50%); z-index:3; display:flex; flex-direction:column; align-items:center; gap:8px; color:var(--clr-text-dim); font-size:9px; letter-spacing:3px; text-transform:uppercase; animation:scrollBob 2.2s ease-in-out infinite; }
     @keyframes scrollBob { 0%,100%{transform:translateX(-50%) translateY(0);} 50%{transform:translateX(-50%) translateY(8px);} }
     @media(max-width:768px){.scroll-indicator{display:none;}}
-
-    /* ===== STATS ===== */
     .stats-section { background-color:var(--bg-2); background-image:var(--metal-lines); border-top:1px solid rgba(0,0,0,0.10); }
-
-    /* ===== PRODUCTS ===== */
     .products-section { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
     .products-intro { margin-bottom:52px; }
     .products-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
@@ -51,19 +46,17 @@
     .product-card:hover::after { transform:scaleX(1); }
     .product-card.gold { border-top:3px solid var(--gold); }
     .product-card.silver { border-top:3px solid var(--charcoal-2); }
-    .product-badge { display:inline-block; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; padding:4px 12px; border:1px solid; margin-bottom:24px; font-weight:600; }
+    .product-badge { display:inline-block; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; padding:4px 12px; border:1px solid; margin-bottom:24px; font-weight:600; }
     .product-badge.gold { color:var(--gold); border-color:var(--gold-border); background:var(--gold-dim); }
     .product-badge.silver { color:var(--charcoal-2); border-color:rgba(0,0,0,0.15); background:rgba(0,0,0,0.05); }
     .product-name { font-family:var(--font-d); font-weight:700; font-size:26px; color:var(--charcoal); letter-spacing:0.06em; margin-bottom:10px; }
     .product-name em { font-style:normal; color:var(--gold); }
-    .product-tagline { font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:22px; }
+    .product-tagline { font-size:12px; letter-spacing:0.10em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:22px; }
     .product-description { font-size:14.5px; color:var(--text-mid); line-height:1.75; margin-bottom:32px; }
     .product-features { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:36px; }
-    .product-feature { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); background:rgba(0,0,0,0.05); border:1px solid var(--border); padding:4px 11px; }
-    .product-link { font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:gap 0.2s ease; font-weight:600; }
+    .product-feature { font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); background:rgba(0,0,0,0.05); border:1px solid var(--border); padding:4px 11px; }
+    .product-link { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:gap 0.2s ease; font-weight:600; }
     .product-link:hover { gap:13px; }
-
-    /* ===== SERVICES ===== */
     .services-section { background-color:var(--bg); background-image:var(--metal-lines); border-top:1px solid var(--border); }
     .services-header { margin-bottom:52px; }
     .services-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
@@ -75,23 +68,19 @@
     .service-title { font-family:var(--font-d); font-weight:700; font-size:14px; color:var(--charcoal); letter-spacing:0.05em; margin-bottom:12px; line-height:1.35; }
     .service-description { font-size:13px; color:var(--text-dim); line-height:1.65; }
     .services-footer { margin-top:44px; }
-
-    /* ===== ABOUT ===== */
     .about-section { background-color:var(--bg-2); background-image:var(--metal-lines); border-top:1px solid var(--border); }
     .about-inner { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
     @media(max-width:860px){.about-inner{grid-template-columns:1fr;gap:44px;}}
     .about-description { font-size:15px; line-height:1.82; color:var(--text-mid); margin:20px 0 36px; }
-
-    /* ===== REFERENCES ===== */
     .references-section { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
     .reference-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:48px; }
     @media(max-width:800px){.reference-cards{grid-template-columns:1fr;}}
     .reference-card { padding:36px 30px; background-color:var(--bg); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); transition:border-color 0.22s ease; }
     .reference-card:hover { border-color:var(--border-gold); }
-    .reference-tag { font-size:10px; letter-spacing:0.20em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:14px; }
+    .reference-tag { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:14px; }
     .reference-city { font-family:var(--font-d); font-weight:700; font-size:22px; color:var(--charcoal); letter-spacing:0.04em; margin-bottom:6px; }
     .reference-project { font-size:13.5px; color:var(--text-mid); margin-bottom:18px; }
-    .reference-type { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); padding:4px 10px; background:rgba(0,0,0,0.05); border:1px solid var(--border); display:inline-block; }
+    .reference-type { font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); padding:4px 10px; background:rgba(0,0,0,0.05); border:1px solid var(--border); display:inline-block; }
     .references-footer { margin-top:44px; }
   </style>
 </head>
@@ -108,29 +97,35 @@
 <section class="hero">
   <div class="swiper hero-swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide hero-slide" style="background-image:url('photos/home_page_banner/banner-1.jpg')"></div>
-      <div class="swiper-slide hero-slide" style="background-image:url('photos/home_page_banner/banner-2.jpg')"></div>
-      <div class="swiper-slide hero-slide" style="background-image:url('photos/home_page_banner/banner-3.jpg')"></div>
-      <div class="swiper-slide hero-slide" style="background-image:url('photos/home_page_banner/banner-4.jpg')"></div>
+      <div class="swiper-slide hero-slide" style="background-image:url('../photos/home_page_banner/banner-1.jpg')"></div>
+      <div class="swiper-slide hero-slide" style="background-image:url('../photos/home_page_banner/banner-2.jpg')"></div>
+      <div class="swiper-slide hero-slide" style="background-image:url('../photos/home_page_banner/banner-3.jpg')"></div>
+      <div class="swiper-slide hero-slide" style="background-image:url('../photos/home_page_banner/banner-4.jpg')"></div>
     </div>
     <div class="swiper-pagination"></div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
   </div>
-  <img class="hero-ring" src="brand_assets/centor-C-ring-transparent.PNG" alt="" aria-hidden="true" />
+  <svg class="hero-ring" viewBox="0 0 90 102" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M78.283 83.706 A44 44 0 0 1 44.79 93.69 L46.744 77.307 A27.5 27.5 0 0 0 67.677 71.066 Z" fill="url(#gSteel)"/>
+    <path d="M39.878 92.82  A44 44 0 0 1 11.857 71.933 L26.16 63.708 A27.5 27.5 0 0 0 43.674 76.762 Z" fill="url(#gSteel)"/>
+    <path d="M9.619 67.475   A44 44 0 0 1 9.619 32.525  L24.762 39.078 A27.5 27.5 0 0 0 24.762 60.922 Z" fill="url(#gGrey)"/>
+    <path d="M11.857 28.067  A44 44 0 0 1 39.878 7.18   L43.674 23.238 A27.5 27.5 0 0 0 26.16 36.292 Z"  fill="url(#gGrey)"/>
+    <path d="M44.79 6.31     A44 44 0 0 1 78.283 16.294 L67.677 28.934 A27.5 27.5 0 0 0 46.744 22.693 Z" fill="url(#gSteel)"/>
+  </svg>
   <div class="hero-inner container">
     <div class="hero-content">
-      <div class="hero-eyebrow"><span class="hero-eyebrow-line"></span><span class="hero-eyebrow-text">Lubrication &amp; Conditioning for TBM</span></div>
+      <div class="hero-eyebrow"><span class="hero-eyebrow-line"></span><span class="hero-eyebrow-text">TBM 润滑与调节</span></div>
       <h1 class="hero-heading">CENTOR</h1>
-      <p class="hero-subtitle">Underground &nbsp;·&nbsp; Solutions</p>
-      <p class="hero-description">Engineering-grade lubrication and conditioning products built for Tunnel Boring Machines and underground infrastructure. Trusted by leading contractors across global metro, highway, and utility projects.</p>
+      <p class="hero-subtitle">地下 &nbsp;·&nbsp; 解决方案</p>
+      <p class="hero-description">专为隧道掘进机（TBM）及地下基础设施设计的工程级润滑与调节产品。获全球地铁、公路及市政隧道工程领先承包商广泛信赖。</p>
       <div class="hero-buttons">
-        <a href="products.html" class="btn-gold">Explore Products</a>
-        <a href="contact.html" class="btn-ghost">Request a Quote</a>
+        <a href="products.html" class="btn-gold">探索产品</a>
+        <a href="contact.html" class="btn-ghost">申请报价</a>
       </div>
     </div>
   </div>
-  <div class="scroll-indicator" aria-hidden="true"><span>Scroll</span></div>
+  <div class="scroll-indicator" aria-hidden="true"><span>滚动</span></div>
 </section>
 
 <!-- ABOUT STRIP -->
@@ -138,24 +133,16 @@
   <div class="container">
     <div class="about-inner">
       <div class="fade-up">
-        <div class="eyebrow"><span class="eyebrow-num">01</span><span class="eyebrow-line"></span><span class="eyebrow-label">About CENTOR</span></div>
-        <h2 class="section-h">Building Trust Beneath the <em>Surface</em></h2>
-        <p class="about-description">CENTOR is a Singapore-based underground construction materials and technical solutions platform dedicated to supporting tunnelling and underground infrastructure projects worldwide.</p>
-        <p class="about-description">Founded by industry professionals with extensive experience in TBM operations, underground construction, and international project delivery, CENTOR was established with a clear mission: to bridge the gap between manufacturing capability and real-world engineering performance.</p>
-        <p class="about-description">We combine high-performance construction materials with technical expertise, project databases, international standards, and local support capabilities to deliver practical solutions for complex underground environments.</p>
-        <a href="about.html" class="btn-ghost">Read Our Story →</a>
+        <div class="eyebrow"><span class="eyebrow-num">01</span><span class="eyebrow-line"></span><span class="eyebrow-label">关于 CENTOR</span></div>
+        <h2 class="section-h">为地下工程创造更可靠的<em>解决方案</em></h2>
+        <p class="about-description">CENTOR（承拓）是一家立足新加坡、服务全球的地下工程材料与技术解决方案平台，专注于为隧道、地铁、地下空间开发及各类地下基础设施项目提供专业产品与技术服务。</p>
+        <p class="about-description">CENTOR 由长期深耕地下工程行业的专业团队创立。我们深知，地下工程的成功不仅依赖优质材料，更依赖标准化的质量体系、丰富的项目经验、可靠的技术支持以及持续稳定的服务能力。</p>
+        <p class="about-description">我们将高性能地下工程材料、国际标准化管理体系、项目数据库、技术知识库以及本地化技术服务相结合，为客户提供覆盖项目全生命周期的综合解决方案。</p>
+        <a href="about.html" class="btn-ghost">了解我们 →</a>
       </div>
-      <!-- <div class="fade-up" style="transition-delay:0.12s">
-        <div class="stat-band" style="grid-template-columns:1fr 1fr;">
-          <div class="stat-box"><div class="stat-box-val">12+</div><div class="stat-box-label">Years in Operation</div></div>
-          <div class="stat-box"><div class="stat-box-val">500+</div><div class="stat-box-label">Projects Supported</div></div>
-          <div class="stat-box"><div class="stat-box-val">30+</div><div class="stat-box-label">Countries Served</div></div>
-          <div class="stat-box"><div class="stat-box-val">2</div><div class="stat-box-label">Product Lines</div></div>
-        </div>
-      </div> -->
       <div class="fade-up" style="transition-delay:0.12s">
         <div style="border:1px solid var(--border);overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,0.55);">
-          <img src="photos/banner/about_banner/banner.jpg" alt="CENTOR underground engineering" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;" />
+          <img src="../photos/banner/about_banner/banner.jpg" alt="CENTOR underground engineering" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;" />
         </div>
       </div>
     </div>
@@ -166,26 +153,26 @@
 <section class="products-section sp">
   <div class="container">
     <div class="products-intro fade-up">
-      <div class="eyebrow"><span class="eyebrow-num">02</span><span class="eyebrow-line"></span><span class="eyebrow-label">Product Lines</span></div>
-      <h2 class="section-h">Engineered for the <em>Underground</em></h2>
-      <p class="section-lede" style="max-width:520px">Two complementary lines covering every project requirement — from ultra-demanding deep-sea metro TBMs to standard utility tunnel drives.</p>
+      <div class="eyebrow"><span class="eyebrow-num">02</span><span class="eyebrow-line"></span><span class="eyebrow-label">产品系列</span></div>
+      <h2 class="section-h">专为<em>地下工程</em>而生</h2>
+      <p class="section-lede" style="max-width:520px">两大互补产品系列，覆盖所有项目需求——从超高要求的深海地铁 TBM，到标准市政隧道掘进作业。</p>
     </div>
     <div class="products-grid">
       <div class="product-card gold fade-up">
-        <div class="product-badge gold">TBM Sealing Materials</div>
-        <div class="product-name">Sealing <em>Systems</em></div>
-        <div class="product-tagline">4 Products — Pump-type &amp; Hand-applied</div>
-        <p class="product-description">Engineered sealants for main bearing lip-seal systems and tail brush assemblies. Covering the full range of shield TBM configurations — from centralised pump-distributed main bearing grease to manually applied first-fill tail sealants.</p>
-        <div class="product-features"><span class="product-feature">Main Bearing</span><span class="product-feature">Tail Seal</span><span class="product-feature">Biodegradable</span><span class="product-feature">High Pressure</span><span class="product-feature">Flame Retardant</span></div>
-        <a href="products.html#sealing-materials" class="product-link">View Sealing Products →</a>
+        <div class="product-badge gold">TBM 密封材料</div>
+        <div class="product-name">密封<em>系统</em></div>
+        <div class="product-tagline">4 款产品 — 泵送型与手涂型</div>
+        <p class="product-description">专为 TBM 主轴承唇形密封系统及盾尾密封刷组件设计的工程密封脂，涵盖盾构 TBM 全系列配置——从集中泵送式主轴承润滑脂到手动涂抹的初填盾尾密封剂。</p>
+        <div class="product-features"><span class="product-feature">主轴承</span><span class="product-feature">盾尾密封</span><span class="product-feature">可生物降解</span><span class="product-feature">高压</span><span class="product-feature">阻燃</span></div>
+        <a href="products.html#sealing-materials" class="product-link">查看密封产品 →</a>
       </div>
       <div class="product-card silver fade-up" style="transition-delay:0.08s">
-        <div class="product-badge silver">Soil Conditioning</div>
-        <div class="product-name">Foam <em>Agents</em></div>
+        <div class="product-badge silver">渣土改良</div>
+        <div class="product-name">泡沫<em>剂</em></div>
         <div class="product-tagline">IS-C · IS-D · IS-P</div>
-        <p class="product-description">EPB-grade soil conditioning foam agents that reduce cutterhead torque, control face permeability, and improve muck flow through the screw conveyor. Three variants for standard, dispersive, and cohesive ground conditions.</p>
-        <div class="product-features"><span class="product-feature">Biodegradable</span><span class="product-feature">Water Soluble</span><span class="product-feature">EPB Compatible</span><span class="product-feature">Face Pressure Control</span></div>
-        <a href="products.html#soil-conditioning" class="product-link">View Foam Agents →</a>
+        <p class="product-description">土压平衡盾构专用渣土改良泡沫剂，可降低刀盘扭矩、控制掌子面渗透性，并改善螺旋输送机出渣流动性。针对标准、分散及黏性地质条件提供三种配方。</p>
+        <div class="product-features"><span class="product-feature">可生物降解</span><span class="product-feature">水溶性</span><span class="product-feature">适用于 EPB</span><span class="product-feature">面压控制</span></div>
+        <a href="products.html#soil-conditioning" class="product-link">查看泡沫剂 →</a>
       </div>
     </div>
   </div>
@@ -195,17 +182,17 @@
 <section class="services-section sp">
   <div class="container">
     <div class="services-header fade-up">
-      <div class="eyebrow"><span class="eyebrow-num">03</span><span class="eyebrow-line"></span><span class="eyebrow-label">Our Services</span></div>
-      <h2 class="section-h">End-to-End <em>Underground Solutions</em></h2>
-      <p class="section-lede" style="max-width:520px">From product supply to on-site technical support, CENTOR partners with contractors at every stage of the project lifecycle.</p>
+      <div class="eyebrow"><span class="eyebrow-num">03</span><span class="eyebrow-line"></span><span class="eyebrow-label">我们的服务</span></div>
+      <h2 class="section-h">全方位<em>地下工程解决方案</em></h2>
+      <p class="section-lede" style="max-width:520px">从产品供应到现场技术支持，承拓在项目全生命周期的每个阶段与承包商紧密合作。</p>
     </div>
     <div class="services-grid">
-      <div class="service-card fade-up"><div class="service-number">01</div><div class="service-title">TBM Lubrication</div><div class="service-description">Comprehensive lubrication system design and product selection tailored to your TBM type and ground conditions.</div></div>
-      <div class="service-card fade-up" style="transition-delay:0.06s"><div class="service-number">02</div><div class="service-title">Engineering Expertise</div><div class="service-description">CENTOR engineers deployed on-site during commissioning, launch, and critical ground transition zones.</div></div>
-      <div class="service-card fade-up" style="transition-delay:0.12s"><div class="service-number">03</div><div class="service-title">Global Supply</div><div class="service-description">On-time product delivery to project sites worldwide. We manage customs, logistics, and compliance.</div></div>
-      <div class="service-card fade-up" style="transition-delay:0.18s"><div class="service-number">04</div><div class="service-title">Built for Underground</div><div class="service-description">Every product and service engineered specifically for TBM and underground construction environments.</div></div>
+      <div class="service-card fade-up"><div class="service-number">01</div><div class="service-title">TBM 润滑</div><div class="service-description">根据您的 TBM 类型及地质条件，提供量身定制的润滑系统设计与产品选型方案。</div></div>
+      <div class="service-card fade-up" style="transition-delay:0.06s"><div class="service-number">02</div><div class="service-title">工程专业能力</div><div class="service-description">承拓工程师在 TBM 调试、始发及关键地层过渡段全程驻场，提供专业技术支持。</div></div>
+      <div class="service-card fade-up" style="transition-delay:0.12s"><div class="service-number">03</div><div class="service-title">全球供应</div><div class="service-description">准时向全球各项目工地供货，统筹管理海关、物流及合规事宜。</div></div>
+      <div class="service-card fade-up" style="transition-delay:0.18s"><div class="service-number">04</div><div class="service-title">专为地下工程设计</div><div class="service-description">每款产品与服务均专为 TBM 及地下工程施工环境量身打造。</div></div>
     </div>
-    <div class="services-footer fade-up"><a href="services.html" class="btn-ghost">View All Services →</a></div>
+    <div class="services-footer fade-up"><a href="services.html" class="btn-ghost">查看全部服务 →</a></div>
   </div>
 </section>
 
@@ -213,35 +200,36 @@
 <section class="references-section sp">
   <div class="container">
     <div class="fade-up">
-      <div class="eyebrow"><span class="eyebrow-num">04</span><span class="eyebrow-line"></span><span class="eyebrow-label">Project References</span></div>
-      <h2 class="section-h">Trusted on Projects <em>Worldwide</em></h2>
+      <div class="eyebrow"><span class="eyebrow-num">04</span><span class="eyebrow-line"></span><span class="eyebrow-label">项目参考</span></div>
+      <h2 class="section-h">全球项目<em>信赖之选</em></h2>
+      <p class="section-lede" style="max-width:480px">逾 500 个地铁、公路、铁路及市政隧道项目遍布四大洲。</p>
     </div>
     <div class="reference-cards">
-      <div class="reference-card fade-up"><div class="reference-tag">Asia-Pacific</div><div class="reference-city">Singapore</div><p class="reference-project">Thomson-East Coast Line</p><span class="reference-type">Metro · Shield Tunnelling</span></div>
-      <div class="reference-card fade-up" style="transition-delay:0.08s"><div class="reference-tag">Asia-Pacific</div><div class="reference-city">Hong Kong</div><p class="reference-project">MTR Tuen Ma Line Extension</p><span class="reference-type">Metro · EPB TBM</span></div>
-      <div class="reference-card fade-up" style="transition-delay:0.16s"><div class="reference-tag">Middle East</div><div class="reference-city">Dubai</div><p class="reference-project">Dubai Metro Blue Line</p><span class="reference-type">Metro · Slurry TBM</span></div>
+      <div class="reference-card fade-up"><div class="reference-tag">亚太地区</div><div class="reference-city">新加坡</div><p class="reference-project">滨海汤东线</p><span class="reference-type">地铁 · 盾构施工</span></div>
+      <div class="reference-card fade-up" style="transition-delay:0.08s"><div class="reference-tag">亚太地区</div><div class="reference-city">香港</div><p class="reference-project">港铁屯马线延线</p><span class="reference-type">地铁 · EPB TBM</span></div>
+      <div class="reference-card fade-up" style="transition-delay:0.16s"><div class="reference-tag">中东</div><div class="reference-city">迪拜</div><p class="reference-project">迪拜地铁蓝线</p><span class="reference-type">地铁 · 泥水平衡 TBM</span></div>
     </div>
-    <div class="references-footer fade-up"><a href="references.html" class="btn-ghost">View All References →</a></div>
+    <div class="references-footer fade-up"><a href="references.html" class="btn-ghost">查看全部参考项目 →</a></div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-band">
   <div class="cta-band-inner">
-    <div class="eyebrow fade-up" style="justify-content:center"><span class="eyebrow-num">05</span><span class="eyebrow-line"></span><span class="eyebrow-label">Get in Touch</span></div>
-    <h2 class="cta-band-h fade-up">Ready to Optimise Your <em>TBM Performance?</em></h2>
-    <p class="cta-band-body fade-up" style="transition-delay:0.1s">Contact our engineering team for a no-obligation technical consultation. We provide specifications, qualification data, and on-site support for tunnelling contractors worldwide.</p>
+    <div class="eyebrow fade-up" style="justify-content:center"><span class="eyebrow-num">05</span><span class="eyebrow-line"></span><span class="eyebrow-label">联系我们</span></div>
+    <h2 class="cta-band-h fade-up">准备提升您的 <em>TBM 性能？</em></h2>
+    <p class="cta-band-body fade-up" style="transition-delay:0.1s">请联系我们的工程团队，获取免费技术咨询。我们为全球隧道承包商提供技术规格书、资质数据及现场技术支持。</p>
     <div class="cta-band-actions fade-up" style="transition-delay:0.2s">
-      <a href="contact.html" class="btn-gold">Contact Us</a>
-      <a href="products.html" class="btn-ghost">View Products</a>
+      <a href="contact.html" class="btn-gold">联系我们</a>
+      <a href="products.html" class="btn-ghost">查看产品</a>
     </div>
   </div>
 </section>
 
 <site-footer></site-footer>
 
-<script src="components/navbar.js"></script>
-<script src="components/footer.js"></script>
+<script src="../components/navbar.js"></script>
+<script src="../components/footer.js"></script>
 <script>
   var heroContent=document.querySelector('.hero-content');
   window.addEventListener('scroll',function(){
@@ -272,6 +260,6 @@
   });
 })();
 </script>
-<script src="centor.js"></script>
+<script src="../centor.js"></script>
 </body>
 </html>

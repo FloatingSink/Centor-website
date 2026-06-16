@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>服务 — 承拓 CENTOR 地下系统解决方案</title>
+  <link rel="alternate" hreflang="en" href="https://staging.centorglobal.com/services.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://staging.centorglobal.com/zh/services.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Outfit:wght@700&family=Barlow:wght@400;500;600&family=Montserrat:wght@600&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../centor.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <style>
+    .partnership { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .partner-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+    @media(max-width:860px){.partner-grid{grid-template-columns:1fr;gap:48px;}}
+    .partner-body p { font-size:15px; line-height:1.82; color:var(--text-mid); margin-bottom:18px; }
+    .partner-body p:last-child { margin-bottom:0; }
+    .core-services { background-color:var(--bg); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .svc-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+    @media(max-width:700px){.svc-grid{grid-template-columns:1fr;}}
+    .sc { padding:40px 34px; background-color:var(--bg-1); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); transition:border-color 0.22s ease,background-color 0.22s ease; }
+    .sc:hover { border-color:var(--border-gold); background-color:var(--bg-2); background-image:var(--metal-sheen),var(--metal-lines-strong); }
+    .sc-num { font-family:var(--font-ui); font-weight:600; font-size:10px; color:var(--gold); letter-spacing:0.18em; margin-bottom:18px; opacity:0.7; }
+    .sc-title { font-family:var(--font-d); font-weight:700; font-size:15px; color:var(--charcoal); letter-spacing:0.05em; margin-bottom:14px; }
+    .sc-desc { font-size:14px; color:var(--text-mid); line-height:1.72; margin-bottom:24px; }
+    .sc-list { display:flex; flex-direction:column; gap:9px; }
+    .sc-item { display:flex; align-items:flex-start; gap:10px; font-size:13.5px; color:var(--text-dim); line-height:1.45; }
+    .sc-item::before { content:'—'; color:var(--gold); flex:none; font-size:12px; margin-top:2px; }
+    .process { background-color:var(--bg-2); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; margin-top:48px; }
+    @media(max-width:900px){.steps{grid-template-columns:1fr 1fr;}}
+    @media(max-width:480px){.steps{grid-template-columns:1fr;}}
+    .step { padding:40px 28px; background-color:var(--bg-1); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); position:relative; overflow:hidden; }
+    .step::before { content:attr(data-n); position:absolute; top:14px; right:16px; font-family:var(--font-ui); font-size:52px; color:var(--charcoal); opacity:0.05; line-height:1; }
+    .step-num { font-family:var(--font-ui); font-weight:600; font-size:10px; color:var(--gold); letter-spacing:0.20em; margin-bottom:18px; }
+    .step-name { font-family:var(--font-d); font-weight:700; font-size:15px; color:var(--charcoal); letter-spacing:0.04em; margin-bottom:12px; }
+    .step-desc { font-size:13px; color:var(--text-dim); line-height:1.65; }
+  </style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true"><defs>
+  <linearGradient id="gSteel" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#f4f5f6"/><stop offset="0.32" stop-color="#d3d5d8"/><stop offset="0.6" stop-color="#a7abae"/><stop offset="0.82" stop-color="#888c90"/><stop offset="1" stop-color="#6c7074"/></linearGradient>
+  <linearGradient id="gGrey" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#74787c"/><stop offset="0.4" stop-color="#4f5256"/><stop offset="0.75" stop-color="#3a3d40"/><stop offset="1" stop-color="#2a2c2f"/></linearGradient>
+</defs></svg>
+
+<site-navbar></site-navbar>
+
+<div class="page-banner">
+  <div class="swiper banner-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide banner-slide" style="background-image:url('https://images.unsplash.com/photo-1558382689-c1c29cc9b37e?w=1600&q=80')"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <div class="page-banner-inner container">
+    <div class="page-banner-eyebrow">我们的服务</div>
+    <h1 class="page-banner-h">从合同前期到掘进后分析<br><em>全程技术支持</em></h1>
+    <p class="page-banner-sub">我们在每个项目阶段均配备工程技术专长——从润滑审计、TBM 调试，到实时监测与竣工后性能分析，全周期陪伴。</p>
+  </div>
+</div>
+
+<!-- MORE THAN PRODUCTS -->
+<section class="partnership sp" id="overview">
+  <div class="container">
+    <div class="partner-grid">
+      <div class="fade-up">
+        <div class="eyebrow"><span class="eyebrow-num">01</span><span class="eyebrow-line"></span><span class="eyebrow-label">不止于产品</span></div>
+        <h2 class="section-h">全程<em>技术合作伙伴</em></h2>
+        <div class="partner-body" style="margin-top:22px">
+          <p>承拓不仅是产品供应商。从合同前期润滑审计、TBM 调试支持，到掘进过程中的实时监测与竣工后性能分析，我们在项目每个阶段均深度嵌入技术专长。</p>
+          <p>我们的工程师曾参与全球多个极具挑战性的地下工程项目，并将这些宝贵经验带入每一次客户合作，无论项目规模大小。</p>
+        </div>
+        <a href="contact.html" class="btn-gold" style="margin-top:34px">讨论您的项目</a>
+      </div>
+      <div class="fade-up" style="transition-delay:0.12s">
+        <div style="border:1px solid var(--border);overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,0.55);">
+          <img src="../photos/banner/services_banner/banner.jpg" alt="CENTOR underground engineering" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE SERVICES -->
+<section class="core-services sp" id="what-we-deliver">
+  <div class="container">
+    <div class="fade-up" style="margin-bottom:48px">
+      <div class="eyebrow"><span class="eyebrow-num">02</span><span class="eyebrow-line"></span><span class="eyebrow-label">核心服务</span></div>
+      <h2 class="section-h">我们能<em>提供什么</em></h2>
+      <p class="section-lede" style="max-width:520px">六大专项服务，覆盖项目全生命周期——从产品规格制定到掘进后分析报告。</p>
+    </div>
+    <div class="svc-grid">
+      <div class="sc fade-up">
+        <div class="sc-num">服务 01</div>
+        <div class="sc-title">润滑工程</div>
+        <p class="sc-desc">根据 TBM 类型、地质条件及项目风险特征，提供量身定制的润滑系统设计与产品选型方案。</p>
+        <div class="sc-list">
+          <div class="sc-item">TBM 润滑审计与差距分析</div>
+          <div class="sc-item">产品规格制定与用量估算</div>
+          <div class="sc-item">与现有系统的兼容性评估</div>
+          <div class="sc-item">润滑计划及换脂周期优化</div>
+        </div>
+      </div>
+      <div class="sc fade-up" style="transition-delay:0.06s">
+        <div class="sc-num">服务 02</div>
+        <div class="sc-title">现场技术支持</div>
+        <p class="sc-desc">承拓工程师在关键阶段驻场——TBM 调试、始发及地层过渡段。</p>
+        <div class="sc-list">
+          <div class="sc-item">TBM 调试支持与始发保障</div>
+          <div class="sc-item">润滑实时监测与动态调整</div>
+          <div class="sc-item">操作人员培训与资料整理</div>
+          <div class="sc-item">故障排查与根因分析</div>
+        </div>
+      </div>
+      <div class="sc fade-up" style="transition-delay:0.12s">
+        <div class="sc-num">服务 03</div>
+        <div class="sc-title">全球供应链</div>
+        <p class="sc-desc">可靠、准时地将产品交付至全球各项目工地。我们统筹管理清关、物流及当地法规合规事宜，让您专注于主业。</p>
+        <div class="sc-list">
+          <div class="sc-item">基于项目的供应计划与预测</div>
+          <div class="sc-item">国际货运与清关管理</div>
+          <div class="sc-item">当地法规合规文件</div>
+          <div class="sc-item">紧急供应与加急能力</div>
+        </div>
+      </div>
+      <div class="sc fade-up" style="transition-delay:0.18s">
+        <div class="sc-num">服务 04</div>
+        <div class="sc-title">技术文件</div>
+        <p class="sc-desc">提供完整的产品技术数据表、安全数据表及项目专属润滑手册，支持所有所需语言版本。</p>
+        <div class="sc-list">
+          <div class="sc-item">多语言产品 TDS / SDS</div>
+          <div class="sc-item">项目专属润滑手册</div>
+          <div class="sc-item">合规证书与检测报告</div>
+          <div class="sc-item">竣工后性能分析报告</div>
+        </div>
+      </div>
+      <div class="sc fade-up" style="transition-delay:0.24s">
+        <div class="sc-num">服务 05</div>
+        <div class="sc-title">性能监测</div>
+        <p class="sc-desc">持续分析 TBM 运营数据，识别润滑相关性能趋势，在问题造成停机前主动介入处置。</p>
+        <div class="sc-list">
+          <div class="sc-item">掘进数据分析与趋势研判</div>
+          <div class="sc-item">润滑脂耗量监控</div>
+          <div class="sc-item">轴承温度与振动审查</div>
+          <div class="sc-item">干预建议报告</div>
+        </div>
+      </div>
+      <div class="sc fade-up" style="transition-delay:0.30s">
+        <div class="sc-num">服务 06</div>
+        <div class="sc-title">培训与认证</div>
+        <p class="sc-desc">面向 TBM 操作员、维保工程师及项目经理的结构化培训课程，涵盖地下工程润滑最佳实践。</p>
+        <div class="sc-list">
+          <div class="sc-item">TBM 润滑基础培训</div>
+          <div class="sc-item">承拓产品应用工作坊</div>
+          <div class="sc-item">现场操作员认证</div>
+          <div class="sc-item">在线学习模块（可选）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process sp" id="process">
+  <div class="container">
+    <div class="fade-up">
+      <div class="eyebrow"><span class="eyebrow-num">03</span><span class="eyebrow-line"></span><span class="eyebrow-label">我们的工作方式</span></div>
+      <h2 class="section-h">我们的<em>合作流程</em></h2>
+      <p class="section-lede" style="max-width:480px">经过验证的四阶段合作模式，从初步咨询到项目竣工及性能评估。</p>
+    </div>
+    <div class="steps">
+      <div class="step fade-up" data-n="01"><div class="step-num">阶段 01</div><div class="step-name">需求咨询</div><p class="step-desc">项目初步沟通——TBM 规格、地质条件、施工计划及重点关注事项。</p></div>
+      <div class="step fade-up" style="transition-delay:0.08s" data-n="02"><div class="step-num">阶段 02</div><div class="step-name">方案制定</div><p class="step-desc">根据项目时间节点，完成产品选型、用量估算及交货计划定制。</p></div>
+      <div class="step fade-up" style="transition-delay:0.16s" data-n="03"><div class="step-num">阶段 03</div><div class="step-name">产品交付</div><p class="step-desc">按时将产品交付至项目工地，附带完整技术文件及技术交底。</p></div>
+      <div class="step fade-up" style="transition-delay:0.24s" data-n="04"><div class="step-num">阶段 04</div><div class="step-name">持续支持</div><p class="step-desc">项目掘进全程提供持续监测、现场服务及 24/7 技术支持。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <h2 class="cta-band-h fade-up">欢迎洽谈<em>您的项目</em></h2>
+    <p class="cta-band-body fade-up" style="transition-delay:0.1s">无论您正处于规划阶段还是已经在施工现场，承拓都能为您提供专业支持。立即联系我们，享受无义务技术咨询。</p>
+    <div class="cta-band-actions fade-up" style="transition-delay:0.2s">
+      <a href="contact.html" class="btn-gold">立即联系</a>
+      <a href="products.html" class="btn-ghost">查看产品</a>
+    </div>
+  </div>
+</section>
+
+<site-footer></site-footer>
+<script src="../components/navbar.js"></script>
+<script src="../components/footer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="../centor.js"></script>
+</body></html>

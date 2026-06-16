@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us — CENTOR Underground System Solutions</title>
+  <title>关于我们 — 承拓 CENTOR 地下系统解决方案</title>
   <link rel="alternate" hreflang="en" href="https://staging.centorglobal.com/about.html" />
   <link rel="alternate" hreflang="zh-Hans" href="https://staging.centorglobal.com/zh/about.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Outfit:wght@700&family=Barlow:wght@400;500;600&family=Montserrat:wght@600&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="centor.css" />
+  <link rel="stylesheet" href="../centor.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
   <style>
     .who-we-are { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
     .two-col { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
@@ -18,7 +19,6 @@
     .kf-item { padding:24px 22px; background-color:var(--bg-2); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.5); }
     .kf-label { font-family:var(--font-ui); font-weight:600; font-size:10.5px; color:var(--gold); letter-spacing:0.16em; text-transform:uppercase; margin-bottom:6px; }
     .kf-val { font-size:14px; color:var(--charcoal-2); line-height:1.5; }
-
     .mv-section { background-color:var(--bg); background-image:var(--metal-lines); border-top:1px solid var(--border); }
     .mv-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:48px; }
     @media(max-width:700px){.mv-grid{grid-template-columns:1fr;}}
@@ -26,7 +26,6 @@
     .mv-label { font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:18px; }
     .mv-heading { font-family:var(--font-d); font-weight:700; font-size:clamp(15px,2vw,24px); color:var(--charcoal); letter-spacing:0.04em; line-height:1.25; margin-bottom:16px; }
     .mv-body { font-size:14px; color:var(--text-mid); line-height:1.75; }
-
     .values-section { background-color:var(--bg-2); background-image:var(--metal-lines); border-top:1px solid var(--border); }
     .values-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:2px; margin-top:48px; }
     @media(max-width:1100px){.values-grid{grid-template-columns:repeat(3,1fr);}}
@@ -50,33 +49,39 @@
 
 <!-- PAGE BANNER -->
 <div class="page-banner">
-  <div class="banner-static banner-slide" style="background-image:url('photos/banner/about_banner/banner.jpg')"></div>
+  <div class="swiper banner-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide banner-slide" style="background-image:url('../photos/banner/about_banner/banner.jpg')"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
   <div class="page-banner-inner container">
-    <div class="page-banner-eyebrow">About CENTOR</div>
-    <h1 class="page-banner-h">Built by tunnelling specialists.<br><em>Engineered for the underground.</em></h1>
-    <p class="page-banner-sub"></p>
+    <div class="page-banner-eyebrow">关于承拓</div>
+    <h1 class="page-banner-h">由隧道专家创立。<br><em>专为地下工程而生。</em></h1>
+    <p class="page-banner-sub">超过 12 年的地下工程专业经验，产品已应用于 30 余个国家的 500 余个项目。</p>
   </div>
 </div>
-
 
 <!-- WHO WE ARE -->
 <section class="who-we-are sp" id="who-we-are">
   <div class="container">
     <div class="two-col">
       <div class="fade-up">
-        <div class="eyebrow"><span class="eyebrow-num">01</span><span class="eyebrow-line"></span><span class="eyebrow-label">Who We Are</span></div>
-        <h2 class="section-h">Precision Chemistry for the <em>World Beneath</em></h2>
+        <div class="eyebrow"><span class="eyebrow-num">01</span><span class="eyebrow-line"></span><span class="eyebrow-label">公司介绍</span></div>
+        <h2 class="section-h">精密化学，深耕<em>地下世界</em></h2>
         <div class="body-text" style="margin-top:24px">
-          <p>CENTOR was founded to address a critical gap in the underground construction industry: underground machinery was being lubricated with generic, surface-grade products that were never designed for the extreme pressures, temperatures, and contamination environments found beneath the ground.</p>
-          <p>Our founders brought together decades of combined underground project experience — from EPB metro drives in Asia to hard-rock TBMs in Europe — to develop purpose-built formulations that address the real challenges of tunnelling operations.</p>
-          <p>Today, CENTOR operates globally from our Singapore headquarters, supplying specialist products to contractors on some of the world's most challenging underground projects.</p>
+          <p>承拓（CENTOR）的创立，源于对地下施工行业核心痛点的深刻洞察：地下机械长期使用地面级通用润滑产品，而这些产品从未针对地下环境中极端压力、高温及污染条件进行专项设计。</p>
+          <p>我们的创始团队汇聚了数十年地下工程项目实战经验——从亚洲的土压平衡地铁盾构，到欧洲的硬岩掘进机施工——开发出真正解决隧道掘进作业现实挑战的专用配方产品。</p>
+          <p>如今，承拓总部设于新加坡，向全球最具挑战性的地下工程项目的承包商供应专业产品。</p>
         </div>
-        <a href="contact.html" class="btn-gold" style="margin-top:36px">Contact Us</a>
+        <a href="contact.html" class="btn-gold" style="margin-top:36px">联系我们</a>
       </div>
       <div class="key-facts fade-up" style="transition-delay:0.12s">
-        <div class="kf-item"><div class="kf-label">Founded</div><div class="kf-val">Established by tunnelling engineers with 20+ years combined underground project experience</div></div>
-<div class="kf-item"><div class="kf-label">Product Range</div><div class="kf-val">Premium and standard formulations — covering every project requirement</div></div>
-        <div class="kf-item"><div class="kf-label">Technical Support</div><div class="kf-val">In-house engineering team provides on-site and remote support throughout every drive</div></div>
+        <div class="kf-item"><div class="kf-label">创立背景</div><div class="kf-val">由拥有 20 余年地下工程项目经验的隧道工程师创立</div></div>
+<div class="kf-item"><div class="kf-label">产品系列</div><div class="kf-val">高端与标准配方——覆盖所有项目需求</div></div>
+        <div class="kf-item"><div class="kf-label">技术支持</div><div class="kf-val">内部工程团队在每个施工阶段提供现场及远程技术支持</div></div>
       </div>
     </div>
   </div>
@@ -86,17 +91,17 @@
 <section class="mv-section sp" id="mission-vision">
   <div class="container">
     <div class="fade-up">
-      <div class="eyebrow"><span class="eyebrow-num">02</span><span class="eyebrow-line"></span><span class="eyebrow-label">Direction</span></div>
-      <h2 class="section-h">Our Mission &amp; <em>Vision</em></h2>
+      <div class="eyebrow"><span class="eyebrow-num">02</span><span class="eyebrow-line"></span><span class="eyebrow-label">战略方向</span></div>
+      <h2 class="section-h">使命与<em>愿景</em></h2>
     </div>
     <div class="mv-grid">
       <div class="mv-card fade-up">
-        <div class="mv-label">Our Mission</div>
-        <div class="mv-heading">To solve underground construction challenges through quality, innovation, and technical excellence.</div>
+        <div class="mv-label">我们的使命</div>
+        <div class="mv-heading">以品质、创新与专业技术解决地下工程挑战。</div>
       </div>
       <div class="mv-card fade-up" style="transition-delay:0.1s">
-        <div class="mv-label">Our Vision</div>
-        <div class="mv-heading">To become the world's most trusted underground construction materials and technical solutions platform.</div>
+        <div class="mv-label">我们的愿景</div>
+        <div class="mv-heading">成为全球最值得信赖的地下工程材料与技术解决方案平台。</div>
       </div>
     </div>
   </div>
@@ -106,16 +111,16 @@
 <section class="values-section sp" id="values">
   <div class="container">
     <div class="fade-up">
-      <div class="eyebrow"><span class="eyebrow-num">03</span><span class="eyebrow-line"></span><span class="eyebrow-label">Core Values</span></div>
-      <h2 class="section-h">What We <em>Stand For</em></h2>
-      <p class="section-lede" style="max-width:480px">Five principles that guide every product we develop and every project we support.</p>
+      <div class="eyebrow"><span class="eyebrow-num">03</span><span class="eyebrow-line"></span><span class="eyebrow-label">核心价值观</span></div>
+      <h2 class="section-h">我们的<em>核心理念</em></h2>
+      <p class="section-lede" style="max-width:480px">五项核心价值观，指引我们研发每一款产品、支持每一个项目。</p>
     </div>
     <div class="values-grid">
-      <div class="val-card fade-up"><div class="val-num">01</div><div class="val-name">Quality First</div><div class="val-desc">We never compromise on quality and consistency.</div></div>
-      <div class="val-card fade-up" style="transition-delay:0.07s"><div class="val-num">02</div><div class="val-name">Customer Success</div><div class="val-desc">We measure our success by the success of our clients.</div></div>
-      <div class="val-card fade-up" style="transition-delay:0.14s"><div class="val-num">03</div><div class="val-name">Technical Excellence</div><div class="val-desc">Engineering expertise drives every solution we deliver.</div></div>
-      <div class="val-card fade-up" style="transition-delay:0.21s"><div class="val-num">04</div><div class="val-name">Trust &amp; Integrity</div><div class="val-desc">Long-term partnerships are built on trust.</div></div>
-      <div class="val-card fade-up" style="transition-delay:0.28s"><div class="val-num">05</div><div class="val-name">Continuous Innovation</div><div class="val-desc">We continuously improve products, services, and knowledge.</div></div>
+      <div class="val-card fade-up"><div class="val-num">01</div><div class="val-name">品质至上</div><div class="val-desc">我们始终坚持品质与稳定性。</div></div>
+      <div class="val-card fade-up" style="transition-delay:0.07s"><div class="val-num">02</div><div class="val-name">客户成功</div><div class="val-desc">客户的成功，就是我们的成功。</div></div>
+      <div class="val-card fade-up" style="transition-delay:0.14s"><div class="val-num">03</div><div class="val-name">专业技术</div><div class="val-desc">以专业技术驱动每一个解决方案。</div></div>
+      <div class="val-card fade-up" style="transition-delay:0.21s"><div class="val-num">04</div><div class="val-name">诚信与信任</div><div class="val-desc">长期合作始于信任。</div></div>
+      <div class="val-card fade-up" style="transition-delay:0.28s"><div class="val-num">05</div><div class="val-name">持续创新</div><div class="val-desc">持续优化产品、服务与技术体系。</div></div>
     </div>
   </div>
 </section>
@@ -123,21 +128,22 @@
 <!-- CTA -->
 <section class="cta-band">
   <div class="cta-band-inner">
-    <h2 class="cta-band-h fade-up">Work With CENTOR on Your <em>Next Project</em></h2>
-    <p class="cta-band-body fade-up" style="transition-delay:0.1s">Talk to our engineering team about your project requirements. We provide technical specifications, qualification data, and on-site support for tunnelling contractors worldwide.</p>
+    <h2 class="cta-band-h fade-up">携手承拓共建<em>下一个项目</em></h2>
+    <p class="cta-band-body fade-up" style="transition-delay:0.1s">与我们的工程团队探讨您的项目需求。我们为全球隧道承包商提供技术规格书、资质数据及现场技术支持。</p>
     <div class="cta-band-actions fade-up" style="transition-delay:0.2s">
-      <a href="contact.html" class="btn-gold">Contact Us</a>
-      <a href="products.html" class="btn-ghost">View Products</a>
+      <a href="contact.html" class="btn-gold">联系我们</a>
+      <a href="products.html" class="btn-ghost">查看产品</a>
     </div>
   </div>
 </section>
 
 <site-footer></site-footer>
-
-<script src="components/navbar.js"></script>
-<script src="components/footer.js"></script>
+<script src="../components/navbar.js"></script>
+<script src="../components/footer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script>
   var io=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target);}});},{rootMargin:'0px 0px -60px 0px',threshold:0.08});
   document.querySelectorAll('.fade-up').forEach(function(el){io.observe(el);});
 </script>
+<script src="../centor.js"></script>
 </body></html>

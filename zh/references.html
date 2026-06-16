@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>项目参考 — 承拓 CENTOR 地下系统解决方案</title>
+  <link rel="alternate" hreflang="en" href="https://staging.centorglobal.com/references.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://staging.centorglobal.com/zh/references.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Outfit:wght@700&family=Barlow:wght@400;500;600&family=Montserrat:wght@600&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../centor.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <style>
+    .featured { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .feat-card { padding:52px 48px; background-color:var(--bg); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 2px 12px rgba(0,0,0,0.07); border-left:4px solid var(--gold); }
+    @media(max-width:768px){.feat-card{padding:36px 28px;}}
+    .feat-tag { font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:18px; }
+    .feat-h { font-family:var(--font-d); font-weight:700; font-size:clamp(16px,2.4vw,28px); color:var(--charcoal); letter-spacing:0.04em; margin-bottom:20px; line-height:1.22; }
+    .feat-body { font-size:15px; color:var(--text-mid); line-height:1.78; margin-bottom:36px; max-width:700px; }
+    .feat-metrics { display:flex; gap:44px; flex-wrap:wrap; }
+    .feat-m { display:flex; flex-direction:column; gap:5px; }
+    .feat-m-val { font-family:var(--font-spec); font-weight:600; font-size:26px; color:var(--gold); }
+    .feat-m-label { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); }
+    .feat-products { margin-top:28px; padding-top:22px; border-top:1px solid var(--border); font-size:12.5px; color:var(--text-dim); }
+    .feat-products strong { color:var(--charcoal-2); }
+    .portfolio { background-color:var(--bg); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .rg { margin-bottom:48px; }
+    .rg:last-child { margin-bottom:0; }
+    .rg-label { font-family:var(--font-ui); font-weight:600; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--charcoal-2); padding-bottom:12px; border-bottom:1px solid var(--border); margin-bottom:12px; }
+    .proj-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+    @media(max-width:900px){.proj-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:500px){.proj-grid{grid-template-columns:1fr;}}
+    .pj { padding:28px 24px; background-color:var(--bg-1); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); transition:border-color 0.22s ease; }
+    .pj:hover { border-color:var(--border-gold); }
+    .pj-country { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:8px; }
+    .pj-name { font-family:var(--font-d); font-weight:700; font-size:13px; color:var(--charcoal); letter-spacing:0.04em; margin-bottom:6px; line-height:1.35; }
+    .pj-meta { font-size:12px; color:var(--text-dim); margin-bottom:12px; }
+    .pj-desc { font-size:12.5px; color:var(--text-mid); line-height:1.62; margin-bottom:12px; }
+    .pj-type { font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); padding:3px 9px; background:rgba(0,0,0,0.05); border:1px solid var(--border); display:inline-block; }
+    .testimonials { background-color:var(--bg-2); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .tg { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:48px; }
+    @media(max-width:900px){.tg{grid-template-columns:1fr;}}
+    .tc { padding:40px 34px; background-color:var(--bg-1); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); }
+    .tc-q { font-size:40px; color:var(--gold); line-height:1; margin-bottom:16px; font-family:Georgia,serif; }
+    .tc-text { font-size:14px; color:var(--text-mid); line-height:1.80; margin-bottom:24px; font-style:italic; }
+    .tc-attr strong { color:var(--charcoal-2); display:block; font-size:12.5px; margin-bottom:3px; font-style:normal; }
+    .tc-attr { font-size:12px; color:var(--text-dim); }
+  </style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true"><defs>
+  <linearGradient id="gSteel" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#f4f5f6"/><stop offset="0.32" stop-color="#d3d5d8"/><stop offset="0.6" stop-color="#a7abae"/><stop offset="0.82" stop-color="#888c90"/><stop offset="1" stop-color="#6c7074"/></linearGradient>
+  <linearGradient id="gGrey" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#74787c"/><stop offset="0.4" stop-color="#4f5256"/><stop offset="0.75" stop-color="#3a3d40"/><stop offset="1" stop-color="#2a2c2f"/></linearGradient>
+</defs></svg>
+
+<site-navbar></site-navbar>
+
+<div class="page-banner">
+  <div class="swiper banner-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide banner-slide" style="background-image:url('https://images.unsplash.com/photo-1672571055011-8c74bf640894?w=1600&q=80')"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <div class="page-banner-inner container">
+    <div class="page-banner-eyebrow">项目参考</div>
+    <h1 class="page-banner-h">经过全球最严苛地下工程<br><em>验证的实力</em></h1>
+    <p class="page-banner-sub">承拓已支持全球四大洲 500 余个地铁、公路、铁路及市政隧道项目。</p>
+  </div>
+</div>
+
+<!-- FEATURED PROJECT -->
+<section class="featured sp" id="featured-project">
+  <div class="container">
+    <div class="fade-up" style="margin-bottom:40px">
+      <div class="eyebrow"><span class="eyebrow-num">01</span><span class="eyebrow-line"></span><span class="eyebrow-label">重点参考项目</span></div>
+      <h2 class="section-h">承拓指定产品 — <em>英国</em></h2>
+    </div>
+    <div class="feat-card fade-up">
+      <div class="feat-tag">地铁线路延伸 · 英国大伦敦地区 · EPB TBM × 8 台，直径 Ø 7.1 m</div>
+      <div class="feat-h">8 台混合地层 EPB TBM 全线指定使用承拓主轴承润滑脂与盾尾密封脂，穿越伦敦黏土及阶地砾石地层</div>
+      <p class="feat-body">承拓主轴承润滑脂与盾尾密封脂被指定用于 8 台穿越伦敦黏土及阶地砾石层的混合地层 EPB TBM。项目创下每周 92 米的最高掘进纪录，历时 42 个月，零润滑相关停机。</p>
+      <div class="feat-metrics">
+        <div class="feat-m"><div class="feat-m-val">92 m/周</div><div class="feat-m-label">最高掘进纪录</div></div>
+        <div class="feat-m"><div class="feat-m-val">0</div><div class="feat-m-label">润滑相关停机</div></div>
+        <div class="feat-m"><div class="feat-m-val">42 km</div><div class="feat-m-label">累计掘进里程</div></div>
+        <div class="feat-m"><div class="feat-m-val">42 个月</div><div class="feat-m-label">掘进周期</div></div>
+      </div>
+      <div class="feat-products"><strong>指定产品：</strong>CTG-MB-GL01 主轴承润滑脂 · CTS-ST-GL02 盾尾密封脂</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT PORTFOLIO -->
+<section class="portfolio sp" id="portfolio">
+  <div class="container">
+    <div class="fade-up" style="margin-bottom:48px">
+      <div class="eyebrow"><span class="eyebrow-num">02</span><span class="eyebrow-line"></span><span class="eyebrow-label">项目档案</span></div>
+      <h2 class="section-h">12 个<em>全球参考项目</em></h2>
+    </div>
+    <div class="rg fade-up">
+      <div class="rg-label">亚太地区</div>
+      <div class="proj-grid">
+        <div class="pj"><div class="pj-country">新加坡</div><div class="pj-name">南北走廊隧道</div><p class="pj-meta">EPB TBM — Ø 11.6 m · 2021–2024</p><p class="pj-desc">高密度城区双线大直径 EPB 掘进。承拓渣土改良剂与主轴承润滑脂获指定，累计掘进里程 12.4 km。</p><span class="pj-type">公路 · EPB TBM</span></div>
+        <div class="pj"><div class="pj-country">澳大利亚</div><div class="pj-name">墨尔本地铁隧道项目</div><p class="pj-meta">EPB TBM — Ø 7.85 m · 2019–2023</p><p class="pj-desc">4 台 EPB TBM 全线配套承拓产品，穿越墨尔本玄武岩、砂岩及粉砂岩混合地层。</p><span class="pj-type">地铁 · EPB TBM</span></div>
+        <div class="pj"><div class="pj-country">台湾</div><div class="pj-name">台北环状线二期</div><p class="pj-meta">EPB TBM — Ø 6.1 m · 2017–2021</p><p class="pj-desc">6 台 TBM 同步掘进，全线采用承拓产品。技术支持团队全程驻场，确保掘进持续顺利推进。</p><span class="pj-type">地铁 · EPB TBM</span></div>
+        <div class="pj"><div class="pj-country">香港</div><div class="pj-name">屯门—赤鱲角连接路</div><p class="pj-meta">泥水加压 TBM — Ø 14.0 m · 2015–2020</p><p class="pj-desc">亚洲有史以来最大直径水下隧道 TBM 之一。承拓提供完整润滑配套及现场工程支持。</p><span class="pj-type">公路 · 泥水 TBM</span></div>
+      </div>
+    </div>
+    <div class="rg fade-up" style="transition-delay:0.1s">
+      <div class="rg-label">中东地区</div>
+      <div class="proj-grid">
+        <div class="pj"><div class="pj-country">沙特阿拉伯</div><div class="pj-name">利雅得地铁 3 号线</div><p class="pj-meta">泥水加压 TBM — Ø 6.8 m · 2019–2022</p><p class="pj-desc">高研磨性砂岩地层泥水 TBM 掘进。承拓切削刀具润滑脂使刀具磨耗较前期项目基准降低约 18%。</p><span class="pj-type">地铁 · 泥水 TBM</span></div>
+        <div class="pj"><div class="pj-country">阿联酋</div><div class="pj-name">迪拜地铁 2020 路线延伸</div><p class="pj-meta">EPB TBM — Ø 6.5 m · 2018–2020</p><p class="pj-desc">4 台 EPB TBM 在靠近世博 2020 场馆的盐碱土及松散砂层中掘进，指定使用盾尾密封脂与主轴承润滑脂。</p><span class="pj-type">地铁 · EPB TBM</span></div>
+        <div class="pj"><div class="pj-country">卡塔尔</div><div class="pj-name">多哈地铁项目</div><p class="pj-meta">EPB TBM — Ø 6.6 m · 16 台 · 2013–2018</p><p class="pj-desc">16 台 TBM 同步运营。承拓以单一供应协议为整个机群统筹管理集中散装供应与技术文件。</p><span class="pj-type">地铁 · EPB TBM</span></div>
+      </div>
+    </div>
+    <div class="rg fade-up" style="transition-delay:0.2s">
+      <div class="rg-label">欧洲</div>
+      <div class="proj-grid">
+        <div class="pj"><div class="pj-country">法国 / 意大利</div><div class="pj-name">里昂—都灵基础隧道</div><p class="pj-meta">硬岩 TBM — Ø 10.4 m · 2020–2026</p><p class="pj-desc">4 台硬岩 TBM 在埋深逾 2,000 m 的阿尔卑斯花岗岩中掘进，采用承拓液压油及轴承润滑脂。</p><span class="pj-type">铁路 · 硬岩 TBM</span></div>
+        <div class="pj"><div class="pj-country">丹麦</div><div class="pj-name">哥本哈根地铁环线</div><p class="pj-meta">EPB TBM — Ø 5.5 m · 2012–2018</p><p class="pj-desc">双线地铁环线工程。承拓可生物降解渣土改良泡沫获哥本哈根市政当局批准，符合地下水保护环保要求。</p><span class="pj-type">地铁 · EPB TBM</span></div>
+        <div class="pj"><div class="pj-country">法国</div><div class="pj-name">大巴黎快线 15、16 号线</div><p class="pj-meta">EPB TBM — Ø 9.0 m · 11 段 · 2019–2027</p><p class="pj-desc">欧洲最大规模城市轨道基础设施计划，11 段 TBM 掘进全程采用承拓产品，并提供完整技术文件与 MSDS 支持。</p><span class="pj-type">地铁 · EPB TBM</span></div>
+      </div>
+    </div>
+    <div class="rg fade-up" style="transition-delay:0.3s">
+      <div class="rg-label">美洲</div>
+      <div class="proj-grid">
+        <div class="pj"><div class="pj-country">美国</div><div class="pj-name">洛杉矶紫线延伸段</div><p class="pj-meta">EPB TBM — Ø 7.4 m · 2019–2025</p><p class="pj-desc">第 2、3 标段。承拓主轴承润滑脂与抗磨液压油用于 Wilshire 大道地下段掘进。</p><span class="pj-type">地铁 · EPB TBM</span></div>
+        <div class="pj"><div class="pj-country">加拿大</div><div class="pj-name">多伦多 Eglinton 轻轨</div><p class="pj-meta">EPB TBM — Ø 6.7 m · 2014–2022</p><p class="pj-desc">双线隧道穿越多伦多市中心及前寒武纪花岗岩，指定使用承拓盾尾密封脂及管片脱模剂。</p><span class="pj-type">轻轨 · EPB TBM</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials sp" id="testimonials">
+  <div class="container">
+    <div class="fade-up">
+      <div class="eyebrow"><span class="eyebrow-num">03</span><span class="eyebrow-line"></span><span class="eyebrow-label">客户评价</span></div>
+      <h2 class="section-h">客户<em>怎么说</em></h2>
+    </div>
+    <div class="tg">
+      <div class="tc fade-up"><div class="tc-q">"</div><p class="tc-text">承拓主轴承润滑脂在新加坡南北走廊项目中的使用寿命显著优于我们过去的指定产品。其驻场工程师在复杂混合地层段的现场支持更是不可或缺。</p><div class="tc-attr"><strong>项目总监</strong>大型 TBM 承包商，新加坡（2024年）</div></div>
+      <div class="tc fade-up" style="transition-delay:0.1s"><div class="tc-q">"</div><p class="tc-text">我们为多哈地铁整个机群指定了承拓产品。其出色的物流统筹和稳定一致的产品品质，让同时管理 16 台 TBM 远比预期顺畅。</p><div class="tc-attr"><strong>首席隧道工程师</strong>联合体承包商，多哈（2018年）</div></div>
+      <div class="tc fade-up" style="transition-delay:0.2s"><div class="tc-q">"</div><p class="tc-text">可生物降解渣土改良泡沫对我们在哥本哈根获取环境许可至关重要。承拓提供的合规文件支持，让与市政当局的审批流程高效而顺畅。</p><div class="tc-attr"><strong>环保合规经理</strong>地铁承包商，哥本哈根（2017年）</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <h2 class="cta-band-h fade-up">将您的项目纳入<em>我们的参考案例</em></h2>
+    <p class="cta-band-body fade-up" style="transition-delay:0.1s">欢迎联系我们，探讨如何将承拓产品与工程服务纳入您的下一个地下工程项目。</p>
+    <div class="cta-band-actions fade-up" style="transition-delay:0.2s"><a href="contact.html" class="btn-gold">立即联系</a><a href="products.html" class="btn-ghost">查看产品</a></div>
+  </div>
+</section>
+
+<site-footer></site-footer>
+<script src="../components/navbar.js"></script>
+<script src="../components/footer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="../centor.js"></script>
+</body></html>
