@@ -102,12 +102,11 @@
     .references-section { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
     .reference-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:48px; }
     @media(max-width:800px){.reference-cards{grid-template-columns:1fr;}}
-    .reference-card { padding:36px 30px; background-color:var(--bg); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); transition:border-color 0.22s ease; }
-    .reference-card:hover { border-color:var(--border-gold); }
-    .reference-tag { font-size:10px; letter-spacing:0.20em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:14px; }
-    .reference-city { font-family:var(--font-d); font-weight:700; font-size:22px; color:var(--charcoal); letter-spacing:0.04em; margin-bottom:6px; }
-    .reference-project { font-size:13.5px; color:var(--text-mid); margin-bottom:18px; }
-    .reference-type { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); padding:4px 10px; background:rgba(0,0,0,0.05); border:1px solid var(--border); display:inline-block; }
+    .reference-card { padding:48px 36px; background-color:var(--bg); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); border-top:2px solid var(--border-gold); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); transition:border-color 0.22s ease, box-shadow 0.22s ease; }
+    .reference-card:hover { border-color:var(--border-gold); border-top-color:var(--gold); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55), 0 6px 28px rgba(184,138,60,0.09); }
+    .reference-tag { font-size:10px; letter-spacing:0.20em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:20px; }
+    .reference-city { font-family:var(--font-d); font-weight:700; font-size:30px; color:var(--charcoal); letter-spacing:0.04em; margin-bottom:6px; }
+    .reference-country { font-size:11px; letter-spacing:0.10em; text-transform:uppercase; color:var(--text-dim); }
     .references-footer { margin-top:44px; }
   </style>
   <script type="application/ld+json">
@@ -260,9 +259,9 @@
       <h2 class="section-h">Trusted on Projects <em>Worldwide</em></h2>
     </div>
     <div class="reference-cards">
-      <div class="reference-card fade-up"><div class="reference-tag">Asia-Pacific</div><div class="reference-city">Singapore</div><p class="reference-project">Thomson-East Coast Line</p><span class="reference-type">Metro · Shield Tunnelling</span></div>
-      <div class="reference-card fade-up" style="transition-delay:0.08s"><div class="reference-tag">Asia-Pacific</div><div class="reference-city">Hong Kong</div><p class="reference-project">MTR Tuen Ma Line Extension</p><span class="reference-type">Metro · EPB TBM</span></div>
-      <div class="reference-card fade-up" style="transition-delay:0.16s"><div class="reference-tag">Middle East</div><div class="reference-city">Dubai</div><p class="reference-project">Dubai Metro Blue Line</p><span class="reference-type">Metro · Slurry TBM</span></div>
+      <div class="reference-card fade-up"><div class="reference-tag">Asia-Pacific</div><div class="reference-city">Singapore</div><div class="reference-country">Republic of Singapore</div></div>
+      <div class="reference-card fade-up" style="transition-delay:0.08s"><div class="reference-tag">Asia-Pacific</div><div class="reference-city">Hong Kong</div><div class="reference-country">S.A.R., China</div></div>
+      <div class="reference-card fade-up" style="transition-delay:0.16s"><div class="reference-tag">Middle East</div><div class="reference-city">Dubai</div><div class="reference-country">United Arab Emirates</div></div>
     </div>
     <div class="references-footer fade-up"><a href="references.html" class="btn-ghost">View All References →</a></div>
   </div>
