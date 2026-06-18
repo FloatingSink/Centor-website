@@ -259,6 +259,41 @@ nav {
 .page-banner-sub { font-size: 16px; line-height: 1.75; color: var(--text-mid); max-width: 540px;
   animation: bannerContentIn 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.65s both; }
 
+/* ===== BANNER LIGHTBOX ===== */
+.page-banner, .hero { cursor: zoom-in; }
+.page-banner a, .page-banner button, .hero a, .hero button { cursor: pointer; }
+.banner-swiper .swiper-button-prev, .banner-swiper .swiper-button-next,
+.banner-swiper .swiper-pagination,
+.hero-swiper .swiper-button-prev, .hero-swiper .swiper-button-next,
+.hero-swiper .swiper-pagination { cursor: pointer; }
+.img-lightbox-overlay {
+  position: fixed; inset: 0; z-index: 9000;
+  background: rgba(0,0,0,0.88);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.img-lightbox-overlay.is-open { opacity: 1; pointer-events: auto; }
+.img-lightbox-img {
+  max-width: 92vw; max-height: 88vh;
+  object-fit: contain;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.7);
+  transform: scale(0.94);
+  transition: transform 0.28s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.img-lightbox-overlay.is-open .img-lightbox-img { transform: scale(1); }
+.img-lightbox-close {
+  position: absolute; top: 20px; right: 24px;
+  width: 40px; height: 40px;
+  background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 50%; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 20px; line-height: 1;
+  transition: background 0.18s ease;
+}
+.img-lightbox-close:hover { background: rgba(255,255,255,0.22); }
+
 /* ===== TICKER ===== */
 .ticker {
   background-color: var(--bg-2);
