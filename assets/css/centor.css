@@ -117,7 +117,7 @@ nav {
 @media (max-width: 768px) { .nav-inner { padding: 0 24px; } }
 
 .nav-logo { display: flex; align-items: center; text-decoration: none; flex: none; background: transparent; }
-.nav-logo img { height: 45px; width: auto; mix-blend-mode: darken; display: block; }
+.nav-logo img { height: 100px; width: auto; mix-blend-mode: darken; display: block; }
 
 .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
 .nav-links a { text-decoration: none; color: var(--text-dim); font-family: var(--font-ui); font-size: 12.5px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; transition: color 0.18s ease; }
@@ -313,7 +313,7 @@ footer {
 
 .footer-brand { display: flex; flex-direction: column; gap: 18px; }
 .footer-logo { background: transparent; }
-.footer-logo img { height: 80px; width: auto; mix-blend-mode: darken; display: block; }
+.footer-logo img { height: 120px; width: auto; mix-blend-mode: darken; display: block; }
 .footer-desc { font-size: 13px; color: var(--text-dim); line-height: 1.78; max-width: 245px; }
 .footer-socials { display: flex; gap: 10px; }
 .social-btn {
