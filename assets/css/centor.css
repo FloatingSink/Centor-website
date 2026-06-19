@@ -259,6 +259,14 @@ nav {
 .page-banner-sub { font-size: 16px; line-height: 1.75; color: var(--text-mid); max-width: 540px;
   animation: bannerContentIn 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.65s both; }
 
+/* ===== BANNER LIGHTBOX ===== */
+.page-banner, .hero { cursor: zoom-in; }
+.page-banner a, .page-banner button, .hero a, .hero button { cursor: pointer; }
+.banner-swiper .swiper-button-prev, .banner-swiper .swiper-button-next,
+.banner-swiper .swiper-pagination,
+.hero-swiper .swiper-button-prev, .hero-swiper .swiper-button-next,
+.hero-swiper .swiper-pagination { cursor: pointer; }
+
 /* ===== TICKER ===== */
 .ticker {
   background-color: var(--bg-2);
