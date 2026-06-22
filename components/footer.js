@@ -101,7 +101,7 @@
         '  <div class="container">\n' +
         '    <div class="footer-grid">\n' +
         '      <div class="footer-brand">\n' +
-        '        <div class="footer-logo"><img src="/assets/brand/CENTOR%20Full%20Logo.png" alt="CENTOR" /></div>\n' +
+        '        <div class="footer-logo"><img src="/assets/brand/centor-full-logo.png" alt="CENTOR" /></div>\n' +
         '        <p class="footer-desc">' + t.desc + '</p>\n' +
         '        <div class="footer-socials"><a href="#" class="social-btn" aria-label="LinkedIn">in</a></div>\n' +
         '      </div>\n' +
