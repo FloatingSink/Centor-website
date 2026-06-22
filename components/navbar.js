@@ -108,7 +108,7 @@
       this.innerHTML =
         '<nav id="top-nav">\n' +
         '  <div class="nav-inner">\n' +
-        '    <a href="' + base + '" class="nav-logo"><img src="/assets/brand/CENTOR%20Full%20Logo.png" alt="CENTOR" /></a>\n' +
+        '    <a href="' + base + '" class="nav-logo"><img src="/assets/brand/centor-full-logo.png" alt="CENTOR" /></a>\n' +
         '    <ul class="nav-links">' + desktopLinks + '</ul>\n' +
         '    <a href="' + base + 'contact.html" class="btn-nav desktop-only">' + cta + '</a>\n' +
         '    <div class="lang-switcher" style="display:none">\n' +
