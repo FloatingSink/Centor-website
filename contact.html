@@ -285,12 +285,6 @@ const OFFICES = [
   { id: 'de', lat: 48.330000, lng:   7.870000, label: 'Germany',   region: 'Europe',        address: 'Schlittengasse 17\n77933 Lahr\nDeutschland' },
 ];
 
-const ARCS = [
-  { from: [OFFICES[0].lat, OFFICES[0].lng], to: [OFFICES[1].lat, OFFICES[1].lng] }, /* SG → HK      */
-  { from: [OFFICES[0].lat, OFFICES[0].lng], to: [OFFICES[2].lat, OFFICES[2].lng] }, /* SG → Dubai   */
-  { from: [OFFICES[0].lat, OFFICES[0].lng], to: [OFFICES[4].lat, OFFICES[4].lng] }, /* SG → Germany */
-];
-
 const GOLD    = [0.72, 0.54, 0.24];
 const THETA   = 0.22;
 const ROT_SPD = 0.003;
@@ -326,9 +320,7 @@ const globe = createGlobe(canvas, {
   baseColor:     [0.84, 0.87, 0.94],
   markerColor:   GOLD,
   glowColor:     [0.72, 0.54, 0.24],
-  arcColor:      GOLD,
   markers: OFFICES.map(o => ({ id: o.id, location: [o.lat, o.lng], size: 0.06 })),
-  arcs:    ARCS,
 });
 
 /* ── Marker labels via CSS Anchor Positioning ── */

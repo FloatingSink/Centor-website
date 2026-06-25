@@ -263,11 +263,6 @@ const OFFICES = [
   { id: 'pa', lat:  8.990000, lng: -79.520000, label: '巴拿马', region: '拉丁美洲',  address: 'P.H. BICSA金融中心\n4007室\n巴拿马城' },
   { id: 'de', lat: 48.330000, lng:   7.870000, label: '德国',   region: '欧洲',      address: 'Schlittengasse 17\n77933 Lahr\n德国' },
 ];
-const ARCS = [
-  { from: [OFFICES[0].lat, OFFICES[0].lng], to: [OFFICES[1].lat, OFFICES[1].lng] },
-  { from: [OFFICES[0].lat, OFFICES[0].lng], to: [OFFICES[2].lat, OFFICES[2].lng] },
-  { from: [OFFICES[0].lat, OFFICES[0].lng], to: [OFFICES[4].lat, OFFICES[4].lng] },
-];
 const GOLD  = [0.72, 0.54, 0.24];
 const THETA = 0.22;
 const SIZE  = 600;
@@ -290,9 +285,8 @@ const globe = createGlobe(canvas, {
   phi: baseRotation, theta: 0.22, dark: 0, diffuse: 1.2, scale: 1,
   mapSamples: 16000, mapBrightness: 3.5,
   baseColor: [0.84, 0.87, 0.94], markerColor: GOLD,
-  glowColor: [0.72, 0.54, 0.24], arcColor: GOLD,
+  glowColor: [0.72, 0.54, 0.24],
   markers: OFFICES.map(o => ({ id: o.id, location: [o.lat, o.lng], size: 0.06 })),
-  arcs: ARCS,
 });
 
 const cobeWrap = canvas.parentElement;
