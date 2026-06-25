@@ -118,7 +118,7 @@
         '        <div class="footer-contact">\n' +
         '          <div class="contact-item"><div class="contact-label">' + t.hqLabel + '</div><div class="contact-val">' + t.hqVal + '</div></div>\n' +
         '          <div class="contact-item"><div class="contact-label">' + t.emailLabel + '</div><div class="contact-val"><a href="mailto:info@centorglobal.com">info@centorglobal.com</a></div></div>\n' +
-        '          <div class="contact-item"><div class="contact-label">' + t.phoneLabel + '</div><div class="contact-val"><a href="tel:+6562221800">+65 6222 1800</a></div></div>\n' +
+        '          <div class="contact-item"><div class="contact-label">' + t.phoneLabel + '</div><div class="contact-val"><a href="tel: ~ ">To be updated</a></div></div>\n' +
         '        </div>\n' +
         '      </div>\n' +
         '    </div>\n' +
