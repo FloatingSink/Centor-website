@@ -84,6 +84,21 @@
     .hc:hover { border-color:var(--border-gold); }
     .hc-title { font-family:var(--font-d); font-weight:700; font-size:14px; color:var(--charcoal); letter-spacing:0.05em; margin-bottom:10px; }
     .hc-desc { font-size:13.5px; color:var(--text-dim); line-height:1.68; }
+
+    /* ===== GLOBAL PRESENCE MAP ===== */
+    .gmap-section { background-color:var(--bg-2); border-top:1px solid var(--border); }
+    .gmap-header { max-width:560px; margin-bottom:48px; }
+    .gmap-canvas { position:relative; width:100%; aspect-ratio:2/1; min-height:400px; background-color:var(--bg-1); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.50); overflow:hidden; }
+    #globe-canvas { position:absolute; top:0; left:0; width:100%; height:100%; display:block; }
+
+
+.gmap-tooltip { position:absolute; z-index:20; pointer-events:none; opacity:0; visibility:hidden; min-width:172px; transition:opacity 0.18s ease,visibility 0.18s ease; }
+    .gmap-tooltip.active { opacity:1; visibility:visible; }
+    .gmap-tt { padding:14px 16px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:0 8px 24px rgba(0,0,0,0.12),inset 0 1px 0 rgba(255,255,255,0.55); }
+    .gmap-tt-region { font-family:var(--font-ui); font-size:9px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:5px; }
+    .gmap-tt-city { font-family:var(--font-d); font-size:13px; font-weight:700; color:var(--charcoal); letter-spacing:0.04em; margin-bottom:3px; }
+    .gmap-tt-detail { font-size:11.5px; color:var(--text-dim); line-height:1.5; }
+    .gmap-tt-hq { display:inline-flex; align-items:center; font-family:var(--font-ui); font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); background:var(--gold-dim); border:1px solid var(--gold-border); padding:3px 9px; margin-top:7px; }
   </style>
 </head>
 <body>
@@ -197,6 +212,42 @@
   </div>
 </section>
 
+<!-- GLOBAL PRESENCE MAP -->
+<section class="gmap-section sp">
+  <div class="container">
+    <div class="gmap-header fade-up">
+      <div class="eyebrow"><span class="eyebrow-num">01</span><span class="eyebrow-line"></span><span class="eyebrow-label">Worldwide Engineering Reach</span></div>
+      <h2 class="section-h">Our <em>Global Presence</em></h2>
+      <p class="section-lede">Engineering expertise deployed where tunnelling projects demand it. CENTOR operates from Singapore with regional offices spanning Europe and the Americas.</p>
+    </div>
+    <div class="gmap-canvas fade-up" style="transition-delay:0.12s" role="img" aria-label="World map showing CENTOR office locations in Singapore, Panama, and Germany">
+      <canvas id="globe-canvas" aria-hidden="true"></canvas>
+      <div class="gmap-tooltip" id="tt-sg" role="tooltip">
+        <div class="gmap-tt">
+          <div class="gmap-tt-region">Global Headquarters</div>
+          <div class="gmap-tt-city">Singapore</div>
+          <div class="gmap-tt-detail">151 Chin Swee Road, #09-08<br>Manhattan House, 169876</div>
+          <div class="gmap-tt-hq">HQ</div>
+        </div>
+      </div>
+      <div class="gmap-tooltip" id="tt-pa" role="tooltip">
+        <div class="gmap-tt">
+          <div class="gmap-tt-region">Latin America</div>
+          <div class="gmap-tt-city">Panama City</div>
+          <div class="gmap-tt-detail">P.H. BICSA Financial Center<br>Oficina 4007, Panamá</div>
+        </div>
+      </div>
+      <div class="gmap-tooltip" id="tt-de" role="tooltip">
+        <div class="gmap-tt">
+          <div class="gmap-tt-region">Europe</div>
+          <div class="gmap-tt-city">Lahr, Germany</div>
+          <div class="gmap-tt-detail">Schlittengasse 17<br>77933 Lahr, Deutschland</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- HOW WE CAN HELP -->
 <section class="help sp">
   <div class="container">
@@ -225,4 +276,187 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="assets/js/centor.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-geo@3/dist/d3-geo.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<script>
+(function(){
+  var canvas = document.getElementById('globe-canvas');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var dpr = Math.min(window.devicePixelRatio||1, 2);
+  var W=0, H=0;
+
+  var OFFICES = [
+    {id:'sg', lon:103.82, lat:1.35,  hq:true,  _px:null, _py:null},
+    {id:'pa', lon:-79.52, lat:8.99,  hq:false, _px:null, _py:null},
+    {id:'de', lon:7.87,   lat:48.33, hq:false, _px:null, _py:null}
+  ];
+
+  var rot     = [0, -20];
+  var land    = null;
+  var grat    = d3.geoGraticule()();
+  var hovered = null;
+  var proj    = d3.geoOrthographic().clipAngle(90);
+
+  function resize(){
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.round(rect.width);
+    var h = Math.round(rect.height);
+    if(!w) w = canvas.parentElement.offsetWidth;
+    if(!h) h = Math.round(w / 2);
+    if(!w || !h) return;
+    W = w; H = h;
+    canvas.width  = W*dpr;
+    canvas.height = H*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  window.addEventListener('resize', function(){ resize(); });
+
+  /* Defer first resize+draw until after browser has painted (layout complete) */
+  requestAnimationFrame(function(){
+    resize();
+    var lastT=0;
+    requestAnimationFrame(function loop(t){
+      if(t-lastT>=16){ draw(t); lastT=t; }
+      requestAnimationFrame(loop);
+    });
+  });
+
+  fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+    .then(function(r){return r.json();})
+    .then(function(w){ land = topojson.feature(w, w.objects.land); })
+    .catch(function(){});
+
+  function draw(t){
+    var r  = Math.min(W,H)*0.45;
+    var cx = W/2, cy = H/2;
+
+    proj.scale(r).translate([cx,cy]).rotate([rot[0],rot[1],0]);
+    var path = d3.geoPath().projection(proj).context(ctx);
+
+    ctx.clearRect(0,0,W,H);
+
+    /* atmosphere shadow ring */
+    var atmo = ctx.createRadialGradient(cx,cy,r*.93,cx,cy,r*1.07);
+    atmo.addColorStop(0,'rgba(0,0,0,.18)');
+    atmo.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.beginPath(); ctx.arc(cx,cy,r*1.07,0,Math.PI*2);
+    ctx.fillStyle=atmo; ctx.fill();
+
+    /* ocean */
+    ctx.beginPath(); path({type:'Sphere'});
+    ctx.fillStyle='#D4D8E2'; ctx.fill();
+
+    /* graticule */
+    ctx.beginPath(); path(grat);
+    ctx.strokeStyle='rgba(0,0,0,.07)'; ctx.lineWidth=.5; ctx.stroke();
+
+    /* land */
+    if(land){
+      ctx.beginPath(); path(land);
+      ctx.fillStyle='rgba(68,74,83,.50)'; ctx.fill();
+      ctx.strokeStyle='rgba(68,74,83,.20)'; ctx.lineWidth=.5; ctx.stroke();
+    }
+
+    /* specular highlight + edge shadow */
+    var shade = ctx.createRadialGradient(cx-r*.20,cy-r*.25,r*.08,cx+r*.10,cy+r*.10,r);
+    shade.addColorStop(0.00,'rgba(255,255,255,.22)');
+    shade.addColorStop(0.40,'rgba(255,255,255,0)');
+    shade.addColorStop(0.72,'rgba(0,0,0,0)');
+    shade.addColorStop(1.00,'rgba(0,0,0,.32)');
+    ctx.beginPath(); path({type:'Sphere'});
+    ctx.fillStyle=shade; ctx.fill();
+
+    /* globe outline */
+    ctx.beginPath(); path({type:'Sphere'});
+    ctx.strokeStyle='rgba(0,0,0,.22)'; ctx.lineWidth=1; ctx.stroke();
+
+    /* office markers */
+    var fl=-rot[0], fp=-rot[1];
+    OFFICES.forEach(function(o,i){
+      var dist = d3.geoDistance([o.lon,o.lat],[fl,fp]);
+      if(dist >= Math.PI/2*.97){ o._px=null; return; }
+      var alpha = Math.min((1 - dist/(Math.PI/2*.97))*4, 1);
+      var pt = proj([o.lon,o.lat]);
+      if(!pt){ o._px=null; return; }
+      o._px=pt[0]; o._py=pt[1];
+      ctx.save(); ctx.globalAlpha=alpha;
+
+      /* pulse ring */
+      var phase = ((t*.001 + i*.93) % 2.8) / 2.8;
+      if(phase < .75){
+        var sc  = .4 + phase/.75*2.4;
+        var rop = (1-phase/.75)*.75;
+        ctx.beginPath(); ctx.arc(o._px,o._py,8*sc,0,Math.PI*2);
+        ctx.strokeStyle='rgba(184,138,60,'+rop+')'; ctx.lineWidth=1.2; ctx.stroke();
+      }
+
+      /* dot */
+      var dotR = o.hq?5.5:4.5;
+      ctx.beginPath(); ctx.arc(o._px,o._py,dotR,0,Math.PI*2);
+      ctx.fillStyle = o.hq?'#D4A843':'#B88A3C'; ctx.fill();
+
+      if(hovered===o.id){
+        ctx.beginPath(); ctx.arc(o._px,o._py,dotR+3,0,Math.PI*2);
+        ctx.strokeStyle='rgba(212,168,67,.75)'; ctx.lineWidth=2; ctx.stroke();
+      }
+      ctx.restore();
+    });
+
+    if(!hovered) rot[0]+=.12;
+  }
+
+  /* tooltips */
+  var ttEls={};
+  OFFICES.forEach(function(o){ ttEls[o.id]=document.getElementById('tt-'+o.id); });
+
+  function place(o){
+    var tt=ttEls[o.id]; if(!tt||o._px==null) return;
+    var tw=178, th=tt.offsetHeight||115;
+    var l=o._px-tw/2, t=o._py-th-14;
+    if(l<6) l=6; if(l+tw>W-6) l=W-tw-6; if(t<6) t=o._py+16;
+    tt.style.left=l+'px'; tt.style.top=t+'px';
+    tt.classList.add('active');
+  }
+
+  function hideAll(){
+    OFFICES.forEach(function(o){ var tt=ttEls[o.id]; if(tt) tt.classList.remove('active'); });
+    hovered=null;
+  }
+
+  function hitTest(e){
+    var rect=canvas.getBoundingClientRect();
+    var mx=(e.clientX-rect.left)*(W/rect.width);
+    var my=(e.clientY-rect.top)*(H/rect.height);
+    var best=null, bd=Infinity;
+    OFFICES.forEach(function(o){
+      if(o._px==null) return;
+      var d=Math.hypot(mx-o._px, my-o._py);
+      if(d<18 && d<bd){ bd=d; best=o; }
+    });
+    return best;
+  }
+
+  canvas.addEventListener('mousemove',function(e){
+    var h=hitTest(e);
+    canvas.style.cursor=h?'pointer':'';
+    if(h){ if(hovered!==h.id){ hideAll(); hovered=h.id; place(h); } }
+    else if(hovered) hideAll();
+  });
+
+  canvas.addEventListener('click',function(e){
+    var h=hitTest(e);
+    if(h){ var tt=ttEls[h.id]; tt&&tt.classList.contains('active')?hideAll():(hovered=h.id,place(h)); }
+  });
+
+  canvas.addEventListener('touchstart',function(e){
+    if(e.touches.length===1){
+      var h=hitTest({clientX:e.touches[0].clientX, clientY:e.touches[0].clientY});
+      if(h){ e.preventDefault(); hovered=h.id; place(h); } else hideAll();
+    }
+  },{passive:false});
+
+  document.addEventListener('click',function(e){ if(e.target!==canvas) hideAll(); });
+}());
+</script>
 </body></html>
