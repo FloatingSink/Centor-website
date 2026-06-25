@@ -18,9 +18,14 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
   <style>
     .cat-intro { background-color:var(--bg-1); border-top:1px solid var(--border); }
-    .cat-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:48px; }
-    @media(max-width:700px){ .cat-grid { grid-template-columns:1fr; } }
-    .cat-card { padding:44px 36px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); }
+    .cat-swiper { margin-top:48px; }
+    .cat-swiper .swiper-slide { height:auto; box-sizing:border-box; }
+    .cat-swiper .swiper-pagination { display:none; position:static; margin-top:20px; }
+    @media(max-width:700px){
+      .cat-swiper .swiper-pagination { display:block; }
+      .cat-swiper .swiper-pagination .swiper-pagination-bullet-active { background:var(--gold); }
+    }
+    .cat-card { padding:44px 36px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); height:100%; box-sizing:border-box; }
     .cat-card.sealing  { border-top:3px solid var(--gold); }
     .cat-card.conditioning { border-top:3px solid var(--charcoal-2); }
     .cat-badge { display:inline-block; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; padding:4px 12px; border:1px solid; margin-bottom:20px; font-weight:600; }
@@ -40,9 +45,19 @@
     .section-line-head-left h2 { font-family:var(--font-d); font-weight:700; font-size:clamp(20px,2.8vw,34px); color:var(--charcoal); letter-spacing:0.04em; margin-top:10px; }
     .section-line-head-left h2 em { font-style:normal; color:var(--gold); }
     .section-line-head-right { font-size:14px; color:var(--text-mid); line-height:1.72; max-width:380px; }
-    .prod-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
-    @media(max-width:700px){ .prod-grid { grid-template-columns:1fr; } }
-    .pc { padding:34px 28px; background-color:var(--bg-1); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 1px 4px rgba(0,0,0,0.06); position:relative; overflow:hidden; transition:border-color 0.22s ease,background-color 0.22s ease; display:flex; flex-direction:column; }
+    /* ── Product card grid / carousel ── */
+    .prod-swiper .swiper-slide { height:auto; box-sizing:border-box; }
+    .prod-swiper .swiper-pagination { display:none; position:static; margin-top:20px; }
+    @media(max-width:699px){
+      .prod-swiper .swiper-pagination { display:block; }
+      .prod-swiper .swiper-pagination .swiper-pagination-bullet-active { background:var(--gold); }
+    }
+    @media(min-width:700px){
+      .prod-swiper { overflow:visible; }
+      .prod-swiper .swiper-wrapper { display:grid; grid-template-columns:1fr 1fr; gap:2px; transform:none !important; height:auto !important; }
+      .prod-swiper .swiper-slide { width:auto !important; }
+    }
+    .pc { padding:34px 28px; background-color:var(--bg-1); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 1px 4px rgba(0,0,0,0.06); position:relative; overflow:hidden; transition:border-color 0.22s ease,background-color 0.22s ease; display:flex; flex-direction:column; height:100%; box-sizing:border-box; }
     .pc::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); transform:scaleX(0); transform-origin:left; transition:transform 0.32s cubic-bezier(0.34,1.56,0.64,1); }
     .pc:hover { border-color:var(--border-gold); background-color:var(--bg-2); }
     .pc:hover::after { transform:scaleX(1); }
@@ -65,9 +80,19 @@
     .pc-link:hover { gap:12px; }
     .conditioning-section .pc { background-color:var(--bg); }
     .conditioning-section .pc:hover { background-color:var(--bg-2); }
-    .foam-layout { display:grid; grid-template-columns:2fr 1fr; gap:2px; }
-    @media(max-width:860px){ .foam-layout { grid-template-columns:1fr; } }
-    .foam-main { padding:40px 36px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 1px 4px rgba(0,0,0,0.06); position:relative; overflow:hidden; transition:border-color 0.22s,background-color 0.22s; }
+    /* ── Foam agents layout / carousel ── */
+    .foam-swiper .swiper-slide { height:auto; box-sizing:border-box; }
+    .foam-swiper .swiper-pagination { display:none; position:static; margin-top:20px; }
+    @media(max-width:859px){
+      .foam-swiper .swiper-pagination { display:block; }
+      .foam-swiper .swiper-pagination .swiper-pagination-bullet-active { background:var(--gold); }
+    }
+    @media(min-width:860px){
+      .foam-swiper { overflow:visible; }
+      .foam-swiper .swiper-wrapper { display:grid; grid-template-columns:2fr 1fr; gap:2px; transform:none !important; height:auto !important; }
+      .foam-swiper .swiper-slide { width:auto !important; }
+    }
+    .foam-main { padding:40px 36px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 1px 4px rgba(0,0,0,0.06); position:relative; overflow:hidden; transition:border-color 0.22s,background-color 0.22s; height:100%; box-sizing:border-box; }
     .foam-main::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); transform:scaleX(0); transform-origin:left; transition:transform 0.32s cubic-bezier(0.34,1.56,0.64,1); }
     .foam-main:hover { border-color:var(--border-gold); background-color:var(--bg-2); }
     .foam-main:hover::after { transform:scaleX(1); }
@@ -75,7 +100,7 @@
     .foam-main-title { font-family:var(--font-d); font-weight:700; font-size:20px; color:var(--charcoal); letter-spacing:0.05em; margin-bottom:6px; }
     .foam-main-title em { font-style:normal; color:var(--gold); }
     .foam-main-tagline { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:18px; }
-    .foam-variants-panel { display:flex; flex-direction:column; gap:2px; }
+    .foam-variants-panel { display:flex; flex-direction:column; gap:2px; height:100%; }
     .foam-var { padding:24px 26px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); position:relative; overflow:hidden; transition:border-color 0.22s; display:flex; flex-direction:column; flex:1; }
     .foam-var::after { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(180deg,var(--gold),var(--gold-light)); transform:scaleY(0); transform-origin:top; transition:transform 0.28s cubic-bezier(0.34,1.56,0.64,1); }
     .foam-var:hover { border-color:var(--border-gold); }
@@ -128,23 +153,30 @@
       <h2 class="section-h">密封材料与<em>渣土改良</em></h2>
       <p class="section-lede" style="max-width:560px">两大产品类别覆盖 TBM 消耗品全谱系——专为主轴承及盾尾密封系统设计的工程密封脂，以及用于 EPB 掌子面管理的渣土改良泡沫剂。</p>
     </div>
-    <div class="cat-grid">
-      <div class="cat-card sealing fade-up">
-        <div class="cat-badge g">TBM 密封材料</div>
-        <div class="cat-name">密封<em>系统</em></div>
-        <div class="cat-tagline">4 款产品 — 泵送型与手涂型</div>
-        <p class="cat-desc">专为 TBM 主轴承唇形密封系统及盾尾密封刷组件设计的工程密封脂，泵送型与手涂型配方均能有效抵御灌浆浆液、地下水及高压土体——涵盖盾构 TBM 全系列配置。</p>
-        <div class="cat-feats"><span class="cat-feat">主轴承</span><span class="cat-feat">盾尾密封</span><span class="cat-feat">泵送型</span><span class="cat-feat">手涂型</span><span class="cat-feat">高压</span></div>
-        <a href="#sealing-materials" class="cat-jump">查看密封产品 ↓</a>
+    <div class="swiper cat-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="cat-card sealing fade-up">
+            <div class="cat-badge g">TBM 密封材料</div>
+            <div class="cat-name">密封<em>系统</em></div>
+            <div class="cat-tagline">4 款产品 — 泵送型与手涂型</div>
+            <p class="cat-desc">专为 TBM 主轴承唇形密封系统及盾尾密封刷组件设计的工程密封脂，泵送型与手涂型配方均能有效抵御灌浆浆液、地下水及高压土体——涵盖盾构 TBM 全系列配置。</p>
+            <div class="cat-feats"><span class="cat-feat">主轴承</span><span class="cat-feat">盾尾密封</span><span class="cat-feat">泵送型</span><span class="cat-feat">手涂型</span><span class="cat-feat">高压</span></div>
+            <a href="#sealing-materials" class="cat-jump">查看密封产品 ↓</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="cat-card conditioning fade-up">
+            <div class="cat-badge s">渣土改良</div>
+            <div class="cat-name">泡沫<em>剂</em></div>
+            <div class="cat-tagline">IS-C · IS-D · IS-P</div>
+            <p class="cat-desc">EPB 盾构专用发泡剂，可降低刀盘扭矩、控制面压、改善开挖渣土流变性，实现螺旋输送机顺畅排渣。针对标准、分散及黏性地质条件提供三种配方。</p>
+            <div class="cat-feats"><span class="cat-feat">可生物降解</span><span class="cat-feat">水溶性</span><span class="cat-feat">适用于 EPB</span><span class="cat-feat">面压控制</span></div>
+            <a href="#soil-conditioning" class="cat-jump">查看泡沫剂 ↓</a>
+          </div>
+        </div>
       </div>
-      <div class="cat-card conditioning fade-up" style="transition-delay:0.08s">
-        <div class="cat-badge s">渣土改良</div>
-        <div class="cat-name">泡沫<em>剂</em></div>
-        <div class="cat-tagline">IS-C · IS-D · IS-P</div>
-        <p class="cat-desc">EPB 盾构专用发泡剂，可降低刀盘扭矩、控制面压、改善开挖渣土流变性，实现螺旋输送机顺畅排渣。针对标准、分散及黏性地质条件提供三种配方。</p>
-        <div class="cat-feats"><span class="cat-feat">可生物降解</span><span class="cat-feat">水溶性</span><span class="cat-feat">适用于 EPB</span><span class="cat-feat">面压控制</span></div>
-        <a href="#soil-conditioning" class="cat-jump">查看泡沫剂 ↓</a>
-      </div>
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </section>
@@ -159,72 +191,83 @@
       </div>
       <div class="section-line-head-right">专为 TBM 主轴承唇形密封及盾尾密封刷系统设计，泵送型与手涂型配方能有效抵御灌浆浆液、地下水及高压土体渗入。</div>
     </div>
-    <div class="prod-grid">
+    <div class="swiper prod-swiper">
+      <div class="swiper-wrapper">
 
-      <!-- Main Bearing Sealant PX2350 -->
-      <div class="pc fade-up">
-        <div class="pc-code">型号：PX2350</div>
-        <div class="pc-name">主轴承<em>密封脂</em></div>
-        <div class="pc-cat g">TBM 密封 · 泵送型</div>
-        <p class="pc-desc">黏土稠化润滑脂，专为 TBM 主轴承唇形密封系统设计。含固体填料、纤维及石墨，有效阻止土体、水分及粉尘通过主轴承密封进入。</p>
-        <div class="pc-specs">
-          <div class="spec"><span class="spec-k">外观</span><span class="spec-v">黑色纤维状膏体</span></div>
-          <div class="spec"><span class="spec-k">密度</span><span class="spec-v">1.25±0.05 g/cm³</span></div>
-          <div class="spec"><span class="spec-k">闪点</span><span class="spec-v">≥220°C</span></div>
+        <!-- Main Bearing Sealant PX2350 -->
+        <div class="swiper-slide">
+          <div class="pc fade-up">
+            <div class="pc-code">型号：PX2350</div>
+            <div class="pc-name">主轴承<em>密封脂</em></div>
+            <div class="pc-cat g">TBM 密封 · 泵送型</div>
+            <p class="pc-desc">黏土稠化润滑脂，专为 TBM 主轴承唇形密封系统设计。含固体填料、纤维及石墨，有效阻止土体、水分及粉尘通过主轴承密封进入。</p>
+            <div class="pc-specs">
+              <div class="spec"><span class="spec-k">外观</span><span class="spec-v">黑色纤维状膏体</span></div>
+              <div class="spec"><span class="spec-k">密度</span><span class="spec-v">1.25±0.05 g/cm³</span></div>
+              <div class="spec"><span class="spec-k">闪点</span><span class="spec-v">≥220°C</span></div>
+            </div>
+            <div class="pc-pkg"><strong>包装：</strong>25 / 70 / 230 kg 桶装</div>
+            <div class="pc-feats"><span class="pc-feat">可生物降解</span><span class="pc-feat">自熄性</span><span class="pc-feat">高抗水性</span></div>
+            <a href="main-bearing-sealant.html" class="pc-link">查看详情 →</a>
+          </div>
         </div>
-        <div class="pc-pkg"><strong>包装：</strong>25 / 70 / 230 kg 桶装</div>
-        <div class="pc-feats"><span class="pc-feat">可生物降解</span><span class="pc-feat">自熄性</span><span class="pc-feat">高抗水性</span></div>
-        <a href="main-bearing-sealant.html" class="pc-link">查看详情 →</a>
-      </div>
 
-      <!-- Tail Seal Grease TM-T100 -->
-      <div class="pc fade-up" style="transition-delay:0.06s">
-        <div class="pc-code">型号：TM-T100</div>
-        <div class="pc-name">盾尾<em>密封脂</em></div>
-        <div class="pc-cat g">TBM 密封 · 泵送型</div>
-        <p class="pc-desc">经济型驱进密封脂，适用于有盾尾的 TBM。泵入盾尾密封腔，防止水、土及环形注浆浆液进入 TBM 盾尾。</p>
-        <div class="pc-specs">
-          <div class="spec"><span class="spec-k">密度</span><span class="spec-v">1.35±0.05 g/cm³</span></div>
-          <div class="spec"><span class="spec-k">止水性能</span><span class="spec-v">35 bar — 零渗漏</span></div>
-          <div class="spec"><span class="spec-k">闪点</span><span class="spec-v">≥220°C</span></div>
+        <!-- Tail Seal Grease TM-T100 -->
+        <div class="swiper-slide">
+          <div class="pc fade-up">
+            <div class="pc-code">型号：TM-T100</div>
+            <div class="pc-name">盾尾<em>密封脂</em></div>
+            <div class="pc-cat g">TBM 密封 · 泵送型</div>
+            <p class="pc-desc">经济型驱进密封脂，适用于有盾尾的 TBM。泵入盾尾密封腔，防止水、土及环形注浆浆液进入 TBM 盾尾。</p>
+            <div class="pc-specs">
+              <div class="spec"><span class="spec-k">密度</span><span class="spec-v">1.35±0.05 g/cm³</span></div>
+              <div class="spec"><span class="spec-k">止水性能</span><span class="spec-v">35 bar — 零渗漏</span></div>
+              <div class="spec"><span class="spec-k">闪点</span><span class="spec-v">≥220°C</span></div>
+            </div>
+            <div class="pc-pkg"><strong>包装：</strong>25 / 70 / 250 kg 桶装</div>
+            <div class="pc-feats"><span class="pc-feat">高压</span><span class="pc-feat">阻燃</span><span class="pc-feat">抗冲刷</span></div>
+            <a href="tail-seal-grease.html" class="pc-link">查看详情 →</a>
+          </div>
         </div>
-        <div class="pc-pkg"><strong>包装：</strong>25 / 70 / 250 kg 桶装</div>
-        <div class="pc-feats"><span class="pc-feat">高压</span><span class="pc-feat">阻燃</span><span class="pc-feat">抗冲刷</span></div>
-        <a href="tail-seal-grease.html" class="pc-link">查看详情 →</a>
-      </div>
 
-      <!-- Tail Sealant Hand-coat PA -->
-      <div class="pc fade-up" style="transition-delay:0.12s">
-        <div class="pc-code">型号：PA</div>
-        <div class="pc-name">盾尾密封<em>手涂剂</em></div>
-        <div class="pc-cat g">盾构机消耗品 · 手涂型</div>
-        <p class="pc-desc">专用初填密封剂，手动填充至盾尾密封刷，防止同步注浆浆液及地下水渗入导致密封刷板结失效。</p>
-        <div class="pc-specs">
-          <div class="spec"><span class="spec-k">颜色</span><span class="spec-v">白色</span></div>
-          <div class="spec"><span class="spec-k">密度</span><span class="spec-v">1.30±0.05 g/cm³</span></div>
-          <div class="spec"><span class="spec-k">止水性能</span><span class="spec-v">35 bar（松村标准）</span></div>
+        <!-- Tail Sealant Hand-coat PA -->
+        <div class="swiper-slide">
+          <div class="pc fade-up">
+            <div class="pc-code">型号：PA</div>
+            <div class="pc-name">盾尾密封<em>手涂剂</em></div>
+            <div class="pc-cat g">盾构机消耗品 · 手涂型</div>
+            <p class="pc-desc">专用初填密封剂，手动填充至盾尾密封刷，防止同步注浆浆液及地下水渗入导致密封刷板结失效。</p>
+            <div class="pc-specs">
+              <div class="spec"><span class="spec-k">颜色</span><span class="spec-v">白色</span></div>
+              <div class="spec"><span class="spec-k">密度</span><span class="spec-v">1.30±0.05 g/cm³</span></div>
+              <div class="spec"><span class="spec-k">止水性能</span><span class="spec-v">35 bar（松村标准）</span></div>
+            </div>
+            <div class="pc-pkg"><strong>施工方式：</strong>手动填充密封刷</div>
+            <div class="pc-feats"><span class="pc-feat">手涂型</span><span class="pc-feat">阻燃</span><span class="pc-feat">高黏附性</span></div>
+            <a href="tail-sealant-handcoat.html" class="pc-link">查看详情 →</a>
+          </div>
         </div>
-        <div class="pc-pkg"><strong>施工方式：</strong>手动填充密封刷</div>
-        <div class="pc-feats"><span class="pc-feat">手涂型</span><span class="pc-feat">阻燃</span><span class="pc-feat">高黏附性</span></div>
-        <a href="tail-sealant-handcoat.html" class="pc-link">查看详情 →</a>
-      </div>
 
-      <!-- Main Bearing Grease EP1/EP2 -->
-      <div class="pc fade-up" style="transition-delay:0.18s">
-        <div class="pc-code">型号：EP1 / EP2</div>
-        <div class="pc-name">主轴承<em>润滑脂</em></div>
-        <div class="pc-cat g">盾构机消耗品 · 泵送型</div>
-        <p class="pc-desc">环保型密封脂，用于盾构机主轴承唇形密封系统，通过集中泵送系统分配。可生物降解、无毒——对地下水及土壤零污染。</p>
-        <div class="pc-specs">
-          <div class="spec"><span class="spec-k">外观</span><span class="spec-v">黑色均质膏体</span></div>
-          <div class="spec"><span class="spec-k">密度</span><span class="spec-v">1.25±0.05 g/cm³</span></div>
-          <div class="spec"><span class="spec-k">锥入度</span><span class="spec-v">230–280（1/10mm）</span></div>
+        <!-- Main Bearing Grease EP1/EP2 -->
+        <div class="swiper-slide">
+          <div class="pc fade-up">
+            <div class="pc-code">型号：EP1 / EP2</div>
+            <div class="pc-name">主轴承<em>润滑脂</em></div>
+            <div class="pc-cat g">盾构机消耗品 · 泵送型</div>
+            <p class="pc-desc">环保型密封脂，用于盾构机主轴承唇形密封系统，通过集中泵送系统分配。可生物降解、无毒——对地下水及土壤零污染。</p>
+            <div class="pc-specs">
+              <div class="spec"><span class="spec-k">外观</span><span class="spec-v">黑色均质膏体</span></div>
+              <div class="spec"><span class="spec-k">密度</span><span class="spec-v">1.25±0.05 g/cm³</span></div>
+              <div class="spec"><span class="spec-k">锥入度</span><span class="spec-v">230–280（1/10mm）</span></div>
+            </div>
+            <div class="pc-pkg"><strong>施工方式：</strong>集中泵送系统</div>
+            <div class="pc-feats"><span class="pc-feat">可生物降解</span><span class="pc-feat">无毒</span><span class="pc-feat">阻燃</span></div>
+            <a href="main-bearing-grease.html" class="pc-link">查看详情 →</a>
+          </div>
         </div>
-        <div class="pc-pkg"><strong>施工方式：</strong>集中泵送系统</div>
-        <div class="pc-feats"><span class="pc-feat">可生物降解</span><span class="pc-feat">无毒</span><span class="pc-feat">阻燃</span></div>
-        <a href="main-bearing-grease.html" class="pc-link">查看详情 →</a>
-      </div>
 
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </section>
@@ -239,45 +282,52 @@
       </div>
       <div class="section-line-head-right">EPB 盾构专用渣土改良泡沫剂，可降低刀盘扭矩、控制掌子面渗透性，并改善开挖渣土通过螺旋输送机的流动性。可生物降解，完全水溶。</div>
     </div>
-    <div class="foam-layout fade-up">
+    <div class="swiper foam-swiper fade-up">
+      <div class="swiper-wrapper">
 
-      <div class="foam-main">
-        <div class="foam-main-code">IS 系列 · 泡沫剂</div>
-        <div class="cat-badge s" style="margin-bottom:18px">渣土改良 · EPB 盾构</div>
-        <div class="foam-main-title">IS 系列泡沫<em>剂</em></div>
-        <div class="foam-main-tagline">IS-C · IS-D · IS-P</div>
-        <p style="font-size:14px;color:var(--text-mid);line-height:1.75;margin-bottom:24px">三种 EPB 盾构 TBM 专用渣土改良泡沫剂配方，通过 TBM 发泡装置混合发泡后注入刀盘开挖腔，对开挖渣土进行改良，改善其通过螺旋输送机和土仓的流动性。三种配方均可在开挖渣土中产生临时黏聚力，降低掌子面水渗透性，提供气垫缓冲补偿压力骤变，并改善渣土整体流变性。请根据地层条件——标准、分散型至黏性或复合地层——选择适用配方。</p>
-        <div class="pc-specs" style="margin-bottom:22px">
-          <div class="spec"><span class="spec-k">pH 值</span><span class="spec-v">7.0–9.0（所有配方）</span></div>
-          <div class="spec"><span class="spec-k">溶解性</span><span class="spec-v">完全水溶</span></div>
-          <div class="spec"><span class="spec-k">生物降解</span><span class="spec-v">&gt;80%（28天，IS-C）</span></div>
-          <div class="spec"><span class="spec-k">包装</span><span class="spec-v">200 kg 桶 / 1,000 kg IBC</span></div>
+        <div class="swiper-slide">
+          <div class="foam-main">
+            <div class="foam-main-code">IS 系列 · 泡沫剂</div>
+            <div class="cat-badge s" style="margin-bottom:18px">渣土改良 · EPB 盾构</div>
+            <div class="foam-main-title">IS 系列泡沫<em>剂</em></div>
+            <div class="foam-main-tagline">IS-C · IS-D · IS-P</div>
+            <p style="font-size:14px;color:var(--text-mid);line-height:1.75;margin-bottom:24px">三种 EPB 盾构 TBM 专用渣土改良泡沫剂配方，通过 TBM 发泡装置混合发泡后注入刀盘开挖腔，对开挖渣土进行改良，改善其通过螺旋输送机和土仓的流动性。三种配方均可在开挖渣土中产生临时黏聚力，降低掌子面水渗透性，提供气垫缓冲补偿压力骤变，并改善渣土整体流变性。请根据地层条件——标准、分散型至黏性或复合地层——选择适用配方。</p>
+            <div class="pc-specs" style="margin-bottom:22px">
+              <div class="spec"><span class="spec-k">pH 值</span><span class="spec-v">7.0–9.0（所有配方）</span></div>
+              <div class="spec"><span class="spec-k">溶解性</span><span class="spec-v">完全水溶</span></div>
+              <div class="spec"><span class="spec-k">生物降解</span><span class="spec-v">&gt;80%（28天，IS-C）</span></div>
+              <div class="spec"><span class="spec-k">包装</span><span class="spec-v">200 kg 桶 / 1,000 kg IBC</span></div>
+            </div>
+            <div class="pc-feats" style="margin-bottom:26px"><span class="pc-feat">可生物降解</span><span class="pc-feat">完全水溶</span><span class="pc-feat">适用于 EPB</span><span class="pc-feat">降低扭矩</span><span class="pc-feat">面压控制</span></div>
+            <a href="foam-agents.html" class="pc-link">查看完整对比与详细说明 →</a>
+          </div>
         </div>
-        <div class="pc-feats" style="margin-bottom:26px"><span class="pc-feat">可生物降解</span><span class="pc-feat">完全水溶</span><span class="pc-feat">适用于 EPB</span><span class="pc-feat">降低扭矩</span><span class="pc-feat">面压控制</span></div>
-        <a href="foam-agents.html" class="pc-link">查看完整对比与详细说明 →</a>
+
+        <div class="swiper-slide">
+          <div class="foam-variants-panel">
+            <div class="foam-var">
+              <div class="foam-var-code">IS-C</div>
+              <div class="foam-var-sub">标准型</div>
+              <p class="foam-var-desc">适用于湿砂至砂黏土地层的标准配方。固含量 13.5–15.1%，发泡倍率 8–25×，配比 1.5–5%。</p>
+              <a href="foam-agents.html#is-c" class="foam-var-link">详情 →</a>
+            </div>
+            <div class="foam-var">
+              <div class="foam-var-code">IS-D</div>
+              <div class="foam-var-sub">分散型</div>
+              <p class="foam-var-desc">高固含量（19.4–21.4%），适用于分散型地层，在高渗透性土体中具有更优异的泡沫稳定性。</p>
+              <a href="foam-agents.html#is-d" class="foam-var-link">详情 →</a>
+            </div>
+            <div class="foam-var">
+              <div class="foam-var-code">IS-P</div>
+              <div class="foam-var-sub">聚合物型</div>
+              <p class="foam-var-desc">聚合物增强配方，适用于黏性或复合地层，泡沫结构更稳定，渣土融合性能更优异。</p>
+              <a href="foam-agents.html#is-p" class="foam-var-link">详情 →</a>
+            </div>
+          </div>
+        </div>
+
       </div>
-
-      <div class="foam-variants-panel">
-        <div class="foam-var">
-          <div class="foam-var-code">IS-C</div>
-          <div class="foam-var-sub">标准型</div>
-          <p class="foam-var-desc">适用于湿砂至砂黏土地层的标准配方。固含量 13.5–15.1%，发泡倍率 8–25×，配比 1.5–5%。</p>
-          <a href="foam-agents.html#is-c" class="foam-var-link">详情 →</a>
-        </div>
-        <div class="foam-var">
-          <div class="foam-var-code">IS-D</div>
-          <div class="foam-var-sub">分散型</div>
-          <p class="foam-var-desc">高固含量（19.4–21.4%），适用于分散型地层，在高渗透性土体中具有更优异的泡沫稳定性。</p>
-          <a href="foam-agents.html#is-d" class="foam-var-link">详情 →</a>
-        </div>
-        <div class="foam-var">
-          <div class="foam-var-code">IS-P</div>
-          <div class="foam-var-sub">聚合物型</div>
-          <p class="foam-var-desc">聚合物增强配方，适用于黏性或复合地层，泡沫结构更稳定，渣土融合性能更优异。</p>
-          <a href="foam-agents.html#is-p" class="foam-var-link">详情 →</a>
-        </div>
-      </div>
-
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </section>
@@ -303,4 +353,35 @@
 <script src="../../components/footer.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="../../assets/js/centor.js"></script>
+<script>
+  new Swiper('.cat-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 2,
+    allowTouchMove: true,
+    pagination: { el: '.cat-swiper .swiper-pagination', clickable: true },
+    breakpoints: {
+      700: { slidesPerView: 2, allowTouchMove: false, pagination: { enabled: false } }
+    }
+  });
+
+  new Swiper('.prod-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 2,
+    allowTouchMove: true,
+    pagination: { el: '.prod-swiper .swiper-pagination', clickable: true },
+    breakpoints: {
+      700: { allowTouchMove: false, pagination: { enabled: false } }
+    }
+  });
+
+  new Swiper('.foam-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 2,
+    allowTouchMove: true,
+    pagination: { el: '.foam-swiper .swiper-pagination', clickable: true },
+    breakpoints: {
+      860: { allowTouchMove: false, pagination: { enabled: false } }
+    }
+  });
+</script>
 </body></html>

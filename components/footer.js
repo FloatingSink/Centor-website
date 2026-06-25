@@ -47,9 +47,9 @@
         prodHead: 'Products',
         prodLinks: [
           { href: base + 'products/main-bearing-sealant.html',  label: 'Main Bearing Sealant' },
+          { href: base + 'products/main-bearing-grease.html',   label: 'Main Bearing Grease' },
           { href: base + 'products/tail-seal-grease.html',      label: 'Tail Seal Grease' },
           { href: base + 'products/tail-sealant-handcoat.html', label: 'Tail Sealant Hand-coat' },
-          { href: base + 'products/main-bearing-grease.html',   label: 'Main Bearing Grease' },
           { href: base + 'products/foam-agents.html',           label: 'Foam Agents' },
         ],
         contactHead: 'Contact',
