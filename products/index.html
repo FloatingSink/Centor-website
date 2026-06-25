@@ -26,9 +26,14 @@
   <style>
     /* ── Category intro cards ── */
     .cat-intro { background-color:var(--bg-1); border-top:1px solid var(--border); }
-    .cat-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:48px; }
-    @media(max-width:700px){ .cat-grid { grid-template-columns:1fr; } }
-    .cat-card { padding:44px 36px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); }
+    .cat-swiper { margin-top:48px; }
+    .cat-swiper .swiper-slide { height:auto; box-sizing:border-box; }
+    .cat-swiper .swiper-pagination { display:none; position:static; margin-top:20px; }
+    @media(max-width:700px){
+      .cat-swiper .swiper-pagination { display:block; }
+      .cat-swiper .swiper-pagination .swiper-pagination-bullet-active { background:var(--gold); }
+    }
+    .cat-card { padding:44px 36px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); height:100%; box-sizing:border-box; }
     .cat-card.sealing  { border-top:3px solid var(--gold); }
     .cat-card.conditioning { border-top:3px solid var(--charcoal-2); }
     .cat-badge { display:inline-block; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; padding:4px 12px; border:1px solid; margin-bottom:20px; font-weight:600; }
@@ -52,11 +57,21 @@
     .section-line-head-left h2 em { font-style:normal; color:var(--gold); }
     .section-line-head-right { font-size:14px; color:var(--text-mid); line-height:1.72; max-width:380px; }
 
-    .prod-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
-    @media(max-width:700px){ .prod-grid { grid-template-columns:1fr; } }
+    /* ── Product card grid / carousel ── */
+    .prod-swiper .swiper-slide { height:auto; box-sizing:border-box; }
+    .prod-swiper .swiper-pagination { display:none; position:static; margin-top:20px; }
+    @media(max-width:699px){
+      .prod-swiper .swiper-pagination { display:block; }
+      .prod-swiper .swiper-pagination .swiper-pagination-bullet-active { background:var(--gold); }
+    }
+    @media(min-width:700px){
+      .prod-swiper { overflow:visible; }
+      .prod-swiper .swiper-wrapper { display:grid; grid-template-columns:1fr 1fr; gap:2px; transform:none !important; height:auto !important; }
+      .prod-swiper .swiper-slide { width:auto !important; }
+    }
 
     /* ── Product card ── */
-    .pc { padding:34px 28px; background-color:var(--bg-1); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 1px 4px rgba(0,0,0,0.06); position:relative; overflow:hidden; transition:border-color 0.22s ease,background-color 0.22s ease; display:flex; flex-direction:column; }
+    .pc { padding:34px 28px; background-color:var(--bg-1); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 1px 4px rgba(0,0,0,0.06); position:relative; overflow:hidden; transition:border-color 0.22s ease,background-color 0.22s ease; display:flex; flex-direction:column; height:100%; box-sizing:border-box; }
     .pc::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); transform:scaleX(0); transform-origin:left; transition:transform 0.32s cubic-bezier(0.34,1.56,0.64,1); }
     .pc:hover { border-color:var(--border-gold); background-color:var(--bg-2); }
     .pc:hover::after { transform:scaleX(1); }
@@ -81,11 +96,20 @@
     .conditioning-section .pc { background-color:var(--bg); }
     .conditioning-section .pc:hover { background-color:var(--bg-2); }
 
-    /* ── Foam agents layout ── */
-    .foam-layout { display:grid; grid-template-columns:2fr 1fr; gap:2px; }
-    @media(max-width:860px){ .foam-layout { grid-template-columns:1fr; } }
+    /* ── Foam agents layout / carousel ── */
+    .foam-swiper .swiper-slide { height:auto; box-sizing:border-box; }
+    .foam-swiper .swiper-pagination { display:none; position:static; margin-top:20px; }
+    @media(max-width:859px){
+      .foam-swiper .swiper-pagination { display:block; }
+      .foam-swiper .swiper-pagination .swiper-pagination-bullet-active { background:var(--gold); }
+    }
+    @media(min-width:860px){
+      .foam-swiper { overflow:visible; }
+      .foam-swiper .swiper-wrapper { display:grid; grid-template-columns:2fr 1fr; gap:2px; transform:none !important; height:auto !important; }
+      .foam-swiper .swiper-slide { width:auto !important; }
+    }
 
-    .foam-main { padding:40px 36px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 1px 4px rgba(0,0,0,0.06); position:relative; overflow:hidden; transition:border-color 0.22s,background-color 0.22s; }
+    .foam-main { padding:40px 36px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 1px 4px rgba(0,0,0,0.06); position:relative; overflow:hidden; transition:border-color 0.22s,background-color 0.22s; height:100%; box-sizing:border-box; }
     .foam-main::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); transform:scaleX(0); transform-origin:left; transition:transform 0.32s cubic-bezier(0.34,1.56,0.64,1); }
     .foam-main:hover { border-color:var(--border-gold); background-color:var(--bg-2); }
     .foam-main:hover::after { transform:scaleX(1); }
@@ -94,7 +118,7 @@
     .foam-main-title em { font-style:normal; color:var(--gold); }
     .foam-main-tagline { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:18px; }
 
-    .foam-variants-panel { display:flex; flex-direction:column; gap:2px; }
+    .foam-variants-panel { display:flex; flex-direction:column; gap:2px; height:100%; }
     .foam-var { padding:24px 26px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); position:relative; overflow:hidden; transition:border-color 0.22s; display:flex; flex-direction:column; flex:1; }
     .foam-var::after { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(180deg,var(--gold),var(--gold-light)); transform:scaleY(0); transform-origin:top; transition:transform 0.28s cubic-bezier(0.34,1.56,0.64,1); }
     .foam-var:hover { border-color:var(--border-gold); }
@@ -149,23 +173,30 @@
       <h2 class="section-h">Sealing Materials &amp; <em>Soil Conditioning</em></h2>
       <p class="section-lede" style="max-width:560px">Two product categories covering the full spectrum of TBM consumable requirements — engineered sealants for main bearing and tail brush systems, and soil conditioning foam for EPB face management.</p>
     </div>
-    <div class="cat-grid">
-      <div class="cat-card sealing fade-up">
-        <div class="cat-badge g">TBM Sealing Materials</div>
-        <div class="cat-name">Sealing <em>Systems</em></div>
-        <div class="cat-tagline">4 Products — Pump-type &amp; Hand-applied</div>
-        <p class="cat-desc">Engineered sealants for main bearing lip-seal systems and tail brush assemblies. Pump-type and hand-applied formulations resistant to grout, groundwater, and high-pressure soil — covering the full range of shield TBM configurations.</p>
-        <div class="cat-feats"><span class="cat-feat">Main Bearing</span><span class="cat-feat">Tail Seal</span><span class="cat-feat">Pump-type</span><span class="cat-feat">Hand-applied</span><span class="cat-feat">High Pressure</span></div>
-        <a href="#sealing-materials" class="cat-jump">View Sealing Products ↓</a>
+    <div class="swiper cat-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="cat-card sealing fade-up">
+            <div class="cat-badge g">TBM Sealing Materials</div>
+            <div class="cat-name">Sealing <em>Systems</em></div>
+            <div class="cat-tagline">4 Products — Pump-type &amp; Hand-applied</div>
+            <p class="cat-desc">Engineered sealants for main bearing lip-seal systems and tail brush assemblies. Pump-type and hand-applied formulations resistant to grout, groundwater, and high-pressure soil — covering the full range of shield TBM configurations.</p>
+            <div class="cat-feats"><span class="cat-feat">Main Bearing</span><span class="cat-feat">Tail Seal</span><span class="cat-feat">Pump-type</span><span class="cat-feat">Hand-applied</span><span class="cat-feat">High Pressure</span></div>
+            <a href="#sealing-materials" class="cat-jump">View Sealing Products ↓</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="cat-card conditioning fade-up">
+            <div class="cat-badge s">Soil Conditioning</div>
+            <div class="cat-name">Foam <em>Agents</em></div>
+            <div class="cat-tagline">IS-C · IS-D · IS-P</div>
+            <p class="cat-desc">EPB-grade foaming agents that reduce cutterhead torque, control face pressure, and improve muck rheology for smooth screw conveyor discharge. Three variants for standard, dispersive, and cohesive ground conditions.</p>
+            <div class="cat-feats"><span class="cat-feat">Biodegradable</span><span class="cat-feat">Water Soluble</span><span class="cat-feat">EPB Compatible</span><span class="cat-feat">Face Pressure Control</span></div>
+            <a href="#soil-conditioning" class="cat-jump">View Foam Agents ↓</a>
+          </div>
+        </div>
       </div>
-      <div class="cat-card conditioning fade-up" style="transition-delay:0.08s">
-        <div class="cat-badge s">Soil Conditioning</div>
-        <div class="cat-name">Foam <em>Agents</em></div>
-        <div class="cat-tagline">IS-C · IS-D · IS-P</div>
-        <p class="cat-desc">EPB-grade foaming agents that reduce cutterhead torque, control face pressure, and improve muck rheology for smooth screw conveyor discharge. Three variants for standard, dispersive, and cohesive ground conditions.</p>
-        <div class="cat-feats"><span class="cat-feat">Biodegradable</span><span class="cat-feat">Water Soluble</span><span class="cat-feat">EPB Compatible</span><span class="cat-feat">Face Pressure Control</span></div>
-        <a href="#soil-conditioning" class="cat-jump">View Foam Agents ↓</a>
-      </div>
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </section>
@@ -180,72 +211,83 @@
       </div>
       <div class="section-line-head-right">Engineered sealants for main bearing lip-seal and tail brush systems. Pump-type and hand-applied formulations resistant to grout, groundwater, and high-pressure soil ingress.</div>
     </div>
-    <div class="prod-grid">
+    <div class="swiper prod-swiper">
+      <div class="swiper-wrapper">
 
-      <!-- Main Bearing Sealant PX2350 -->
-      <div class="pc fade-up">
-        <div class="pc-code">Model: PX2350</div>
-        <div class="pc-name">Main Bearing <em>Sealant</em></div>
-        <div class="pc-cat g">TBM Sealing · Pump-type</div>
-        <p class="pc-desc">Clay-thickened lubricating grease for the lips sealing system of TBM main bearings. Contains solids, fibers and graphite to prevent ingress of soil, water and dust through the main bearing sealing.</p>
-        <div class="pc-specs">
-          <div class="spec"><span class="spec-k">Appearance</span><span class="spec-v">Black fibrous paste</span></div>
-          <div class="spec"><span class="spec-k">Density</span><span class="spec-v">1.25±0.05 g/cm³</span></div>
-          <div class="spec"><span class="spec-k">Flash Point</span><span class="spec-v">≥220°C</span></div>
+        <!-- Main Bearing Sealant PX2350 -->
+        <div class="swiper-slide">
+          <div class="pc fade-up">
+            <div class="pc-code">Model: PX2350</div>
+            <div class="pc-name">Main Bearing <em>Sealant</em></div>
+            <div class="pc-cat g">TBM Sealing · Pump-type</div>
+            <p class="pc-desc">Clay-thickened lubricating grease for the lips sealing system of TBM main bearings. Contains solids, fibers and graphite to prevent ingress of soil, water and dust through the main bearing sealing.</p>
+            <div class="pc-specs">
+              <div class="spec"><span class="spec-k">Appearance</span><span class="spec-v">Black fibrous paste</span></div>
+              <div class="spec"><span class="spec-k">Density</span><span class="spec-v">1.25±0.05 g/cm³</span></div>
+              <div class="spec"><span class="spec-k">Flash Point</span><span class="spec-v">≥220°C</span></div>
+            </div>
+            <div class="pc-pkg"><strong>Packaging:</strong> 25 / 70 / 230 kg drum</div>
+            <div class="pc-feats"><span class="pc-feat">Biodegradable</span><span class="pc-feat">Self-extinguishing</span><span class="pc-feat">High water resistance</span></div>
+            <a href="main-bearing-sealant.html" class="pc-link">View Details →</a>
+          </div>
         </div>
-        <div class="pc-pkg"><strong>Packaging:</strong> 25 / 70 / 230 kg drum</div>
-        <div class="pc-feats"><span class="pc-feat">Biodegradable</span><span class="pc-feat">Self-extinguishing</span><span class="pc-feat">High water resistance</span></div>
-        <a href="main-bearing-sealant.html" class="pc-link">View Details →</a>
-      </div>
 
-      <!-- Tail Seal Grease TM-T100 -->
-      <div class="pc fade-up" style="transition-delay:0.06s">
-        <div class="pc-code">Model: TM-T100</div>
-        <div class="pc-name">Tail Seal <em>Grease</em></div>
-        <div class="pc-cat g">TBM Sealing · Pump-type</div>
-        <p class="pc-desc">Economical driving-grade tail sealant for shielded TBMs. Pumped into the tail sealing chamber to prevent water, soil and annulus grout from entering the TBM invert.</p>
-        <div class="pc-specs">
-          <div class="spec"><span class="spec-k">Density</span><span class="spec-v">1.35±0.05 g/cm³</span></div>
-          <div class="spec"><span class="spec-k">Water Seal</span><span class="spec-v">35 bar — no leakage</span></div>
-          <div class="spec"><span class="spec-k">Flash Point</span><span class="spec-v">≥220°C</span></div>
+        <!-- Tail Seal Grease TM-T100 -->
+        <div class="swiper-slide">
+          <div class="pc fade-up">
+            <div class="pc-code">Model: TM-T100</div>
+            <div class="pc-name">Tail Seal <em>Grease</em></div>
+            <div class="pc-cat g">TBM Sealing · Pump-type</div>
+            <p class="pc-desc">Economical driving-grade tail sealant for shielded TBMs. Pumped into the tail sealing chamber to prevent water, soil and annulus grout from entering the TBM invert.</p>
+            <div class="pc-specs">
+              <div class="spec"><span class="spec-k">Density</span><span class="spec-v">1.35±0.05 g/cm³</span></div>
+              <div class="spec"><span class="spec-k">Water Seal</span><span class="spec-v">35 bar — no leakage</span></div>
+              <div class="spec"><span class="spec-k">Flash Point</span><span class="spec-v">≥220°C</span></div>
+            </div>
+            <div class="pc-pkg"><strong>Packaging:</strong> 25 / 70 / 250 kg drum</div>
+            <div class="pc-feats"><span class="pc-feat">High pressure</span><span class="pc-feat">Flame retardant</span><span class="pc-feat">Anti-washout</span></div>
+            <a href="tail-seal-grease.html" class="pc-link">View Details →</a>
+          </div>
         </div>
-        <div class="pc-pkg"><strong>Packaging:</strong> 25 / 70 / 250 kg drum</div>
-        <div class="pc-feats"><span class="pc-feat">High pressure</span><span class="pc-feat">Flame retardant</span><span class="pc-feat">Anti-washout</span></div>
-        <a href="tail-seal-grease.html" class="pc-link">View Details →</a>
-      </div>
 
-      <!-- Tail Sealant Hand-coat PA -->
-      <div class="pc fade-up" style="transition-delay:0.12s">
-        <div class="pc-code">Model: PA</div>
-        <div class="pc-name">Tail Sealant <em>Hand-coat</em></div>
-        <div class="pc-cat g">Shield Machine Consumable · Hand-applied</div>
-        <p class="pc-desc">Dedicated first-fill sealant manually packed into the tail sealing brush to prevent synchronous grouting slurry and groundwater from infiltrating and causing brush hardening failure.</p>
-        <div class="pc-specs">
-          <div class="spec"><span class="spec-k">Colour</span><span class="spec-v">White</span></div>
-          <div class="spec"><span class="spec-k">Density</span><span class="spec-v">1.30±0.05 g/cm³</span></div>
-          <div class="spec"><span class="spec-k">Water Seal</span><span class="spec-v">35 bar (Matsumura)</span></div>
+        <!-- Tail Sealant Hand-coat PA -->
+        <div class="swiper-slide">
+          <div class="pc fade-up">
+            <div class="pc-code">Model: PA</div>
+            <div class="pc-name">Tail Sealant <em>Hand-coat</em></div>
+            <div class="pc-cat g">Shield Machine Consumable · Hand-applied</div>
+            <p class="pc-desc">Dedicated first-fill sealant manually packed into the tail sealing brush to prevent synchronous grouting slurry and groundwater from infiltrating and causing brush hardening failure.</p>
+            <div class="pc-specs">
+              <div class="spec"><span class="spec-k">Colour</span><span class="spec-v">White</span></div>
+              <div class="spec"><span class="spec-k">Density</span><span class="spec-v">1.30±0.05 g/cm³</span></div>
+              <div class="spec"><span class="spec-k">Water Seal</span><span class="spec-v">35 bar (Matsumura)</span></div>
+            </div>
+            <div class="pc-pkg"><strong>Application:</strong> Manual brush filling</div>
+            <div class="pc-feats"><span class="pc-feat">Hand-applied</span><span class="pc-feat">Flame retardant</span><span class="pc-feat">High cohesion</span></div>
+            <a href="tail-sealant-handcoat.html" class="pc-link">View Details →</a>
+          </div>
         </div>
-        <div class="pc-pkg"><strong>Application:</strong> Manual brush filling</div>
-        <div class="pc-feats"><span class="pc-feat">Hand-applied</span><span class="pc-feat">Flame retardant</span><span class="pc-feat">High cohesion</span></div>
-        <a href="tail-sealant-handcoat.html" class="pc-link">View Details →</a>
-      </div>
 
-      <!-- Main Bearing Grease EP1/EP2 -->
-      <div class="pc fade-up" style="transition-delay:0.18s">
-        <div class="pc-code">Models: EP1 / EP2</div>
-        <div class="pc-name">Main Bearing <em>Grease</em></div>
-        <div class="pc-cat g">Shield Machine Consumable · Pump-type</div>
-        <p class="pc-desc">Eco-friendly sealant for the main bearing lip-seal system of shield boring machines. Distributed via centralised pump system. Biodegradable and non-toxic — zero groundwater or soil pollution.</p>
-        <div class="pc-specs">
-          <div class="spec"><span class="spec-k">Appearance</span><span class="spec-v">Black homogeneous paste</span></div>
-          <div class="spec"><span class="spec-k">Density</span><span class="spec-v">1.25±0.05 g/cm³</span></div>
-          <div class="spec"><span class="spec-k">Penetration</span><span class="spec-v">230–280 (1/10mm)</span></div>
+        <!-- Main Bearing Grease EP1/EP2 -->
+        <div class="swiper-slide">
+          <div class="pc fade-up">
+            <div class="pc-code">Models: EP1 / EP2</div>
+            <div class="pc-name">Main Bearing <em>Grease</em></div>
+            <div class="pc-cat g">Shield Machine Consumable · Pump-type</div>
+            <p class="pc-desc">Eco-friendly sealant for the main bearing lip-seal system of shield boring machines. Distributed via centralised pump system. Biodegradable and non-toxic — zero groundwater or soil pollution.</p>
+            <div class="pc-specs">
+              <div class="spec"><span class="spec-k">Appearance</span><span class="spec-v">Black homogeneous paste</span></div>
+              <div class="spec"><span class="spec-k">Density</span><span class="spec-v">1.25±0.05 g/cm³</span></div>
+              <div class="spec"><span class="spec-k">Penetration</span><span class="spec-v">230–280 (1/10mm)</span></div>
+            </div>
+            <div class="pc-pkg"><strong>Application:</strong> Centralised pump system</div>
+            <div class="pc-feats"><span class="pc-feat">Biodegradable</span><span class="pc-feat">Non-toxic</span><span class="pc-feat">Flame retardant</span></div>
+            <a href="main-bearing-grease.html" class="pc-link">View Details →</a>
+          </div>
         </div>
-        <div class="pc-pkg"><strong>Application:</strong> Centralised pump system</div>
-        <div class="pc-feats"><span class="pc-feat">Biodegradable</span><span class="pc-feat">Non-toxic</span><span class="pc-feat">Flame retardant</span></div>
-        <a href="main-bearing-grease.html" class="pc-link">View Details →</a>
-      </div>
 
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </section>
@@ -260,47 +302,54 @@
       </div>
       <div class="section-line-head-right">EPB-grade soil conditioning foam that reduces cutterhead torque, controls face permeability, and improves excavated muck flow through the screw conveyor. Biodegradable and water soluble.</div>
     </div>
-    <div class="foam-layout fade-up">
+    <div class="swiper foam-swiper fade-up">
+      <div class="swiper-wrapper">
 
-      <!-- Main foam agents card -->
-      <div class="foam-main">
-        <div class="foam-main-code">IS Series · Foam Agents</div>
-        <div class="cat-badge s" style="margin-bottom:18px">Soil Conditioning · EPB Shield</div>
-        <div class="foam-main-title">IS Series Foam <em>Agents</em></div>
-        <div class="foam-main-tagline">IS-C · IS-D · IS-P</div>
-        <p style="font-size:14px;color:var(--text-mid);line-height:1.75;margin-bottom:24px">Three formulations of TBM soil conditioning foam for EPB shield machines. Creates temporary cohesion in excavated soil, reduces water permeability at the face, provides air cushion pressure compensation, and improves muck flow. All variants are biodegradable and completely water soluble. Choose between standard, dispersed (higher solids), and polymer-enhanced formulations based on ground conditions.</p>
-        <div class="pc-specs" style="margin-bottom:22px">
-          <div class="spec"><span class="spec-k">pH</span><span class="spec-v">7.0–9.0 (all variants)</span></div>
-          <div class="spec"><span class="spec-k">Solubility</span><span class="spec-v">Completely water soluble</span></div>
-          <div class="spec"><span class="spec-k">Biodeg.</span><span class="spec-v">&gt;80% in 28 days (IS-C)</span></div>
-          <div class="spec"><span class="spec-k">Packaging</span><span class="spec-v">200 kg drum / 1,000 kg IBC</span></div>
+        <!-- Main foam agents card -->
+        <div class="swiper-slide">
+          <div class="foam-main">
+            <div class="foam-main-code">IS Series · Foam Agents</div>
+            <div class="cat-badge s" style="margin-bottom:18px">Soil Conditioning · EPB Shield</div>
+            <div class="foam-main-title">IS Series Foam <em>Agents</em></div>
+            <div class="foam-main-tagline">IS-C · IS-D · IS-P</div>
+            <p style="font-size:14px;color:var(--text-mid);line-height:1.75;margin-bottom:24px">Three formulations of TBM soil conditioning foam for EPB shield machines. Creates temporary cohesion in excavated soil, reduces water permeability at the face, provides air cushion pressure compensation, and improves muck flow. All variants are biodegradable and completely water soluble. Choose between standard, dispersed (higher solids), and polymer-enhanced formulations based on ground conditions.</p>
+            <div class="pc-specs" style="margin-bottom:22px">
+              <div class="spec"><span class="spec-k">pH</span><span class="spec-v">7.0–9.0 (all variants)</span></div>
+              <div class="spec"><span class="spec-k">Solubility</span><span class="spec-v">Completely water soluble</span></div>
+              <div class="spec"><span class="spec-k">Biodeg.</span><span class="spec-v">&gt;80% in 28 days (IS-C)</span></div>
+              <div class="spec"><span class="spec-k">Packaging</span><span class="spec-v">200 kg drum / 1,000 kg IBC</span></div>
+            </div>
+            <div class="pc-feats" style="margin-bottom:26px"><span class="pc-feat">Biodegradable</span><span class="pc-feat">Water soluble</span><span class="pc-feat">EPB compatible</span><span class="pc-feat">Torque reduction</span><span class="pc-feat">Face pressure control</span></div>
+            <a href="foam-agents.html" class="pc-link">View Full Comparison &amp; Details →</a>
+          </div>
         </div>
-        <div class="pc-feats" style="margin-bottom:26px"><span class="pc-feat">Biodegradable</span><span class="pc-feat">Water soluble</span><span class="pc-feat">EPB compatible</span><span class="pc-feat">Torque reduction</span><span class="pc-feat">Face pressure control</span></div>
-        <a href="foam-agents.html" class="pc-link">View Full Comparison &amp; Details →</a>
+
+        <!-- Variant panel -->
+        <div class="swiper-slide">
+          <div class="foam-variants-panel">
+            <div class="foam-var">
+              <div class="foam-var-code">IS-C</div>
+              <div class="foam-var-sub">Standard</div>
+              <p class="foam-var-desc">Standard formulation for wet to sandy clay soils. Solid content 13.5–15.1%, expansion rate 8–25×, mix ratio 1.5–5%.</p>
+              <a href="foam-agents.html#is-c" class="foam-var-link">Details →</a>
+            </div>
+            <div class="foam-var">
+              <div class="foam-var-code">IS-D</div>
+              <div class="foam-var-sub">Dispersed</div>
+              <p class="foam-var-desc">Higher solid content (19.4–21.4%) for dispersive ground. Improved stability in high-permeability soils.</p>
+              <a href="foam-agents.html#is-d" class="foam-var-link">Details →</a>
+            </div>
+            <div class="foam-var">
+              <div class="foam-var-code">IS-P</div>
+              <div class="foam-var-sub">Polymer</div>
+              <p class="foam-var-desc">Polymer-enhanced formula for cohesive or mixed ground conditions. Improved foam structure and soil integration.</p>
+              <a href="foam-agents.html#is-p" class="foam-var-link">Details →</a>
+            </div>
+          </div>
+        </div>
+
       </div>
-
-      <!-- Variant panel -->
-      <div class="foam-variants-panel">
-        <div class="foam-var">
-          <div class="foam-var-code">IS-C</div>
-          <div class="foam-var-sub">Standard</div>
-          <p class="foam-var-desc">Standard formulation for wet to sandy clay soils. Solid content 13.5–15.1%, expansion rate 8–25×, mix ratio 1.5–5%.</p>
-          <a href="foam-agents.html#is-c" class="foam-var-link">Details →</a>
-        </div>
-        <div class="foam-var">
-          <div class="foam-var-code">IS-D</div>
-          <div class="foam-var-sub">Dispersed</div>
-          <p class="foam-var-desc">Higher solid content (19.4–21.4%) for dispersive ground. Improved stability in high-permeability soils.</p>
-          <a href="foam-agents.html#is-d" class="foam-var-link">Details →</a>
-        </div>
-        <div class="foam-var">
-          <div class="foam-var-code">IS-P</div>
-          <div class="foam-var-sub">Polymer</div>
-          <p class="foam-var-desc">Polymer-enhanced formula for cohesive or mixed ground conditions. Improved foam structure and soil integration.</p>
-          <a href="foam-agents.html#is-p" class="foam-var-link">Details →</a>
-        </div>
-      </div>
-
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </section>
@@ -327,4 +376,35 @@
 <script src="../components/footer.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="../assets/js/centor.js"></script>
+<script>
+  new Swiper('.cat-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 2,
+    allowTouchMove: true,
+    pagination: { el: '.cat-swiper .swiper-pagination', clickable: true },
+    breakpoints: {
+      700: { slidesPerView: 2, allowTouchMove: false, pagination: { enabled: false } }
+    }
+  });
+
+  new Swiper('.prod-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 2,
+    allowTouchMove: true,
+    pagination: { el: '.prod-swiper .swiper-pagination', clickable: true },
+    breakpoints: {
+      700: { allowTouchMove: false, pagination: { enabled: false } }
+    }
+  });
+
+  new Swiper('.foam-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 2,
+    allowTouchMove: true,
+    pagination: { el: '.foam-swiper .swiper-pagination', clickable: true },
+    breakpoints: {
+      860: { allowTouchMove: false, pagination: { enabled: false } }
+    }
+  });
+</script>
 </body></html>
