@@ -79,7 +79,8 @@
 
     /* GLOBE */
     .globe-section{background:var(--bg);background-image:var(--metal-lines);border-top:1px solid var(--border);}
-    .globe-inner{max-width:600px;margin:0 auto;}
+    .globe-info-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+    @media(max-width:960px){.globe-info-layout{grid-template-columns:1fr;gap:48px;}}
     .globe-hd{margin-bottom:44px;}
     .globe-stage{background:var(--bg);background-image:linear-gradient(145deg,rgba(0,0,0,0.015) 0%,transparent 55%);border:1px solid var(--gold-border);box-shadow:0 12px 48px rgba(0,0,0,0.10),inset 0 1px 0 rgba(255,255,255,0.90);padding:52px 40px 40px;display:flex;flex-direction:column;align-items:center;}
     @media(max-width:600px){.globe-stage{padding:32px 20px 28px;}}
@@ -126,12 +127,32 @@
   </div>
 </div>
 
-<!-- CONTACT MAIN -->
-<section class="contact-section sp">
+<!-- 全球办公室 + 联系信息 -->
+<section class="globe-section sp">
   <div class="container">
-    <div class="contact-layout">
-      <!-- INFO -->
-      <div class="info-blocks fade-up">
+    <div class="globe-info-layout">
+      <!-- GLOBE -->
+      <div class="fade-up">
+        <div class="globe-hd">
+          <div class="eyebrow"><span class="eyebrow-num">01</span><span class="eyebrow-line"></span><span class="eyebrow-label">全球业务布局</span></div>
+          <h2 class="section-h">我们的<em>办公室</em></h2>
+          <p class="section-lede">新加坡 · 香港 · 迪拜 · 巴拿马 · 德国</p>
+        </div>
+        <div class="globe-stage" style="transition-delay:0.1s">
+          <div class="globe-cvs-wrap">
+            <canvas id="cobe-canvas"></canvas>
+          </div>
+          <div class="globe-legend">
+            <div class="gleg"><span class="gleg-dot gleg-hq"></span><div><div class="gleg-city">新加坡</div><div class="gleg-reg">全球总部</div></div></div>
+            <div class="gleg"><span class="gleg-dot"></span><div><div class="gleg-city">香港</div><div class="gleg-reg">亚太区</div></div></div>
+            <div class="gleg"><span class="gleg-dot"></span><div><div class="gleg-city">迪拜</div><div class="gleg-reg">中东</div></div></div>
+            <div class="gleg"><span class="gleg-dot"></span><div><div class="gleg-city">巴拿马</div><div class="gleg-reg">拉丁美洲</div></div></div>
+            <div class="gleg"><span class="gleg-dot"></span><div><div class="gleg-city">德国</div><div class="gleg-reg">欧洲</div></div></div>
+          </div>
+        </div>
+      </div>
+      <!-- INFO BLOCKS -->
+      <div class="info-blocks fade-up" style="transition-delay:0.1s">
         <div class="ib">
           <div class="ib-head">新加坡 — 全球总部</div>
           <div class="ib-row"><div class="ib-label">联系人</div><div class="ib-val">余家龙</div></div>
@@ -152,80 +173,57 @@
           <div class="ib-row"><div class="ib-label">电话</div><div class="ib-val"><a href="tel:+491714311744">+49 171 431 17 44</a></div></div>
         </div>
       </div>
-
-      <!-- FORM -->
-      <div class="fade-up" style="transition-delay:0.12s">
-        <div class="form-wrap">
-          <div class="form-h">发送询盘</div>
-          <p class="form-sub">请填写以下表单，我们的工程团队将在一个工作日内与您联系。</p>
-          <form id="cform" action="https://formspree.io/f/mvzjaprj" method="POST" novalidate>
-            <input type="hidden" name="_subject" value="New enquiry from CENTOR website (ZH)">
-            <div class="fg">
-              <div class="f"><label class="flabel" for="fn">名 <span>*</span></label><input class="finput" type="text" id="fn" name="first_name" placeholder="名" required data-fs-field /></div>
-              <div class="f"><label class="flabel" for="ln">姓 <span>*</span></label><input class="finput" type="text" id="ln" name="last_name" placeholder="姓" required data-fs-field /></div>
-              <div class="f"><label class="flabel" for="em">电子邮箱 <span>*</span></label><input class="finput" type="email" id="em" name="email" placeholder="your@email.com" required data-fs-field /><span data-fs-error="email"></span></div>
-              <div class="f"><label class="flabel" for="ph">联系电话</label><input class="finput" type="tel" id="ph" name="phone" placeholder="+65 0000 0000" data-fs-field /></div>
-              <div class="f full"><label class="flabel" for="co">公司/单位 <span>*</span></label><input class="finput" type="text" id="co" name="company" placeholder="公司名称" required data-fs-field /></div>
-              <div class="f"><label class="flabel" for="eq">询盘类型 <span>*</span></label>
-                <select class="fselect" id="eq" name="enquiry_type" required data-fs-field>
-                  <option value="">请选择询盘类型…</option>
-                  <option>产品资料 / 技术数据表申请</option>
-                  <option>项目报价</option>
-                  <option>技术咨询</option>
-                  <option>现场技术支持申请</option>
-                  <option>供应链 / 物流</option>
-                  <option>培训与认证</option>
-                  <option>其他</option>
-                </select>
-              </div>
-              <div class="f"><label class="flabel" for="tb">TBM 类型</label>
-                <select class="fselect" id="tb" name="tbm_type" data-fs-field>
-                  <option value="">请选择 TBM 类型…</option>
-                  <option>EPB（土压平衡盾构）</option>
-                  <option>泥水加压 / 混合盾构</option>
-                  <option>硬岩 / 开敞式 TBM</option>
-                  <option>路面铣刨机 / 序列掘进</option>
-                  <option>顶管 / 微型隧道</option>
-                  <option>其他 / 未确定</option>
-                </select>
-              </div>
-              <div class="f full"><label class="flabel" for="pn">项目名称</label><input class="finput" type="text" id="pn" name="project_name" placeholder="项目名称（可选）" data-fs-field /></div>
-              <div class="f full"><label class="flabel" for="msg">留言 <span>*</span></label><textarea class="ftextarea" id="msg" name="message" placeholder="请描述您的项目情况、地质条件、施工计划及具体需求…" required data-fs-field></textarea></div>
-              <div class="fcheck"><input type="checkbox" id="priv" name="privacy_consent" value="yes" required data-fs-field /><label for="priv">我已阅读并同意<a href="#">隐私政策</a>，并授权承拓处理我的个人信息以回复本次询盘。</label></div>
-            </div>
-            <div class="ferror" id="ferror" data-fs-error>提交失败，请稍后重试，或直接发送邮件至 <a href="mailto:info@centorglobal.com">info@centorglobal.com</a>。</div>
-            <button type="submit" class="fsubmit" style="margin-top:20px" id="fsubmit" data-fs-submit-btn>提交询盘</button>
-          </form>
-          <div class="fresponse" id="fresponse" data-fs-success>
-            <div class="fresponse-h">询盘已收到</div>
-            <p class="fresponse-b">感谢您的询盘。我们的工程团队将在一个工作日内与您联系。</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- 全球办公室 GLOBE -->
-<section class="globe-section sp">
+<!-- CONTACT FORM -->
+<section class="contact-section sp">
   <div class="container">
-    <div class="globe-inner">
-      <div class="globe-hd fade-up">
-        <div class="eyebrow"><span class="eyebrow-num">01</span><span class="eyebrow-line"></span><span class="eyebrow-label">全球业务布局</span></div>
-        <h2 class="section-h">我们的<em>办公室</em></h2>
-        <p class="section-lede">新加坡 · 香港 · 迪拜 · 巴拿马 · 德国</p>
-      </div>
-      <div class="globe-stage fade-up" style="transition-delay:0.1s">
-        <div class="globe-cvs-wrap">
-          <canvas id="cobe-canvas"></canvas>
+    <div class="form-wrap fade-up">
+      <div class="form-h">发送询盘</div>
+      <p class="form-sub">请填写以下表单，我们的工程团队将在一个工作日内与您联系。</p>
+      <form id="cform" action="https://formspree.io/f/mvzjaprj" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="New enquiry from CENTOR website (ZH)">
+        <div class="fg">
+          <div class="f"><label class="flabel" for="fn">名 <span>*</span></label><input class="finput" type="text" id="fn" name="first_name" placeholder="名" required data-fs-field /></div>
+          <div class="f"><label class="flabel" for="ln">姓 <span>*</span></label><input class="finput" type="text" id="ln" name="last_name" placeholder="姓" required data-fs-field /></div>
+          <div class="f"><label class="flabel" for="em">电子邮箱 <span>*</span></label><input class="finput" type="email" id="em" name="email" placeholder="your@email.com" required data-fs-field /><span data-fs-error="email"></span></div>
+          <div class="f"><label class="flabel" for="ph">联系电话</label><input class="finput" type="tel" id="ph" name="phone" placeholder="+65 0000 0000" data-fs-field /></div>
+          <div class="f full"><label class="flabel" for="co">公司/单位 <span>*</span></label><input class="finput" type="text" id="co" name="company" placeholder="公司名称" required data-fs-field /></div>
+          <div class="f"><label class="flabel" for="eq">询盘类型 <span>*</span></label>
+            <select class="fselect" id="eq" name="enquiry_type" required data-fs-field>
+              <option value="">请选择询盘类型…</option>
+              <option>产品资料 / 技术数据表申请</option>
+              <option>项目报价</option>
+              <option>技术咨询</option>
+              <option>现场技术支持申请</option>
+              <option>供应链 / 物流</option>
+              <option>培训与认证</option>
+              <option>其他</option>
+            </select>
+          </div>
+          <div class="f"><label class="flabel" for="tb">TBM 类型</label>
+            <select class="fselect" id="tb" name="tbm_type" data-fs-field>
+              <option value="">请选择 TBM 类型…</option>
+              <option>EPB（土压平衡盾构）</option>
+              <option>泥水加压 / 混合盾构</option>
+              <option>硬岩 / 开敞式 TBM</option>
+              <option>路面铣刨机 / 序列掘进</option>
+              <option>顶管 / 微型隧道</option>
+              <option>其他 / 未确定</option>
+            </select>
+          </div>
+          <div class="f full"><label class="flabel" for="pn">项目名称</label><input class="finput" type="text" id="pn" name="project_name" placeholder="项目名称（可选）" data-fs-field /></div>
+          <div class="f full"><label class="flabel" for="msg">留言 <span>*</span></label><textarea class="ftextarea" id="msg" name="message" placeholder="请描述您的项目情况、地质条件、施工计划及具体需求…" required data-fs-field></textarea></div>
+          <div class="fcheck"><input type="checkbox" id="priv" name="privacy_consent" value="yes" required data-fs-field /><label for="priv">我已阅读并同意<a href="#">隐私政策</a>，并授权承拓处理我的个人信息以回复本次询盘。</label></div>
         </div>
-        <div class="globe-legend">
-          <div class="gleg"><span class="gleg-dot gleg-hq"></span><div><div class="gleg-city">新加坡</div><div class="gleg-reg">全球总部</div></div></div>
-          <div class="gleg"><span class="gleg-dot"></span><div><div class="gleg-city">香港</div><div class="gleg-reg">亚太区</div></div></div>
-          <div class="gleg"><span class="gleg-dot"></span><div><div class="gleg-city">迪拜</div><div class="gleg-reg">中东</div></div></div>
-          <div class="gleg"><span class="gleg-dot"></span><div><div class="gleg-city">巴拿马</div><div class="gleg-reg">拉丁美洲</div></div></div>
-          <div class="gleg"><span class="gleg-dot"></span><div><div class="gleg-city">德国</div><div class="gleg-reg">欧洲</div></div></div>
-        </div>
+        <div class="ferror" id="ferror" data-fs-error>提交失败，请稍后重试，或直接发送邮件至 <a href="mailto:info@centorglobal.com">info@centorglobal.com</a>。</div>
+        <button type="submit" class="fsubmit" style="margin-top:20px" id="fsubmit" data-fs-submit-btn>提交询盘</button>
+      </form>
+      <div class="fresponse" id="fresponse" data-fs-success>
+        <div class="fresponse-h">询盘已收到</div>
+        <p class="fresponse-b">感谢您的询盘。我们的工程团队将在一个工作日内与您联系。</p>
       </div>
     </div>
   </div>
