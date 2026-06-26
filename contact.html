@@ -71,11 +71,14 @@
     .fcheck label { font-size:12.5px; color:var(--text-dim); line-height:1.5; cursor:pointer; }
     .fcheck a { color:var(--gold); }
     .fsubmit { margin-top:6px; width:100%; padding:14px; background:var(--gold); color:#080808; font-family:var(--font-ui); font-size:12px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; border:1px solid var(--gold); cursor:pointer; transition:background 0.2s ease,box-shadow 0.2s ease; }
-    .fsubmit:hover { background:var(--gold-light); box-shadow:0 4px 18px rgba(184,138,60,0.30); }
+    .fsubmit:hover:not(:disabled) { background:var(--gold-light); box-shadow:0 4px 18px rgba(184,138,60,0.30); }
+    .fsubmit:disabled { opacity:0.6; cursor:not-allowed; }
     .fresponse { display:none; padding:24px; background:var(--gold-dim); border:1px solid var(--gold-border); text-align:center; }
     .fresponse.show { display:block; }
     .fresponse-h { font-family:var(--font-d); font-weight:700; font-size:15px; color:var(--gold); letter-spacing:0.06em; margin-bottom:8px; }
     .fresponse-b { font-size:13.5px; color:var(--text-mid); }
+    .ferror { display:none; margin-top:14px; padding:14px 18px; background:#fff0f0; border:1px solid #e0b0b0; color:#7a2020; font-size:13px; }
+    .ferror.show { display:block; }
 
     .help { background-color:var(--bg); background-image:var(--metal-lines); border-top:1px solid var(--border); }
     .help-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:44px; }
@@ -174,15 +177,16 @@
         <div class="form-wrap">
           <div class="form-h">Send Us a Message</div>
           <p class="form-sub">Fill in the form below and our engineering team will respond within one business day.</p>
-          <form id="cform" novalidate>
+          <form id="cform" action="https://formspree.io/f/mvzjaprj" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="New enquiry from CENTOR website">
             <div class="fg">
-              <div class="f"><label class="flabel" for="fn">First Name <span>*</span></label><input class="finput" type="text" id="fn" placeholder="First name" /></div>
-              <div class="f"><label class="flabel" for="ln">Last Name <span>*</span></label><input class="finput" type="text" id="ln" placeholder="Last name" /></div>
-              <div class="f"><label class="flabel" for="em">Email Address <span>*</span></label><input class="finput" type="email" id="em" placeholder="your@email.com" /></div>
-              <div class="f"><label class="flabel" for="ph">Phone Number</label><input class="finput" type="tel" id="ph" placeholder="+65 0000 0000" /></div>
-              <div class="f full"><label class="flabel" for="co">Company / Organisation <span>*</span></label><input class="finput" type="text" id="co" placeholder="Company name" /></div>
+              <div class="f"><label class="flabel" for="fn">First Name <span>*</span></label><input class="finput" type="text" id="fn" name="first_name" placeholder="First name" required data-fs-field /></div>
+              <div class="f"><label class="flabel" for="ln">Last Name <span>*</span></label><input class="finput" type="text" id="ln" name="last_name" placeholder="Last name" required data-fs-field /></div>
+              <div class="f"><label class="flabel" for="em">Email Address <span>*</span></label><input class="finput" type="email" id="em" name="email" placeholder="your@email.com" required data-fs-field /><span data-fs-error="email"></span></div>
+              <div class="f"><label class="flabel" for="ph">Phone Number</label><input class="finput" type="tel" id="ph" name="phone" placeholder="+65 0000 0000" data-fs-field /></div>
+              <div class="f full"><label class="flabel" for="co">Company / Organisation <span>*</span></label><input class="finput" type="text" id="co" name="company" placeholder="Company name" required data-fs-field /></div>
               <div class="f"><label class="flabel" for="eq">Enquiry Type <span>*</span></label>
-                <select class="fselect" id="eq">
+                <select class="fselect" id="eq" name="enquiry_type" required data-fs-field>
                   <option value="">Select enquiry type…</option>
                   <option>Product Information / Datasheet Request</option>
                   <option>Project Quotation</option>
@@ -194,7 +198,7 @@
                 </select>
               </div>
               <div class="f"><label class="flabel" for="tb">TBM Type</label>
-                <select class="fselect" id="tb">
+                <select class="fselect" id="tb" name="tbm_type" data-fs-field>
                   <option value="">Select TBM type…</option>
                   <option>EPB (Earth Pressure Balance)</option>
                   <option>Slurry / Mixshield</option>
@@ -204,13 +208,14 @@
                   <option>Other / Unknown</option>
                 </select>
               </div>
-              <div class="f full"><label class="flabel" for="pn">Project Name</label><input class="finput" type="text" id="pn" placeholder="Project name (optional)" /></div>
-              <div class="f full"><label class="flabel" for="msg">Message <span>*</span></label><textarea class="ftextarea" id="msg" placeholder="Tell us about your project, ground conditions, timeline, and any specific requirements…"></textarea></div>
-              <div class="fcheck"><input type="checkbox" id="priv" /><label for="priv">I have read and agree to the <a href="#">Privacy Policy</a>. I consent to CENTOR processing my data to respond to this enquiry.</label></div>
+              <div class="f full"><label class="flabel" for="pn">Project Name</label><input class="finput" type="text" id="pn" name="project_name" placeholder="Project name (optional)" data-fs-field /></div>
+              <div class="f full"><label class="flabel" for="msg">Message <span>*</span></label><textarea class="ftextarea" id="msg" name="message" placeholder="Tell us about your project, ground conditions, timeline, and any specific requirements…" required data-fs-field></textarea></div>
+              <div class="fcheck"><input type="checkbox" id="priv" name="privacy_consent" value="yes" required data-fs-field /><label for="priv">I have read and agree to the <a href="#">Privacy Policy</a>. I consent to CENTOR processing my data to respond to this enquiry.</label></div>
             </div>
-            <button type="submit" class="fsubmit" style="margin-top:20px">Send Enquiry</button>
+            <div class="ferror" id="ferror" data-fs-error>Something went wrong. Please try again or email us directly at <a href="mailto:info@centorglobal.com">info@centorglobal.com</a>.</div>
+            <button type="submit" class="fsubmit" style="margin-top:20px" id="fsubmit" data-fs-submit-btn>Send Enquiry</button>
           </form>
-          <div class="fresponse" id="fresponse">
+          <div class="fresponse" id="fresponse" data-fs-success>
             <div class="fresponse-h">Message Received</div>
             <p class="fresponse-b">Thank you for your enquiry. Our engineering team will respond within one business day.</p>
           </div>
@@ -265,12 +270,10 @@
 <script src="components/navbar.js"></script>
 <script src="components/footer.js"></script>
 <script>
-  document.getElementById('cform').addEventListener('submit',function(e){
-    e.preventDefault();
-    this.style.display='none';
-    document.getElementById('fresponse').classList.add('show');
-  });
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#cform', formId: 'mvzjaprj' });
 </script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="assets/js/centor.js"></script>
 <script type="module">
