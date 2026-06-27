@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produktkatalog — CENTOR Untertagelösungen</title>
+  <link rel="icon" href="/assets/brand/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/brand/favicon-96x96.png" />
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="alternate" hreflang="en" href="https://centorglobal.com/products/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://centorglobal.com/zh/products/" />
+  <link rel="alternate" hreflang="de" href="https://centorglobal.com/de/products/" />
+  <link rel="alternate" hreflang="x-default" href="https://centorglobal.com/products/" />
+  <link rel="canonical" href="https://centorglobal.com/de/products/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Outfit:wght@700&family=Barlow:wght@400;500;600&family=Montserrat:wght@600&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/centor.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <style>
+    .cat-intro { background-color:var(--bg-1); border-top:1px solid var(--border); }
+    .cat-swiper { margin-top:48px; }
+    .cat-swiper .swiper-slide { height:auto; box-sizing:border-box; }
+    .cat-swiper .swiper-pagination { display:none; position:static; margin-top:20px; }
+    @media(max-width:700px){
+      .cat-swiper .swiper-pagination { display:block; }
+      .cat-swiper .swiper-pagination .swiper-pagination-bullet-active { background:var(--gold); }
+    }
+    .cat-card { padding:44px 36px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); height:100%; box-sizing:border-box; }
+    .cat-card.sealing  { border-top:3px solid var(--gold); }
+    .cat-card.conditioning { border-top:3px solid var(--charcoal-2); }
+    .cat-badge { display:inline-block; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; padding:4px 12px; border:1px solid; margin-bottom:20px; font-weight:600; }
+    .cat-badge.g { color:var(--gold); border-color:var(--gold-border); background:var(--gold-dim); }
+    .cat-badge.s { color:var(--charcoal-2); border-color:rgba(0,0,0,0.15); background:rgba(0,0,0,0.05); }
+    .cat-name { font-family:var(--font-d); font-weight:700; font-size:22px; color:var(--charcoal); letter-spacing:0.06em; margin-bottom:8px; }
+    .cat-name em { font-style:normal; color:var(--gold); }
+    .cat-tagline { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:18px; }
+    .cat-desc { font-size:14px; color:var(--text-mid); line-height:1.75; margin-bottom:24px; }
+    .cat-feats { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:28px; }
+    .cat-feat { font-size:10px; letter-spacing:0.10em; text-transform:uppercase; color:var(--text-dim); background:rgba(0,0,0,0.05); border:1px solid var(--border); padding:4px 10px; }
+    .cat-jump { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); text-decoration:none; display:inline-flex; align-items:center; gap:7px; transition:gap 0.2s ease; font-weight:600; }
+    .cat-jump:hover { gap:12px; }
+    .sealing-section     { background-color:var(--bg); border-top:1px solid var(--border); }
+    .conditioning-section{ background-color:var(--bg-1); border-top:1px solid var(--border); }
+    .section-line-head { display:flex; align-items:flex-end; justify-content:space-between; gap:32px; flex-wrap:wrap; margin-bottom:40px; padding-bottom:32px; border-bottom:1px solid var(--border); }
+    .section-line-head-left h2 { font-family:var(--font-d); font-weight:700; font-size:clamp(20px,2.8vw,34px); color:var(--charcoal); letter-spacing:0.04em; margin-top:10px; }
+    .section-line-head-left h2 em { font-style:normal; color:var(--gold); }
+    .section-line-head-right { font-size:14px; color:var(--text-mid); line-height:1.72; max-width:380px; }
+    .prod-swiper .swiper-slide { height:auto; box-sizing:border-box; }
+    .prod-swiper .swiper-pagination { display:none; position:static; margin-top:20px; }
+    @media(max-width:699px){
+      .prod-swiper .swiper-pagination { display:block; }
+      .prod-swiper .swiper-pagination .swiper-pagination-bullet-active { background:var(--gold); }
+    }
+    @media(min-width:700px){
+      .prod-swiper { overflow:visible; }
+      .prod-swiper .swiper-wrapper { display:grid; grid-template-columns:1fr 1fr; gap:2px; transform:none !important; height:auto !important; }
+      .prod-swiper .swiper-slide { width:auto !important; }
+    }
+    .pc { padding:34px 28px; background-color:var(--bg-1); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 1px 4px rgba(0,0,0,0.06); position:relative; overflow:hidden; transition:border-color 0.22s ease,background-color 0.22s ease; display:flex; flex-direction:column; height:100%; box-sizing:border-box; }
+    .pc::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); transform:scaleX(0); transform-origin:left; transition:transform 0.32s cubic-bezier(0.34,1.56,0.64,1); }
+    .pc:hover { border-color:var(--border-gold); background-color:var(--bg-2); }
+    .pc:hover::after { transform:scaleX(1); }
+    .pc-code { font-family:var(--font-spec); font-size:11px; color:var(--text-dim); letter-spacing:0.18em; margin-bottom:6px; text-transform:uppercase; font-weight:600; }
+    .pc-name { font-family:var(--font-d); font-weight:700; font-size:15px; color:var(--charcoal); letter-spacing:0.05em; margin-bottom:6px; line-height:1.3; }
+    .pc-name em { font-style:normal; color:var(--gold); }
+    .pc-cat { font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; margin-bottom:14px; }
+    .pc-cat.g { color:var(--gold); }
+    .pc-cat.s { color:var(--charcoal-2); }
+    .pc-desc { font-size:13px; color:var(--text-mid); line-height:1.68; margin-bottom:20px; flex:1; }
+    .pc-specs { display:flex; flex-direction:column; gap:5px; margin-bottom:16px; padding:14px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .spec { display:flex; gap:8px; }
+    .spec-k { font-family:var(--font-spec); color:var(--text-mid); text-transform:uppercase; letter-spacing:0.08em; font-size:11px; flex:none; min-width:90px; padding-top:1px; font-weight:500; }
+    .spec-v { font-family:var(--font-spec); color:var(--charcoal-2); font-size:12px; font-weight:500; }
+    .pc-pkg { font-size:12px; color:var(--text-dim); margin-bottom:14px; }
+    .pc-pkg strong { color:var(--charcoal-2); }
+    .pc-feats { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:18px; }
+    .pc-feat { font-size:9.5px; letter-spacing:0.10em; text-transform:uppercase; color:var(--text-dim); background:rgba(0,0,0,0.04); border:1px solid var(--border); padding:3px 8px; }
+    .pc-link { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); text-decoration:none; display:inline-flex; align-items:center; gap:7px; transition:gap 0.2s ease; font-weight:600; margin-top:auto; }
+    .pc-link:hover { gap:12px; }
+    .conditioning-section .pc { background-color:var(--bg); }
+    .conditioning-section .pc:hover { background-color:var(--bg-2); }
+    .foam-swiper .swiper-slide { height:auto; box-sizing:border-box; }
+    .foam-swiper .swiper-pagination { display:none; position:static; margin-top:20px; }
+    @media(max-width:859px){
+      .foam-swiper .swiper-pagination { display:block; }
+      .foam-swiper .swiper-pagination .swiper-pagination-bullet-active { background:var(--gold); }
+    }
+    @media(min-width:860px){
+      .foam-swiper { overflow:visible; }
+      .foam-swiper .swiper-wrapper { display:grid; grid-template-columns:2fr 1fr; gap:2px; transform:none !important; height:auto !important; }
+      .foam-swiper .swiper-slide { width:auto !important; }
+    }
+    .foam-main { padding:40px 36px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 1px 4px rgba(0,0,0,0.06); position:relative; overflow:hidden; transition:border-color 0.22s,background-color 0.22s; height:100%; box-sizing:border-box; }
+    .foam-main::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); transform:scaleX(0); transform-origin:left; transition:transform 0.32s cubic-bezier(0.34,1.56,0.64,1); }
+    .foam-main:hover { border-color:var(--border-gold); background-color:var(--bg-2); }
+    .foam-main:hover::after { transform:scaleX(1); }
+    .foam-main-code { font-family:var(--font-spec); font-size:9px; color:var(--text-faint); letter-spacing:0.24em; text-transform:uppercase; margin-bottom:10px; }
+    .foam-main-title { font-family:var(--font-d); font-weight:700; font-size:20px; color:var(--charcoal); letter-spacing:0.05em; margin-bottom:6px; }
+    .foam-main-title em { font-style:normal; color:var(--gold); }
+    .foam-main-tagline { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:18px; }
+    .foam-variants-panel { display:flex; flex-direction:column; gap:2px; height:100%; }
+    .foam-var { padding:24px 26px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); position:relative; overflow:hidden; transition:border-color 0.22s; display:flex; flex-direction:column; flex:1; }
+    .foam-var::after { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(180deg,var(--gold),var(--gold-light)); transform:scaleY(0); transform-origin:top; transition:transform 0.28s cubic-bezier(0.34,1.56,0.64,1); }
+    .foam-var:hover { border-color:var(--border-gold); }
+    .foam-var:hover::after { transform:scaleY(1); }
+    .foam-var-code { font-family:var(--font-spec); font-size:15px; color:var(--charcoal); font-weight:600; letter-spacing:0.10em; margin-bottom:3px; }
+    .foam-var-sub { font-size:10px; color:var(--text-dim); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:10px; }
+    .foam-var-desc { font-size:12px; color:var(--text-mid); line-height:1.6; margin-bottom:14px; flex:1; }
+    .foam-var-link { font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); text-decoration:none; display:inline-flex; align-items:center; gap:5px; font-weight:600; transition:gap 0.2s; }
+    .foam-var-link:hover { gap:9px; }
+    .support { background-color:var(--bg-2); border-top:1px solid var(--border); }
+    .support-inner { display:grid; grid-template-columns:1fr auto; gap:48px; align-items:center; }
+    @media(max-width:700px){ .support-inner { grid-template-columns:1fr; gap:28px; } }
+    .support-h { font-family:var(--font-d); font-weight:700; font-size:clamp(16px,2.4vw,28px); color:var(--charcoal); letter-spacing:0.04em; margin-bottom:12px; }
+    .support-h em { font-style:normal; color:var(--gold); }
+    .support-body { font-size:14.5px; color:var(--text-mid); line-height:1.72; }
+    .support-actions { display:flex; gap:12px; flex-wrap:wrap; flex:none; }
+  </style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true"><defs>
+  <linearGradient id="gSteel" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#f4f5f6"/><stop offset="0.32" stop-color="#d3d5d8"/><stop offset="0.6" stop-color="#a7abae"/><stop offset="0.82" stop-color="#888c90"/><stop offset="1" stop-color="#6c7074"/></linearGradient>
+  <linearGradient id="gGrey" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#74787c"/><stop offset="0.4" stop-color="#4f5256"/><stop offset="0.75" stop-color="#3a3d40"/><stop offset="1" stop-color="#2a2c2f"/></linearGradient>
+</defs></svg>
+
+<site-navbar></site-navbar>
+
+<div class="page-banner">
+  <div class="swiper banner-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide banner-slide" style="background-image:url('https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?w=1600&q=80')"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <div class="page-banner-inner container">
+    <div class="page-banner-eyebrow">Produktkatalog</div>
+    <h1 class="page-banner-h">TBM-Verbrauchsmaterialien &amp; <em>Dichtungslösungen</em></h1>
+    <p class="page-banner-sub">Präzisionsdichtungsmaterialien und Bodenverbesserungsprodukte für TBM — Hauptlagerdichtfett, Schildschwanzdichtfett und EPB-Schaumzusätze.</p>
+  </div>
+</div>
+
+<!-- CATEGORY OVERVIEW -->
+<section class="cat-intro sp">
+  <div class="container">
+    <div class="fade-up">
+      <div class="eyebrow"><span class="eyebrow-num">01</span><span class="eyebrow-line"></span><span class="eyebrow-label">Produktkategorien</span></div>
+      <h2 class="section-h">Dichtungsmaterialien &amp; <em>Bodenverbesserung</em></h2>
+      <p class="section-lede" style="max-width:560px">Zwei Produktkategorien decken das gesamte Spektrum der TBM-Verbrauchsmaterialien ab — technische Dichtfette für Hauptlager- und Schildschwanzdichtsysteme sowie Bodenverbesserungs-Schaumzusätze für die EPB-Ortsbrustkontrolle.</p>
+    </div>
+    <div class="swiper cat-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="cat-card sealing fade-up">
+            <div class="cat-badge g">TBM-Dichtungsmaterialien</div>
+            <div class="cat-name">Dichtungs<em>systeme</em></div>
+            <div class="cat-tagline">4 Produkte — Pump- und Handauftrag</div>
+            <p class="cat-desc">Technische Dichtfette für TBM-Hauptlager-Lippendichtsysteme und Schildschwanzborstendichtungen — Pump- und Handauftragformulierungen, die Injektionsmörtel, Grundwasser und Hochdruckboden abhalten, für alle Schilds-TBM-Konfigurationen.</p>
+            <div class="cat-feats"><span class="cat-feat">Hauptlager</span><span class="cat-feat">Schildschwanz</span><span class="cat-feat">Pumpbar</span><span class="cat-feat">Handauftrag</span><span class="cat-feat">Hochdruck</span></div>
+            <a href="#sealing-materials" class="cat-jump">Dichtungsprodukte ansehen ↓</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="cat-card conditioning fade-up">
+            <div class="cat-badge s">Bodenverbesserung</div>
+            <div class="cat-name">Schaum<em>zusätze</em></div>
+            <div class="cat-tagline">IS-C · IS-D · IS-P</div>
+            <p class="cat-desc">EPB-Schaumzusätze zur Bodenverbesserung, die Schneidradmoment reduzieren, Ortsbrustpermeabilität kontrollieren und die Fließfähigkeit des Ausbruchmaterials durch die Förderschnecke verbessern. Drei Formulierungen für Standard-, dispersive und kohäsive Geologie.</p>
+            <div class="cat-feats"><span class="cat-feat">Biologisch abbaubar</span><span class="cat-feat">Wasserlöslich</span><span class="cat-feat">EPB-geeignet</span><span class="cat-feat">Ortsbrustdruck</span></div>
+            <a href="#soil-conditioning" class="cat-jump">Schaumzusätze ansehen ↓</a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEALING MATERIALS -->
+<section class="sealing-section sp" id="sealing-materials">
+  <div class="container">
+    <div class="section-line-head fade-up">
+      <div class="section-line-head-left">
+        <span class="cat-badge g">TBM-Dichtungsmaterialien</span>
+        <h2>Dichtungs<em>materialien</em></h2>
+      </div>
+      <div class="section-line-head-right">Entwickelt für TBM-Hauptlager-Lippendichtsysteme und Schildschwanzborstensysteme — Pump- und Handauftragformulierungen zum Schutz gegen Injektionsmörtel, Grundwasser und Hochdruckboden.</div>
+    </div>
+    <div class="swiper prod-swiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="pc fade-up">
+            <div class="pc-code">Typ: PX2350</div>
+            <div class="pc-name">Hauptlager<em>dichtfett</em></div>
+            <div class="pc-cat g">TBM-Dichtung · Pumpbar</div>
+            <p class="pc-desc">Tonverdicktes Schmierfett für TBM-Hauptlager-Lippendichtsysteme. Mit Feststofffüllern, Fasern und Graphit — verhindert das Eindringen von Boden, Wasser und Staub durch Hauptlagerdichtungen.</p>
+            <div class="pc-specs">
+              <div class="spec"><span class="spec-k">Aussehen</span><span class="spec-v">Schwarze, faserige Paste</span></div>
+              <div class="spec"><span class="spec-k">Dichte</span><span class="spec-v">1,25±0,05 g/cm³</span></div>
+              <div class="spec"><span class="spec-k">Flammpunkt</span><span class="spec-v">≥220°C</span></div>
+            </div>
+            <div class="pc-pkg"><strong>Verpackung:</strong> 25 / 70 / 230 kg Fässer</div>
+            <div class="pc-feats"><span class="pc-feat">Biologisch abbaubar</span><span class="pc-feat">Selbstverlöschend</span><span class="pc-feat">Hohe Wasserbeständigkeit</span></div>
+            <a href="main-bearing-sealant.html" class="pc-link">Details ansehen →</a>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="pc fade-up">
+            <div class="pc-code">Typ: TM-T100</div>
+            <div class="pc-name">Schildschwanz<em>dichtfett</em></div>
+            <div class="pc-cat g">TBM-Dichtung · Pumpbar</div>
+            <p class="pc-desc">Wirtschaftliches Antriebsdichtfett für TBM mit Schildschwanz. Wird in den Schildschwanzdichtungshohlraum gepumpt, um Wasser, Boden und ringförmigen Injektionsmörtel am Eindringen in den TBM-Schildschwanz zu hindern.</p>
+            <div class="pc-specs">
+              <div class="spec"><span class="spec-k">Dichte</span><span class="spec-v">1,35±0,05 g/cm³</span></div>
+              <div class="spec"><span class="spec-k">Wasserabdichtung</span><span class="spec-v">35 bar — kein Leck</span></div>
+              <div class="spec"><span class="spec-k">Flammpunkt</span><span class="spec-v">≥220°C</span></div>
+            </div>
+            <div class="pc-pkg"><strong>Verpackung:</strong> 25 / 70 / 250 kg Fässer</div>
+            <div class="pc-feats"><span class="pc-feat">Hochdruck</span><span class="pc-feat">Flammhemmend</span><span class="pc-feat">Auswaschbeständig</span></div>
+            <a href="tail-seal-grease.html" class="pc-link">Details ansehen →</a>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="pc fade-up">
+            <div class="pc-code">Typ: PA</div>
+            <div class="pc-name">Schildschwanz-<em>Handabdichtung</em></div>
+            <div class="pc-cat g">TBM-Verbrauchsmaterial · Handauftrag</div>
+            <p class="pc-desc">Spezielle Erstbefüllungsdichtmasse, manuell in Schildschwanzborstendichtungen eingebracht, um Injektionsmörtel und Grundwasser am Eindringen und Versteifen der Dichtbürsten zu hindern.</p>
+            <div class="pc-specs">
+              <div class="spec"><span class="spec-k">Farbe</span><span class="spec-v">Weiß</span></div>
+              <div class="spec"><span class="spec-k">Dichte</span><span class="spec-v">1,30±0,05 g/cm³</span></div>
+              <div class="spec"><span class="spec-k">Wasserabdichtung</span><span class="spec-v">35 bar (Matsumura)</span></div>
+            </div>
+            <div class="pc-pkg"><strong>Auftrag:</strong> Manuelle Borstenfüllung</div>
+            <div class="pc-feats"><span class="pc-feat">Handauftrag</span><span class="pc-feat">Flammhemmend</span><span class="pc-feat">Hohe Haftfestigkeit</span></div>
+            <a href="tail-sealant-handcoat.html" class="pc-link">Details ansehen →</a>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="pc fade-up">
+            <div class="pc-code">Typ: EP1 / EP2</div>
+            <div class="pc-name">Hauptlager<em>schmierfett</em></div>
+            <div class="pc-cat g">TBM-Verbrauchsmaterial · Pumpbar</div>
+            <p class="pc-desc">Umweltfreundliches Schmierfett für Hauptlager-Lippendichtsysteme, über Zentralschmiersysteme verteilt. Biologisch abbaubar und ungiftig — keine Beeinträchtigung von Grundwasser oder Boden.</p>
+            <div class="pc-specs">
+              <div class="spec"><span class="spec-k">Aussehen</span><span class="spec-v">Schwarze homogene Paste</span></div>
+              <div class="spec"><span class="spec-k">Dichte</span><span class="spec-v">1,25±0,05 g/cm³</span></div>
+              <div class="spec"><span class="spec-k">Penetration</span><span class="spec-v">230–280 (1/10mm)</span></div>
+            </div>
+            <div class="pc-pkg"><strong>Auftrag:</strong> Zentralschmiersystem</div>
+            <div class="pc-feats"><span class="pc-feat">Biologisch abbaubar</span><span class="pc-feat">Ungiftig</span><span class="pc-feat">Flammhemmend</span></div>
+            <a href="main-bearing-grease.html" class="pc-link">Details ansehen →</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOIL CONDITIONING -->
+<section class="conditioning-section sp" id="soil-conditioning">
+  <div class="container">
+    <div class="section-line-head fade-up">
+      <div class="section-line-head-left">
+        <span class="cat-badge s">Bodenverbesserung</span>
+        <h2>Schaum<em>zusätze</em></h2>
+      </div>
+      <div class="section-line-head-right">Bodenverbesserungsschaumzusätze für EPB-TBM, die Schneidradmoment reduzieren, Ortsbrustpermeabilität kontrollieren und die Fließfähigkeit des Ausbruchmaterials durch die Förderschnecke verbessern. Biologisch abbaubar und vollständig wasserlöslich.</div>
+    </div>
+    <div class="swiper foam-swiper fade-up">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="foam-main">
+            <div class="foam-main-code">IS-Serie · Schaumzusätze</div>
+            <div class="cat-badge s" style="margin-bottom:18px">Bodenverbesserung · EPB-TBM</div>
+            <div class="foam-main-title">IS-Schaum<em>zusätze</em></div>
+            <div class="foam-main-tagline">IS-C · IS-D · IS-P</div>
+            <p style="font-size:14px;color:var(--text-mid);line-height:1.75;margin-bottom:24px">Drei EPB-TBM-Schaumzusatzformulierungen zur Bodenverbesserung, die nach Schaumgenerierung über die TBM-Schäumanlage in den Schneidkopfabbaukammer injiziert werden, um Ausbruchmaterial zu konditionieren und dessen Durchfluss durch Förderschnecke und Aushubkammer zu verbessern. Alle drei Formulierungen erzeugen temporäre Kohäsion im Ausbruchmaterial, reduzieren Ortsbrustpermeabilität, bieten ein Luftkissen für Druckausgleich und verbessern die Rheologie. Wählen Sie basierend auf der Geologie — Standard, dispersiv bis kohäsiv oder Mischboden.</p>
+            <div class="pc-specs" style="margin-bottom:22px">
+              <div class="spec"><span class="spec-k">pH</span><span class="spec-v">7,0–9,0 (alle Formulierungen)</span></div>
+              <div class="spec"><span class="spec-k">Löslichkeit</span><span class="spec-v">Vollständig wasserlöslich</span></div>
+              <div class="spec"><span class="spec-k">Biol. Abbaubarkeit</span><span class="spec-v">&gt;80% (28 Tage, IS-C)</span></div>
+              <div class="spec"><span class="spec-k">Verpackung</span><span class="spec-v">200-kg-Fass / 1.000-kg-IBC</span></div>
+            </div>
+            <div class="pc-feats" style="margin-bottom:26px"><span class="pc-feat">Biologisch abbaubar</span><span class="pc-feat">Vollständig wasserlöslich</span><span class="pc-feat">EPB-geeignet</span><span class="pc-feat">Drehmomentsenkung</span><span class="pc-feat">Druckkontrolle</span></div>
+            <a href="foam-agents.html" class="pc-link">Vollständiger Vergleich &amp; Beschreibung ansehen →</a>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="foam-variants-panel">
+            <div class="foam-var">
+              <div class="foam-var-code">IS-C</div>
+              <div class="foam-var-sub">Standardformulierung</div>
+              <p class="foam-var-desc">Standardformulierung für nassen Sand bis sandigen Ton. Feststoffgehalt 13,5–15,1%, Schaumexpansion 8–25×, Mischverhältnis 1,5–5%.</p>
+              <a href="foam-agents.html#is-c" class="foam-var-link">Details →</a>
+            </div>
+            <div class="foam-var">
+              <div class="foam-var-code">IS-D</div>
+              <div class="foam-var-sub">Dispersivformulierung</div>
+              <p class="foam-var-desc">Hoher Feststoffgehalt (19,4–21,4%) für dispersive Böden mit überlegener Schaumstabilität in hochpermeablen Böden.</p>
+              <a href="foam-agents.html#is-d" class="foam-var-link">Details →</a>
+            </div>
+            <div class="foam-var">
+              <div class="foam-var-code">IS-P</div>
+              <div class="foam-var-sub">Polymerformulierung</div>
+              <p class="foam-var-desc">Polymerverstärkte Formulierung für kohäsive oder Mischböden mit stabilerer Schaumstruktur und überlegener Bodeneinbettung.</p>
+              <a href="foam-agents.html#is-p" class="foam-var-link">Details →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT CTA -->
+<section class="support sp">
+  <div class="container">
+    <div class="support-inner fade-up">
+      <div>
+        <h2 class="support-h">Technische Beratung für Ihr <em>TBM-Projekt</em> benötigt?</h2>
+        <p class="support-body">Unser Ingenieurteam bewertet Ihre Geologie, TBM-Spezifikation und Projektanforderungen und empfiehlt die optimale Produktkonfiguration und Einsatzparameter.</p>
+      </div>
+      <div class="support-actions">
+        <a href="../contact.html" class="btn-gold">Technische Beratung anfragen</a>
+        <a href="../services.html" class="btn-ghost">Unsere Leistungen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<site-footer></site-footer>
+<script src="../../components/navbar.js"></script>
+<script src="../../components/footer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="../../assets/js/centor.js"></script>
+<script>
+  new Swiper('.cat-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 2,
+    allowTouchMove: true,
+    pagination: { el: '.cat-swiper .swiper-pagination', clickable: true },
+    breakpoints: {
+      700: { slidesPerView: 2, allowTouchMove: false, pagination: { enabled: false } }
+    }
+  });
+
+  new Swiper('.prod-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 2,
+    allowTouchMove: true,
+    pagination: { el: '.prod-swiper .swiper-pagination', clickable: true },
+    breakpoints: {
+      700: { allowTouchMove: false, pagination: { enabled: false } }
+    }
+  });
+
+  new Swiper('.foam-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 2,
+    allowTouchMove: true,
+    pagination: { el: '.foam-swiper .swiper-pagination', clickable: true },
+    breakpoints: {
+      860: { allowTouchMove: false, pagination: { enabled: false } }
+    }
+  });
+</script>
+</body></html>

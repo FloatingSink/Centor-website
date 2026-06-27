@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CENTOR — Untertagelösungen</title>
+  <link rel="icon" href="/assets/brand/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/brand/favicon-96x96.png" />
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="alternate" hreflang="en" href="https://centorglobal.com/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://centorglobal.com/zh/" />
+  <link rel="alternate" hreflang="de" href="https://centorglobal.com/de/" />
+  <link rel="alternate" hreflang="x-default" href="https://centorglobal.com/" />
+  <link rel="canonical" href="https://centorglobal.com/de/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Outfit:wght@700&family=Barlow:wght@400;500;600&family=Montserrat:wght@600&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/centor.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <style>
+    .hero { position:relative; width:100%; height:100vh; max-height:950px; padding-top:var(--nav-h); display:flex; align-items:center; overflow:hidden; }
+    .hero-swiper { position:absolute; inset:0; height:100%; }
+    .hero-swiper .swiper-wrapper { height:100%; }
+    .hero-slide { background-size:cover; background-position:center 22%; background-repeat:no-repeat; position:relative; animation:bannerBgZoom 2.4s cubic-bezier(0.25,0.46,0.45,0.94) both; }
+    .hero-slide::after { content:''; position:absolute; inset:0; pointer-events:none; background: linear-gradient(108deg,rgba(222,223,226,0.15) 0%,rgba(218,220,223,0.10) 35%,rgba(210,212,215,0.03) 62%,rgba(215,217,220,0.08) 100%), linear-gradient(180deg,rgba(200,202,205,0.22) 0%,transparent 40%,rgba(195,197,200,0.14) 100%), radial-gradient(ellipse 130% 50% at 50% 0%,rgba(180,182,185,0.16) 0%,transparent 55%); }
+    .hero-swiper .swiper-button-prev, .hero-swiper .swiper-button-next { --swiper-navigation-size:32px; color:var(--charcoal); transition:color 0.2s; padding:28px 32px; }
+    .hero-swiper .swiper-button-prev:hover, .hero-swiper .swiper-button-next:hover { color:var(--gold); }
+    .hero-swiper .swiper-pagination-bullet { background:rgba(0,0,0,0.30); opacity:1; }
+    .hero-swiper .swiper-pagination-bullet-active { background:var(--gold); }
+    .hero-ring { position:absolute; right:-80px; top:50%; transform:translateY(-50%); width:700px; height:700px; opacity:0.20; pointer-events:none; z-index:2; filter:drop-shadow(0 4px 32px rgba(0,0,0,0.08)); mix-blend-mode:multiply; }
+    @media(max-width:1100px){ .hero-ring{width:480px;height:480px;right:-60px;opacity:0.15;} }
+    @media(max-width:768px){ .hero-ring{width:280px;height:280px;right:-40px;opacity:0.10;} }
+    .hero-inner { position:relative; z-index:10; width:100%; }
+    .hero-content { max-width:580px; padding:48px 36px; background:rgba(255,255,255,0.52); backdrop-filter:blur(5px); -webkit-backdrop-filter:blur(5px); border-radius:6px; }
+    .hero-eyebrow { display:flex; align-items:center; gap:12px; margin-bottom:32px; animation:bannerContentIn 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.25s both; }
+    .hero-eyebrow-line { width:44px; height:1px; background:var(--gold); }
+    .hero-eyebrow-text { font-size:13px; letter-spacing:0.20em; text-transform:uppercase; color:var(--gold); font-weight:600; }
+    .hero-heading { font-family:var(--font-d); font-weight:700; font-size:clamp(52px,8.5vw,108px); color:var(--gold); line-height:1.0; letter-spacing:0.06em; margin-bottom:10px; animation:bannerContentIn 0.95s cubic-bezier(0.25,0.46,0.45,0.94) 0.45s both; }
+    .hero-subtitle { font-family:var(--font-ui); font-size:clamp(11px,1.6vw,18px); font-weight:600; color:var(--charcoal); letter-spacing:0.20em; text-transform:uppercase; margin-bottom:28px; animation:bannerContentIn 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.6s both; }
+    .hero-description { font-size:16px; line-height:1.80; color:var(--charcoal); max-width:460px; margin-bottom:48px; animation:bannerContentIn 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.75s both; }
+    .hero-buttons { display:flex; gap:14px; flex-wrap:wrap; animation:bannerContentIn 0.85s cubic-bezier(0.25,0.46,0.45,0.94) 0.9s both; }
+    .scroll-indicator { position:absolute; bottom:45px; left:50%; transform:translateX(-50%); z-index:3; display:flex; flex-direction:column; align-items:center; gap:8px; color:var(--clr-text-dim); font-size:9px; letter-spacing:3px; text-transform:uppercase; animation:scrollBob 2.2s ease-in-out infinite; }
+    @keyframes scrollBob { 0%,100%{transform:translateX(-50%) translateY(0);} 50%{transform:translateX(-50%) translateY(8px);} }
+    @media(max-width:768px){.scroll-indicator{display:none;}}
+    .stats-section { background-color:var(--bg-2); background-image:var(--metal-lines); border-top:1px solid rgba(0,0,0,0.10); }
+    .products-section { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .products-intro { margin-bottom:52px; }
+    .products-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+    @media(max-width:680px){.products-grid{grid-template-columns:1fr;}}
+    .product-card { padding:52px 44px; background-color:var(--bg); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 2px 8px rgba(0,0,0,0.06); position:relative; overflow:hidden; transition:border-color 0.22s ease,box-shadow 0.22s ease; }
+    .product-card::after { content:''; position:absolute; bottom:0;left:0;right:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); transform:scaleX(0); transform-origin:left; transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1); }
+    .product-card:hover { border-color:var(--border-gold); box-shadow:inset 0 1px 0 rgba(255,255,255,0.45),0 6px 24px rgba(0,0,0,0.09); }
+    .product-card:hover::after { transform:scaleX(1); }
+    .product-card.gold { border-top:3px solid var(--gold); }
+    .product-card.silver { border-top:3px solid var(--charcoal-2); }
+    .product-badge { display:inline-block; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; padding:4px 12px; border:1px solid; margin-bottom:24px; font-weight:600; }
+    .product-badge.gold { color:var(--gold); border-color:var(--gold-border); background:var(--gold-dim); }
+    .product-badge.silver { color:var(--charcoal-2); border-color:rgba(0,0,0,0.15); background:rgba(0,0,0,0.05); }
+    .product-name { font-family:var(--font-d); font-weight:700; font-size:26px; color:var(--charcoal); letter-spacing:0.06em; margin-bottom:10px; }
+    .product-name em { font-style:normal; color:var(--gold); }
+    .product-tagline { font-size:12px; letter-spacing:0.10em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:22px; }
+    .product-description { font-size:14.5px; color:var(--text-mid); line-height:1.75; margin-bottom:32px; }
+    .product-features { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:36px; }
+    .product-feature { font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); background:rgba(0,0,0,0.05); border:1px solid var(--border); padding:4px 11px; }
+    .product-link { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:gap 0.2s ease; font-weight:600; }
+    .product-link:hover { gap:13px; }
+    .services-section { background-color:var(--bg); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .services-header { margin-bottom:52px; }
+    .services-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+    @media(max-width:900px){.services-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:480px){.services-grid{grid-template-columns:1fr;}}
+    .service-card { padding:40px 30px; background-color:var(--bg-1); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); transition:border-color 0.22s ease; }
+    .service-card:hover { border-color:var(--border-gold); }
+    .service-number { font-family:var(--font-ui); font-weight:600; font-size:10px; color:var(--gold); letter-spacing:0.18em; margin-bottom:16px; opacity:0.7; }
+    .service-title { font-family:var(--font-d); font-weight:700; font-size:14px; color:var(--charcoal); letter-spacing:0.05em; margin-bottom:12px; line-height:1.35; }
+    .service-description { font-size:13px; color:var(--text-dim); line-height:1.65; }
+    .services-footer { margin-top:44px; }
+    .about-section { background-color:var(--bg-2); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .about-inner { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+    @media(max-width:860px){.about-inner{grid-template-columns:1fr;gap:44px;}}
+    .about-description { font-size:15px; line-height:1.82; color:var(--text-mid); margin:20px 0 36px; }
+    .references-section { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .reference-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:48px; }
+    @media(max-width:800px){.reference-cards{grid-template-columns:1fr;}}
+    .reference-card { padding:36px 30px; background-color:var(--bg); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); transition:border-color 0.22s ease; }
+    .reference-card:hover { border-color:var(--border-gold); }
+    .reference-tag { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:14px; }
+    .reference-city { font-family:var(--font-d); font-weight:700; font-size:22px; color:var(--charcoal); letter-spacing:0.04em; margin-bottom:6px; }
+    .reference-project { font-size:13.5px; color:var(--text-mid); margin-bottom:18px; }
+    .reference-type { font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); padding:4px 10px; background:rgba(0,0,0,0.05); border:1px solid var(--border); display:inline-block; }
+    .references-footer { margin-top:44px; }
+  </style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true"><defs>
+  <linearGradient id="gSteel" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#f4f5f6"/><stop offset="0.32" stop-color="#d3d5d8"/><stop offset="0.6" stop-color="#a7abae"/><stop offset="0.82" stop-color="#888c90"/><stop offset="1" stop-color="#6c7074"/></linearGradient>
+  <linearGradient id="gGrey" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#74787c"/><stop offset="0.4" stop-color="#4f5256"/><stop offset="0.75" stop-color="#3a3d40"/><stop offset="1" stop-color="#2a2c2f"/></linearGradient>
+</defs></svg>
+
+<site-navbar></site-navbar>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="swiper hero-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide hero-slide" style="background-image:url('../assets/images/hero/hero-2.jpg')"></div>
+      <div class="swiper-slide hero-slide" style="background-image:url('../assets/images/hero/hero-3.jpg')"></div>
+      <div class="swiper-slide hero-slide" style="background-image:url('../assets/images/hero/hero-4.jpg')"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <svg class="hero-ring" viewBox="0 0 90 102" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M78.283 83.706 A44 44 0 0 1 44.79 93.69 L46.744 77.307 A27.5 27.5 0 0 0 67.677 71.066 Z" fill="url(#gSteel)"/>
+    <path d="M39.878 92.82  A44 44 0 0 1 11.857 71.933 L26.16 63.708 A27.5 27.5 0 0 0 43.674 76.762 Z" fill="url(#gSteel)"/>
+    <path d="M9.619 67.475   A44 44 0 0 1 9.619 32.525  L24.762 39.078 A27.5 27.5 0 0 0 24.762 60.922 Z" fill="url(#gGrey)"/>
+    <path d="M11.857 28.067  A44 44 0 0 1 39.878 7.18   L43.674 23.238 A27.5 27.5 0 0 0 26.16 36.292 Z"  fill="url(#gGrey)"/>
+    <path d="M44.79 6.31     A44 44 0 0 1 78.283 16.294 L67.677 28.934 A27.5 27.5 0 0 0 46.744 22.693 Z" fill="url(#gSteel)"/>
+  </svg>
+  <div class="hero-inner container">
+    <div class="hero-content">
+      <div class="hero-eyebrow"><span class="hero-eyebrow-line"></span><span class="hero-eyebrow-text">TBM-Schmierung &amp; Konditionierung</span></div>
+      <h1 class="hero-heading">CENTOR</h1>
+      <p class="hero-subtitle">Untertage &nbsp;·&nbsp; Lösungen</p>
+      <p class="hero-description">Technische Schmier- und Konditionierungsprodukte für Tunnelbohrmaschinen (TBM) und unterirdische Infrastruktur. Vertraut bei führenden Auftragnehmern weltweit im U-Bahn-, Straßen- und Versorgungstunnelbau.</p>
+      <div class="hero-buttons">
+        <a href="products/" class="btn-gold">Produkte entdecken</a>
+        <a href="contact.html" class="btn-ghost">Angebot anfragen</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator" aria-hidden="true"><span>Scrollen</span></div>
+</section>
+
+<!-- ABOUT STRIP -->
+<section class="about-section sp">
+  <div class="container">
+    <div class="about-inner">
+      <div class="fade-up">
+        <div class="eyebrow"><span class="eyebrow-num">01</span><span class="eyebrow-line"></span><span class="eyebrow-label">Über CENTOR</span></div>
+        <h2 class="section-h">Zuverlässigere <em>Untertagelösungen</em> schaffen</h2>
+        <p class="about-description">CENTOR ist eine in Singapur ansässige, global tätige Plattform für Untertagebau-Materialien und technische Lösungen, spezialisiert auf Fachprodukte und technische Dienstleistungen für Tunnel-, U-Bahn-, Kavernen- und sonstige Untertageprojekte.</p>
+        <p class="about-description">CENTOR wurde von einem Team mit langjähriger Erfahrung im Untertagebau gegründet. Wir wissen, dass der Erfolg im Untertagebau nicht nur von hochwertigen Materialien abhängt, sondern auch von standardisierten Qualitätssystemen, umfangreichem Projektwissen, zuverlässigem technischen Support und kontinuierlicher Servicekapazität.</p>
+        <p class="about-description">Wir verbinden Hochleistungs-Untertagebaumaterialien, internationale Qualitätsmanagementsysteme, Projektdatenbanken, technisches Know-how und lokalen technischen Service zu umfassenden Lösungen für den gesamten Projektlebenszyklus.</p>
+        <a href="about.html" class="btn-ghost">Mehr über uns →</a>
+      </div>
+      <div class="fade-up" style="transition-delay:0.12s">
+        <div style="border:1px solid var(--border);overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,0.55);">
+          <img src="../assets/images/about-centor.jpg" alt="CENTOR Untertagebau" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT LINES -->
+<section class="products-section sp">
+  <div class="container">
+    <div class="products-intro fade-up">
+      <div class="eyebrow"><span class="eyebrow-num">02</span><span class="eyebrow-line"></span><span class="eyebrow-label">Produktlinien</span></div>
+      <h2 class="section-h">Entwickelt für den <em>Untertagebau</em></h2>
+      <p class="section-lede" style="max-width:520px">Zwei komplementäre Produktlinien für alle Projektanforderungen – von anspruchsvollen Tiefsee-U-Bahn-TBMs bis hin zu Standard-Kommunaltunneln.</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card gold fade-up">
+        <div class="product-badge gold">TBM-Dichtungsmaterialien</div>
+        <div class="product-name">Dichtungs<em>systeme</em></div>
+        <div class="product-tagline">4 Produkte — Pump- &amp; Handauftrag</div>
+        <p class="product-description">Technische Dichtfette für TBM-Hauptlager-Lippendichtungssysteme und Schildschwanzdichtungsbürstensätze – für das gesamte Spektrum von Schildvortriebsmaschinen, von zentraler Pumpenschmierung bis zum manuellen Auftrag.</p>
+        <div class="product-features"><span class="product-feature">Hauptlager</span><span class="product-feature">Schildschwanz</span><span class="product-feature">Biologisch abbaubar</span><span class="product-feature">Hochdruck</span><span class="product-feature">Flammwidrig</span></div>
+        <a href="products/#sealing-materials" class="product-link">Dichtungsprodukte ansehen →</a>
+      </div>
+      <div class="product-card silver fade-up" style="transition-delay:0.08s">
+        <div class="product-badge silver">Bodenverbesserung</div>
+        <div class="product-name">Schaum<em>zusätze</em></div>
+        <div class="product-tagline">IS-C · IS-D · IS-P</div>
+        <p class="product-description">Bodenverbesserungsschaumzusätze für EPB-Schildvortriebsmaschinen – reduzieren Schneidradmoment, kontrollieren Ortsbrustpermeabilität und verbessern den Abraumfluss durch den Schneckenförderer. Drei Formulierungen für Standard-, dispersive und kohäsive Böden.</p>
+        <div class="product-features"><span class="product-feature">Biologisch abbaubar</span><span class="product-feature">Wasserlöslich</span><span class="product-feature">Für EPB</span><span class="product-feature">Druckkontrolle</span></div>
+        <a href="products/#soil-conditioning" class="product-link">Schaumzusätze ansehen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section sp">
+  <div class="container">
+    <div class="services-header fade-up">
+      <div class="eyebrow"><span class="eyebrow-num">03</span><span class="eyebrow-line"></span><span class="eyebrow-label">Unsere Leistungen</span></div>
+      <h2 class="section-h">Umfassende <em>Untertagelösungen</em></h2>
+      <p class="section-lede" style="max-width:520px">Von der Produktlieferung bis zur Vor-Ort-Unterstützung arbeitet CENTOR in jeder Phase des Projekts eng mit Auftragnehmern zusammen.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up"><div class="service-number">01</div><div class="service-title">TBM-Schmierung</div><div class="service-description">Maßgeschneiderte Schmiersystemauslegung und Produktauswahl basierend auf Ihrem TBM-Typ und den geologischen Bedingungen.</div></div>
+      <div class="service-card fade-up" style="transition-delay:0.06s"><div class="service-number">02</div><div class="service-title">Technisches Fachwissen</div><div class="service-description">CENTOR-Ingenieure sind bei TBM-Inbetriebnahme, Start und kritischen Gebirgsübergängen vor Ort präsent.</div></div>
+      <div class="service-card fade-up" style="transition-delay:0.12s"><div class="service-number">03</div><div class="service-title">Globale Lieferung</div><div class="service-description">Pünktliche Lieferung an Projektstandorte weltweit – mit vollständiger Abwicklung von Zoll, Logistik und Compliance.</div></div>
+      <div class="service-card fade-up" style="transition-delay:0.18s"><div class="service-number">04</div><div class="service-title">Speziell für Untertagebau</div><div class="service-description">Jedes Produkt und jede Dienstleistung wurde speziell für TBM- und Untertagebau-Umgebungen entwickelt.</div></div>
+    </div>
+    <div class="services-footer fade-up"><a href="services.html" class="btn-ghost">Alle Leistungen ansehen →</a></div>
+  </div>
+</section>
+
+<!-- REFERENCES STRIP -->
+<section class="references-section sp">
+  <div class="container">
+    <div class="fade-up">
+      <div class="eyebrow"><span class="eyebrow-num">04</span><span class="eyebrow-line"></span><span class="eyebrow-label">Projektreferenzen</span></div>
+      <h2 class="section-h">Weltweit bewährt bei <em>führenden Projekten</em></h2>
+      <p class="section-lede" style="max-width:480px">Über 500 U-Bahn-, Straßen-, Bahn- und Kommunaltunnelprojekte auf vier Kontinenten.</p>
+    </div>
+    <div class="reference-cards">
+      <div class="reference-card fade-up"><div class="reference-tag">Asien-Pazifik</div><div class="reference-city">Singapur</div><p class="reference-project">Thomson-East Coast Line</p><span class="reference-type">U-Bahn · Schildvortrieb</span></div>
+      <div class="reference-card fade-up" style="transition-delay:0.08s"><div class="reference-tag">Asien-Pazifik</div><div class="reference-city">Hongkong</div><p class="reference-project">MTR Tuen Ma Line Erweiterung</p><span class="reference-type">U-Bahn · EPB TBM</span></div>
+      <div class="reference-card fade-up" style="transition-delay:0.16s"><div class="reference-tag">Naher Osten</div><div class="reference-city">Dubai</div><p class="reference-project">Dubai Metro Blue Line</p><span class="reference-type">U-Bahn · Mixschild TBM</span></div>
+    </div>
+    <div class="references-footer fade-up"><a href="references.html" class="btn-ghost">Alle Referenzen ansehen →</a></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <div class="eyebrow fade-up" style="justify-content:center"><span class="eyebrow-num">05</span><span class="eyebrow-line"></span><span class="eyebrow-label">Kontakt aufnehmen</span></div>
+    <h2 class="cta-band-h fade-up">Bereit, Ihre <em>TBM-Leistung zu steigern?</em></h2>
+    <p class="cta-band-body fade-up" style="transition-delay:0.1s">Sprechen Sie mit unserem Ingenieurteam für eine kostenlose technische Beratung. Wir stellen Tunnelbauauftragnehmern weltweit technische Datenblätter, Qualifikationsdaten und Vor-Ort-Support zur Verfügung.</p>
+    <div class="cta-band-actions fade-up" style="transition-delay:0.2s">
+      <a href="contact.html" class="btn-gold">Kontakt aufnehmen</a>
+      <a href="products/" class="btn-ghost">Produkte ansehen</a>
+    </div>
+  </div>
+</section>
+
+<site-footer></site-footer>
+
+<script src="../components/navbar.js"></script>
+<script src="../components/footer.js"></script>
+<script>
+  var heroContent=document.querySelector('.hero-content');
+  window.addEventListener('scroll',function(){
+    if(heroContent){
+      var heroH=document.querySelector('.hero').offsetHeight;
+      var p=Math.min(window.scrollY/(heroH*0.55),1);
+      heroContent.style.opacity=1-p;
+      heroContent.style.transform='translateY('+(-p*60)+'px)';
+    }
+  },{passive:true});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+(function(){
+  var el = document.querySelector('.hero-swiper');
+  if(!el) return;
+  var slides = el.querySelectorAll('.hero-slide');
+  if(slides.length < 2){
+    el.querySelectorAll('.swiper-button-prev,.swiper-button-next,.swiper-pagination').forEach(function(n){ n.style.display='none'; });
+    return;
+  }
+  new Swiper('.hero-swiper', {
+    loop: true,
+    speed: 800,
+    autoplay: { delay: 5000, disableOnInteraction: false },
+    pagination: { el: '.hero-swiper .swiper-pagination', clickable: true },
+    navigation: { nextEl: '.hero-swiper .swiper-button-next', prevEl: '.hero-swiper .swiper-button-prev' },
+  });
+})();
+</script>
+<script src="../assets/js/centor.js"></script>
+</body>
+</html>

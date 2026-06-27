@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Über uns — CENTOR Untertagelösungen</title>
+  <link rel="icon" href="/assets/brand/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/brand/favicon-96x96.png" />
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="alternate" hreflang="en" href="https://centorglobal.com/about.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://centorglobal.com/zh/about.html" />
+  <link rel="alternate" hreflang="de" href="https://centorglobal.com/de/about.html" />
+  <link rel="alternate" hreflang="x-default" href="https://centorglobal.com/about.html" />
+  <link rel="canonical" href="https://centorglobal.com/de/about.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Outfit:wght@700&family=Barlow:wght@400;500;600&family=Montserrat:wght@600&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/centor.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <style>
+    .who-we-are { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
+    @media(max-width:860px){.two-col{grid-template-columns:1fr;gap:48px;}}
+    .body-text p { font-size:15px; line-height:1.82; color:var(--text-mid); margin-bottom:20px; }
+    .body-text p:last-child { margin-bottom:0; }
+    .key-facts { display:flex; flex-direction:column; gap:2px; }
+    .kf-item { padding:24px 22px; background-color:var(--bg-2); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.5); }
+    .kf-label { font-family:var(--font-ui); font-weight:600; font-size:10.5px; color:var(--gold); letter-spacing:0.16em; text-transform:uppercase; margin-bottom:6px; }
+    .kf-val { font-size:14px; color:var(--charcoal-2); line-height:1.5; }
+    .mv-section { background-color:var(--bg); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .mv-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:48px; }
+    @media(max-width:700px){.mv-grid{grid-template-columns:1fr;}}
+    .mv-card { padding:56px 44px; background-color:var(--bg-1); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); }
+    .mv-label { font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:18px; }
+    .mv-heading { font-family:var(--font-d); font-weight:700; font-size:clamp(15px,2vw,24px); color:var(--charcoal); letter-spacing:0.04em; line-height:1.25; margin-bottom:16px; }
+    .mv-body { font-size:14px; color:var(--text-mid); line-height:1.75; }
+    .values-section { background-color:var(--bg-2); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .values-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:2px; margin-top:48px; }
+    @media(max-width:1100px){.values-grid{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:900px){.values-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:480px){.values-grid{grid-template-columns:1fr;}}
+    .val-card { padding:40px 28px; background-color:var(--bg-1); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); transition:border-color 0.22s ease; }
+    .val-card:hover { border-color:var(--border-gold); }
+    .val-num { font-family:var(--font-ui); font-weight:600; font-size:30px; color:var(--gold); line-height:1; margin-bottom:18px; opacity:0.55; }
+    .val-name { font-family:var(--font-d); font-weight:700; font-size:14px; color:var(--charcoal); letter-spacing:0.06em; margin-bottom:12px; }
+    .val-desc { font-size:13px; color:var(--text-dim); line-height:1.65; }
+  </style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true"><defs>
+  <linearGradient id="gSteel" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#f4f5f6"/><stop offset="0.32" stop-color="#d3d5d8"/><stop offset="0.6" stop-color="#a7abae"/><stop offset="0.82" stop-color="#888c90"/><stop offset="1" stop-color="#6c7074"/></linearGradient>
+  <linearGradient id="gGrey" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#74787c"/><stop offset="0.4" stop-color="#4f5256"/><stop offset="0.75" stop-color="#3a3d40"/><stop offset="1" stop-color="#2a2c2f"/></linearGradient>
+</defs></svg>
+
+<site-navbar></site-navbar>
+
+<!-- PAGE BANNER -->
+<div class="page-banner">
+  <div class="swiper banner-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide banner-slide" style="background-image:url('../assets/images/banners/about.jpg');background-position:center 75%"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <div class="page-banner-inner container">
+    <div class="page-banner-eyebrow">Über CENTOR</div>
+    <h1 class="page-banner-h">Von Tunnelexperten gegründet.<br><em>Für den Untertagebau entwickelt.</em></h1>
+    <p class="page-banner-sub">Über 12 Jahre Erfahrung im Untertagebau, Produkte in über 500 Projekten in mehr als 30 Ländern eingesetzt.</p>
+  </div>
+</div>
+
+<!-- WHO WE ARE -->
+<section class="who-we-are sp" id="who-we-are">
+  <div class="container">
+    <div class="two-col">
+      <div class="fade-up">
+        <div class="eyebrow"><span class="eyebrow-num">01</span><span class="eyebrow-line"></span><span class="eyebrow-label">Wer wir sind</span></div>
+        <h2 class="section-h">Präzisionschemie für die <em>Unterwelt</em></h2>
+        <div class="body-text" style="margin-top:24px">
+          <p>CENTOR wurde aus einer grundlegenden Erkenntnis im Untertagebau heraus gegründet: Unterirdische Maschinen wurden jahrelang mit allgemeinen Schmierstoffen für den Oberflächeneinsatz betrieben, die nie für die extremen Drücke, Temperaturen und Verunreinigungen unterirdischer Umgebungen ausgelegt waren.</p>
+          <p>Unser Gründerteam bringt jahrzehntelange praktische Erfahrung aus Untertageprojekten mit – von EPB-U-Bahn-Schilden in Asien bis zu Hartgesteinsbohrtunneln in Europa – und hat spezialisierte Formulierungen entwickelt, die die tatsächlichen Herausforderungen des Tunnelvortriebs lösen.</p>
+          <p>Heute liefert CENTOR mit Sitz in Singapur spezialisierte Produkte an Auftragnehmer für einige der anspruchsvollsten Untertageprojekte der Welt.</p>
+        </div>
+        <a href="contact.html" class="btn-gold" style="margin-top:36px">Kontakt aufnehmen</a>
+      </div>
+      <div class="key-facts fade-up" style="transition-delay:0.12s">
+        <div class="kf-item"><div class="kf-label">Gründungshintergrund</div><div class="kf-val">Gegründet von Tunnelingenieure mit über 20 Jahren Erfahrung in Untertageprojekten</div></div>
+        <div class="kf-item"><div class="kf-label">Produktlinien</div><div class="kf-val">Premium- und Standardformulierungen – für alle Projektanforderungen</div></div>
+        <div class="kf-item"><div class="kf-label">Technischer Support</div><div class="kf-val">Internes Ingenieurteam für Vor-Ort- und Remote-Support in jeder Bauphase</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="mv-section sp" id="mission-vision">
+  <div class="container">
+    <div class="fade-up">
+      <div class="eyebrow"><span class="eyebrow-num">02</span><span class="eyebrow-line"></span><span class="eyebrow-label">Strategische Ausrichtung</span></div>
+      <h2 class="section-h">Mission &amp; <em>Vision</em></h2>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card fade-up">
+        <div class="mv-label">Unsere Mission</div>
+        <div class="mv-heading">Untertagebau-Herausforderungen durch Qualität, Innovation und technisches Fachwissen lösen.</div>
+      </div>
+      <div class="mv-card fade-up" style="transition-delay:0.1s">
+        <div class="mv-label">Unsere Vision</div>
+        <div class="mv-heading">Die weltweit vertrauenswürdigste Plattform für Untertagebau-Materialien und technische Lösungen zu werden.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE VALUES -->
+<section class="values-section sp" id="values">
+  <div class="container">
+    <div class="fade-up">
+      <div class="eyebrow"><span class="eyebrow-num">03</span><span class="eyebrow-line"></span><span class="eyebrow-label">Kernwerte</span></div>
+      <h2 class="section-h">Unsere <em>Grundprinzipien</em></h2>
+      <p class="section-lede" style="max-width:480px">Fünf Kernwerte leiten uns bei der Entwicklung jedes Produkts und der Unterstützung jedes Projekts.</p>
+    </div>
+    <div class="values-grid">
+      <div class="val-card fade-up"><div class="val-num">01</div><div class="val-name">Qualität zuerst</div><div class="val-desc">Wir setzen niemals Qualität und Zuverlässigkeit aufs Spiel.</div></div>
+      <div class="val-card fade-up" style="transition-delay:0.07s"><div class="val-num">02</div><div class="val-name">Kundenerfolg</div><div class="val-desc">Ihr Erfolg ist unser Erfolg.</div></div>
+      <div class="val-card fade-up" style="transition-delay:0.14s"><div class="val-num">03</div><div class="val-name">Technisches Fachwissen</div><div class="val-desc">Jede Lösung wird von echtem Fachwissen angetrieben.</div></div>
+      <div class="val-card fade-up" style="transition-delay:0.21s"><div class="val-num">04</div><div class="val-name">Integrität &amp; Vertrauen</div><div class="val-desc">Langfristige Partnerschaften beginnen mit Vertrauen.</div></div>
+      <div class="val-card fade-up" style="transition-delay:0.28s"><div class="val-num">05</div><div class="val-name">Kontinuierliche Innovation</div><div class="val-desc">Wir verbessern ständig Produkte, Dienstleistungen und Systeme.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <h2 class="cta-band-h fade-up">Arbeiten Sie mit CENTOR an <em>Ihrem nächsten Projekt</em></h2>
+    <p class="cta-band-body fade-up" style="transition-delay:0.1s">Sprechen Sie mit unserem Ingenieurteam über Ihre Projektanforderungen. Wir stellen Tunnelbauauftragnehmern weltweit technische Datenblätter, Qualifikationsdaten und Vor-Ort-Support zur Verfügung.</p>
+    <div class="cta-band-actions fade-up" style="transition-delay:0.2s">
+      <a href="contact.html" class="btn-gold">Kontakt aufnehmen</a>
+      <a href="products/" class="btn-ghost">Produkte ansehen</a>
+    </div>
+  </div>
+</section>
+
+<site-footer></site-footer>
+<script src="../components/navbar.js"></script>
+<script src="../components/footer.js"></script>
+<script src="../assets/js/centor.js"></script>
+</body></html>

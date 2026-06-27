@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>المنتجات — CENTOR Underground System Solutions</title>
+  <link rel="icon" href="/assets/brand/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/brand/favicon-96x96.png" />
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="description" content="مجموعة CENTOR الكاملة من المواد الاستهلاكية لآلات الحفر — مواد ختم المحمل الرئيسي وشحوم ختم الذيل وعوامل رغوة EPB مصممة هندسياً لأداء الختم تحت الأرض." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://centorglobal.com/ar/products/" />
+  <meta property="og:title" content="المنتجات — CENTOR Underground System Solutions" />
+  <meta property="og:description" content="مجموعة CENTOR الكاملة من المواد الاستهلاكية لآلات الحفر — مواد ختم المحمل الرئيسي وشحوم ختم الذيل وعوامل رغوة EPB." />
+  <meta property="og:image" content="https://centorglobal.com/assets/brand/centor-full-logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="en" href="https://centorglobal.com/products/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://centorglobal.com/zh/products/" />
+  <link rel="alternate" hreflang="de" href="https://centorglobal.com/de/products/" />
+  <link rel="alternate" hreflang="es" href="https://centorglobal.com/es/products/" />
+  <link rel="alternate" hreflang="ar" href="https://centorglobal.com/ar/products/" />
+  <link rel="alternate" hreflang="x-default" href="https://centorglobal.com/products/" />
+  <link rel="canonical" href="https://centorglobal.com/ar/products/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Jost:wght@400;500;600;700&family=Outfit:wght@700&family=Barlow:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/centor.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <style>
+    body, .section-h, .eyebrow-label, .btn-gold, .btn-ghost, p, h1, h2, h3, h4, h5, h6, span, div, a, li { font-family: 'Cairo', sans-serif !important; }
+    .eyebrow-label { letter-spacing: 0 !important; }
+    /* ── Category intro cards ── */
+    .cat-intro { background-color:var(--bg-1); border-top:1px solid var(--border); }
+    .cat-swiper { margin-top:48px; }
+    .cat-swiper .swiper-slide { height:auto; box-sizing:border-box; }
+    .cat-swiper .swiper-pagination { display:none; position:static; margin-top:20px; }
+    @media(max-width:700px){
+      .cat-swiper .swiper-pagination { display:block; }
+      .cat-swiper .swiper-pagination .swiper-pagination-bullet-active { background:var(--gold); }
+    }
+    .cat-card { padding:44px 36px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); height:100%; box-sizing:border-box; }
+    .cat-card.sealing  { border-top:3px solid var(--gold); }
+    .cat-card.conditioning { border-top:3px solid var(--charcoal-2); }
+    .cat-badge { display:inline-block; font-size:10px; letter-spacing:0; padding:4px 12px; border:1px solid; margin-bottom:20px; font-weight:600; }
+    .cat-badge.g { color:var(--gold); border-color:var(--gold-border); background:var(--gold-dim); }
+    .cat-badge.s { color:var(--charcoal-2); border-color:rgba(0,0,0,0.15); background:rgba(0,0,0,0.05); }
+    .cat-name { font-family:'Cairo',sans-serif !important; font-weight:700; font-size:22px; color:var(--charcoal); letter-spacing:0; margin-bottom:8px; }
+    .cat-name em { font-style:normal; color:var(--gold); }
+    .cat-tagline { font-size:11px; letter-spacing:0; color:var(--gold); font-weight:600; margin-bottom:18px; }
+    .cat-desc { font-size:14px; color:var(--text-mid); line-height:1.75; margin-bottom:24px; }
+    .cat-feats { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:28px; }
+    .cat-feat { font-size:10px; letter-spacing:0; color:var(--text-dim); background:rgba(0,0,0,0.05); border:1px solid var(--border); padding:4px 10px; }
+    .cat-jump { font-size:11px; letter-spacing:0; color:var(--gold); text-decoration:none; display:inline-flex; align-items:center; gap:7px; transition:gap 0.2s ease; font-weight:600; }
+    .cat-jump:hover { gap:12px; }
+    /* ── Product sections ── */
+    .sealing-section     { background-color:var(--bg); border-top:1px solid var(--border); }
+    .conditioning-section{ background-color:var(--bg-1); border-top:1px solid var(--border); }
+    .section-line-head { display:flex; align-items:flex-end; justify-content:space-between; gap:32px; flex-wrap:wrap; margin-bottom:40px; padding-bottom:32px; border-bottom:1px solid var(--border); }
+    .section-line-head-left h2 { font-family:'Cairo',sans-serif !important; font-weight:700; font-size:clamp(20px,2.8vw,34px); color:var(--charcoal); letter-spacing:0; margin-top:10px; }
+    .section-line-head-left h2 em { font-style:normal; color:var(--gold); }
+    .section-line-head-right { font-size:14px; color:var(--text-mid); line-height:1.72; max-width:380px; }
+    /* ── Product card grid / carousel ── */
+    .prod-swiper .swiper-slide { height:auto; box-sizing:border-box; }
+    .prod-swiper .swiper-pagination { display:none; position:static; margin-top:20px; }
+    @media(max-width:699px){
+      .prod-swiper .swiper-pagination { display:block; }
+      .prod-swiper .swiper-pagination .swiper-pagination-bullet-active { background:var(--gold); }
+    }
+    @media(min-width:700px){
+      .prod-swiper { overflow:visible; }
+      .prod-swiper .swiper-wrapper { display:grid; grid-template-columns:1fr 1fr; gap:2px; transform:none !important; height:auto !important; }
+      .prod-swiper .swiper-slide { width:auto !important; }
+    }
+    /* ── Product card ── */
+    .pc { padding:34px 28px; background-color:var(--bg-1); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 1px 4px rgba(0,0,0,0.06); position:relative; overflow:hidden; transition:border-color 0.22s ease,background-color 0.22s ease; display:flex; flex-direction:column; height:100%; box-sizing:border-box; }
+    .pc::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); transform:scaleX(0); transform-origin:left; transition:transform 0.32s cubic-bezier(0.34,1.56,0.64,1); }
+    .pc:hover { border-color:var(--border-gold); background-color:var(--bg-2); }
+    .pc:hover::after { transform:scaleX(1); }
+    .pc-code { font-size:11px; color:var(--text-dim); letter-spacing:0; margin-bottom:6px; font-weight:600; }
+    .pc-name { font-family:'Cairo',sans-serif !important; font-weight:700; font-size:15px; color:var(--charcoal); letter-spacing:0; margin-bottom:6px; line-height:1.3; }
+    .pc-name em { font-style:normal; color:var(--gold); }
+    .pc-cat { font-size:9.5px; letter-spacing:0; font-weight:600; margin-bottom:14px; }
+    .pc-cat.g { color:var(--gold); }
+    .pc-cat.s { color:var(--charcoal-2); }
+    .pc-desc { font-size:13px; color:var(--text-mid); line-height:1.68; margin-bottom:20px; flex:1; }
+    .pc-specs { display:flex; flex-direction:column; gap:5px; margin-bottom:16px; padding:14px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .spec { display:flex; gap:8px; }
+    .spec-k { color:var(--text-mid); font-size:11px; flex:none; min-width:90px; padding-top:1px; font-weight:500; }
+    .spec-v { color:var(--charcoal-2); font-size:12px; font-weight:500; }
+    .pc-pkg { font-size:12px; color:var(--text-dim); margin-bottom:14px; }
+    .pc-pkg strong { color:var(--charcoal-2); }
+    .pc-feats { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:18px; }
+    .pc-feat { font-size:9.5px; letter-spacing:0; color:var(--text-dim); background:rgba(0,0,0,0.04); border:1px solid var(--border); padding:3px 8px; }
+    .pc-link { font-size:11px; letter-spacing:0; color:var(--gold); text-decoration:none; display:inline-flex; align-items:center; gap:7px; transition:gap 0.2s ease; font-weight:600; margin-top:auto; }
+    .pc-link:hover { gap:12px; }
+    .conditioning-section .pc { background-color:var(--bg); }
+    .conditioning-section .pc:hover { background-color:var(--bg-2); }
+    /* ── Foam agents layout / carousel ── */
+    .foam-swiper .swiper-slide { height:auto; box-sizing:border-box; }
+    .foam-swiper .swiper-pagination { display:none; position:static; margin-top:20px; }
+    @media(max-width:859px){
+      .foam-swiper .swiper-pagination { display:block; }
+      .foam-swiper .swiper-pagination .swiper-pagination-bullet-active { background:var(--gold); }
+    }
+    @media(min-width:860px){
+      .foam-swiper { overflow:visible; }
+      .foam-swiper .swiper-wrapper { display:grid; grid-template-columns:2fr 1fr; gap:2px; transform:none !important; height:auto !important; }
+      .foam-swiper .swiper-slide { width:auto !important; }
+    }
+    .foam-main { padding:40px 36px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),0 1px 4px rgba(0,0,0,0.06); position:relative; overflow:hidden; transition:border-color 0.22s,background-color 0.22s; height:100%; box-sizing:border-box; }
+    .foam-main::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); transform:scaleX(0); transform-origin:left; transition:transform 0.32s cubic-bezier(0.34,1.56,0.64,1); }
+    .foam-main:hover { border-color:var(--border-gold); background-color:var(--bg-2); }
+    .foam-main:hover::after { transform:scaleX(1); }
+    .foam-main-code { font-size:9px; color:var(--text-faint); letter-spacing:0; margin-bottom:10px; }
+    .foam-main-title { font-family:'Cairo',sans-serif !important; font-weight:700; font-size:20px; color:var(--charcoal); letter-spacing:0; margin-bottom:6px; }
+    .foam-main-title em { font-style:normal; color:var(--gold); }
+    .foam-main-tagline { font-size:11px; letter-spacing:0; color:var(--gold); font-weight:600; margin-bottom:18px; }
+    .foam-variants-panel { display:flex; flex-direction:column; gap:2px; height:100%; }
+    .foam-var { padding:24px 26px; background-color:var(--bg); background-image:var(--metal-sheen); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); position:relative; overflow:hidden; transition:border-color 0.22s; display:flex; flex-direction:column; flex:1; }
+    .foam-var::after { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(180deg,var(--gold),var(--gold-light)); transform:scaleY(0); transform-origin:top; transition:transform 0.28s cubic-bezier(0.34,1.56,0.64,1); }
+    .foam-var:hover { border-color:var(--border-gold); }
+    .foam-var:hover::after { transform:scaleY(1); }
+    .foam-var-code { font-size:15px; color:var(--charcoal); font-weight:600; letter-spacing:0; margin-bottom:3px; }
+    .foam-var-sub { font-size:10px; color:var(--text-dim); letter-spacing:0; margin-bottom:10px; }
+    .foam-var-desc { font-size:12px; color:var(--text-mid); line-height:1.6; margin-bottom:14px; flex:1; }
+    .foam-var-link { font-size:10px; letter-spacing:0; color:var(--gold); text-decoration:none; display:inline-flex; align-items:center; gap:5px; font-weight:600; transition:gap 0.2s; }
+    .foam-var-link:hover { gap:9px; }
+    /* ── Support ── */
+    .support { background-color:var(--bg-2); border-top:1px solid var(--border); }
+    .support-inner { display:grid; grid-template-columns:1fr auto; gap:48px; align-items:center; }
+    @media(max-width:700px){ .support-inner { grid-template-columns:1fr; gap:28px; } }
+    .support-h { font-family:'Cairo',sans-serif !important; font-weight:700; font-size:clamp(16px,2.4vw,28px); color:var(--charcoal); letter-spacing:0; margin-bottom:12px; }
+    .support-h em { font-style:normal; color:var(--gold); }
+    .support-body { font-size:14.5px; color:var(--text-mid); line-height:1.72; }
+    .support-actions { display:flex; gap:12px; flex-wrap:wrap; flex:none; }
+  </style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true"><defs>
+  <linearGradient id="gSteel" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#f4f5f6"/><stop offset="0.32" stop-color="#d3d5d8"/><stop offset="0.6" stop-color="#a7abae"/><stop offset="0.82" stop-color="#888c90"/><stop offset="1" stop-color="#6c7074"/></linearGradient>
+  <linearGradient id="gGrey" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#74787c"/><stop offset="0.4" stop-color="#4f5256"/><stop offset="0.75" stop-color="#3a3d40"/><stop offset="1" stop-color="#2a2c2f"/></linearGradient>
+</defs></svg>
+
+<site-navbar></site-navbar>
+
+<div class="page-banner">
+  <div class="swiper banner-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide banner-slide" style="background-image:url('https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?w=1600&q=80')"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <div class="page-banner-inner container">
+    <div class="page-banner-eyebrow">دليل المنتجات</div>
+    <h1 class="page-banner-h">المواد الاستهلاكية لآلات الحفر &amp; <em>حلول الختم</em></h1>
+    <p class="page-banner-sub">مواد ختم دقيقة ومنتجات تكييف التربة لآلات الحفر الدرعية — مواد ختم المحمل الرئيسي وشحوم ختم الذيل وعوامل رغوة EPB.</p>
+  </div>
+</div>
+
+<!-- CATEGORY OVERVIEW -->
+<section class="cat-intro sp">
+  <div class="container">
+    <div class="fade-up">
+      <div class="eyebrow"><span class="eyebrow-num">01</span><span class="eyebrow-line"></span><span class="eyebrow-label">فئات المنتجات</span></div>
+      <h2 class="section-h">مواد الختم &amp; <em>تكييف التربة</em></h2>
+      <p class="section-lede" style="max-width:560px">فئتان من المنتجات تغطيان الطيف الكامل من متطلبات المواد الاستهلاكية لآلات الحفر — مواد ختم مصممة لأنظمة المحمل الرئيسي وفرش الذيل، ورغوة تكييف التربة لإدارة واجهة EPB.</p>
+    </div>
+    <div class="swiper cat-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="cat-card sealing fade-up">
+            <div class="cat-badge g">مواد ختم آلات الحفر</div>
+            <div class="cat-name">أنظمة <em>الختم</em></div>
+            <div class="cat-tagline">4 منتجات — ضخ وتطبيق يدوي</div>
+            <p class="cat-desc">مواد ختم مصممة هندسياً لأنظمة الختم الشفوي للمحمل الرئيسي وتجميعات فرش الذيل. صيغ بالضخ وبالتطبيق اليدوي مقاومة للحقن المائي والمياه الجوفية والتربة عالية الضغط — تغطي النطاق الكامل لتكوينات الدرع TBM.</p>
+            <div class="cat-feats"><span class="cat-feat">المحمل الرئيسي</span><span class="cat-feat">ختم الذيل</span><span class="cat-feat">بالضخ</span><span class="cat-feat">تطبيق يدوي</span><span class="cat-feat">ضغط عالٍ</span></div>
+            <a href="#sealing-materials" class="cat-jump">عرض منتجات الختم ↓</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="cat-card conditioning fade-up">
+            <div class="cat-badge s">تكييف التربة</div>
+            <div class="cat-name">عوامل <em>الرغوة</em></div>
+            <div class="cat-tagline">IS-C · IS-D · IS-P</div>
+            <p class="cat-desc">عوامل رغوة من درجة EPB تقلل عزم دوران رأس القطع وتتحكم في ضغط الواجهة وتحسّن ريولوجية الحمأة لتفريغ ناعم من الناقل الحلزوني. ثلاثة متغيرات لحالات التربة القياسية والمتشتتة والمتماسكة.</p>
+            <div class="cat-feats"><span class="cat-feat">قابل للتحلل البيولوجي</span><span class="cat-feat">قابل للذوبان بالماء</span><span class="cat-feat">متوافق مع EPB</span><span class="cat-feat">التحكم في ضغط الواجهة</span></div>
+            <a href="#soil-conditioning" class="cat-jump">عرض عوامل الرغوة ↓</a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEALING MATERIALS -->
+<section class="sealing-section sp" id="sealing-materials">
+  <div class="container">
+    <div class="section-line-head fade-up">
+      <div class="section-line-head-left">
+        <span class="cat-badge g">مواد ختم آلات الحفر</span>
+        <h2>مواد <em>الختم</em></h2>
+      </div>
+      <div class="section-line-head-right">مواد ختم مصممة هندسياً لأنظمة الختم الشفوي للمحمل الرئيسي وفرش الذيل. صيغ بالضخ وبالتطبيق اليدوي مقاومة للحقن المائي والمياه الجوفية وتسرب التربة عالية الضغط.</div>
+    </div>
+    <div class="swiper prod-swiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="pc fade-up">
+            <div class="pc-code">الطراز: PX2350</div>
+            <div class="pc-name">مادة ختم <em>المحمل الرئيسي</em></div>
+            <div class="pc-cat g">ختم آلات الحفر · بالضخ</div>
+            <p class="pc-desc">شحم تشحيم مكثّف بالطين لنظام الختم الشفوي لمحامل آلات الحفر الرئيسية. يحتوي على مواد صلبة وألياف وجرافيت لمنع تسرب التربة والمياه والغبار عبر ختم المحمل الرئيسي.</p>
+            <div class="pc-specs">
+              <div class="spec"><span class="spec-k">المظهر</span><span class="spec-v">معجون ليفي أسود</span></div>
+              <div class="spec"><span class="spec-k">الكثافة</span><span class="spec-v">1.25±0.05 g/cm³</span></div>
+              <div class="spec"><span class="spec-k">نقطة الاشتعال</span><span class="spec-v">≥220°C</span></div>
+            </div>
+            <div class="pc-pkg"><strong>التعبئة:</strong> أسطوانة 25 / 70 / 230 كغ</div>
+            <div class="pc-feats"><span class="pc-feat">قابل للتحلل البيولوجي</span><span class="pc-feat">ذاتي الإطفاء</span><span class="pc-feat">مقاومة عالية للماء</span></div>
+            <a href="main-bearing-sealant.html" class="pc-link">عرض التفاصيل →</a>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="pc fade-up">
+            <div class="pc-code">الطراز: TM-T100</div>
+            <div class="pc-name">شحم <em>ختم الذيل</em></div>
+            <div class="pc-cat g">ختم آلات الحفر · بالضخ</div>
+            <p class="pc-desc">مادة ختم ذيل اقتصادية من درجة الحفر للدرع TBM. تُضخ في غرفة ختم الذيل لمنع المياه والتربة وحقن حلقة الهالة من دخول أرضية آلة الحفر.</p>
+            <div class="pc-specs">
+              <div class="spec"><span class="spec-k">الكثافة</span><span class="spec-v">1.35±0.05 g/cm³</span></div>
+              <div class="spec"><span class="spec-k">ختم مائي</span><span class="spec-v">35 بار — بدون تسرب</span></div>
+              <div class="spec"><span class="spec-k">نقطة الاشتعال</span><span class="spec-v">≥220°C</span></div>
+            </div>
+            <div class="pc-pkg"><strong>التعبئة:</strong> أسطوانة 25 / 70 / 250 كغ</div>
+            <div class="pc-feats"><span class="pc-feat">ضغط عالٍ</span><span class="pc-feat">مثبط للهب</span><span class="pc-feat">مقاوم للغسيل</span></div>
+            <a href="tail-seal-grease.html" class="pc-link">عرض التفاصيل →</a>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="pc fade-up">
+            <div class="pc-code">الطراز: PA</div>
+            <div class="pc-name">مادة ختم ذيل <em>بالتطبيق اليدوي</em></div>
+            <div class="pc-cat g">مستهلك آلة الدرع · تطبيق يدوي</div>
+            <p class="pc-desc">مادة ختم للتعبئة الأولى يتم حشوها يدوياً في فرشاة ختم الذيل لمنع حلقة الحقن المتزامن وارتشاح المياه الجوفية الذي يسبب فشل صلابة الفرشاة.</p>
+            <div class="pc-specs">
+              <div class="spec"><span class="spec-k">اللون</span><span class="spec-v">أبيض</span></div>
+              <div class="spec"><span class="spec-k">الكثافة</span><span class="spec-v">1.30±0.05 g/cm³</span></div>
+              <div class="spec"><span class="spec-k">ختم مائي</span><span class="spec-v">35 بار (Matsumura)</span></div>
+            </div>
+            <div class="pc-pkg"><strong>التطبيق:</strong> تعبئة يدوية للفرشاة</div>
+            <div class="pc-feats"><span class="pc-feat">تطبيق يدوي</span><span class="pc-feat">مثبط للهب</span><span class="pc-feat">تماسك عالٍ</span></div>
+            <a href="tail-sealant-handcoat.html" class="pc-link">عرض التفاصيل →</a>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="pc fade-up">
+            <div class="pc-code">الطرازات: EP1 / EP2</div>
+            <div class="pc-name">شحم <em>المحمل الرئيسي</em></div>
+            <div class="pc-cat g">مستهلك آلة الدرع · بالضخ</div>
+            <p class="pc-desc">مادة ختم صديقة للبيئة لنظام الختم الشفوي للمحمل الرئيسي لآلات الحفر الدرعية. موزعة عبر نظام ضخ مركزي. قابلة للتحلل البيولوجي وغير سامة — صفر تلوث للمياه الجوفية أو التربة.</p>
+            <div class="pc-specs">
+              <div class="spec"><span class="spec-k">المظهر</span><span class="spec-v">معجون أسود متجانس</span></div>
+              <div class="spec"><span class="spec-k">الكثافة</span><span class="spec-v">1.25±0.05 g/cm³</span></div>
+              <div class="spec"><span class="spec-k">الاختراق</span><span class="spec-v">230–280 (1/10مم)</span></div>
+            </div>
+            <div class="pc-pkg"><strong>التطبيق:</strong> نظام ضخ مركزي</div>
+            <div class="pc-feats"><span class="pc-feat">قابل للتحلل البيولوجي</span><span class="pc-feat">غير سام</span><span class="pc-feat">مثبط للهب</span></div>
+            <a href="main-bearing-grease.html" class="pc-link">عرض التفاصيل →</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOIL CONDITIONING -->
+<section class="conditioning-section sp" id="soil-conditioning">
+  <div class="container">
+    <div class="section-line-head fade-up">
+      <div class="section-line-head-left">
+        <span class="cat-badge s">تكييف التربة</span>
+        <h2>عوامل <em>الرغوة</em></h2>
+      </div>
+      <div class="section-line-head-right">رغوة تكييف تربة من درجة EPB تقلل عزم دوران رأس القطع وتتحكم في نفاذية الواجهة وتحسّن تدفق الحمأة المحفورة عبر الناقل الحلزوني. قابلة للتحلل البيولوجي وقابلة للذوبان بالماء.</div>
+    </div>
+    <div class="swiper foam-swiper fade-up">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="foam-main">
+            <div class="foam-main-code">سلسلة IS · عوامل الرغوة</div>
+            <div class="cat-badge s" style="margin-bottom:18px">تكييف التربة · درع EPB</div>
+            <div class="foam-main-title">سلسلة IS من عوامل <em>الرغوة</em></div>
+            <div class="foam-main-tagline">IS-C · IS-D · IS-P</div>
+            <p style="font-size:14px;color:var(--text-mid);line-height:1.75;margin-bottom:24px">ثلاثة صيغ من رغوة تكييف التربة لآلات الحفر TBM من نوع درع EPB. تخلق تماسكاً مؤقتاً في التربة المحفورة وتقلل نفاذية الماء عند الواجهة وتوفر تعويض ضغط وسادة هوائية وتحسّن تدفق الحمأة. جميع المتغيرات قابلة للتحلل البيولوجي وقابلة للذوبان في الماء بالكامل. اختر بين الصيغ القياسية والمشتتة (نسبة مواد صلبة أعلى) والمعززة بالبوليمر بناءً على ظروف التربة.</p>
+            <div class="pc-specs" style="margin-bottom:22px">
+              <div class="spec"><span class="spec-k">الرقم الهيدروجيني</span><span class="spec-v">7.0–9.0 (جميع المتغيرات)</span></div>
+              <div class="spec"><span class="spec-k">الذوبانية</span><span class="spec-v">قابل للذوبان في الماء كلياً</span></div>
+              <div class="spec"><span class="spec-k">التحلل</span><span class="spec-v">&gt;80% في 28 يوماً (IS-C)</span></div>
+              <div class="spec"><span class="spec-k">التعبئة</span><span class="spec-v">أسطوانة 200 كغ / حاوية IBC 1,000 كغ</span></div>
+            </div>
+            <div class="pc-feats" style="margin-bottom:26px"><span class="pc-feat">قابل للتحلل البيولوجي</span><span class="pc-feat">قابل للذوبان بالماء</span><span class="pc-feat">متوافق مع EPB</span><span class="pc-feat">تقليل العزم</span><span class="pc-feat">التحكم في ضغط الواجهة</span></div>
+            <a href="foam-agents.html" class="pc-link">عرض المقارنة الكاملة والتفاصيل →</a>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="foam-variants-panel">
+            <div class="foam-var">
+              <div class="foam-var-code">IS-C</div>
+              <div class="foam-var-sub">قياسي</div>
+              <p class="foam-var-desc">الصيغة القياسية للتربة الرطبة إلى الطينية الرملية. نسبة المواد الصلبة 13.5–15.1%، معدل التمدد 8–25×، نسبة الخلط 1.5–5%.</p>
+              <a href="foam-agents.html#is-c" class="foam-var-link">التفاصيل →</a>
+            </div>
+            <div class="foam-var">
+              <div class="foam-var-code">IS-D</div>
+              <div class="foam-var-sub">مشتت</div>
+              <p class="foam-var-desc">نسبة مواد صلبة أعلى (19.4–21.4%) للأرضية المتشتتة. استقرار محسّن في التربة عالية النفاذية.</p>
+              <a href="foam-agents.html#is-d" class="foam-var-link">التفاصيل →</a>
+            </div>
+            <div class="foam-var">
+              <div class="foam-var-code">IS-P</div>
+              <div class="foam-var-sub">بوليمر</div>
+              <p class="foam-var-desc">صيغة معززة بالبوليمر للتربة المتماسكة أو المختلطة. بنية رغوة محسّنة وتكامل أفضل مع التربة.</p>
+              <a href="foam-agents.html#is-p" class="foam-var-link">التفاصيل →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT CTA -->
+<section class="support sp">
+  <div class="container">
+    <div class="support-inner fade-up">
+      <div>
+        <h2 class="support-h">تحتاج إلى استشارة تقنية لـ <em>مشروع TBM؟</em></h2>
+        <p class="support-body">سيراجع فريقنا الهندسي ظروف التربة ومواصفات آلة الحفر ومتطلبات المشروع للتوصية باختيار المنتج الأمثل وبارامترات التطبيق.</p>
+      </div>
+      <div class="support-actions">
+        <a href="../../ar/contact.html" class="btn-gold">طلب استشارة تقنية</a>
+        <a href="../../ar/services.html" class="btn-ghost">خدماتنا</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<site-footer></site-footer>
+
+<script src="../../components/navbar.js"></script>
+<script src="../../components/footer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="../../assets/js/centor.js"></script>
+<script>
+  new Swiper('.cat-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 2,
+    allowTouchMove: true,
+    pagination: { el: '.cat-swiper .swiper-pagination', clickable: true },
+    breakpoints: {
+      700: { slidesPerView: 2, allowTouchMove: false, pagination: { enabled: false } }
+    }
+  });
+
+  new Swiper('.prod-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 2,
+    allowTouchMove: true,
+    pagination: { el: '.prod-swiper .swiper-pagination', clickable: true },
+    breakpoints: {
+      700: { allowTouchMove: false, pagination: { enabled: false } }
+    }
+  });
+
+  new Swiper('.foam-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 2,
+    allowTouchMove: true,
+    pagination: { el: '.foam-swiper .swiper-pagination', clickable: true },
+    breakpoints: {
+      860: { allowTouchMove: false, pagination: { enabled: false } }
+    }
+  });
+</script>
+</body></html>
