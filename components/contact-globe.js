@@ -83,12 +83,12 @@
 
       /* ── Optional offices grid ── */
       const officesGridHtml = showOfficesGrid
-        ? `<div class="ib">` +
+        ? `<div class="ib offices-panel">` +
             `<div class="ib-head">${t(STR.offHead)}</div>` +
             `<div class="offices">` +
-              `<div class="office hq">${t(STR.offHq)}</div>` +
-              `<div class="office">${t(STR.offPa)}</div>` +
-              `<div class="office">${t(STR.offDe)}</div>` +
+              `<div class="office active" data-slide="0">${t(STR.offHq)}</div>` +
+              `<div class="office" data-slide="1">${t(STR.offPa)}</div>` +
+              `<div class="office" data-slide="2">${t(STR.offDe)}</div>` +
             `</div>` +
           `</div>`
         : '';
@@ -131,7 +131,10 @@
           `.gcard-region{font-size:9px;color:#B88A3C;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:8px;}` +
           `.gcard-rule{height:1px;background:rgba(184,138,60,0.20);margin-bottom:8px;}` +
           `.gcard-addr{font-size:11px;color:rgba(30,32,36,0.50);line-height:1.6;font-family:var(--font-b);}` +
-          `.info-blocks{display:flex;flex-direction:column;gap:2px;}` +
+          `.carousel-wrap{position:relative;overflow:hidden;}` +
+          `.carousel-track{transition:transform 0.6s cubic-bezier(0.4,0,0.2,1);}` +
+          `.carousel-track .ib{overflow-y:auto;box-sizing:border-box;}` +
+          `.offices-panel{margin-top:6px;}` +
           `.ib{padding:26px 24px;background-color:var(--bg-2);background-image:var(--metal-sheen),var(--metal-lines-strong);border:1px solid var(--border);box-shadow:inset 0 1px 0 rgba(255,255,255,0.50);}` +
           `.ib-head{font-family:var(--font-ui);font-weight:600;font-size:10px;color:var(--gold);letter-spacing:0.20em;text-transform:uppercase;margin-bottom:16px;}` +
           `.ib-row{display:flex;flex-direction:column;gap:3px;margin-bottom:14px;}` +
@@ -143,8 +146,8 @@
           `.ib-note{font-size:11.5px;color:var(--text-dim);margin-top:3px;}` +
           `.ib-badge{display:inline-flex;align-items:center;gap:7px;font-size:10.5px;color:var(--gold);background:var(--gold-dim);border:1px solid var(--gold-border);padding:5px 14px;margin-top:10px;font-weight:600;}` +
           `.offices{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}` +
-          `.office{padding:10px 12px;background-color:var(--bg-1);background-image:var(--metal-lines);border:1px solid var(--border);font-size:12.5px;color:var(--charcoal-2);text-align:center;box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);}` +
-          `.office.hq{border-color:var(--gold-border);color:var(--gold);background-color:var(--gold-dim);}` +
+          `.office{padding:10px 12px;background-color:var(--bg-1);background-image:var(--metal-lines);border:1px solid var(--border);font-size:12.5px;color:var(--charcoal-2);text-align:center;box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);cursor:pointer;transition:background-color 0.2s,color 0.2s,border-color 0.2s;}` +
+          `.office.hq,.office.active{border-color:var(--gold-border);color:var(--gold);background-color:var(--gold-dim);}` +
           `.office.inactive{opacity:0.4;}` +
           arCss +
         `</style>` +
@@ -156,25 +159,29 @@
               `<p class="section-lede">${t(STR.lede)}</p>` +
             `</div>` +
             `<div class="globe-info-layout" style="grid-template-columns:3.5fr 6.5fr;">` +
-              `<div class="info-blocks fade-up" style="transition-delay:0.1s">` +
-                `<div class="ib">` +
-                  `<div class="ib-head">${t(STR.sgHead)}</div>` +
-                  `<div class="ib-row"><div class="ib-label">${t(STR.lContact)}</div><div class="ib-val">${t(STR.sgName)}</div></div>` +
-                  `<div class="ib-row"><div class="ib-label">${t(STR.lAddr)}</div><div class="ib-val">151 Chin Swee Road, #09-08<br>Manhattan House<br>Singapore 169876</div></div>` +
-                  `<div class="ib-row"><div class="ib-label">${t(STR.lPhone)}</div><div class="ib-val">${t(STR.sgPhone)}</div></div>` +
-                  `<div class="ib-row"><div class="ib-label">${t(STR.lEmail)}</div><div class="ib-val"><a href="mailto:info@centorglobal.com">info@centorglobal.com</a></div></div>` +
-                `</div>` +
-                `<div class="ib">` +
-                  `<div class="ib-head">${t(STR.paHead)}</div>` +
-                  `<div class="ib-row"><div class="ib-label">${t(STR.lContact)}</div><div class="ib-val">Felipe</div></div>` +
-                  `<div class="ib-row"><div class="ib-label">${t(STR.lAddr)}</div><div class="ib-val">P.H. BICSA Financial Center, Oficina 4007<br>Aquilino de la Guardia<br>Panamá City, Panamá</div></div>` +
-                  `<div class="ib-row"><div class="ib-label">${t(STR.lPhone)}</div><div class="ib-val"><a href="tel:+50767383230">+507 6738 3230</a></div></div>` +
-                `</div>` +
-                `<div class="ib">` +
-                  `<div class="ib-head">${t(STR.deHead)}</div>` +
-                  `<div class="ib-row"><div class="ib-label">${t(STR.lContact)}</div><div class="ib-val">Gebhard Lehmann</div></div>` +
-                  `<div class="ib-row"><div class="ib-label">${t(STR.lAddr)}</div><div class="ib-val">Schlittengasse 17<br>77933 Lahr, Deutschland</div></div>` +
-                  `<div class="ib-row"><div class="ib-label">${t(STR.lPhone)}</div><div class="ib-val"><a href="tel:+491714311744">+49 171 431 17 44</a></div></div>` +
+              `<div class="carousel-outer fade-up" style="transition-delay:0.1s">` +
+                `<div class="carousel-wrap">` +
+                  `<div class="carousel-track">` +
+                    `<div class="ib">` +
+                      `<div class="ib-head">${t(STR.sgHead)}</div>` +
+                      `<div class="ib-row"><div class="ib-label">${t(STR.lContact)}</div><div class="ib-val">${t(STR.sgName)}</div></div>` +
+                      `<div class="ib-row"><div class="ib-label">${t(STR.lAddr)}</div><div class="ib-val">151 Chin Swee Road, #09-08<br>Manhattan House<br>Singapore 169876</div></div>` +
+                      `<div class="ib-row"><div class="ib-label">${t(STR.lPhone)}</div><div class="ib-val">${t(STR.sgPhone)}</div></div>` +
+                      `<div class="ib-row"><div class="ib-label">${t(STR.lEmail)}</div><div class="ib-val"><a href="mailto:info@centorglobal.com">info@centorglobal.com</a></div></div>` +
+                    `</div>` +
+                    `<div class="ib">` +
+                      `<div class="ib-head">${t(STR.paHead)}</div>` +
+                      `<div class="ib-row"><div class="ib-label">${t(STR.lContact)}</div><div class="ib-val">Felipe</div></div>` +
+                      `<div class="ib-row"><div class="ib-label">${t(STR.lAddr)}</div><div class="ib-val">P.H. BICSA Financial Center, Oficina 4007<br>Aquilino de la Guardia<br>Panamá City, Panamá</div></div>` +
+                      `<div class="ib-row"><div class="ib-label">${t(STR.lPhone)}</div><div class="ib-val"><a href="tel:+50767383230">+507 6738 3230</a></div></div>` +
+                    `</div>` +
+                    `<div class="ib">` +
+                      `<div class="ib-head">${t(STR.deHead)}</div>` +
+                      `<div class="ib-row"><div class="ib-label">${t(STR.lContact)}</div><div class="ib-val">Gebhard Lehmann</div></div>` +
+                      `<div class="ib-row"><div class="ib-label">${t(STR.lAddr)}</div><div class="ib-val">Schlittengasse 17<br>77933 Lahr, Deutschland</div></div>` +
+                      `<div class="ib-row"><div class="ib-label">${t(STR.lPhone)}</div><div class="ib-val"><a href="tel:+491714311744">+49 171 431 17 44</a></div></div>` +
+                    `</div>` +
+                  `</div>` +
                 `</div>` +
                 officesGridHtml +
               `</div>` +
@@ -187,6 +194,60 @@
             `</div>` +
           `</div>` +
         `</section>`;
+
+      /* ── Carousel ── */
+      let carouselGoTo = null;
+      const officeIdToSlide = { sg: 0, pa: 1, de: 2 };
+
+      requestAnimationFrame(() => {
+        const outer      = this.querySelector('.carousel-outer');
+        const wrap       = this.querySelector('.carousel-wrap');
+        const track      = this.querySelector('.carousel-track');
+        const globeStage = this.querySelector('.globe-stage');
+        const offPanel   = this.querySelector('.offices-panel');
+        const offTabs    = [...this.querySelectorAll('.offices-panel .office')];
+        const cards      = [...this.querySelectorAll('.carousel-track .ib')];
+        const n          = cards.length;
+
+        let cur = 0;
+
+        function recalc() {
+          const isDesktop = window.innerWidth > 960;
+          const globeH    = globeStage.offsetHeight;
+          const offH      = offPanel ? offPanel.offsetHeight + 6 : 0; // 6 = margin-top
+
+          let wrapH;
+          if (isDesktop && globeH) {
+            wrapH = globeH - offH;
+          } else {
+            cards.forEach(c => { c.style.height = ''; });
+            wrapH = Math.max(...cards.map(c => c.scrollHeight), 200);
+          }
+
+          if (wrapH <= 0) return;
+          wrap.style.height = wrapH + 'px';
+          cards.forEach(c => { c.style.height = wrapH + 'px'; });
+
+          const saved = track.style.transition;
+          track.style.transition = 'none';
+          track.style.transform = `translateY(-${cur * wrapH}px)`;
+          requestAnimationFrame(() => { track.style.transition = saved; });
+        }
+
+        function goTo(i) {
+          cur = i;
+          const h = wrap.clientHeight || 0;
+          track.style.transform = `translateY(-${i * h}px)`;
+          offTabs.forEach((t, j) => t.classList.toggle('active', j === i));
+        }
+
+        carouselGoTo = goTo;
+
+        new ResizeObserver(recalc).observe(globeStage);
+        window.addEventListener('resize', recalc);
+
+        offTabs.forEach((tab, i) => tab.addEventListener('click', () => goTo(i)));
+      });
 
       /* ── Globe initialisation ── */
       const { default: createGlobe } = await import('/assets/js/cobe.esm.js');
@@ -203,6 +264,7 @@
       let springR = 0, springV = 0, springTgt = 0;
       let pointerX = null;
       let isHovering = false, isJumping = false;
+      let legendPaused = false, legendLeaveTimer = null;
 
       function tickSpring() {
         springV = (springV + (springTgt - springR) * 0.14) * 0.78;
@@ -261,7 +323,7 @@
       }
 
       (function frame() {
-        if (!isHovering && pointerX === null && !isJumping) baseRotation += ROT_SPD;
+        if (!isHovering && pointerX === null && !isJumping && !legendPaused) baseRotation += ROT_SPD;
         tickSpring();
         if (isJumping && Math.abs(springV) < 0.0002 && Math.abs(springTgt - springR) < 0.001) {
           baseRotation += springR;
@@ -294,8 +356,24 @@
         canvas.style.cursor = 'grab';
       });
 
+      const legendEl = this.querySelector('.globe-legend');
+      legendEl.addEventListener('mouseenter', () => {
+        clearTimeout(legendLeaveTimer);
+      });
+      legendEl.addEventListener('mouseleave', () => {
+        if (legendPaused) {
+          legendLeaveTimer = setTimeout(() => { legendPaused = false; }, 1000);
+        }
+      });
+
       this.querySelectorAll('.globe-legend .gleg').forEach((el, i) => {
-        el.addEventListener('click', () => flyTo(offices[i]));
+        el.addEventListener('click', () => {
+          legendPaused = true;
+          clearTimeout(legendLeaveTimer);
+          flyTo(offices[i]);
+          const slideIdx = officeIdToSlide[offices[i].id];
+          if (carouselGoTo && slideIdx !== undefined) carouselGoTo(slideIdx);
+        });
       });
     }
   }
