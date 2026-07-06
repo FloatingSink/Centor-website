@@ -21,7 +21,7 @@
         lPhone:  { en: 'Phone',          zh: '电话',     de: 'Telefon',           es: 'Teléfono',            ar: 'الهاتف' },
         lEmail:  { en: 'Email',          zh: '电子邮箱', de: 'E-Mail',            es: 'Email',               ar: 'البريد الإلكتروني' },
         sgHead:  { en: 'Singapore — Global Headquarters', zh: '新加坡 — 全球总部', de: 'Singapur — Hauptsitz', es: 'Singapur — Sede Global', ar: 'سنغافورة — المقر الرئيسي العالمي' },
-        sgName:  { en: 'Yu Jia Long', zh: '余家龙', de: 'Jia Long Yu', es: 'Yu Jia Long', ar: 'يو جيا لونغ' },
+        sgName:  { en: 'Yu Jia Long', zh: '于嘉龙', de: 'Jia Long Yu', es: 'Yu Jia Long', ar: 'يو جيا لونغ' },
         sgPhone: { en: 'To be updated', zh: '待更新', de: 'Wird aktualisiert', es: 'Por actualizar', ar: 'سيتم التحديث' },
         hkHead:  { en: 'Hong Kong — Asia Pacific', zh: '香港 — 亚太区', de: 'Hongkong — Asien-Pazifik', es: 'Hong Kong — Asia Pacífico', ar: 'هونغ كونغ — آسيا والمحيط الهادئ' },
         toHead:  { en: 'Tokyo — Northeast Asia', zh: '东京 — 东北亚', de: 'Tokio — Nordostasien', es: 'Tokio — Noreste de Asia', ar: 'طوكيو — شمال شرق آسيا' },
