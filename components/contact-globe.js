@@ -15,7 +15,7 @@
       const STR = {
         eyebrow: { en: 'Global Presence',   zh: '全球业务布局',    de: 'Globale Präsenz',  es: 'Presencia Global',  ar: 'الحضور العالمي' },
         h2:      { en: 'Our <em>Offices</em>', zh: '我们的<em>办公室</em>', de: 'Unsere <em>Büros</em>', es: 'Nuestras <em>Oficinas</em>', ar: 'مكاتبنا <em>حول العالم</em>' },
-        lede:    { en: 'Singapore · Hong Kong · Dubai · Panama · Germany', zh: '新加坡 · 香港 · 迪拜 · 巴拿马 · 德国', de: 'Singapur · Hongkong · Dubai · Panama · Deutschland', es: 'Singapur · Hong Kong · Dubái · Panamá · Alemania', ar: 'سنغافورة · هونغ كونغ · دبي · بنما · ألمانيا' },
+        lede:    { en: 'Singapore · Hong Kong · Tokyo · Dubai · Panama · Germany', zh: '新加坡 · 香港 · 东京 · 迪拜 · 巴拿马 · 德国', de: 'Singapur · Hongkong · Tokio · Dubai · Panama · Deutschland', es: 'Singapur · Hong Kong · Tokio · Dubái · Panamá · Alemania', ar: 'سنغافورة · هونغ كونغ · طوكيو · دبي · بنما · ألمانيا' },
         lContact:{ en: 'Contact Person', zh: '联系人',   de: 'Ansprechpartner',   es: 'Persona de Contacto', ar: 'شخص الاتصال' },
         lAddr:   { en: 'Address',        zh: '地址',     de: 'Adresse',           es: 'Dirección',           ar: 'العنوان' },
         lPhone:  { en: 'Phone',          zh: '电话',     de: 'Telefon',           es: 'Teléfono',            ar: 'الهاتف' },
@@ -23,10 +23,14 @@
         sgHead:  { en: 'Singapore — Global Headquarters', zh: '新加坡 — 全球总部', de: 'Singapur — Hauptsitz', es: 'Singapur — Sede Global', ar: 'سنغافورة — المقر الرئيسي العالمي' },
         sgName:  { en: 'Yu Jia Long', zh: '余家龙', de: 'Jia Long Yu', es: 'Yu Jia Long', ar: 'يو جيا لونغ' },
         sgPhone: { en: 'To be updated', zh: '待更新', de: 'Wird aktualisiert', es: 'Por actualizar', ar: 'سيتم التحديث' },
+        hkHead:  { en: 'Hong Kong — Asia Pacific', zh: '香港 — 亚太区', de: 'Hongkong — Asien-Pazifik', es: 'Hong Kong — Asia Pacífico', ar: 'هونغ كونغ — آسيا والمحيط الهادئ' },
+        toHead:  { en: 'Tokyo — Northeast Asia', zh: '东京 — 东北亚', de: 'Tokio — Nordostasien', es: 'Tokio — Noreste de Asia', ar: 'طوكيو — شمال شرق آسيا' },
         paHead:  { en: 'Panama — Latin America', zh: '巴拿马 — 拉丁美洲', de: 'Panama — Lateinamerika', es: 'Panamá — Latinoamérica', ar: 'بنما — أمريكا اللاتينية' },
         deHead:  { en: 'Germany — Europe', zh: '德国 — 欧洲', de: 'Deutschland — Europa', es: 'Alemania — Europa', ar: 'ألمانيا — أوروبا' },
         offHead: { en: 'Global Offices', zh: null, de: null, es: 'Oficinas Globales', ar: 'المكاتب العالمية' },
         offHq:   { en: 'Singapore HQ',  zh: null, de: null, es: 'Singapur HQ',       ar: 'سنغافورة — المقر' },
+        offHk:   { en: 'Hong Kong',     zh: null, de: null, es: 'Hong Kong',         ar: 'هونغ كونغ' },
+        offTo:   { en: 'Tokyo',         zh: null, de: null, es: 'Tokio',             ar: 'طوكيو' },
         offPa:   { en: 'Panama',        zh: null, de: null, es: 'Panamá',             ar: 'بنما' },
         offDe:   { en: 'Germany',       zh: null, de: null, es: 'Alemania',           ar: 'ألمانيا' },
       };
@@ -34,36 +38,41 @@
       /* ── Office data per language ── */
       const OFFICES = {
         en: [
-          { id: 'sg', lat:  1.290270, lng: 103.851959, label: 'Singapore',   region: 'Global HQ',     address: '151 Chin Swee Road, #09-08\nManhattan House\nSingapore 169876' },
-          { id: 'hk', lat: 22.302711, lng: 114.177216, label: 'Hong Kong',   region: 'Asia Pacific',  address: 'Central\nHong Kong SAR' },
-          { id: 'du', lat: 25.276987, lng:  55.296249, label: 'Dubai',       region: 'Middle East',   address: 'Dubai\nUnited Arab Emirates' },
-          { id: 'pa', lat:  8.990000, lng: -79.520000, label: 'Panama',      region: 'Latin America', address: 'P.H. BICSA Financial Center\nOficina 4007\nPanamá City' },
-          { id: 'de', lat: 48.330000, lng:   7.870000, label: 'Germany',     region: 'Europe',        address: 'Schlittengasse 17\n77933 Lahr\nDeutschland' },
+          { id: 'sg', lat:  1.290270, lng: 103.851959, label: 'Singapore',   region: 'Global HQ',       address: '151 Chin Swee Road, #09-08\nManhattan House\nSingapore 169876' },
+          { id: 'hk', lat: 22.302711, lng: 114.177216, label: 'Hong Kong',   region: 'Asia Pacific',    address: 'Room 1101, 11/F., David House\n8-20 Nanking Street, Jordan\nHong Kong' },
+          { id: 'to', lat: 35.625200, lng: 139.729400, label: 'Tokyo',       region: 'Northeast Asia',  address: 'Shinagawa-ku\nTokyo, Japan' },
+          { id: 'du', lat: 25.276987, lng:  55.296249, label: 'Dubai',       region: 'Middle East',     address: 'Dubai\nUnited Arab Emirates' },
+          { id: 'pa', lat:  8.990000, lng: -79.520000, label: 'Panama',      region: 'Latin America',   address: 'P.H. BICSA Financial Center\nOficina 4007\nPanamá City' },
+          { id: 'de', lat: 48.330000, lng:   7.870000, label: 'Germany',     region: 'Europe',          address: 'Schlittengasse 17\n77933 Lahr\nDeutschland' },
         ],
         zh: [
           { id: 'sg', lat:  1.290270, lng: 103.851959, label: '新加坡', region: '全球总部',  address: '151 Chin Swee Road, #09-08\n曼哈顿大厦\n新加坡 169876' },
-          { id: 'hk', lat: 22.302711, lng: 114.177216, label: '香港',   region: '亚太区',    address: '中环\n中国香港' },
+          { id: 'hk', lat: 22.302711, lng: 114.177216, label: '香港',   region: '亚太区',    address: 'Room 1101, 11/F., David House\n8-20 Nanking Street, Jordan\n中国香港' },
+          { id: 'to', lat: 35.625200, lng: 139.729400, label: '东京',   region: '东北亚',    address: '品川区\n东京\n日本' },
           { id: 'du', lat: 25.276987, lng:  55.296249, label: '迪拜',   region: '中东',      address: '迪拜\n阿拉伯联合酋长国' },
           { id: 'pa', lat:  8.990000, lng: -79.520000, label: '巴拿马', region: '拉丁美洲',  address: 'P.H. BICSA金融中心\n4007室\n巴拿马城' },
           { id: 'de', lat: 48.330000, lng:   7.870000, label: '德国',   region: '欧洲',      address: 'Schlittengasse 17\n77933 Lahr\n德国' },
         ],
         de: [
-          { id: 'sg', lat:  1.290270, lng: 103.851959, label: 'Singapur',    region: 'Hauptsitz',     address: '151 Chin Swee Road, #09-08\nManhattan House\nSingapur 169876' },
-          { id: 'hk', lat: 22.302711, lng: 114.177216, label: 'Hongkong',    region: 'Asien-Pazifik', address: 'Central\nHongkong' },
-          { id: 'du', lat: 25.276987, lng:  55.296249, label: 'Dubai',       region: 'Naher Osten',   address: 'Dubai\nVereinigte Arabische Emirate' },
-          { id: 'pa', lat:  8.990000, lng: -79.520000, label: 'Panama',      region: 'Lateinamerika', address: 'P.H. BICSA Financial Center\nOfficina 4007\nPanama-Stadt' },
-          { id: 'de', lat: 48.330000, lng:   7.870000, label: 'Deutschland', region: 'Europa',        address: 'Schlittengasse 17\n77933 Lahr\nDeutschland' },
+          { id: 'sg', lat:  1.290270, lng: 103.851959, label: 'Singapur',    region: 'Hauptsitz',       address: '151 Chin Swee Road, #09-08\nManhattan House\nSingapur 169876' },
+          { id: 'hk', lat: 22.302711, lng: 114.177216, label: 'Hongkong',    region: 'Asien-Pazifik',   address: 'Room 1101, 11/F., David House\n8-20 Nanking Street, Jordan\nHongkong' },
+          { id: 'to', lat: 35.625200, lng: 139.729400, label: 'Tokio',       region: 'Nordostasien',    address: 'Shinagawa-ku\nTokio, Japan' },
+          { id: 'du', lat: 25.276987, lng:  55.296249, label: 'Dubai',       region: 'Naher Osten',     address: 'Dubai\nVereinigte Arabische Emirate' },
+          { id: 'pa', lat:  8.990000, lng: -79.520000, label: 'Panama',      region: 'Lateinamerika',   address: 'P.H. BICSA Financial Center\nOfficina 4007\nPanama-Stadt' },
+          { id: 'de', lat: 48.330000, lng:   7.870000, label: 'Deutschland', region: 'Europa',          address: 'Schlittengasse 17\n77933 Lahr\nDeutschland' },
         ],
         es: [
           { id: 'sg', lat:  1.290270, lng: 103.851959, label: 'Singapur',  region: 'Sede Global',   address: '151 Chin Swee Road, #09-08\nManhattan House\nSingapur 169876' },
-          { id: 'hk', lat: 22.302711, lng: 114.177216, label: 'Hong Kong', region: 'Asia Pacífico', address: 'Central\nHong Kong RAE' },
+          { id: 'hk', lat: 22.302711, lng: 114.177216, label: 'Hong Kong', region: 'Asia Pacífico', address: 'Room 1101, 11/F., David House\n8-20 Nanking Street, Jordan\nHong Kong' },
+          { id: 'to', lat: 35.625200, lng: 139.729400, label: 'Tokio',     region: 'Noreste de Asia', address: 'Shinagawa-ku\nTokio, Japón' },
           { id: 'du', lat: 25.276987, lng:  55.296249, label: 'Dubái',     region: 'Oriente Medio', address: 'Dubái\nEmirates Árabes Unidos' },
           { id: 'pa', lat:  8.990000, lng: -79.520000, label: 'Panamá',    region: 'Latinoamérica', address: 'P.H. BICSA Financial Center\nOficina 4007\nCiudad de Panamá' },
           { id: 'de', lat: 48.330000, lng:   7.870000, label: 'Alemania',  region: 'Europa',        address: 'Schlittengasse 17\n77933 Lahr\nAlemania' },
         ],
         ar: [
           { id: 'sg', lat:  1.290270, lng: 103.851959, label: 'سنغافورة',  region: 'المقر الرئيسي',      address: '151 Chin Swee Road, #09-08\nManhattan House\nسنغافورة 169876' },
-          { id: 'hk', lat: 22.302711, lng: 114.177216, label: 'هونغ كونغ', region: 'آسيا-المحيط الهادئ', address: 'Central\nهونغ كونغ' },
+          { id: 'hk', lat: 22.302711, lng: 114.177216, label: 'هونغ كونغ', region: 'آسيا-المحيط الهادئ', address: 'Room 1101, 11/F., David House\n8-20 Nanking Street, Jordan\nهونغ كونغ' },
+          { id: 'to', lat: 35.625200, lng: 139.729400, label: 'طوكيو',     region: 'شمال شرق آسيا',      address: 'Shinagawa-ku\nطوكيو، اليابان' },
           { id: 'du', lat: 25.276987, lng:  55.296249, label: 'دبي',        region: 'الشرق الأوسط',        address: 'دبي\nالإمارات العربية المتحدة' },
           { id: 'pa', lat:  8.990000, lng: -79.520000, label: 'بنما',       region: 'أمريكا اللاتينية',    address: 'P.H. BICSA Financial Center\nOficina 4007\nمدينة بنما' },
           { id: 'de', lat: 48.330000, lng:   7.870000, label: 'ألمانيا',    region: 'أوروبا',              address: 'Schlittengasse 17\n77933 Lahr\nDeutschland' },
@@ -87,8 +96,10 @@
             `<div class="ib-head">${t(STR.offHead)}</div>` +
             `<div class="offices">` +
               `<div class="office active" data-slide="0">${t(STR.offHq)}</div>` +
-              `<div class="office" data-slide="1">${t(STR.offPa)}</div>` +
-              `<div class="office" data-slide="2">${t(STR.offDe)}</div>` +
+              `<div class="office" data-slide="1">${t(STR.offHk)}</div>` +
+              `<div class="office" data-slide="2">${t(STR.offTo)}</div>` +
+              `<div class="office" data-slide="3">${t(STR.offPa)}</div>` +
+              `<div class="office" data-slide="4">${t(STR.offDe)}</div>` +
             `</div>` +
           `</div>`
         : '';
@@ -170,6 +181,19 @@
                       `<div class="ib-row"><div class="ib-label">${t(STR.lEmail)}</div><div class="ib-val"><a href="mailto:info@centorglobal.com">info@centorglobal.com</a></div></div>` +
                     `</div>` +
                     `<div class="ib">` +
+                      `<div class="ib-head">${t(STR.hkHead)}</div>` +
+                      `<div class="ib-row"><div class="ib-label">${t(STR.lContact)}</div><div class="ib-val">Felix</div></div>` +
+                      `<div class="ib-row"><div class="ib-label">${t(STR.lAddr)}</div><div class="ib-val">Room 1101, 11/F., David House<br>8-20 Nanking Street, Jordan<br>Hong Kong</div></div>` +
+                      `<div class="ib-row"><div class="ib-label">${t(STR.lPhone)}</div><div class="ib-val"><a href="tel:+8618601768395">+86 18601768395</a></div></div>` +
+                    `</div>` +
+                    `<div class="ib">` +
+                      `<div class="ib-head">${t(STR.toHead)}</div>` +
+                      `<div class="ib-row"><div class="ib-label">${t(STR.lContact)}</div><div class="ib-val">キム・ソヨン</div></div>` +
+                      `<div class="ib-row"><div class="ib-label">${t(STR.lAddr)}</div><div class="ib-val">Shinagawa-ku<br>Tokyo, Japan</div></div>` +
+                      `<div class="ib-row"><div class="ib-label">${t(STR.lPhone)}</div><div class="ib-val"><a href="tel:+817091833737">+81 70-9183-3737</a></div></div>` +
+                      `<div class="ib-row"><div class="ib-label">${t(STR.lEmail)}</div><div class="ib-val"><a href="mailto:ip-link@soyon-sowon.com">ip-link@soyon-sowon.com</a></div></div>` +
+                    `</div>` +
+                    `<div class="ib">` +
                       `<div class="ib-head">${t(STR.paHead)}</div>` +
                       `<div class="ib-row"><div class="ib-label">${t(STR.lContact)}</div><div class="ib-val">Felipe</div></div>` +
                       `<div class="ib-row"><div class="ib-label">${t(STR.lAddr)}</div><div class="ib-val">P.H. BICSA Financial Center, Oficina 4007<br>Aquilino de la Guardia<br>Panamá City, Panamá</div></div>` +
@@ -197,7 +221,7 @@
 
       /* ── Carousel ── */
       let carouselGoTo = null;
-      const officeIdToSlide = { sg: 0, pa: 1, de: 2 };
+      const officeIdToSlide = { sg: 0, hk: 1, to: 2, pa: 3, de: 4 };
 
       requestAnimationFrame(() => {
         const outer      = this.querySelector('.carousel-outer');
