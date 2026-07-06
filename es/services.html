@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicios — CENTOR Underground System Solutions</title>
+  <link rel="icon" href="/assets/brand/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/brand/favicon-96x96.png" />
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="description" content="CENTOR integra experiencia de ingeniería en cada etapa del proyecto — desde auditorías de lubricación precontrato y puesta en marcha de TBM hasta monitoreo en tiempo real durante la excavación." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://centorglobal.com/es/services.html" />
+  <meta property="og:title" content="Servicios — CENTOR Underground System Solutions" />
+  <meta property="og:description" content="CENTOR integra experiencia de ingeniería en cada etapa del proyecto." />
+  <meta property="og:image" content="https://centorglobal.com/assets/brand/centor-full-logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="en" href="https://centorglobal.com/services.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://centorglobal.com/zh/services.html" />
+  <link rel="alternate" hreflang="de" href="https://centorglobal.com/de/services.html" />
+  <link rel="alternate" hreflang="es" href="https://centorglobal.com/es/services.html" />
+  <link rel="alternate" hreflang="ar" href="https://centorglobal.com/ar/services.html" />
+  <link rel="alternate" hreflang="x-default" href="https://centorglobal.com/services.html" />
+  <link rel="canonical" href="https://centorglobal.com/es/services.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Outfit:wght@700&family=Barlow:wght@400;500;600&family=Montserrat:wght@600&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/centor.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <style>
+    .partnership { background-color:var(--bg-1); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .partner-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+    @media(max-width:860px){.partner-grid{grid-template-columns:1fr;gap:48px;}}
+    .partner-body p { font-size:15px; line-height:1.82; color:var(--text-mid); margin-bottom:18px; }
+    .partner-body p:last-child { margin-bottom:0; }
+    .core-services { background-color:var(--bg); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .svc-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+    @media(max-width:700px){.svc-grid{grid-template-columns:1fr;}}
+    .sc { padding:40px 34px; background-color:var(--bg-1); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); transition:border-color 0.22s ease,background-color 0.22s ease; }
+    .sc:hover { border-color:var(--border-gold); background-color:var(--bg-2); background-image:var(--metal-sheen),var(--metal-lines-strong); }
+    .sc-num { font-family:var(--font-ui); font-weight:600; font-size:10px; color:var(--gold); letter-spacing:0.18em; margin-bottom:18px; opacity:0.7; }
+    .sc-title { font-family:var(--font-d); font-weight:700; font-size:15px; color:var(--charcoal); letter-spacing:0.05em; margin-bottom:14px; }
+    .sc-desc { font-size:14px; color:var(--text-mid); line-height:1.72; margin-bottom:24px; }
+    .sc-list { display:flex; flex-direction:column; gap:9px; }
+    .sc-item { display:flex; align-items:flex-start; gap:10px; font-size:13.5px; color:var(--text-dim); line-height:1.45; }
+    .sc-item::before { content:'—'; color:var(--gold); flex:none; font-size:12px; margin-top:2px; }
+    .process { background-color:var(--bg-2); background-image:var(--metal-lines); border-top:1px solid var(--border); }
+    .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; margin-top:48px; }
+    @media(max-width:900px){.steps{grid-template-columns:1fr 1fr;}}
+    @media(max-width:480px){.steps{grid-template-columns:1fr;}}
+    .step { padding:40px 28px; background-color:var(--bg-1); background-image:var(--metal-sheen),var(--metal-lines-strong); border:1px solid var(--border); box-shadow:inset 0 1px 0 rgba(255,255,255,0.55); position:relative; overflow:hidden; }
+    .step::before { content:attr(data-n); position:absolute; top:14px; right:16px; font-family:var(--font-ui); font-size:52px; color:var(--charcoal); opacity:0.05; line-height:1; }
+    .step-num { font-family:var(--font-ui); font-weight:600; font-size:10px; color:var(--gold); letter-spacing:0.20em; margin-bottom:18px; }
+    .step-name { font-family:var(--font-d); font-weight:700; font-size:15px; color:var(--charcoal); letter-spacing:0.04em; margin-bottom:12px; }
+    .step-desc { font-size:13px; color:var(--text-dim); line-height:1.65; }
+  </style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true"><defs>
+  <linearGradient id="gSteel" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#f4f5f6"/><stop offset="0.32" stop-color="#d3d5d8"/><stop offset="0.6" stop-color="#a7abae"/><stop offset="0.82" stop-color="#888c90"/><stop offset="1" stop-color="#6c7074"/></linearGradient>
+  <linearGradient id="gGrey" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#74787c"/><stop offset="0.4" stop-color="#4f5256"/><stop offset="0.75" stop-color="#3a3d40"/><stop offset="1" stop-color="#2a2c2f"/></linearGradient>
+</defs></svg>
+
+<site-navbar></site-navbar>
+
+<div class="page-banner">
+  <div class="swiper banner-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide banner-slide" style="background-image:url('https://images.unsplash.com/photo-1558382689-c1c29cc9b37e?w=1600&q=80')"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <div class="page-banner-inner container">
+    <div class="page-banner-eyebrow">Nuestros Servicios</div>
+    <h1 class="page-banner-h">Soporte técnico integral desde la<br><em>precontratación hasta el análisis postexcavación.</em></h1>
+    <p class="page-banner-sub">Integramos experiencia de ingeniería en cada etapa del proyecto — desde auditorías de lubricación y puesta en marcha de TBM hasta monitoreo en tiempo real y análisis de rendimiento postproyecto.</p>
+  </div>
+</div>
+
+<!-- MORE THAN PRODUCTS -->
+<section class="partnership sp" id="overview">
+  <div class="container">
+    <div class="partner-grid">
+      <div class="fade-up">
+        <div class="eyebrow"><span class="eyebrow-num">01</span><span class="eyebrow-line"></span><span class="eyebrow-label">Más que Productos</span></div>
+        <h2 class="section-h">Una Alianza <em>Técnica Completa</em></h2>
+        <div class="partner-body" style="margin-top:22px">
+          <p>CENTOR no es solo un proveedor de productos. Integramos experiencia técnica en cada etapa de su proyecto — desde auditorías de lubricación precontrato y soporte de puesta en marcha de TBM, hasta monitoreo en tiempo real durante la excavación y análisis de rendimiento postproyecto.</p>
+          <p>Nuestros ingenieros han trabajado en algunos de los proyectos subterráneos más desafiantes del mundo. Llevamos esa experiencia a cada compromiso con el cliente, independientemente del tamaño del proyecto.</p>
+        </div>
+        <a href="contact.html" class="btn-gold" style="margin-top:34px">Hable de su Proyecto</a>
+      </div>
+      <div class="fade-up" style="transition-delay:0.12s">
+        <div style="border:1px solid var(--border);overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,0.55);">
+          <img src="../assets/images/banners/services-partnership.jpg" alt="Ingenieros CENTOR en obra" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE SERVICES -->
+<section class="core-services sp" id="what-we-deliver">
+  <div class="container">
+    <div class="fade-up" style="margin-bottom:48px">
+      <div class="eyebrow"><span class="eyebrow-num">02</span><span class="eyebrow-line"></span><span class="eyebrow-label">Servicios Principales</span></div>
+      <h2 class="section-h">Lo que <em>Entregamos</em></h2>
+      <p class="section-lede" style="max-width:520px">Seis áreas de servicio especializadas que cubren el ciclo de vida completo del proyecto — desde la especificación hasta el reporte postexcavación.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="sc fade-up">
+        <div class="sc-num">Servicio 01</div>
+        <div class="sc-title">Ingeniería de Lubricación</div>
+        <p class="sc-desc">Diseño integral del sistema de lubricación y selección de productos adaptados a su tipo de TBM, condiciones del suelo y perfil de riesgo del proyecto.</p>
+        <div class="sc-list">
+          <div class="sc-item">Auditoría de lubricación TBM y análisis de brechas</div>
+          <div class="sc-item">Especificación de productos y estimación de volúmenes</div>
+          <div class="sc-item">Evaluación de compatibilidad con sistemas existentes</div>
+          <div class="sc-item">Optimización de programas e intervalos de lubricación</div>
+        </div>
+      </div>
+      <div class="sc fade-up" style="transition-delay:0.06s">
+        <div class="sc-num">Servicio 02</div>
+        <div class="sc-title">Soporte Técnico en Obra</div>
+        <p class="sc-desc">Ingenieros CENTOR desplegados en su obra durante fases críticas — puesta en marcha de TBM, lanzamiento y zonas de transición de suelo.</p>
+        <div class="sc-list">
+          <div class="sc-item">Soporte de puesta en marcha y arranque de TBM</div>
+          <div class="sc-item">Monitoreo y ajuste de lubricación en tiempo real</div>
+          <div class="sc-item">Capacitación de operadores y documentación</div>
+          <div class="sc-item">Solución de problemas y análisis de causa raíz</div>
+        </div>
+      </div>
+      <div class="sc fade-up" style="transition-delay:0.12s">
+        <div class="sc-num">Servicio 03</div>
+        <div class="sc-title">Cadena de Suministro Global</div>
+        <p class="sc-desc">Entrega de productos confiable y puntual a obras en todo el mundo. Gestionamos aduanas, logística y cumplimiento normativo local.</p>
+        <div class="sc-list">
+          <div class="sc-item">Planificación y previsión de suministro por proyecto</div>
+          <div class="sc-item">Gestión de flete internacional y aduanas</div>
+          <div class="sc-item">Documentación de cumplimiento normativo local</div>
+          <div class="sc-item">Capacidad de suministro de emergencia y expedición</div>
+        </div>
+      </div>
+      <div class="sc fade-up" style="transition-delay:0.18s">
+        <div class="sc-num">Servicio 04</div>
+        <div class="sc-title">Documentación Técnica</div>
+        <p class="sc-desc">Fichas técnicas de productos completas, fichas de datos de seguridad y manuales de lubricación específicos del proyecto en todos los idiomas requeridos.</p>
+        <div class="sc-list">
+          <div class="sc-item">TDS / SDS de productos en todos los idiomas del proyecto</div>
+          <div class="sc-item">Manuales de lubricación específicos del proyecto</div>
+          <div class="sc-item">Certificados de conformidad e informes de pruebas</div>
+          <div class="sc-item">Informes de rendimiento postproyecto</div>
+        </div>
+      </div>
+      <div class="sc fade-up" style="transition-delay:0.24s">
+        <div class="sc-num">Servicio 05</div>
+        <div class="sc-title">Monitoreo de Rendimiento</div>
+        <p class="sc-desc">Análisis continuo de datos operacionales del TBM para identificar tendencias de rendimiento relacionadas con la lubricación y abordar proactivamente los problemas antes de que causen tiempos de inactividad.</p>
+        <div class="sc-list">
+          <div class="sc-item">Análisis y seguimiento de datos de excavación</div>
+          <div class="sc-item">Monitoreo del consumo de grasa</div>
+          <div class="sc-item">Revisión de temperatura de rodamientos y vibración</div>
+          <div class="sc-item">Informes de recomendación de intervención</div>
+        </div>
+      </div>
+      <div class="sc fade-up" style="transition-delay:0.30s">
+        <div class="sc-num">Servicio 06</div>
+        <div class="sc-title">Capacitación</div>
+        <p class="sc-desc">Programas de capacitación estructurados para operadores de TBM, ingenieros de mantenimiento y directores de proyecto sobre mejores prácticas de lubricación subterránea.</p>
+        <div class="sc-list">
+          <div class="sc-item">Capacitación en fundamentos de lubricación TBM</div>
+          <div class="sc-item">Talleres de aplicación de productos CENTOR</div>
+          <div class="sc-item">Módulos de aprendizaje electrónico disponibles</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process sp" id="process">
+  <div class="container">
+    <div class="fade-up">
+      <div class="eyebrow"><span class="eyebrow-num">03</span><span class="eyebrow-line"></span><span class="eyebrow-label">Cómo Trabajamos</span></div>
+      <h2 class="section-h">Nuestro <em>Proceso de Compromiso</em></h2>
+      <p class="section-lede" style="max-width:480px">Un enfoque probado de cuatro etapas desde la consulta inicial hasta la finalización del proyecto y la revisión del rendimiento.</p>
+    </div>
+    <div class="steps">
+      <div class="step fade-up" data-n="01"><div class="step-num">Etapa 01</div><div class="step-name">Consulta</div><p class="step-desc">Briefing inicial del proyecto — especificaciones del TBM, condiciones del suelo, programa y preocupaciones específicas.</p></div>
+      <div class="step fade-up" style="transition-delay:0.08s" data-n="02"><div class="step-num">Etapa 02</div><div class="step-name">Especificación</div><p class="step-desc">Selección de productos, estimación de volúmenes y programa de entrega adaptado al cronograma del proyecto.</p></div>
+      <div class="step fade-up" style="transition-delay:0.16s" data-n="03"><div class="step-num">Etapa 03</div><div class="step-name">Entrega</div><p class="step-desc">Suministro de productos a tiempo en obra, con documentación completa y traspaso técnico.</p></div>
+      <div class="step fade-up" style="transition-delay:0.24s" data-n="04"><div class="step-num">Etapa 04</div><div class="step-name">Soporte</div><p class="step-desc">Monitoreo continuo, visitas a obra y soporte técnico 24/7 durante toda la excavación del proyecto.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <h2 class="cta-band-h fade-up">Hablemos Sobre <em>su Proyecto</em></h2>
+    <p class="cta-band-body fade-up" style="transition-delay:0.1s">Ya sea que esté en la etapa de planificación o ya en obra, CENTOR puede ayudar. Contáctenos para una consulta técnica sin compromiso.</p>
+    <div class="cta-band-actions fade-up" style="transition-delay:0.2s">
+      <a href="contact.html" class="btn-gold">Contáctenos</a>
+      <a href="products/" class="btn-ghost">Ver Productos</a>
+    </div>
+  </div>
+</section>
+
+<site-footer></site-footer>
+
+<script src="../components/navbar.js"></script>
+<script src="../components/footer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="../assets/js/centor.js"></script>
+<lang-bubble></lang-bubble>
+<script src="../components/lang-bubble.js"></script>
+</body></html>

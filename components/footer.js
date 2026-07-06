@@ -4,9 +4,66 @@
       this.style.display = 'contents';
 
       const isZh = window.location.pathname.includes('/zh/');
-      const base = isZh ? '/zh/' : '/';
+      const isDe = window.location.pathname.includes('/de/');
+      const isEs = window.location.pathname.includes('/es/');
+      const isAr = window.location.pathname.includes('/ar/');
+      const base = isZh ? '/zh/' : isDe ? '/de/' : isEs ? '/es/' : isAr ? '/ar/' : '/';
 
-      const t = isZh ? {
+      const t = isAr ? {
+        desc: 'منتجات تشحيم وتكييف هندسية لأنظمة التبم والأعمال تحت الأرض. موثوق بها من قِبل كبرى المقاولين حول العالم.',
+        navHead: 'التنقل',
+        navLinks: [
+          { href: base,                    label: 'الرئيسية' },
+          { href: base + 'about.html',     label: 'من نحن' },
+          { href: base + 'products/',      label: 'المنتجات' },
+          { href: base + 'services.html',  label: 'الخدمات' },
+          { href: base + 'references.html',label: 'المراجع' },
+          { href: base + 'contact.html',   label: 'اتصل بنا' },
+        ],
+        prodHead: 'المنتجات',
+        prodLinks: [
+          { href: base + 'products/main-bearing-sealant.html',  label: 'مادة ختم المحمل الرئيسي' },
+          { href: base + 'products/main-bearing-grease.html',   label: 'شحم المحمل الرئيسي' },
+          { href: base + 'products/tail-seal-grease.html',      label: 'شحم ختم الذيل' },
+          { href: base + 'products/tail-sealant-handcoat.html', label: 'طلاء يدوي لختم الذيل' },
+          { href: base + 'products/foam-agents.html',           label: 'عوامل الرغوة' },
+        ],
+        contactHead: 'اتصل بنا',
+        hqLabel:    'المقر الرئيسي',
+        hqVal:      'سنغافورة · عالميًا',
+        emailLabel: 'البريد الإلكتروني',
+        phoneLabel: 'الهاتف',
+        copy:       '© 2025 CENTOR Underground System Solutions. جميع الحقوق محفوظة.',
+        privacy:    'سياسة الخصوصية',
+        terms:      'شروط الاستخدام',
+      } : isEs ? {
+        desc: 'Productos de lubricación y acondicionamiento de grado industrial para TBM y sistemas subterráneos. Confiados por los principales contratistas del mundo.',
+        navHead: 'Navegación',
+        navLinks: [
+          { href: base,                    label: 'Inicio' },
+          { href: base + 'about.html',     label: 'Nosotros' },
+          { href: base + 'products/',      label: 'Productos' },
+          { href: base + 'services.html',  label: 'Servicios' },
+          { href: base + 'references.html',label: 'Referencias' },
+          { href: base + 'contact.html',   label: 'Contacto' },
+        ],
+        prodHead: 'Productos',
+        prodLinks: [
+          { href: base + 'products/main-bearing-sealant.html',  label: 'Sellante Rodamiento Principal' },
+          { href: base + 'products/main-bearing-grease.html',   label: 'Grasa Rodamiento Principal' },
+          { href: base + 'products/tail-seal-grease.html',      label: 'Grasa Sello de Cola' },
+          { href: base + 'products/tail-sealant-handcoat.html', label: 'Sellante Manual de Cola' },
+          { href: base + 'products/foam-agents.html',           label: 'Agentes Espumantes' },
+        ],
+        contactHead: 'Contacto',
+        hqLabel:    'Sede Global',
+        hqVal:      'Singapur · Global',
+        emailLabel: 'Correo',
+        phoneLabel: 'Teléfono',
+        copy:       '© 2025 CENTOR Underground System Solutions. Todos los derechos reservados.',
+        privacy:    'Política de Privacidad',
+        terms:      'Términos de Uso',
+      } : isZh ? {
         desc: '专为 TBM 及地下工程系统研制的工程级润滑与调节产品，深受全球领先承包商信赖。',
         navHead: '导航',
         navLinks: [
@@ -33,6 +90,33 @@
         copy:       '© 2025 CENTOR 地下系统解决方案。版权所有。',
         privacy:    '隐私政策',
         terms:      '使用条款',
+      } : isDe ? {
+        desc: 'Technische Schmier- und Konditionierungsprodukte für TBM und Untertagewerke. Vertraut bei führenden Auftragnehmern weltweit.',
+        navHead: 'Navigation',
+        navLinks: [
+          { href: base,                    label: 'Startseite' },
+          { href: base + 'about.html',     label: 'Über uns' },
+          { href: base + 'products/',      label: 'Produkte' },
+          { href: base + 'services.html',  label: 'Leistungen' },
+          { href: base + 'references.html',label: 'Referenzen' },
+          { href: base + 'contact.html',   label: 'Kontakt' },
+        ],
+        prodHead: 'Produkte',
+        prodLinks: [
+          { href: base + 'products/main-bearing-sealant.html',  label: 'Hauptlager-Dichtfett' },
+          { href: base + 'products/main-bearing-grease.html',   label: 'Hauptlager-Schmierfett' },
+          { href: base + 'products/tail-seal-grease.html',      label: 'Schildschwanzfett' },
+          { href: base + 'products/tail-sealant-handcoat.html', label: 'Schildschwanz-Handabdichtung' },
+          { href: base + 'products/foam-agents.html',           label: 'Schaumzusätze' },
+        ],
+        contactHead: 'Kontakt',
+        hqLabel:    'Hauptsitz',
+        hqVal:      'Singapur · Weltweit',
+        emailLabel: 'E-Mail',
+        phoneLabel: 'Telefon',
+        copy:       '© 2025 CENTOR Underground System Solutions. Alle Rechte vorbehalten.',
+        privacy:    'Datenschutzrichtlinie',
+        terms:      'Nutzungsbedingungen',
       } : {
         desc: 'Engineering-grade lubrication and conditioning products for TBM and underground systems. Trusted by leading contractors worldwide.',
         navHead: 'Navigation',
