@@ -116,7 +116,7 @@
       const isDefault = !isZh && !isDe && !isEs && !isAr;
 
       const langDropdownHtml =
-        '<div class="lang-dropdown" id="lang-dropdown">' +
+        '<div class="lang-dropdown" id="lang-dropdown" style="display:none">' +
           '<button class="lang-dropdown-btn" id="lang-dropdown-btn" aria-haspopup="listbox" aria-expanded="false" aria-controls="lang-dropdown-menu">' +
             globeSvg + '<span>' + currentLangLabel + '</span>' + chevronSvg +
           '</button>' +
@@ -141,7 +141,7 @@
         '</nav>\n' +
         '<div class="mobile-menu" id="mobile-menu">\n' +
         '  <ul>' + mobileLinks + '</ul>\n' +
-        '  <div class="mobile-lang">\n' +
+        '  <div class="mobile-lang" style="display:none">\n' +
         '    <a href="' + enHref + '"' + (isDefault ? ' class="active"' : '') + '>EN · English</a>' +
         '<a href="' + zhHref + '"' + (isZh ? ' class="active"' : '') + '>中文</a>' +
         '<a href="' + deHref + '"' + (isDe ? ' class="active"' : '') + '>DE · Deutsch</a>' +
