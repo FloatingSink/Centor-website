@@ -169,7 +169,7 @@
               `<h2 class="section-h">${t(STR.h2)}</h2>` +
               `<p class="section-lede">${t(STR.lede)}</p>` +
             `</div>` +
-            `<div class="globe-info-layout" style="grid-template-columns:3.5fr 6.5fr;">` +
+            `<div id="offices" class="globe-info-layout" style="grid-template-columns:3.5fr 6.5fr;scroll-margin-top:calc(var(--nav-h, 80px) + 16px);">` +
               `<div class="carousel-outer fade-up" style="transition-delay:0.1s">` +
                 `<div class="carousel-wrap">` +
                   `<div class="carousel-track">` +
@@ -271,6 +271,12 @@
         window.addEventListener('resize', recalc);
 
         offTabs.forEach((tab, i) => tab.addEventListener('click', () => goTo(i)));
+
+        // Jump the carousel to the office named in the ?office= query param
+        const officeParam = new URLSearchParams(window.location.search).get('office');
+        if (officeParam && officeIdToSlide[officeParam] !== undefined) {
+          goTo(officeIdToSlide[officeParam]);
+        }
       });
 
       /* ── Globe initialisation ── */
@@ -344,6 +350,12 @@
         springR = springV = 0;
         springTgt = diff;
         isJumping = true;
+      }
+
+      // Rotate globe to the ?office= param once flyTo is safe to call
+      const officeParamGlobe = new URLSearchParams(window.location.search).get('office');
+      if (officeParamGlobe && officeIdToSlide[officeParamGlobe] !== undefined) {
+        flyTo(offices[officeIdToSlide[officeParamGlobe]]);
       }
 
       (function frame() {
