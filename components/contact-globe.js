@@ -191,7 +191,6 @@
                       `<div class="ib-row"><div class="ib-label">${t(STR.lContact)}</div><div class="ib-val">キム・ソヨン</div></div>` +
                       `<div class="ib-row"><div class="ib-label">${t(STR.lAddr)}</div><div class="ib-val">Shinagawa-ku<br>Tokyo, Japan</div></div>` +
                       `<div class="ib-row"><div class="ib-label">${t(STR.lPhone)}</div><div class="ib-val"><a href="tel:+817091833737">+81 70-9183-3737</a></div></div>` +
-                      `<div class="ib-row"><div class="ib-label">${t(STR.lEmail)}</div><div class="ib-val"><a href="mailto:ip-link@soyon-sowon.com">ip-link@soyon-sowon.com</a></div></div>` +
                       `<div class="ib-row"><div class="ib-label">${t(STR.lEmail)}</div><div class="ib-val"><a href="mailto:info@centorglobal.com">info@centorglobal.com</a></div></div>` +
                     `</div>` +
                     `<div class="ib">` +
