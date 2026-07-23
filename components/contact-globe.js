@@ -358,8 +358,11 @@
         flyTo(offices[officeIdToSlide[officeParamGlobe]]);
       }
 
-      (function frame() {
-        if (!isHovering && pointerX === null && !isJumping && !legendPaused) baseRotation += ROT_SPD;
+      let lastFrameTime = null;
+      function frame(now) {
+        const dt = lastFrameTime === null ? 16.6667 : Math.min(now - lastFrameTime, 100);
+        lastFrameTime = now;
+        if (!isHovering && pointerX === null && !isJumping && !legendPaused) baseRotation += ROT_SPD * (dt / 16.6667);
         tickSpring();
         if (isJumping && Math.abs(springV) < 0.0002 && Math.abs(springTgt - springR) < 0.001) {
           baseRotation += springR;
@@ -368,7 +371,8 @@
         }
         globe.update({ phi: baseRotation + springR });
         requestAnimationFrame(frame);
-      })();
+      }
+      requestAnimationFrame(frame);
 
       cobeWrap.addEventListener('pointerenter', () => { isHovering = true; });
       cobeWrap.addEventListener('pointerleave', () => { isHovering = false; });
