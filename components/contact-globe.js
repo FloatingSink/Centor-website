@@ -22,7 +22,6 @@
         lEmail:  { en: 'Email',          zh: '电子邮箱', de: 'E-Mail',            es: 'Email',               ar: 'البريد الإلكتروني' },
         sgHead:  { en: 'Singapore — Global Headquarters', zh: '新加坡 — 全球总部', de: 'Singapur — Hauptsitz', es: 'Singapur — Sede Global', ar: 'سنغافورة — المقر الرئيسي العالمي' },
         sgName:  { en: 'Yu Jia Long', zh: '于嘉龙', de: 'Jia Long Yu', es: 'Yu Jia Long', ar: 'يو جيا لونغ' },
-        sgPhone: { en: 'To be updated', zh: '待更新', de: 'Wird aktualisiert', es: 'Por actualizar', ar: 'سيتم التحديث' },
         hkHead:  { en: 'Hong Kong — Asia Pacific', zh: '香港 — 亚太区', de: 'Hongkong — Asien-Pazifik', es: 'Hong Kong — Asia Pacífico', ar: 'هونغ كونغ — آسيا والمحيط الهادئ' },
         toHead:  { en: 'Tokyo — Northeast Asia', zh: '东京 — 东北亚', de: 'Tokio — Nordostasien', es: 'Tokio — Noreste de Asia', ar: 'طوكيو — شمال شرق آسيا' },
         paHead:  { en: 'Panama — Latin America', zh: '巴拿马 — 拉丁美洲', de: 'Panama — Lateinamerika', es: 'Panamá — Latinoamérica', ar: 'بنما — أمريكا اللاتينية' },
@@ -177,7 +176,7 @@
                       `<div class="ib-head">${t(STR.sgHead)}</div>` +
                       `<div class="ib-row"><div class="ib-label">${t(STR.lContact)}</div><div class="ib-val">${t(STR.sgName)}</div></div>` +
                       `<div class="ib-row"><div class="ib-label">${t(STR.lAddr)}</div><div class="ib-val">151 Chin Swee Road, #09-08<br>Manhattan House<br>Singapore 169876</div></div>` +
-                      `<div class="ib-row"><div class="ib-label">${t(STR.lPhone)}</div><div class="ib-val">${t(STR.sgPhone)}</div></div>` +
+                      `<div class="ib-row"><div class="ib-label">${t(STR.lPhone)}</div><div class="ib-val"><a href="tel:+6582036023">+65 8203 6023</a></div></div>` +
                       `<div class="ib-row"><div class="ib-label">${t(STR.lEmail)}</div><div class="ib-val"><a href="mailto:info@centorglobal.com">info@centorglobal.com</a></div></div>` +
                     `</div>` +
                     `<div class="ib">` +
