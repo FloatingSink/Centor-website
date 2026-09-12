@@ -40,12 +40,16 @@
         },
         {
           en: 'References', zh: '项目参考', de: 'Referenzen', es: 'Referencias', ar: 'المراجع', href: base + 'references.html',
-          maintenance: true,
-          subs: [
-            { en: 'Featured Project',    zh: '精选案例', de: 'Ausgewähltes Projekt', es: 'Proyecto Destacado',  ar: 'المشروع المميز',   href: base + 'references.html#featured-project' },
-            { en: 'Project Portfolio',   zh: '项目组合', de: 'Projektportfolio',     es: 'Cartera de Proyectos',ar: 'محفظة المشاريع',   href: base + 'references.html#portfolio' },
-            { en: 'Client Testimonials', zh: '客户评价', de: 'Kundenstimmen',        es: 'Testimonios',         ar: 'آراء العملاء',     href: base + 'references.html#testimonials' },
-          ]
+          // Real project references have shipped in English only. The other
+          // languages still show the placeholder page, so they keep the
+          // maintenance treatment until their translations ship.
+          maintenance: base !== '/',
+          subs: base === '/' ? [
+            { en: 'Overview',            href: base + 'references.html#overview' },
+            { en: 'Wenyi West Road II',  href: base + 'references/hangzhou-wenyi-west-road.html' },
+            { en: 'Yinjiang–Buhan 5-1',  href: base + 'references/yinjiang-buhan.html' },
+            { en: 'Wuhan Metro Line 11', href: base + 'references/wuhan-metro-line-11.html' },
+          ] : null
         },
         { en: 'Contact', zh: '联系我们', de: 'Kontakt', es: 'Contacto', ar: 'اتصل بنا', href: base + 'contact.html' },
       ];
