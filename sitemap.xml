@@ -58,9 +58,27 @@
   </url>
   <url>
     <loc>https://centorglobal.com/references.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://centorglobal.com/references/hangzhou-wenyi-west-road.html</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://centorglobal.com/references/yinjiang-buhan.html</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://centorglobal.com/references/wuhan-metro-line-11.html</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://centorglobal.com/contact.html</loc>
