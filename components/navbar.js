@@ -68,11 +68,15 @@
       const burgerLabel = isZh ? '打开菜单' : isDe ? 'Menü öffnen' : isEs ? 'Abrir menú' : isAr ? 'فتح القائمة' : 'Open menu';
 
       // Language switcher: map current page to its counterpart in each language
+      // Per-project reference pages exist in English only, so switching away
+      // from one lands on that language's references hub instead of a 404.
+      const translated = p => (/^\/references\/./.test(cleanPath) ? p + '/references.html' : p + cleanPath);
+
       const enHref = cleanPath;
-      const zhHref = '/zh' + cleanPath;
-      const deHref = '/de' + cleanPath;
-      const esHref = '/es' + cleanPath;
-      const arHref = '/ar' + cleanPath;
+      const zhHref = translated('/zh');
+      const deHref = translated('/de');
+      const esHref = translated('/es');
+      const arHref = translated('/ar');
 
       const chevronSvg = '<svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>';
       const globeSvg   = '<svg class="globe" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M8 1.5C6.5 4 5.5 6 5.5 8s1 4 2.5 6.5M8 1.5C9.5 4 10.5 6 10.5 8s-1 4-2.5 6.5M1.5 8h13"/></svg>';
