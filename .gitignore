@@ -1,5 +1,5 @@
 node_modules/
 temporary screenshots/
 .claude/
-README.md
 .vercel
+.DS_Store
